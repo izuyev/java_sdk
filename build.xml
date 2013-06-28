@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<project name="ARIA_SDK" basedir="." default="Generate_Aria_SDK">
+
+   <!-- Properties file to work on the whole ant file. -->
+   <property file="build.properties"/>	
+
+   <!-- Define the classpath for CXF, it means, the place where CXF libraries are. -->
+   <path id="cxf.classpath">
+      <fileset dir="${cxf.home}/lib">
+         <include name="*.jar"/>
+      </fileset>
+   </path>
+	
+   <path id="aria.classpath">
+   	  <fileset dir="generate/lib" includes="*.jar"/>
+   </path>
+	
+   <path id="aria_run.classpath">
+   	  <pathelement location="bin"/>
+   	  <pathelement location="generate/lib/javax.wsdl_1.6.2.v200806030405.jar"/>
+  	  <pathelement location="generate/lib/jersey-client-1.4.jar"/>
+  	  <pathelement location="generate/lib/jersey-core-1.4.jar"/>
+  	  <pathelement location="generate/lib/json_simple-1.1.jar"/>
+ 	  <pathelement location="generate/lib/junit.jar"/>
+      <pathelement location="build/classes"/>
+   </path>
+      
+   <!-- Exectues the task that converts a WSDL to Java and has 3 parameters to work correctly which are:
+       1. Destin route.
+       2. WSDL's TargetNamespace
+       3. WSDL's URL. -->
+   <target name="Create_CXF_Resources">
+    	<delete dir="generate/com"/>
+    	<echo message="Creating CXF resources."/>
+      <java classname="org.apache.cxf.tools.wsdlto.WSDLToJava" fork="true">
+         <arg value="-client"/>
+         <arg value="-d"/>
+         <arg value="${cxf.dest.dir}"/>
+      	 <arg value="-p"/>
+         <arg value="${cxf.wsdl.targetnamespace}"/>
+         <arg value="${cxf.wsdl.url}"/>
+         <classpath>
+            <path refid="cxf.classpath"/>
+         </classpath>
+      </java>
+    	<echo message="WSDL to Java conversion complete."/>
+   </target>
+   
+   <target name="Generate_Aria_SDK" depends="Create_CXF_Resources">
+	<delete dir="generate/.Net"/>
+	<delete dir="generate/Java"/>
+        <delete dir="bin"/>
+   	 <mkdir dir="bin"/>
+   	 <javac srcdir="generate" destdir="bin" debug="yes" deprecation="yes">
+   	   <classpath>
+         <path refid="aria.classpath"/>
+       </classpath>
+   	 </javac>
+
+   	<java classname="aria.codegenerator.common.CodeGeneration" fork="false">
+   	 	<classpath>
+          <path refid="aria_run.classpath"/>
+        </classpath>
+   	 </java>
+
+   	<!-- javac: Compile resulting classes -->
+   	<javac srcdir="generate" destdir="bin" debug="yes" deprecation="yes">
+   	   <classpath>
+         <path refid="aria.classpath"/>
+       </classpath>
+   	</javac>
+   	 
+	<!-- jar: class compilados  dirX JAVA -->
+	<!-- <delete dir="generated"/> -->
+	<mkdir dir="generated"/>
+	<mkdir dir="generated/Java"/>
+   	<jar jarfile="generated/Java/AriaSDK.jar" basedir="bin" compress="true">
+        <manifest>
+			<attribute name="Built-By" value="PSL S.A." />
+        </manifest>
+    </jar>
+	
+	<zip destfile="generated/Java/AriaSDK_src.zip" basedir="generate/Java">
+		<exclude name="**/*.jar"/>
+    </zip>
+
+	<!-- jar: class compilados  dirX .NET -->
+	<mkdir dir="generated/.Net"/>
+   	<!--jar jarfile="generated/.Net/AriaSDK.dll" basedir="bin" compress="true">
+        <manifest>
+			<attribute name="Built-By" value="PSL S.A." />
+        </manifest>
+    </jar-->
+	
+	<zip destfile="generated/.Net/AriaSDK_src.zip" basedir="generate/.Net">
+		<exclude name="**/*.jar"/>
+    </zip>
+		
+   	<!-- Copy the resulting files on the selected dirs -->
+	<java classname="aria.codegenerator.common.CopyDirectory" fork="false">
+   	 	<classpath>
+          <path refid="aria_run.classpath"/>
+        </classpath>
+   	</java>
+   	
+   	<!-- Finally Delete generated files -->
+  	<delete dir="generated"/> 
+	<!--<delete dir="generate/com"/>-->
+	<delete dir="generate/.Net"/>
+	<delete dir="generate/Java"/>
+   	
+  </target>
+
+</project>
