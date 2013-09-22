@@ -3,7 +3,7 @@ java_sdk
 
 Aria System's Java SDK
 ----------------------
-Steps to run the SDK generator:
+Guidelines:
 -------------------------------
 Make sure the java version is 1.7.
 * C:\Users >java -version
@@ -11,17 +11,38 @@ Make sure the java version is 1.7.
 * Java(TM) SE Runtime Environment (build 1.7.0_09-b05)
 * Java HotSpot(TM) Client VM (build 23.5-b02, mixed mode, sharing)
 
-Make sure the JAVA_HOME and PATH are pointing to the proper location in the system environment variable settings.
-*     JAVA_HOME = C:\Program Files\Java\jdk1.7.0
-*     PATH = %JAVA_HOME%\bin
+Download the Java SDK library AriaSDK.jar from https://github.com/AriaSystems/java_sdk/download/.
+The dependent third-party libraries are available in https://github.com/AriaSystems/java_sdk/download/third-party/.
 
-Download the SDK Generator project from and run the following command.
-* E:\Aria\Source Code\aria_sdk\SDKGenerator> java -jar RunSDKGenerator.jar
+Import the above libraries to the java project from where the Aria APIs are to be called.
 
-In the UI that opens by the above command, feed the wsdl url with required version (example, https://secure.future.stage.ariasystems.net/api/Advanced/wsdl/6.7/complete-doc_literal_wrapped.wsdl).
+To call the API in REST mode, form the baseAriaBillingDTO as below by passing the "CallType.REST" and use it to get the ariaBillingComplete handle.
+The ariaBillingComplete has the methods to all the core Aria APIs. Call the required API method as seen in the example below.
 
-Enter the Library name like AriaSDK-5.7 to represent the wsdl version for reference.
+The following example uses "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" as the dispatcher, client_no as 100 and auth_key as A1234B6789.
 
-Feed both the Source Path and Library path with any suitable path where the sdk source (AriaSDK_src.zip) and library files (AriaSDK-6.x.jar) has to be copied.
+            /*REST CALL*/
+            BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                        "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php", "logger",
+                        false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON);
+            AriaBillingComplete ariaBillingComplete = AriaBillingBuilder.getAriaSDK(baseAriaBillingDTO);
+            // Form the api inputs
+            com.aria.common.shared.EventListRow eventListRow1 = new com.aria.common.shared.EventListRow();
+            eventListRow1.setEventList(120L);
+            com.aria.common.shared.EventListRow eventListRow2 = new com.aria.common.shared.EventListRow();
+            eventListRow2.setEventList(130L);
+            com.aria.common.shared.EventListArray eventListArray = new com.aria.common.shared.EventListArray();
+            eventListArray.getEventListRow().add(eventListRow1);
+            eventListArray.getEventListRow().add(eventListRow2);
+            // Call the API
+            Map<String,Object> hashMapReturnValues = ariaBillingComplete.subscribeEvents(100L,"A1234B6789", eventListArray);
+            // Read the output from the map as below.
+            System.out.println("error_code: " + hashMapReturnValues.get("error_code"));
+            System.out.println("error_msg: " + hashMapReturnValues.get("error_msg"));
+ 
+To call the API in SOAP mode, it is exactly same as the above code, except for the "CallType.SOAP" as below.
 
-Click on 'Generate Code' and find the AriaSDK- 6.x.jar and AriaSDK_src.zip in the location chosen in step 5.
+            /*SOAP CALL*/
+            BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                        "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php", "logger",
+                        false/* Debug */, CallType.SOAP, OutPutFormat.OUTPUT_JSON);

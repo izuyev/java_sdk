@@ -1,0 +1,56 @@
+package com.aria.common.shared;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "queuedPlans", "currentRateScheduleNo"})
+@XmlRootElement(name = "get_queued_service_plansResponseElement")
+public class GetQueuedServicePlansResponseElement {
+
+    @XmlElement(name = "error_code")
+    protected Long errorCode;
+    @XmlElement(name = "error_msg")
+    protected String errorMsg;
+    @XmlElement(name = "queued_plans")
+    protected List<QueuedPlansReturnElement> queuedPlans;
+    @XmlElement(name = "current_rate_schedule_no")
+    protected Long currentRateScheduleNo;
+    
+    public Long getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(Long value) {
+        this.errorCode = value;
+    }
+
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String value) {
+        this.errorMsg = value;
+    }
+
+    public List<QueuedPlansReturnElement> getQueuedPlans() {
+        if (this.queuedPlans == null) {
+            this.queuedPlans = new ArrayList<QueuedPlansReturnElement>();
+        }
+        return this.queuedPlans;
+    }public Long getCurrentRateScheduleNo() {
+        return currentRateScheduleNo;
+    }
+
+    public void setCurrentRateScheduleNo(Long value) {
+        this.currentRateScheduleNo = value;
+    }
+
+    
+}

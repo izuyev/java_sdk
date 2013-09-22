@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.8.2
-Created-By: 1.6.0_30-b12 (Sun Microsystems Inc.)
-Built-By: Aria Systems
-Main-Class: aria.codegenerator.gui.Generation
-Class-Path: lib/GeneratorUtils.jar lib/javax.wsdl_1.6.2.v200806030405.jar
