@@ -10,7 +10,7 @@ import aria.codegenerator.common.CodeGeneration;
 
 /** Generate dynamically the AriaBillingComplete class code
  *
- * @author Diego trejos, Julio Alexander Guevara */
+ */
 public class AriaBillingCompleteRESTCodeGeneration {
 	private static final String	CLASS_SUB_PACKAGE	= "sdk/classes";
 	private static final String	CLASS_NAME	= "AriaBillingCompleteRest.java";
@@ -75,7 +75,6 @@ public class AriaBillingCompleteRESTCodeGeneration {
 			header.append(" * AriaBillingCompleteRest\n");
 			header.append(" * Web Service class\n");
 			header.append(" * @copyright Aria Systems, Inc\n");
-			header.append(" * @author (Automatic generated) PSL - Julio Alexander Guevara Marulanda\n");
 			header.append(" */\n");
 			header.append("public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBillingComplete {\n");
 			header.append("	/************** CONSTRUCTOR ************************/\n");
@@ -131,20 +130,16 @@ public class AriaBillingCompleteRESTCodeGeneration {
 	private static StringBuilder methodDefinition(Method method) {
 		StringBuilder result = new StringBuilder();
 		Annotation[][] paramanota = method.getParameterAnnotations();
-		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder inParms = new StringBuilder();
 		HashMap<Integer, String> hashMapInParms = new HashMap<Integer, String>();
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
+				if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
 					if (inParms.length() != 0) {
 						inParms.append(", ");
 					}
-					String parmType = parmTypes[i].getName();
-					if (parmType.equals("long")){
-						parmType = "Long";
-					}
+					String parmType = CodeGeneration.getParamType(method, i, webParam);
 					inParms.append(parmType);
 					inParms.append(" ");
 					inParms.append(webParam.name());
@@ -178,25 +173,24 @@ public class AriaBillingCompleteRESTCodeGeneration {
 	private static StringBuilder methodBody2(Method method) {
 		StringBuilder result = new StringBuilder();
 		Annotation[][] paramanota = method.getParameterAnnotations();
-		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder inParms = new StringBuilder();
 		StringBuilder sendParms = new StringBuilder();
 		HashMap<Integer, String> hashMapInParms = new HashMap<Integer, String>();
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
+				if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
 					if (inParms.length() != 0) {
 						sendParms.append(", ");
 					}
-					String type = getParmType(parmTypes[i].getName());
+					String parmType = CodeGeneration.getParamType(method, i, webParam);
 					inParms.append("		");
-					inParms.append(type);
+					inParms.append(parmType);
 					inParms.append(" ");
 					inParms.append(webParam.name());
 					inParms.append(" = ");
 					inParms.append("(");
-					inParms.append(type);
+					inParms.append(parmType);
 					inParms.append(")");
 					inParms.append(" map.get(");
 					inParms.append((char) 34);
@@ -220,7 +214,6 @@ public class AriaBillingCompleteRESTCodeGeneration {
 	@SuppressWarnings("rawtypes")
 	private static StringBuilder buildRestCall(Method method) {
 		Annotation[][] paramanota = method.getParameterAnnotations();
-		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder fullParms = new StringBuilder();
 		StringBuilder outParms = new StringBuilder();
 		StringBuilder inParms = new StringBuilder();
@@ -228,8 +221,9 @@ public class AriaBillingCompleteRESTCodeGeneration {
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
-					String parmType = parmTypes[i].getName().toLowerCase();
+				if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
+					String paramType = CodeGeneration.getParamType(method, i, webParam);
+					String parmType = paramType.toLowerCase();
 					if (parmType.contains("long")) {
 						inParms.append("		addParameters(parameters," + (char) 34 + webParam.name() + (char) 34 + ",getValue("
 								+ (char) 34 + "Long" + (char) 34 + "," + webParam.name() + "));\n");

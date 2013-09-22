@@ -9,7 +9,6 @@ import com.aria.common.shared.CompletePort;
 
 /**
  * Generate dynamically the AriaBillingComplete class code
- * @author Diego trejos, Julio Alexander Guevara
  */
 public class AriaServiceClientTestCodeGenerationNet {
 	private static final String		CLASS_SUB_PACKAGE	= "";
@@ -68,6 +67,8 @@ public class AriaServiceClientTestCodeGenerationNet {
 					+ ";\n");
 			header.append("    private const string ARIA_AUTHORIZATION_KEY = " + (char) 34 + "aria-authorization-key"
 					+ (char) 34 + ";\n");
+			header.append("    private const string ARIA_DISPATCHER_URL = " + (char) 34 + "aria-dispatcher-url"
+					+ (char) 34 + ";\n");
 			header.append("    private const string VALID_ACCOUNT_NUMBER = " + (char) 34 + "valid-account-number" + (char) 34
 					+ ";\n");
 			header.append("    private const string VALID_ACCOUNT_USERID = " + (char) 34 + "valid-account-userid" + (char) 34
@@ -89,8 +90,7 @@ public class AriaServiceClientTestCodeGenerationNet {
 			header.append("    [TestFixtureSetUp]\n");
 			header.append("    public void setUp()\n");
 			header.append("    {\n");
-			header.append("        mService = new AriaBillingComplete(" + (char) 34
-					+ "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" + (char) 34 + ");\n");
+			header.append("        mService = new AriaBillingComplete(ConfigurationManager.AppSettings[ARIA_DISPATCHER_URL]);\n");
 			header.append("    }\n");
 			header.append("\n");
 			header.append("    public long AccountNumber\n");
@@ -243,15 +243,15 @@ public class AriaServiceClientTestCodeGenerationNet {
 	@SuppressWarnings("rawtypes")
 	private static StringBuilder buildRestCall(Method method) {
 		Annotation[][] paramanota = method.getParameterAnnotations();
-		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder inParms = new StringBuilder();
 		StringBuilder callREST = new StringBuilder();
 		callREST.append("       		{\n");
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
-					String parmType = parmTypes[i].getName().toLowerCase();
+				if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
+					String paramType = CodeGeneration.getParamType(method, i, webParam);
+					String parmType = paramType.toLowerCase();
 					String parmName = webParam.name();
 					String value = getParmValue(parmName, parmType);
 					if (inParms.length() > 0){ 
@@ -281,7 +281,7 @@ public class AriaServiceClientTestCodeGenerationNet {
 		} else if (parmName.equalsIgnoreCase("supp_plan_no")) {
 			ret = "SupplementalPlanNumber";
 			parmType = "attribute";
-		} else if (parmName.equalsIgnoreCase("plan_no")) {
+		} else if (parmName.equalsIgnoreCase("plan_no") && parmType.contains("array") == false) {
 			ret = "PlanNumber";
 			parmType = "attribute";
 		} else if (parmName.equalsIgnoreCase("service_no")) {

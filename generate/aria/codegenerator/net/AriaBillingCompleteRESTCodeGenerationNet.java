@@ -9,7 +9,6 @@ import com.aria.common.shared.CompletePort;
 
 /**
  * Generate dynamically the AriaBillingComplete class code
- * @author Diego trejos, Julio Alexander Guevara
  */
 public class AriaBillingCompleteRESTCodeGenerationNet {
 	private static final String		CLASS_SUB_PACKAGE	= "";
@@ -113,7 +112,7 @@ public class AriaBillingCompleteRESTCodeGenerationNet {
 			header.append("\n");
 			header.append("        private static string getContentType()\n");
 			header.append("        {\n");
-			header.append("            return " + (char) 34 + "application/json" + (char) 34 + ";\n");
+			header.append("            return " + (char) 34 + "application/Json" + (char) 34 + ";\n");
 			header.append("        }\n");
 			header.append("\n");
 			header.append("        public string getURL()\n");
@@ -208,14 +207,14 @@ public class AriaBillingCompleteRESTCodeGenerationNet {
 	@SuppressWarnings("rawtypes")
 	private static StringBuilder buildRestCall(Method method) {
 		Annotation[][] paramanota = method.getParameterAnnotations();
-		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder fullParms = new StringBuilder();
 		StringBuilder inParms = new StringBuilder();
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
-					String parmType = parmTypes[i].getName().toLowerCase();
+				if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
+					String paramType = CodeGeneration.getParamType(method, i, webParam);
+					String parmType = paramType.toLowerCase();
 					String parmName = webParam.name();
 					if (parmType.contains("array")) {
 						inParms.append("			RestUtilities.addParameterValuesFromArray(ref url, request." + parmName + ");\n");

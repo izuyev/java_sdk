@@ -69,17 +69,26 @@
          <path refid="aria.classpath"/>
        </classpath>
    	</javac>
+   	<copy todir="bin" overwrite="true">
+   	  <fileset dir="generate">
+   	    <include name="*.properties" />
+   	  </fileset>
+   	</copy>
    	 
 	<!-- jar: class compilados  dirX JAVA -->
 	<!-- <delete dir="generated"/> -->
 	<mkdir dir="generated"/>
 	<mkdir dir="generated/Java"/>
-   	<jar jarfile="generated/Java/AriaSDK.jar" basedir="bin" compress="true">
+   	<jar jarfile="generated/Java/AriaSDK.jar" basedir="bin" compress="true" excludes="aria/**">
         <manifest>
-			<attribute name="Built-By" value="PSL S.A." />
+			<attribute name="Built-By" value="Aria Systems" />
         </manifest>
     </jar>
-	
+   	<copy todir="generate/Java" overwrite="true">
+   	  <fileset dir="generate">
+   	    <include name="*.properties" />
+   	  </fileset>
+   	</copy>
 	<zip destfile="generated/Java/AriaSDK_src.zip" basedir="generate/Java">
 		<exclude name="**/*.jar"/>
     </zip>
@@ -88,7 +97,7 @@
 	<mkdir dir="generated/.Net"/>
    	<!--jar jarfile="generated/.Net/AriaSDK.dll" basedir="bin" compress="true">
         <manifest>
-			<attribute name="Built-By" value="PSL S.A." />
+			<attribute name="Built-By" value="Aria Systems" />
         </manifest>
     </jar-->
 	

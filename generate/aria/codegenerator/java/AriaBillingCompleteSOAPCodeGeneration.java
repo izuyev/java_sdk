@@ -9,7 +9,7 @@ import aria.codegenerator.common.CodeGeneration;
 
 /** Generate dynamically the AriaBillingComplete class code
  * 
- * @author Diego trejos, Julio Alexander Guevara */
+ */
 public class AriaBillingCompleteSOAPCodeGeneration {
 	private static final String	CLASS_SUB_PACKAGE	= "sdk/classes";
 	private static final String	CLASS_NAME	= "AriaBillingCompleteSoap.java";
@@ -70,7 +70,6 @@ public class AriaBillingCompleteSOAPCodeGeneration {
 			header.append(" * AriaBillingCompleteSoap\n");
 			header.append(" * Web Service class\n");
 			header.append(" * @copyright Aria Systems, Inc\n");
-			header.append(" * @author (Automatic generated) PSL - Julio Alexander Guevara Marulanda\n");
 			header.append(" */\n");
 			header.append("public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBillingComplete {\n");
 			header.append("	/*************** CLASS ATTRIBUTES ****************/\n");
@@ -141,27 +140,19 @@ public class AriaBillingCompleteSOAPCodeGeneration {
 
 	/********************************* BASIC METHODS **********************************************/
 	@SuppressWarnings("rawtypes")
-	private static StringBuilder methodDefinition(Method method) {
-		if(method.getName().equalsIgnoreCase("genInvoice"))  
-		{
-			String a = "sdfsdf";
-		}
+	private StringBuilder methodDefinition(Method method) {
 		StringBuilder result = new StringBuilder();
 		Annotation[][] paramanota = method.getParameterAnnotations();
-		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder inParms = new StringBuilder();
 		HashMap<Integer, String> hashMapInParms = new HashMap<Integer, String>();
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
+				if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
 					if (inParms.length() != 0) {
 						inParms.append(", ");
 					}
-					String parmType = parmTypes[i].getName();
-					if (parmType.equals("long")){
-						parmType = "Long";
-					}
+					String parmType = CodeGeneration.getParamType(method, i, webParam);
 					inParms.append(parmType);
 					inParms.append(" ");
 					inParms.append(webParam.name());
@@ -192,21 +183,20 @@ public class AriaBillingCompleteSOAPCodeGeneration {
 	}
 
 	@SuppressWarnings("rawtypes")
-	private static StringBuilder methodBody2(Method method) {
+	private StringBuilder methodBody2(Method method) {
 		StringBuilder result = new StringBuilder();
 		Annotation[][] paramanota = method.getParameterAnnotations();
-		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder inParms = new StringBuilder();
 		StringBuilder sendParms = new StringBuilder();
 		HashMap<Integer, String> hashMapInParms = new HashMap<Integer, String>();
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
+				if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
 					if (inParms.length() != 0) {
 						sendParms.append(", ");
 					}
-					String type = getParmType(parmTypes[i].getName());
+					String type = CodeGeneration.getParamType(method, i, webParam);
 					inParms.append("		");
 					inParms.append(type);
 					inParms.append(" ");
@@ -240,36 +230,37 @@ public class AriaBillingCompleteSOAPCodeGeneration {
 		Class[] parmTypes = method.getParameterTypes();
 		StringBuilder fullParms = new StringBuilder();
 		StringBuilder outParms = new StringBuilder();
-		StringBuilder inParms = new StringBuilder();
 		StringBuilder hashMapPut = new StringBuilder();
 		HashMap<Integer, String> hashMapOutParms = new HashMap<Integer, String>();
-		HashMap<Integer, String> hashMapInParms = new HashMap<Integer, String>();
+		String paramName = "";
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN == webParam.mode()) {
-					if (inParms.length() != 0) {
-						inParms.append(", ");
-					}
-					String parmType = parmTypes[i].getName();
-					if (parmType.equals("long")){
-						parmType = "Long";
-					}
-					inParms.append(parmType);
-					inParms.append(" ");
-					inParms.append(webParam.name());
-					hashMapInParms.put(hashMapInParms.size(), webParam.name());
-				} else {
+				paramName = webParam.name();
+				if (WebParam.Mode.INOUT == webParam.mode()) {
+					paramName = "h_" + webParam.name();
 					outParms.append("		");
 					outParms.append(parmTypes[i].getName());
 					outParms.append(" ");
-					outParms.append(webParam.name());
+					outParms.append(paramName);
+					outParms.append(" = new ");
+					outParms.append(parmTypes[i].getName());
+					outParms.append("(" + webParam.name() + ");\n");
+					hashMapOutParms.put(hashMapOutParms.size(), paramName);
+					hashMapPut.append("		getHashMapReturnValues().put(" + (char) 34 + webParam.name() + (char) 34 + ",(("
+							+ parmTypes[i].getName() + ")" + paramName + ").value);\n");
+				} else if(WebParam.Mode.OUT == webParam.mode()) {
+					paramName = "h_" + webParam.name();
+					outParms.append("		");
+					outParms.append(parmTypes[i].getName());
+					outParms.append(" ");
+					outParms.append(paramName);
 					outParms.append(" = new ");
 					outParms.append(parmTypes[i].getName());
 					outParms.append("();\n");
 					hashMapOutParms.put(hashMapOutParms.size(), webParam.name());
 					hashMapPut.append("		getHashMapReturnValues().put(" + (char) 34 + webParam.name() + (char) 34 + ",(("
-							+ parmTypes[i].getName() + ")" + webParam.name() + ").value);\n");
+							+ parmTypes[i].getName() + ")" + paramName + ").value);\n");
 				}
 				if (fullParms.length() > 0){
 					fullParms.append(", ");
@@ -279,7 +270,7 @@ public class AriaBillingCompleteSOAPCodeGeneration {
 //					fullParms.append(webParam.name()+".longValue()");
 //				} else {
 //				}
-				fullParms.append(webParam.name());
+				fullParms.append(paramName);
 			}
 		}
 		StringBuilder callSOAP = new StringBuilder();

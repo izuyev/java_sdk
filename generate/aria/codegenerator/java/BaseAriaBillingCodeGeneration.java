@@ -1,20 +1,15 @@
 package aria.codegenerator.java;
 
-import java.io.DataInputStream;
 import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.w3c.dom.Document;
+import javax.wsdl.Definition;
+import javax.wsdl.factory.WSDLFactory;
+import javax.wsdl.xml.WSDLReader;
 
 import aria.codegenerator.common.CodeGeneration;
 
 /**
  * Generate dynamically the AriaBillingBuilder.java class code
- * @author Julio Alexander Guevara
  */
 public class BaseAriaBillingCodeGeneration {
 	private static final String		CLASS_SUB_PACKAGE	= "sdk/classes";
@@ -49,15 +44,12 @@ public class BaseAriaBillingCodeGeneration {
 				return "";
 			}
 			try {
-			URL data = new URL(wsdlUrl);
-			URLConnection dataConnection = data.openConnection();
-			DataInputStream dis = new DataInputStream(dataConnection.getInputStream());
-			
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(dis);
-			String version = doc.getDocumentElement().getAttribute("targetNamespace");
-						
+			// Create the WSDL Reader object
+			WSDLReader reader = WSDLFactory.newInstance().newWSDLReader();
+			// Read the WSDL and get the top-level Definition object
+			Definition def = reader.readWSDL(null, wsdlUrl);
+
+			String version = def.getTargetNamespace();
 			// https://secure.future.stage.ariasystems.net/api/Advanced/wsdl/5.7/complete-doc_literal_wrapped.wsdl
 			//String lookFor = "wsdl/";
 			String lookFor = ":vers:";
@@ -96,7 +88,6 @@ public class BaseAriaBillingCodeGeneration {
 			header.append(" * BaseAriaBilling\n");
 			header.append(" * Web Service class that abstracts SOAP and REST calls\n");
 			header.append(" * @copyright Aria Systems, Inc\n");
-			header.append(" * @author PSL - Julio Alexander Guevara Marulanda\n");
 			header.append(" */\n");
 			header.append("public abstract class BaseAriaBilling {\n");
 			header.append("	/*************** CLASS ATTRIBUTES ****************/\n");

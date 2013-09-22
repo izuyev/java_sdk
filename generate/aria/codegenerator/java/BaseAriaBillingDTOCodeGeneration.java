@@ -5,7 +5,6 @@ import aria.codegenerator.common.CodeGeneration;
 
 /**
  * Generate dynamically the AriaBillingBuilder.java class code
- * @author Julio Alexander Guevara
  */
 public class BaseAriaBillingDTOCodeGeneration {
 	private static final String		CLASS_SUB_PACKAGE	= "sdk/classes";
@@ -54,7 +53,6 @@ public class BaseAriaBillingDTOCodeGeneration {
 			header.append("	 * @param debug\n");
 			header.append("	 * @param calltype\n");
 			header.append("	 * @param outPutFormat\n");
-			header.append("	 * @author Julio Alexander Guevara Marulanda\n");
 			header.append("	 */\n");
 			header.append("	public BaseAriaBillingDTO(String url, String logFile, Boolean debug,\n");
 			header.append("			CallType calltype, OutPutFormat outPutFormat) {\n");

@@ -13,7 +13,11 @@ import java.io.InputStreamReader;
 import java.io.Writer;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.Calendar;
+
+import javax.jws.WebParam;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Style;
@@ -344,7 +348,7 @@ public class CodeGeneration {
 	public void codeGeneratorPHP() throws IOException, WSDLException {
 		showProcessText("PHP code generation in process", HEADER);
 		showProcessText("UnImplemented language generation: (codeGeneratorPHP)", ERROR);
-		showProcessText("PHP code generation finished successfully", FOOTER);
+		showProcessText("Exit PHP code generation", FOOTER);
 	}
 
 	private void createPropertiesFile(String parentpath) throws FileNotFoundException, IOException {
@@ -678,5 +682,38 @@ public class CodeGeneration {
 		catch (Exception e) {}
 		return "";
 	}
+
+	public static String getParamType(Method method, int paramIndex, WebParam webParam) {
+		Class[] parmTypes = method.getParameterTypes();
+		String paramType = "";
+		if (WebParam.Mode.IN == webParam.mode()) {
+			paramType = parmTypes[paramIndex].getName();
+			String parmType = paramType.toLowerCase();
+			if (parmType.contains("long")){
+				paramType = "Long";
+			} else if (parmType.contains("string")){
+				paramType = "String";
+			} else if (parmType.contains("double")){
+				paramType = "Double";
+			}
+		} else if (WebParam.Mode.INOUT == webParam.mode()) {
+			paramType = CodeGeneration.getParamType(method, paramIndex);
+		}
+		return paramType;
+	}
+
+	public static String getParamType(Method method, int paramIndex) {
+		Class[] parmTypes = method.getParameterTypes();
+		Type[] genericTypes = method.getGenericParameterTypes();
+		String parmType = parmTypes[paramIndex].getName();
+		if( genericTypes[paramIndex] instanceof ParameterizedType ) {
+			Type[] types = ((ParameterizedType)genericTypes[paramIndex]).getActualTypeArguments();
+			if(types != null && types.length >0 && (types[0] instanceof Class<?>) ) {  
+				parmType = ((Class<?>) (Class<?>) types[0]).getName();  
+			}
+		}
+		return parmType;
+	}
+
 	/* *********************** END - GENERAL METHODS ************************************** */
 }

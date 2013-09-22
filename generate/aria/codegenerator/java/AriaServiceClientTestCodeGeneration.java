@@ -9,7 +9,7 @@ import com.aria.common.shared.CompletePort;
 
 /** Generate dynamically the AriaBillingComplete class code
  * 
- * @author Julio Alexander Guevara */
+ */
 public class AriaServiceClientTestCodeGeneration {
 	private static final String	CLASS_SUB_PACKAGE	= "sdk/unitTest";
 	private static final String	CLASS_NAME	= "AriaServiceClientTest.java";
@@ -75,6 +75,7 @@ public class AriaServiceClientTestCodeGeneration {
 			header.append("\n");
 			header.append("import java.util.HashMap;\n");
 			header.append("import java.util.Map;\n");
+			header.append("import java.util.ResourceBundle;\n");
 			header.append("\n");
 			header.append("import org.junit.Test;\n");
 			header.append("\n");
@@ -86,13 +87,18 @@ public class AriaServiceClientTestCodeGeneration {
 			header.append("	public final String ERROR_CODE = " + (char) 34 + "error_code" + (char) 34 + ";\n");
 			header.append("	public final String ERROR_MESSAGE = " + (char) 34 + "error_msg" + (char) 34 + ";\n");
 			header.append("	public CompletePort completePort;\n");
-			header.append("	private long clientNo = 100;\n");
-			header.append("	private String authKey = " + (char) 34 + "stEKy9vvN9mKEPTeAdNkfeuUE5CGHknB" + (char) 34 + ";\n");
+			header.append("	private static ResourceBundle resourceBundle;\n");
 			header.append("	private Map<String,Object> hashMapReturnValues = new HashMap<String,Object>();\n");
 			header.append("	private AriaBillingComplete ariaBillingComplete;\n");
-			header.append("	private String dispatcher = " + (char) 34
-					+ "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" + (char) 34 + ";\n");
+			header.append("	private String dispatcher = getResourceBundle().getString("+ (char) 34 + "api.dispatcher.url" + (char) 34 +");\n");
 			header.append("	/**************************** END - CLASS ATTRIBUTES ***********************/\n");
+			header.append("\n");
+			header.append(" public static ResourceBundle getResourceBundle() {\n");
+			header.append("     if (resourceBundle == null) {\n");
+			header.append("         resourceBundle = ResourceBundle.getBundle("+ (char) 34 + "ariasdk"+ (char) 34 + ");\n");
+			header.append("     }\n");
+			header.append("     return resourceBundle;\n");
+			header.append(" }\n");
 			header.append("\n");
 			header.append("	/**************************** GETTERS ***********************/\n");
 			header.append("	public AriaBillingComplete getBaseAriaBilling() throws Exception {\n");
@@ -108,10 +114,10 @@ public class AriaServiceClientTestCodeGeneration {
 			header.append("		return ariaBillingComplete;\n");
 			header.append("	}\n");
 			header.append("	public long getClientNo() {\n");
-			header.append("		return clientNo;\n");
+			header.append("		return Long.parseLong(getResourceBundle().getString("+ (char) 34 + "client.no"+ (char) 34 + "));\n");
 			header.append("	}\n");
 			header.append("	public String getAuthKey() {\n");
-			header.append("		return authKey;\n");
+			header.append("		return getResourceBundle().getString("+ (char) 34 + "client.auth.key"+ (char) 34 + ");\n");
 			header.append("	}\n");
 			header.append("	/**************************** END - GETTERS ***********************/\n\n");
 			header.append("	@org.junit.BeforeClass\n");
@@ -168,22 +174,24 @@ public class AriaServiceClientTestCodeGeneration {
 
 	@SuppressWarnings("rawtypes")
 	private static Object getCallParms(Method method) {
-		Class[] parmTypes = method.getParameterTypes();
 		Annotation[][] paramanota = method.getParameterAnnotations();
 		StringBuilder inParms = new StringBuilder();
 		for (int i = 0; i < paramanota.length; i++) {
 			for (int j = 0; j < paramanota[i].length; j++) {
 				WebParam webParam = (WebParam) paramanota[i][j];
-				if (WebParam.Mode.IN != webParam.mode())
+				if (WebParam.Mode.IN != webParam.mode() && WebParam.Mode.INOUT != webParam.mode()) {
 					continue;
-				if (inParms.length() != 0)
+				}
+				if (inParms.length() != 0) {
 					inParms.append(", ");
+				}
 				if (webParam.name().equalsIgnoreCase("client_no")) {
 					inParms.append("getClientNo()");
 				} else if (webParam.name().equalsIgnoreCase("auth_key")) {
 					inParms.append("getAuthKey()");
 				} else {
-					String parmType = parmTypes[i].getName().toLowerCase();
+					String paramType = CodeGeneration.getParamType(method, i, webParam);
+					String parmType = paramType.toLowerCase();
 					if (parmType.contains("long")) {
 						inParms.append("1L");
 					} else if (parmType.contains("double")) {
@@ -195,9 +203,9 @@ public class AriaServiceClientTestCodeGeneration {
 					} else if (parmType.contains("boolean")) {
 						inParms.append("true");
 					} else if (parmType.contains("array")) {
-						String parmName = parmTypes[i].getName().substring(
-								parmTypes[i].getName().lastIndexOf(".", parmTypes[i].getName().length()) + 1);
-						arrayParms += "		" + parmTypes[i].getName() + " " + parmName + " = " + "new " + parmTypes[i].getName()
+						String parmName = paramType.substring(
+								paramType.lastIndexOf(".", paramType.length()) + 1);
+						arrayParms += "		" + paramType + " " + parmName + " = " + "new " + paramType
 								+ "();\n";
 						inParms.append(parmName);
 					} else if (parmType.contains("date")) {

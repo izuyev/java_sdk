@@ -5,7 +5,6 @@ import aria.codegenerator.common.CodeGeneration;
 
 /**
  * Generate dynamically the AriaBillingBuilder.java class code
- * @author Julio Alexander Guevara
  */
 public class AriaBillingBuilderCodeGeneration {
 	private static final String		CLASS_SUB_PACKAGE	= "sdk/classes";

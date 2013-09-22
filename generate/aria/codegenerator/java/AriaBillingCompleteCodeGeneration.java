@@ -1,26 +1,30 @@
 package aria.codegenerator.java;
 
 import static org.w3c.dom.Node.ELEMENT_NODE;
+
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
+
 import javax.jws.WebParam;
 import javax.wsdl.Definition;
 import javax.wsdl.Types;
 import javax.wsdl.WSDLException;
 import javax.wsdl.factory.WSDLFactory;
 import javax.wsdl.xml.WSDLReader;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 import aria.codegenerator.common.CodeGeneration;
+
 import com.aria.common.shared.CompletePort;
 import com.ibm.wsdl.extensions.schema.SchemaImpl;
 
 /**
  * Generate dynamically the AriaBillingComplete class code
- * @author Diego trejos, Julio Alexander Guevara
  */
 public class AriaBillingCompleteCodeGeneration {
 	private static final String							CLASS_SUB_PACKAGE	= "sdk/classes";
@@ -106,14 +110,11 @@ public class AriaBillingCompleteCodeGeneration {
 			for (int i = 0; i < paramanota.length; i++) {
 				for (int j = 0; j < paramanota[i].length; j++) {
 					WebParam webParam = (WebParam) paramanota[i][j];
-					if (WebParam.Mode.IN == webParam.mode()) {
+					if (WebParam.Mode.IN == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
 						if (inParms.length() != 0) {
 							inParms.append(", ");
 						}
-						String parmType = parmTypes[i].getName();
-						if (parmType.equals("long")){
-							parmType = "Long";
-						}
+						String parmType = CodeGeneration.getParamType(method, i, webParam);
 						inParms.append(parmType);
 						inParms.append(" ");
 						inParms.append(webParam.name());
@@ -180,7 +181,7 @@ public class AriaBillingCompleteCodeGeneration {
 			header.append(" * AriaBillingComplete\n");
 			header.append(" * Web Service class\n");
 			header.append(" * @copyright Aria Systems, Inc\n");
-			header.append(" * @author (Automatic generated) Aria\n");
+			header.append(" * @author (Automatic generated)\n");
 			header.append(" */\n");
 			header.append("public interface AriaBillingComplete {\n");
 			header.append("	/********************************** METHODS ***********************************************/\n");
@@ -349,7 +350,6 @@ public class AriaBillingCompleteCodeGeneration {
 			methodDocumentation.append(parmType);
 			methodDocumentation.append("<br>\n");
 		}
-		methodDocumentation.append("\n	* @author (Automatic generated) PSL - Julio Alexander Guevara Marulanda");
 		methodDocumentation.append("\n	*/\n");
 		return methodDocumentation.toString();
 	}

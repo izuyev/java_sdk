@@ -13,7 +13,6 @@ import com.ibm.wsdl.extensions.schema.SchemaImpl;
 
 /**
  * Generate dynamically the AriaBillingComplete class code
- * @author Julio Alexander Guevara
  */
 public class RestUtilitiesCodeGenerationNet {
 	private static final String	CLASS_SUB_PACKAGE	= "";

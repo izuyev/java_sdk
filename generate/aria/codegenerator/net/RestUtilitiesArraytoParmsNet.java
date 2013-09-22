@@ -13,7 +13,7 @@ import com.ibm.wsdl.extensions.schema.SchemaImpl;
 
 /** Generate dynamically the AriaBillingComplete class code
  * 
- * @author Julio Alexander Guevara */
+ */
 public class RestUtilitiesArraytoParmsNet {
 	private static StringBuilder	header;
 	private static StringBuilder	footer;

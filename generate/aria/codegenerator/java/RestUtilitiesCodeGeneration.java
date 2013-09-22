@@ -13,7 +13,6 @@ import com.ibm.wsdl.extensions.schema.SchemaImpl;
 
 /**
  * Generate dynamically the AriaBillingComplete class code
- * @author Julio Alexander Guevara
  */
 public class RestUtilitiesCodeGeneration {
 	private static final String	CLASS_SUB_PACKAGE	= "common/rest";
@@ -93,7 +92,6 @@ public class RestUtilitiesCodeGeneration {
 			header.append(" * RestUtilities\n");
 			header.append(" * Web Service class which has method used on rest service calls\n");
 			header.append(" * @copyright Aria Systems, Inc\n");
-			header.append(" * @author (Automatic generated) PSL - Julio Alexander Guevara Marulanda\n");
 			header.append(" */\n");
 			header.append("public class RestUtilities {\n");
 			header.append("\n");
