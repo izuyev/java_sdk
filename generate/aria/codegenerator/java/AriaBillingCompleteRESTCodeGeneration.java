@@ -236,7 +236,8 @@ public class AriaBillingCompleteRESTCodeGeneration {
 						inParms.append("		addParameters(parameters," + (char) 34 + webParam.name() + (char) 34 + ",getValue("
 								+ (char) 34 + "String" + (char) 34 + "," + webParam.name() + "));\n");
 					}
-				} else {
+				}
+				if (WebParam.Mode.OUT == webParam.mode() || WebParam.Mode.INOUT == webParam.mode()) {
 					outParms.append("		returnValues[" + numOutParms + "] = " + (char) 34 + webParam.name() + (char) 34 + ";\n");
 					numOutParms++;
 				}
