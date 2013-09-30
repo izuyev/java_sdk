@@ -1,8 +1,5 @@
-java_sdk
-========
-
 Aria System's Java SDK
-----------------------
+=====================
 Guidelines:
 -------------------------------
 Make sure the java version is 1.7.
