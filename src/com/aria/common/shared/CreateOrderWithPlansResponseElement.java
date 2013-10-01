@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "orderNo", "invoiceNo", "cartInvoiceLineItems", "invoicingErrorCode", "invoicingErrorMsg", "collectionErrorCode", "collectionErrorMsg", "statementErrorCode", "statementErrorMsg", "transactionId", "procCvvResponse", "procAvsResponse", "procCavvResponse", "procStatusCode", "procStatusText", "procPaymentId", "procAuthCode", "procMerchComments", "thirdPartyErrors"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "orderNo", "invoiceNo", "cartInvoiceLineItems", "collectionErrorCode", "collectionErrorMsg", "statementErrorCode", "statementErrorMsg", "transactionId", "procCvvResponse", "procAvsResponse", "procCavvResponse", "procStatusCode", "procStatusText", "procPaymentId", "procAuthCode", "procMerchComments", "thirdPartyErrors"})
 @XmlRootElement(name = "create_order_with_plansResponseElement")
 public class CreateOrderWithPlansResponseElement {
 
@@ -24,10 +24,6 @@ public class CreateOrderWithPlansResponseElement {
     protected Long invoiceNo;
     @XmlElement(name = "cart_invoice_line_items")
     protected List<CartInvoiceLineItemsReturnElement> cartInvoiceLineItems;
-    @XmlElement(name = "invoicing_error_code")
-    protected Long invoicingErrorCode;
-    @XmlElement(name = "invoicing_error_msg")
-    protected String invoicingErrorMsg;
     @XmlElement(name = "collection_error_code")
     protected Long collectionErrorCode;
     @XmlElement(name = "collection_error_msg")
@@ -94,23 +90,7 @@ public class CreateOrderWithPlansResponseElement {
             this.cartInvoiceLineItems = new ArrayList<CartInvoiceLineItemsReturnElement>();
         }
         return this.cartInvoiceLineItems;
-    }public Long getInvoicingErrorCode() {
-        return invoicingErrorCode;
-    }
-
-    public void setInvoicingErrorCode(Long value) {
-        this.invoicingErrorCode = value;
-    }
-
-    public String getInvoicingErrorMsg() {
-        return invoicingErrorMsg;
-    }
-
-    public void setInvoicingErrorMsg(String value) {
-        this.invoicingErrorMsg = value;
-    }
-
-    public Long getCollectionErrorCode() {
+    }public Long getCollectionErrorCode() {
         return collectionErrorCode;
     }
 

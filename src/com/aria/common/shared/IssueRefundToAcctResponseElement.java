@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "appliedTotalRefundAmount", "appliedTotalReversalAmount", "transactionId", "reversedInvoiceLines"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "appliedTotalRefundAmount", "appliedTotalReversalAmount", "reversedInvoiceLines"})
 @XmlRootElement(name = "issue_refund_to_acctResponseElement")
 public class IssueRefundToAcctResponseElement {
 
@@ -22,8 +22,6 @@ public class IssueRefundToAcctResponseElement {
     protected Double appliedTotalRefundAmount;
     @XmlElement(name = "applied_total_reversal_amount")
     protected Double appliedTotalReversalAmount;
-    @XmlElement(name = "transaction_id")
-    protected Long transactionId;
     @XmlElement(name = "reversed_invoice_lines")
     protected List<ReversedInvoiceLinesReturnElement> reversedInvoiceLines;
     
@@ -57,14 +55,6 @@ public class IssueRefundToAcctResponseElement {
 
     public void setAppliedTotalReversalAmount(Double value) {
         this.appliedTotalReversalAmount = value;
-    }
-
-    public Long getTransactionId() {
-        return transactionId;
-    }
-
-    public void setTransactionId(Long value) {
-        this.transactionId = value;
     }
 
     public List<ReversedInvoiceLinesReturnElement> getReversedInvoiceLines() {

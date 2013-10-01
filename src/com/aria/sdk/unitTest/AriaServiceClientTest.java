@@ -285,7 +285,6 @@ public class AriaServiceClientTest {
         //getRefundablePayments();
         //getReversibleInvsByPayment();
         //issueRefundToAcct();
-        //updateRefundCheckNo();
         //getWriteoffDetails();
         //getAriaXmlStatement();
         //getAcctPaymentHistory();
@@ -301,7 +300,6 @@ public class AriaServiceClientTest {
         //validateSession();
         //keepAlive();
         //killSession();
-        //authenticateCaller();
             }
 
     //@Test
@@ -374,7 +372,7 @@ public class AriaServiceClientTest {
     //@Test
     public void getClientItemsAll() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().getClientItemsAll(getClientNo(), getAuthKey(), "", "", 1L, "");
+        hashMapReturnValues = getBaseAriaBilling().getClientItemsAll(getClientNo(), getAuthKey(), "", "", 1L);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getClientItemsAll - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -637,7 +635,7 @@ public class AriaServiceClientTest {
     //@Test
     public void getClientItemsBasic() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().getClientItemsBasic(getClientNo(), getAuthKey(), "", "", 1L, "");
+        hashMapReturnValues = getBaseAriaBilling().getClientItemsBasic(getClientNo(), getAuthKey(), "", "", 1L);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getClientItemsBasic - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -3187,19 +3185,6 @@ public class AriaServiceClientTest {
     }
 
     //@Test
-    public void updateRefundCheckNo() throws Exception {
-        
-        hashMapReturnValues = getBaseAriaBilling().updateRefundCheckNo(getClientNo(), getAuthKey(), 1L, 1L, 1L, "", "");
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "updateRefundCheckNo - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
     public void getWriteoffDetails() throws Exception {
         
         hashMapReturnValues = getBaseAriaBilling().getWriteoffDetails(getClientNo(), getAuthKey(), 1L, 1L);
@@ -3321,7 +3306,7 @@ public class AriaServiceClientTest {
     //@Test
     public void settleDisputeHold() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().settleDisputeHold(getClientNo(), getAuthKey(), 1L, 1L, 1L, "");
+        hashMapReturnValues = getBaseAriaBilling().settleDisputeHold(getClientNo(), getAuthKey(), 1L, 1L, 1L);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "settleDisputeHold - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -3389,19 +3374,6 @@ public class AriaServiceClientTest {
         hashMapReturnValues = getBaseAriaBilling().killSession(getClientNo(), getAuthKey(), "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "killSession - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
-    public void authenticateCaller() throws Exception {
-        
-        hashMapReturnValues = getBaseAriaBilling().authenticateCaller(getClientNo(), getAuthKey());
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "authenticateCaller - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
                 errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
             }

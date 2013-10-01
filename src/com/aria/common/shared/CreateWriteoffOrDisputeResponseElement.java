@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "recNo", "createdBy", "amount", "invoiceNo", "invoiceDate", "invoiceAmt", "disputeCreationDate", "disputeExpDate", "comments", "reasonCode", "secondaryReasonCode", "disputeInd", "canUnsettle"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "recNo", "createdBy", "amount", "invoiceNo", "invoiceDate", "invoiceAmt", "disputeCreationDate", "disputeExpDate", "comments", "reasonCode", "disputeInd", "canUnsettle"})
 @XmlRootElement(name = "create_writeoff_or_disputeResponseElement")
 public class CreateWriteoffOrDisputeResponseElement {
 
@@ -38,8 +38,6 @@ public class CreateWriteoffOrDisputeResponseElement {
     protected String comments;
     @XmlElement(name = "reason_code")
     protected Long reasonCode;
-    @XmlElement(name = "secondary_reason_code")
-    protected Long secondaryReasonCode;
     @XmlElement(name = "dispute_ind")
     protected Long disputeInd;
     @XmlElement(name = "can_unsettle")
@@ -139,14 +137,6 @@ public class CreateWriteoffOrDisputeResponseElement {
 
     public void setReasonCode(Long value) {
         this.reasonCode = value;
-    }
-
-    public Long getSecondaryReasonCode() {
-        return secondaryReasonCode;
-    }
-
-    public void setSecondaryReasonCode(Long value) {
-        this.secondaryReasonCode = value;
     }
 
     public Long getDisputeInd() {

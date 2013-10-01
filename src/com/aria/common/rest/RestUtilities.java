@@ -3147,7 +3147,6 @@ public class RestUtilities {
             entity.setDisputeCreationDate(getStringValue(jsonObject,"dispute_creation_date"));
             entity.setDisputeExpDate(getStringValue(jsonObject,"dispute_exp_date"));
             entity.setReasonCode(getLongValue(jsonObject,"reason_code"));
-            entity.setSecondaryReasonCode(getLongValue(jsonObject,"secondary_reason_code"));
             entity.setComments(getStringValue(jsonObject,"comments"));
             entity.setDisputeInd(getLongValue(jsonObject,"dispute_ind"));
             entity.setCanUnsettle(getStringValue(jsonObject,"can_unsettle"));

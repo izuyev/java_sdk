@@ -100,13 +100,12 @@ public interface AriaBillingComplete {
     * @param filter_currency_cd - Type: java.lang.String
     * @param return_no_cost_items - Type: java.lang.String
     * @param filter_item_no - Type: Long
-    * @param include_inactive_items - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   all_client_items - Type: ArrayList&#60;AllClientItemsReturnElement&#62;<br>
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> getClientItemsAll(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no, java.lang.String include_inactive_items);
+    abstract Map<String,Object> getClientItemsAll(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no);
 
     abstract Map<String,Object> getClientItemsAll(Map<String,Object> map);
 
@@ -387,13 +386,12 @@ public interface AriaBillingComplete {
     * @param filter_currency_cd - Type: java.lang.String
     * @param return_no_cost_items - Type: java.lang.String
     * @param filter_item_no - Type: Long
-    * @param include_inactive_items - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   items_basic - Type: ArrayList&#60;ItemsBasicReturnElement&#62;<br>
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> getClientItemsBasic(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no, java.lang.String include_inactive_items);
+    abstract Map<String,Object> getClientItemsBasic(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no);
 
     abstract Map<String,Object> getClientItemsBasic(Map<String,Object> map);
 
@@ -3610,8 +3608,6 @@ public interface AriaBillingComplete {
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   order_no - Type: javax.xml.ws.Holder<br>
     *   transaction_id - Type: javax.xml.ws.Holder<br>
-    *   invoicing_error_code - Type: javax.xml.ws.Holder<br>
-    *   invoicing_error_msg - Type: javax.xml.ws.Holder<br>
     *   statement_error_cd - Type: javax.xml.ws.Holder<br>
     *   statement_error_msg - Type: javax.xml.ws.Holder<br>
     *   proc_cvv_response - Type: javax.xml.ws.Holder<br>
@@ -4280,8 +4276,6 @@ public interface AriaBillingComplete {
     *   order_no - Type: javax.xml.ws.Holder<br>
     *   invoice_no - Type: javax.xml.ws.Holder<br>
     *   cart_invoice_line_items - Type: ArrayList&#60;CartInvoiceLineItemsReturnElement&#62;<br>
-    *   invoicing_error_code - Type: javax.xml.ws.Holder<br>
-    *   invoicing_error_msg - Type: javax.xml.ws.Holder<br>
     *   collection_error_code - Type: javax.xml.ws.Holder<br>
     *   collection_error_msg - Type: javax.xml.ws.Holder<br>
     *   statement_error_code - Type: javax.xml.ws.Holder<br>
@@ -4348,29 +4342,11 @@ public interface AriaBillingComplete {
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   applied_total_refund_amount - Type: javax.xml.ws.Holder<br>
     *   applied_total_reversal_amount - Type: javax.xml.ws.Holder<br>
-    *   transaction_id - Type: javax.xml.ws.Holder<br>
     *   reversed_invoice_lines - Type: ArrayList&#60;ReversedInvoiceLinesReturnElement&#62;<br>
     */
     abstract Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse);
 
     abstract Map<String,Object> issueRefundToAcct(Map<String,Object> map);
-
-    /**
-    * updateRefundCheckNo
-    * @param client_no - Type: Long
-    * @param auth_key - Type: java.lang.String
-    * @param transaction_id - Type: Long
-    * @param refund_check_number - Type: Long
-    * @param acct_no - Type: Long
-    * @param acct_user_id - Type: java.lang.String
-    * @param client_acct_id - Type: java.lang.String
-    * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
-    *   error_code - Type: javax.xml.ws.Holder<br>
-    *   error_msg - Type: javax.xml.ws.Holder<br>
-    */
-    abstract Map<String,Object> updateRefundCheckNo(Long client_no, java.lang.String auth_key, Long transaction_id, Long refund_check_number, Long acct_no, java.lang.String acct_user_id, java.lang.String client_acct_id);
-
-    abstract Map<String,Object> updateRefundCheckNo(Map<String,Object> map);
 
     /**
     * getWriteoffDetails
@@ -4492,7 +4468,6 @@ public interface AriaBillingComplete {
     *   dispute_exp_date - Type: javax.xml.ws.Holder<br>
     *   comments - Type: javax.xml.ws.Holder<br>
     *   reason_code - Type: javax.xml.ws.Holder<br>
-    *   secondary_reason_code - Type: javax.xml.ws.Holder<br>
     *   dispute_ind - Type: javax.xml.ws.Holder<br>
     *   can_unsettle - Type: javax.xml.ws.Holder<br>
     */
@@ -4537,7 +4512,6 @@ public interface AriaBillingComplete {
     * @param acct_no - Type: Long
     * @param dispute_no - Type: Long
     * @param settlement_action - Type: Long
-    * @param comments - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -4551,11 +4525,10 @@ public interface AriaBillingComplete {
     *   dispute_exp_date - Type: javax.xml.ws.Holder<br>
     *   comments - Type: javax.xml.ws.Holder<br>
     *   reason_code - Type: javax.xml.ws.Holder<br>
-    *   secondary_reason_code - Type: javax.xml.ws.Holder<br>
     *   dispute_ind - Type: javax.xml.ws.Holder<br>
     *   can_unsettle - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments);
+    abstract Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action);
 
     abstract Map<String,Object> settleDisputeHold(Map<String,Object> map);
 
@@ -4629,18 +4602,6 @@ public interface AriaBillingComplete {
     abstract Map<String,Object> killSession(Long client_no, java.lang.String auth_key, java.lang.String session_id);
 
     abstract Map<String,Object> killSession(Map<String,Object> map);
-
-    /**
-    * authenticateCaller
-    * @param client_no - Type: Long
-    * @param auth_key - Type: java.lang.String
-    * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
-    *   error_code - Type: javax.xml.ws.Holder<br>
-    *   error_msg - Type: javax.xml.ws.Holder<br>
-    */
-    abstract Map<String,Object> authenticateCaller(Long client_no, java.lang.String auth_key);
-
-    abstract Map<String,Object> authenticateCaller(Map<String,Object> map);
 
     /********************************** END - METHODS ***********************************************/
 }
