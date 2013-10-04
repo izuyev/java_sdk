@@ -8,15 +8,15 @@ Make sure the java version is 1.7.
 * Java(TM) SE Runtime Environment (build 1.7.0_09-b05)
 * Java HotSpot(TM) Client VM (build 23.5-b02, mixed mode, sharing)
 
-Download the Java SDK library AriaSDK.jar from https://github.com/AriaSystems/java_sdk/download/.
-The dependent third-party libraries are available in https://github.com/AriaSystems/java_sdk/download/third-party/.
+Download the Java SDK library AriaSDK.jar from download folder in this java_sdk repository.
+The dependent third-party libraries are available in download/third-party folder of this java_sdk repository.
 
 Import the above libraries to the java project from where the Aria APIs are to be called.
 
 To call the API in REST mode, form the baseAriaBillingDTO as below by passing the "CallType.REST" and use it to get the ariaBillingComplete handle.
 The ariaBillingComplete has the methods to all the core Aria APIs. Call the required API method as seen in the example below.
 
-The following example uses "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" as the dispatcher, client_no as 100 and auth_key as A1234B6789.
+The following example uses "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" as the dispatcher, client_no as 100 and auth_key as 'zzzz'.
 
             /*REST CALL*/
             BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
@@ -32,7 +32,7 @@ The following example uses "https://secure.future.stage.ariasystems.net/api/ws/a
             eventListArray.getEventListRow().add(eventListRow1);
             eventListArray.getEventListRow().add(eventListRow2);
             // Call the API
-            Map<String,Object> hashMapReturnValues = ariaBillingComplete.subscribeEvents(100L,"A1234B6789", eventListArray);
+            Map<String,Object> hashMapReturnValues = ariaBillingComplete.subscribeEvents(100L,"zzzz", eventListArray);
             // Read the output from the map as below.
             System.out.println("error_code: " + hashMapReturnValues.get("error_code"));
             System.out.println("error_msg: " + hashMapReturnValues.get("error_msg"));
