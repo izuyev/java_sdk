@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project name="ARIA_JAVA_SDK" basedir="." default="Compile_Aria_Java_SDK">
+
+	<!-- Properties file to work on the whole ant file. -->
+	<property file="build.properties" />
+
+	<path id="aria.classpath">
+		<fileset dir="download/third-party" includes="*.jar" />
+	</path>
+
+	<target name="Compile_Aria_Java_SDK">
+		<delete dir="bin" />
+		<mkdir dir="bin" />
+
+		<javac srcdir="src" destdir="bin" debug="yes" deprecation="yes">
+			<classpath>
+				<path refid="aria.classpath" />
+			</classpath>
+		</javac>
+
+		<copy todir="bin" overwrite="true">
+			<fileset dir="src">
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+
+		<jar jarfile="${library.out.path}/AriaSDK-${wsdl.version}.jar" basedir="bin" compress="true">
+			<manifest>
+				<attribute name="Built-By" value="Aria Systems" />
+			</manifest>
+		</jar>
+
+		<delete dir="bin" />
+
+	</target>
+
+</project>
