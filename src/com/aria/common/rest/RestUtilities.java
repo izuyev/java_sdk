@@ -2580,7 +2580,7 @@ public class RestUtilities {
 
             entity.setNotifyTmpltGrpId(getStringValue(jsonObject,"notify_tmplt_grp_id"));
             entity.setNotifyTmpltGrpLabel(getStringValue(jsonObject,"notify_tmplt_grp_label"));
-            entity.setNotifyTmpltGrpAssignLvl(getLongValue(jsonObject,"notify_tmplt_grp_assign_lvl"));
+            entity.setNotifyTmpltGrpAssignLvl(getStringValue(jsonObject,"notify_tmplt_grp_assign_lvl"));
             
             returnElement.add(entity);
         }
@@ -3147,6 +3147,7 @@ public class RestUtilities {
             entity.setDisputeCreationDate(getStringValue(jsonObject,"dispute_creation_date"));
             entity.setDisputeExpDate(getStringValue(jsonObject,"dispute_exp_date"));
             entity.setReasonCode(getLongValue(jsonObject,"reason_code"));
+            entity.setSecondaryReasonCode(getLongValue(jsonObject,"secondary_reason_code"));
             entity.setComments(getStringValue(jsonObject,"comments"));
             entity.setDisputeInd(getLongValue(jsonObject,"dispute_ind"));
             entity.setCanUnsettle(getStringValue(jsonObject,"can_unsettle"));

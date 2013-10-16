@@ -8064,7 +8064,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("create_writeoff_or_dispute"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
-        String[] returnValues = new String[14];
+        String[] returnValues = new String[15];
 
         returnValues[0] = "error_code";
         returnValues[1] = "error_msg";
@@ -8078,8 +8078,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         returnValues[9] = "dispute_exp_date";
         returnValues[10] = "comments";
         returnValues[11] = "reason_code";
-        returnValues[12] = "dispute_ind";
-        returnValues[13] = "can_unsettle";
+        returnValues[12] = "secondary_reason_code";
+        returnValues[13] = "dispute_ind";
+        returnValues[14] = "can_unsettle";
         
         buildHashMapReturnValues(ret,returnValues);
         return getHashMapReturnValues();
@@ -8154,17 +8155,18 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return getInvoicesToWriteoffOrDispute(client_no, auth_key, acct_no);
     }
 
-    public Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action){
+    public Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
         addParameters(parameters,"acct_no",getValue("Long", acct_no));
         addParameters(parameters,"dispute_no",getValue("Long", dispute_no));
         addParameters(parameters,"settlement_action",getValue("Long", settlement_action));
+        addParameters(parameters,"comments",getValue("String", comments));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("settle_dispute_hold"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
-        String[] returnValues = new String[14];
+        String[] returnValues = new String[15];
 
         returnValues[0] = "error_code";
         returnValues[1] = "error_msg";
@@ -8178,8 +8180,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         returnValues[9] = "dispute_exp_date";
         returnValues[10] = "comments";
         returnValues[11] = "reason_code";
-        returnValues[12] = "dispute_ind";
-        returnValues[13] = "can_unsettle";
+        returnValues[12] = "secondary_reason_code";
+        returnValues[13] = "dispute_ind";
+        returnValues[14] = "can_unsettle";
         
         buildHashMapReturnValues(ret,returnValues);
         return getHashMapReturnValues();
@@ -8191,8 +8194,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         Long acct_no = (Long) map.get("acct_no");
         Long dispute_no = (Long) map.get("dispute_no");
         Long settlement_action = (Long) map.get("settlement_action");
+        String comments = (java.lang.String) map.get("comments");
         
-        return settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action);
+        return settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action, comments);
     }
 
     public Map<String,Object> setSessionAuth(Long client_no, java.lang.String auth_key, java.lang.String user_id, java.lang.String password){
@@ -8326,6 +8330,29 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String session_id = (java.lang.String) map.get("session_id");
         
         return killSession(client_no, auth_key, session_id);
+    }
+
+    public Map<String,Object> authenticateCaller(Long client_no, java.lang.String auth_key){
+        MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
+        addParameters(parameters,"client_no",getValue("Long",client_no));
+        addParameters(parameters,"auth_key",getValue("String",auth_key));
+        
+        WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("authenticate_caller"));
+        String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
+        String[] returnValues = new String[2];
+
+        returnValues[0] = "error_code";
+        returnValues[1] = "error_msg";
+        
+        buildHashMapReturnValues(ret,returnValues);
+        return getHashMapReturnValues();
+    }
+
+    public Map<String,Object> authenticateCaller(Map<String,Object> map){
+        Long client_no = (Long) map.get("client_no");
+        String auth_key = (String) map.get("auth_key");
+        
+        return authenticateCaller(client_no, auth_key);
     }
 
     /********************************** END - METHODS IMPLEMENTATION ***********************************************/

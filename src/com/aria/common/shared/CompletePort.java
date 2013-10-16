@@ -7961,6 +7961,8 @@ public interface CompletePort {
         javax.xml.ws.Holder<String> disputeCreationDate,
         @WebParam(mode = WebParam.Mode.OUT, name = "dispute_exp_date", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         javax.xml.ws.Holder<String> disputeExpDate,
+        @WebParam(mode = WebParam.Mode.OUT, name = "secondary_reason_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
+        javax.xml.ws.Holder<Long> secondaryReasonCode,
         @WebParam(mode = WebParam.Mode.OUT, name = "dispute_ind", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         javax.xml.ws.Holder<Long> disputeInd,
         @WebParam(mode = WebParam.Mode.OUT, name = "can_unsettle", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
@@ -8028,6 +8030,8 @@ public interface CompletePort {
         @WebParam(name = "settlement_action", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         Long settlementAction
 ,
+        @WebParam(mode = WebParam.Mode.INOUT, name = "comments", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
+        javax.xml.ws.Holder<String> comments,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         javax.xml.ws.Holder<Long> errorCode,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_msg", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
@@ -8048,10 +8052,10 @@ public interface CompletePort {
         javax.xml.ws.Holder<String> disputeCreationDate,
         @WebParam(mode = WebParam.Mode.OUT, name = "dispute_exp_date", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         javax.xml.ws.Holder<String> disputeExpDate,
-        @WebParam(mode = WebParam.Mode.OUT, name = "comments", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
-        javax.xml.ws.Holder<String> comments,
         @WebParam(mode = WebParam.Mode.OUT, name = "reason_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         javax.xml.ws.Holder<Long> reasonCode,
+        @WebParam(mode = WebParam.Mode.OUT, name = "secondary_reason_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
+        javax.xml.ws.Holder<Long> secondaryReasonCode,
         @WebParam(mode = WebParam.Mode.OUT, name = "dispute_ind", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         javax.xml.ws.Holder<Long> disputeInd,
         @WebParam(mode = WebParam.Mode.OUT, name = "can_unsettle", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
@@ -8151,6 +8155,20 @@ public interface CompletePort {
         @WebParam(name = "session_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         String sessionId
 ,
+        @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
+        javax.xml.ws.Holder<Long> errorCode,
+        @WebParam(mode = WebParam.Mode.OUT, name = "error_msg", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
+        javax.xml.ws.Holder<String> errorMsg
+    );
+
+    @RequestWrapper(localName = "authenticate_caller", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api", className = "com.aria.common.shared.AuthenticateCaller")
+    @WebMethod(operationName = "authenticate_caller", action = "authenticate_caller")
+    @ResponseWrapper(localName = "authenticate_callerResponseElement", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api", className = "com.aria.common.shared.AuthenticateCallerResponseElement")
+    public void authenticateCaller(
+        @WebParam(name = "client_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
+        Long clientNo,
+        @WebParam(name = "auth_key", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
+        java.lang.String authKey,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")
         javax.xml.ws.Holder<Long> errorCode,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_msg", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.13:aria_complete_api")

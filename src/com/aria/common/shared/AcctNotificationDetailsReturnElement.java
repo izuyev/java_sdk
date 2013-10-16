@@ -18,7 +18,7 @@ public class AcctNotificationDetailsReturnElement {
     @XmlElement(name = "notify_tmplt_grp_label")
     protected String notifyTmpltGrpLabel;
     @XmlElement(name = "notify_tmplt_grp_assign_lvl")
-    protected Long notifyTmpltGrpAssignLvl;
+    protected String notifyTmpltGrpAssignLvl;
     
     public String getNotifyTmpltGrpId() {
         return notifyTmpltGrpId;
@@ -36,11 +36,11 @@ public class AcctNotificationDetailsReturnElement {
         this.notifyTmpltGrpLabel = value;
     }
 
-    public Long getNotifyTmpltGrpAssignLvl() {
+    public String getNotifyTmpltGrpAssignLvl() {
         return notifyTmpltGrpAssignLvl;
     }
 
-    public void setNotifyTmpltGrpAssignLvl(Long value) {
+    public void setNotifyTmpltGrpAssignLvl(String value) {
         this.notifyTmpltGrpAssignLvl = value;
     }
 

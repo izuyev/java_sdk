@@ -300,6 +300,7 @@ public class AriaServiceClientTest {
         //validateSession();
         //keepAlive();
         //killSession();
+        //authenticateCaller();
             }
 
     //@Test
@@ -3306,7 +3307,7 @@ public class AriaServiceClientTest {
     //@Test
     public void settleDisputeHold() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().settleDisputeHold(getClientNo(), getAuthKey(), 1L, 1L, 1L);
+        hashMapReturnValues = getBaseAriaBilling().settleDisputeHold(getClientNo(), getAuthKey(), 1L, 1L, 1L, "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "settleDisputeHold - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -3374,6 +3375,19 @@ public class AriaServiceClientTest {
         hashMapReturnValues = getBaseAriaBilling().killSession(getClientNo(), getAuthKey(), "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "killSession - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
+            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
+                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
+            }
+            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
+        }
+    }
+
+    //@Test
+    public void authenticateCaller() throws Exception {
+        
+        hashMapReturnValues = getBaseAriaBilling().authenticateCaller(getClientNo(), getAuthKey());
+        if (hashMapReturnValues.get(ERROR_CODE) != null) {
+            String errorMessage = "authenticateCaller - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
                 errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
             }

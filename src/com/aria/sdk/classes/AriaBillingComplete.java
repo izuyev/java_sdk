@@ -4468,6 +4468,7 @@ public interface AriaBillingComplete {
     *   dispute_exp_date - Type: javax.xml.ws.Holder<br>
     *   comments - Type: javax.xml.ws.Holder<br>
     *   reason_code - Type: javax.xml.ws.Holder<br>
+    *   secondary_reason_code - Type: javax.xml.ws.Holder<br>
     *   dispute_ind - Type: javax.xml.ws.Holder<br>
     *   can_unsettle - Type: javax.xml.ws.Holder<br>
     */
@@ -4512,6 +4513,7 @@ public interface AriaBillingComplete {
     * @param acct_no - Type: Long
     * @param dispute_no - Type: Long
     * @param settlement_action - Type: Long
+    * @param comments - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -4525,10 +4527,11 @@ public interface AriaBillingComplete {
     *   dispute_exp_date - Type: javax.xml.ws.Holder<br>
     *   comments - Type: javax.xml.ws.Holder<br>
     *   reason_code - Type: javax.xml.ws.Holder<br>
+    *   secondary_reason_code - Type: javax.xml.ws.Holder<br>
     *   dispute_ind - Type: javax.xml.ws.Holder<br>
     *   can_unsettle - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action);
+    abstract Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments);
 
     abstract Map<String,Object> settleDisputeHold(Map<String,Object> map);
 
@@ -4602,6 +4605,18 @@ public interface AriaBillingComplete {
     abstract Map<String,Object> killSession(Long client_no, java.lang.String auth_key, java.lang.String session_id);
 
     abstract Map<String,Object> killSession(Map<String,Object> map);
+
+    /**
+    * authenticateCaller
+    * @param client_no - Type: Long
+    * @param auth_key - Type: java.lang.String
+    * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
+    *   error_code - Type: javax.xml.ws.Holder<br>
+    *   error_msg - Type: javax.xml.ws.Holder<br>
+    */
+    abstract Map<String,Object> authenticateCaller(Long client_no, java.lang.String auth_key);
+
+    abstract Map<String,Object> authenticateCaller(Map<String,Object> map);
 
     /********************************** END - METHODS ***********************************************/
 }

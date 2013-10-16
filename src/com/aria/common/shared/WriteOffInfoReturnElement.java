@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "write_off_info_ReturnElement", propOrder = {"recNo", "createdBy", "amount", "invoiceNo", "invoiceDate", "invoiceAmt", "writeoffDetails", "disputeCreationDate", "disputeExpDate", "reasonCode", "comments", "disputeInd", "canUnsettle"})
+@XmlType(name = "write_off_info_ReturnElement", propOrder = {"recNo", "createdBy", "amount", "invoiceNo", "invoiceDate", "invoiceAmt", "writeoffDetails", "disputeCreationDate", "disputeExpDate", "reasonCode", "secondaryReasonCode", "comments", "disputeInd", "canUnsettle"})
 public class WriteOffInfoReturnElement {
 
     @XmlElement(name = "rec_no")
@@ -33,6 +33,8 @@ public class WriteOffInfoReturnElement {
     protected String disputeExpDate;
     @XmlElement(name = "reason_code")
     protected Long reasonCode;
+    @XmlElement(name = "secondary_reason_code")
+    protected Long secondaryReasonCode;
     @XmlElement(name = "comments")
     protected String comments;
     @XmlElement(name = "dispute_ind")
@@ -115,6 +117,14 @@ public class WriteOffInfoReturnElement {
 
     public void setReasonCode(Long value) {
         this.reasonCode = value;
+    }
+
+    public Long getSecondaryReasonCode() {
+        return secondaryReasonCode;
+    }
+
+    public void setSecondaryReasonCode(Long value) {
+        this.secondaryReasonCode = value;
     }
 
     public String getComments() {
