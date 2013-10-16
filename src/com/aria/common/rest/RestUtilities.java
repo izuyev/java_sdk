@@ -2323,6 +2323,7 @@ public class RestUtilities {
             entity.setUsageParentRecNo(getLongValue(jsonObject,"usage_parent_rec_no"));
             entity.setUsageTypeCode(getStringValue(jsonObject,"usage_type_code"));
             entity.setExcludeReasonCd(getLongValue(jsonObject,"exclude_reason_cd"));
+            entity.setUsageRecNo(getLongValue(jsonObject,"usage_rec_no"));
             
             returnElement.add(entity);
         }
@@ -2637,6 +2638,26 @@ public class RestUtilities {
             entity.setServiceName(getStringValue(jsonObject,"service_name"));
             entity.setOutageDuration(getDoubleValue(jsonObject,"outage_duration"));
             entity.setCreditAmount(getDoubleValue(jsonObject,"credit_amount"));
+            
+            returnElement.add(entity);
+        }
+        return returnElement;
+    }
+
+    public static ArrayList<UsageSummaryRecordsReturnElement> buildUsageSummaryRecordsReturnElement(JSONArray jsonArray) {
+        ArrayList<UsageSummaryRecordsReturnElement> returnElement = new ArrayList<UsageSummaryRecordsReturnElement>();
+        if (jsonArray == null) return returnElement;
+        for (int i = 0;i < jsonArray.size();i++) {
+            UsageSummaryRecordsReturnElement entity = new UsageSummaryRecordsReturnElement();
+            JSONObject jsonObject=(JSONObject)jsonArray.get(i);
+
+            entity.setUsageTypeNo(getLongValue(jsonObject,"usage_type_no"));
+            entity.setUsageTypeLabel(getStringValue(jsonObject,"usage_type_label"));
+            entity.setBilledInd(getLongValue(jsonObject,"billed_ind"));
+            entity.setTotalUnits(getDoubleValue(jsonObject,"total_units"));
+            entity.setTotalValueAmount(getDoubleValue(jsonObject,"total_value_amount"));
+            entity.setTotalValueCurrencyCode(getStringValue(jsonObject,"total_value_currency_code"));
+            entity.setLastUsageDate(getStringValue(jsonObject,"last_usage_date"));
             
             returnElement.add(entity);
         }

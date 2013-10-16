@@ -100,12 +100,13 @@ public interface AriaBillingComplete {
     * @param filter_currency_cd - Type: java.lang.String
     * @param return_no_cost_items - Type: java.lang.String
     * @param filter_item_no - Type: Long
+    * @param include_inactive_items - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   all_client_items - Type: ArrayList&#60;AllClientItemsReturnElement&#62;<br>
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> getClientItemsAll(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no);
+    abstract Map<String,Object> getClientItemsAll(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no, java.lang.String include_inactive_items);
 
     abstract Map<String,Object> getClientItemsAll(Map<String,Object> map);
 
@@ -386,12 +387,13 @@ public interface AriaBillingComplete {
     * @param filter_currency_cd - Type: java.lang.String
     * @param return_no_cost_items - Type: java.lang.String
     * @param filter_item_no - Type: Long
+    * @param include_inactive_items - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   items_basic - Type: ArrayList&#60;ItemsBasicReturnElement&#62;<br>
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> getClientItemsBasic(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no);
+    abstract Map<String,Object> getClientItemsBasic(Long client_no, java.lang.String auth_key, java.lang.String filter_currency_cd, java.lang.String return_no_cost_items, Long filter_item_no, java.lang.String include_inactive_items);
 
     abstract Map<String,Object> getClientItemsBasic(Map<String,Object> map);
 
@@ -1208,6 +1210,31 @@ public interface AriaBillingComplete {
     * @param alt_client_acct_group_id - Type: java.lang.String
     * @param track_data1 - Type: java.lang.String
     * @param track_data2 - Type: java.lang.String
+    * @param alt_pay_method - Type: Long
+    * @param cc_number - Type: java.lang.String
+    * @param cc_expire_mm - Type: Long
+    * @param cc_expire_yyyy - Type: Long
+    * @param bank_routing_num - Type: java.lang.String
+    * @param bank_acct_num - Type: java.lang.String
+    * @param bill_company_name - Type: java.lang.String
+    * @param bill_first_name - Type: java.lang.String
+    * @param bill_middle_initial - Type: java.lang.String
+    * @param bill_last_name - Type: java.lang.String
+    * @param bill_address1 - Type: java.lang.String
+    * @param bill_address2 - Type: java.lang.String
+    * @param bill_address3 - Type: java.lang.String
+    * @param bill_city - Type: java.lang.String
+    * @param bill_locality - Type: java.lang.String
+    * @param bill_state_prov - Type: java.lang.String
+    * @param bill_zip - Type: java.lang.String
+    * @param bill_country - Type: java.lang.String
+    * @param bill_email - Type: java.lang.String
+    * @param bill_phone - Type: java.lang.String
+    * @param bill_phone_extension - Type: java.lang.String
+    * @param bill_cell_phone - Type: java.lang.String
+    * @param bill_work_phone - Type: java.lang.String
+    * @param bill_work_phone_extension - Type: java.lang.String
+    * @param record_cc_on_auth_failure - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -1220,7 +1247,7 @@ public interface AriaBillingComplete {
     *   proc_auth_code - Type: javax.xml.ws.Holder<br>
     *   proc_merch_comments - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> authorizeElectronicPayment(Long client_no, java.lang.String auth_key, Long account_number, java.lang.Double amount, Long payment_source, java.lang.String CVV, Long bill_seq, java.lang.String inTrackingNumber, java.lang.String inAuthValue, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2);
+    abstract Map<String,Object> authorizeElectronicPayment(Long client_no, java.lang.String auth_key, Long account_number, java.lang.Double amount, Long payment_source, java.lang.String CVV, Long bill_seq, java.lang.String inTrackingNumber, java.lang.String inAuthValue, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_address3, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String record_cc_on_auth_failure);
 
     abstract Map<String,Object> authorizeElectronicPayment(Map<String,Object> map);
 
@@ -3500,6 +3527,36 @@ public interface AriaBillingComplete {
     abstract Map<String,Object> getAcctServiceOutageCredit(Map<String,Object> map);
 
     /**
+    * getUsageSummaryByType
+    * @param client_no - Type: Long
+    * @param auth_key - Type: java.lang.String
+    * @param acct_no - Type: Long
+    * @param user_id - Type: java.lang.String
+    * @param usage_type_filter - Type: Long
+    * @param date_filter_start_date - Type: java.lang.String
+    * @param date_filter_start_time - Type: java.lang.String
+    * @param date_filter_end_date - Type: java.lang.String
+    * @param date_filter_end_time - Type: java.lang.String
+    * @param billed_filter - Type: Long
+    * @param billing_period_flag - Type: Long
+    * @param usage_qualifier_1 - Type: com.aria.common.shared.UsageQualifier1Array
+    * @param usage_qualifier_2 - Type: com.aria.common.shared.UsageQualifier2Array
+    * @param usage_qualifier_3 - Type: com.aria.common.shared.UsageQualifier3Array
+    * @param usage_qualifier_4 - Type: com.aria.common.shared.UsageQualifier4Array
+    * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
+    *   error_code - Type: javax.xml.ws.Holder<br>
+    *   error_msg - Type: javax.xml.ws.Holder<br>
+    *   start_date - Type: javax.xml.ws.Holder<br>
+    *   start_time - Type: javax.xml.ws.Holder<br>
+    *   end_date - Type: javax.xml.ws.Holder<br>
+    *   end_time - Type: javax.xml.ws.Holder<br>
+    *   usage_summary_records - Type: ArrayList&#60;UsageSummaryRecordsReturnElement&#62;<br>
+    */
+    abstract Map<String,Object> getUsageSummaryByType(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String user_id, Long usage_type_filter, java.lang.String date_filter_start_date, java.lang.String date_filter_start_time, java.lang.String date_filter_end_date, java.lang.String date_filter_end_time, Long billed_filter, Long billing_period_flag, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4);
+
+    abstract Map<String,Object> getUsageSummaryByType(Map<String,Object> map);
+
+    /**
     * getInvNoFromBalXfer
     * @param client_no - Type: Long
     * @param auth_key - Type: java.lang.String
@@ -3608,6 +3665,8 @@ public interface AriaBillingComplete {
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   order_no - Type: javax.xml.ws.Holder<br>
     *   transaction_id - Type: javax.xml.ws.Holder<br>
+    *   invoicing_error_code - Type: javax.xml.ws.Holder<br>
+    *   invoicing_error_msg - Type: javax.xml.ws.Holder<br>
     *   statement_error_cd - Type: javax.xml.ws.Holder<br>
     *   statement_error_msg - Type: javax.xml.ws.Holder<br>
     *   proc_cvv_response - Type: javax.xml.ws.Holder<br>
@@ -4276,6 +4335,8 @@ public interface AriaBillingComplete {
     *   order_no - Type: javax.xml.ws.Holder<br>
     *   invoice_no - Type: javax.xml.ws.Holder<br>
     *   cart_invoice_line_items - Type: ArrayList&#60;CartInvoiceLineItemsReturnElement&#62;<br>
+    *   invoicing_error_code - Type: javax.xml.ws.Holder<br>
+    *   invoicing_error_msg - Type: javax.xml.ws.Holder<br>
     *   collection_error_code - Type: javax.xml.ws.Holder<br>
     *   collection_error_msg - Type: javax.xml.ws.Holder<br>
     *   statement_error_code - Type: javax.xml.ws.Holder<br>
@@ -4342,11 +4403,29 @@ public interface AriaBillingComplete {
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   applied_total_refund_amount - Type: javax.xml.ws.Holder<br>
     *   applied_total_reversal_amount - Type: javax.xml.ws.Holder<br>
+    *   transaction_id - Type: javax.xml.ws.Holder<br>
     *   reversed_invoice_lines - Type: ArrayList&#60;ReversedInvoiceLinesReturnElement&#62;<br>
     */
     abstract Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse);
 
     abstract Map<String,Object> issueRefundToAcct(Map<String,Object> map);
+
+    /**
+    * updateRefundCheckNo
+    * @param client_no - Type: Long
+    * @param auth_key - Type: java.lang.String
+    * @param transaction_id - Type: Long
+    * @param refund_check_number - Type: Long
+    * @param acct_no - Type: Long
+    * @param acct_user_id - Type: java.lang.String
+    * @param client_acct_id - Type: java.lang.String
+    * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
+    *   error_code - Type: javax.xml.ws.Holder<br>
+    *   error_msg - Type: javax.xml.ws.Holder<br>
+    */
+    abstract Map<String,Object> updateRefundCheckNo(Long client_no, java.lang.String auth_key, Long transaction_id, Long refund_check_number, Long acct_no, java.lang.String acct_user_id, java.lang.String client_acct_id);
+
+    abstract Map<String,Object> updateRefundCheckNo(Map<String,Object> map);
 
     /**
     * getWriteoffDetails

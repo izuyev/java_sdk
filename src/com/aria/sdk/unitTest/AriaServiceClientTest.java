@@ -248,6 +248,7 @@ public class AriaServiceClientTest {
         //savePaypalBillAgreement();
         //initPaypalBillAgreement();
         //getAcctServiceOutageCredit();
+        //getUsageSummaryByType();
         //getInvNoFromBalXfer();
         //voidTransaction();
         //reinstateTransaction();
@@ -285,6 +286,7 @@ public class AriaServiceClientTest {
         //getRefundablePayments();
         //getReversibleInvsByPayment();
         //issueRefundToAcct();
+        //updateRefundCheckNo();
         //getWriteoffDetails();
         //getAriaXmlStatement();
         //getAcctPaymentHistory();
@@ -373,7 +375,7 @@ public class AriaServiceClientTest {
     //@Test
     public void getClientItemsAll() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().getClientItemsAll(getClientNo(), getAuthKey(), "", "", 1L);
+        hashMapReturnValues = getBaseAriaBilling().getClientItemsAll(getClientNo(), getAuthKey(), "", "", 1L, "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getClientItemsAll - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -636,7 +638,7 @@ public class AriaServiceClientTest {
     //@Test
     public void getClientItemsBasic() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().getClientItemsBasic(getClientNo(), getAuthKey(), "", "", 1L);
+        hashMapReturnValues = getBaseAriaBilling().getClientItemsBasic(getClientNo(), getAuthKey(), "", "", 1L, "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getClientItemsBasic - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -1228,7 +1230,7 @@ public class AriaServiceClientTest {
     //@Test
     public void authorizeElectronicPayment() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().authorizeElectronicPayment(getClientNo(), getAuthKey(), 1L, 1d, 1L, "", 1L, "", "", "", "", "");
+        hashMapReturnValues = getBaseAriaBilling().authorizeElectronicPayment(getClientNo(), getAuthKey(), 1L, 1d, 1L, "", 1L, "", "", "", "", "", 1L, "", 1L, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "authorizeElectronicPayment - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -2693,6 +2695,23 @@ public class AriaServiceClientTest {
     }
 
     //@Test
+    public void getUsageSummaryByType() throws Exception {
+        com.aria.common.shared.UsageQualifier1Array usageQualifier1Array = new com.aria.common.shared.UsageQualifier1Array();
+        com.aria.common.shared.UsageQualifier2Array usageQualifier2Array = new com.aria.common.shared.UsageQualifier2Array();
+        com.aria.common.shared.UsageQualifier3Array usageQualifier3Array = new com.aria.common.shared.UsageQualifier3Array();
+        com.aria.common.shared.UsageQualifier4Array usageQualifier4Array = new com.aria.common.shared.UsageQualifier4Array();
+        
+        hashMapReturnValues = getBaseAriaBilling().getUsageSummaryByType(getClientNo(), getAuthKey(), 1L, "", 1L, "", "", "", "", 1L, 1L, usageQualifier1Array, usageQualifier2Array, usageQualifier3Array, usageQualifier4Array);
+        if (hashMapReturnValues.get(ERROR_CODE) != null) {
+            String errorMessage = "getUsageSummaryByType - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
+            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
+                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
+            }
+            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
+        }
+    }
+
+    //@Test
     public void getInvNoFromBalXfer() throws Exception {
         
         hashMapReturnValues = getBaseAriaBilling().getInvNoFromBalXfer(getClientNo(), getAuthKey(), 1L);
@@ -3178,6 +3197,19 @@ public class AriaServiceClientTest {
         hashMapReturnValues = getBaseAriaBilling().issueRefundToAcct(getClientNo(), getAuthKey(), 1L, 1L, 1L, 1d, "", "", "", "", invoicesToReverseArray);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "issueRefundToAcct - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
+            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
+                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
+            }
+            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
+        }
+    }
+
+    //@Test
+    public void updateRefundCheckNo() throws Exception {
+        
+        hashMapReturnValues = getBaseAriaBilling().updateRefundCheckNo(getClientNo(), getAuthKey(), 1L, 1L, 1L, "", "");
+        if (hashMapReturnValues.get(ERROR_CODE) != null) {
+            String errorMessage = "updateRefundCheckNo - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
                 errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
             }

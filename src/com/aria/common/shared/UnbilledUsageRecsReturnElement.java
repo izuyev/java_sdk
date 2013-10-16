@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "unbilled_usage_recs_ReturnElement", propOrder = {"usageTypeNo", "usageTypeDescription", "usageDate", "units", "specificRecordChargeAmount", "preRatedRate", "recordedUnits", "usageParentRecNo", "usageTypeCode", "excludeReasonCd"})
+@XmlType(name = "unbilled_usage_recs_ReturnElement", propOrder = {"usageTypeNo", "usageTypeDescription", "usageDate", "units", "specificRecordChargeAmount", "preRatedRate", "recordedUnits", "usageParentRecNo", "usageTypeCode", "excludeReasonCd", "usageRecNo"})
 public class UnbilledUsageRecsReturnElement {
 
     @XmlElement(name = "usage_type_no")
@@ -33,6 +33,8 @@ public class UnbilledUsageRecsReturnElement {
     protected String usageTypeCode;
     @XmlElement(name = "exclude_reason_cd")
     protected Long excludeReasonCd;
+    @XmlElement(name = "usage_rec_no")
+    protected Long usageRecNo;
     
     public Long getUsageTypeNo() {
         return usageTypeNo;
@@ -112,6 +114,14 @@ public class UnbilledUsageRecsReturnElement {
 
     public void setExcludeReasonCd(Long value) {
         this.excludeReasonCd = value;
+    }
+
+    public Long getUsageRecNo() {
+        return usageRecNo;
+    }
+
+    public void setUsageRecNo(Long value) {
+        this.usageRecNo = value;
     }
 
     

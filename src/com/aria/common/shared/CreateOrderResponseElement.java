@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"orderNo", "transactionId", "statementErrorCd", "statementErrorMsg", "procCvvResponse", "procAvsResponse", "procCavvResponse", "procStatusCode", "procStatusText", "procPaymentId", "procAuthCode", "procMerchComments", "invoiceNo", "errorCode", "errorMsg", "totalChargesBeforeTax", "totalTaxCharges", "totalChargesAfterTax", "totalCredit", "cartInvoiceLineItems", "thirdPartyErrors"})
+@XmlType(name = "", propOrder = {"orderNo", "transactionId", "invoicingErrorCode", "invoicingErrorMsg", "statementErrorCd", "statementErrorMsg", "procCvvResponse", "procAvsResponse", "procCavvResponse", "procStatusCode", "procStatusText", "procPaymentId", "procAuthCode", "procMerchComments", "invoiceNo", "errorCode", "errorMsg", "totalChargesBeforeTax", "totalTaxCharges", "totalChargesAfterTax", "totalCredit", "cartInvoiceLineItems", "thirdPartyErrors"})
 @XmlRootElement(name = "create_orderResponseElement")
 public class CreateOrderResponseElement {
 
@@ -18,6 +18,10 @@ public class CreateOrderResponseElement {
     protected Long orderNo;
     @XmlElement(name = "transaction_id")
     protected Long transactionId;
+    @XmlElement(name = "invoicing_error_code")
+    protected Long invoicingErrorCode;
+    @XmlElement(name = "invoicing_error_msg")
+    protected String invoicingErrorMsg;
     @XmlElement(name = "statement_error_cd")
     protected Long statementErrorCd;
     @XmlElement(name = "statement_error_msg")
@@ -71,6 +75,22 @@ public class CreateOrderResponseElement {
 
     public void setTransactionId(Long value) {
         this.transactionId = value;
+    }
+
+    public Long getInvoicingErrorCode() {
+        return invoicingErrorCode;
+    }
+
+    public void setInvoicingErrorCode(Long value) {
+        this.invoicingErrorCode = value;
+    }
+
+    public String getInvoicingErrorMsg() {
+        return invoicingErrorMsg;
+    }
+
+    public void setInvoicingErrorMsg(String value) {
+        this.invoicingErrorMsg = value;
     }
 
     public Long getStatementErrorCd() {
