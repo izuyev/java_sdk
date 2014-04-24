@@ -37,7 +37,7 @@ Import the above libraries to the java application from where the Aria APIs are 
 
 3. Call the desired API method on AriaBillingComplete instance by passing appropriate inputs objects, client_no and auth_key.
 
-	In the below example, a sample client_no of 100 and auth_key as 'zzzz' is used.
+	In the below example, a sample client_no of 100 and auth_key as 'zzzzz' is used.
 
             // Form the api inputs
             com.aria.common.shared.EventListRow eventListRow1 = new com.aria.common.shared.EventListRow();
