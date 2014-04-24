@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","masterPlanNo","altStartDate","clientAcctId","userid","statusCd","masterPlanUnits","suppPlans","suppPlanUnits","notifyMethod","promoCd","password","secretQuestion","secretQuestionAnswer","firstName","mi","lastName","companyName","address1","address2","city","locality","stateProv","country","postalCd","phone","phoneExt","cellPhone","workPhone","workPhoneExt","email","birthdate","billFirstName","billMi","billLastName","billCompanyName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billCountry","billPostalCd","billPhone","billPhoneExt","billCellPhone","billWorkPhone","billWorkPhoneExt","billEmail","payMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankAcctNo","bankRoutingNo","respLevelCd","seniorAcctNo","functionalAcctGroups","collectionsAcctGroups","suppFieldNames","suppFieldValues","testAcctInd","statusUntilAltStart","balanceForward","altBillDay","doFullInvoicing","doProratedInvoicing","masterPlanAltRateSchedNo","suppPlanAltRateSchedNo","clientReceiptId","currencyCd","cvv","taxpayerId","billAgreementId","retroactiveStartDate","couponCodes","newAcctCustomRates","altMsgTemplateNo","seqFuncGroupNo","newAcctPlanContracts","address3","billAddress3","usageAccumulationConfig","enableUsagePoolingPlanNo","clientFuncAcctGroupIds","clientCollAcctGroupIds","trackData1","trackData2","doWrite","taxExemptionLevel","cnAltMsgTemplateNo"})
+    "authKey","masterPlanNo","altStartDate","clientAcctId","userid","statusCd","masterPlanUnits","suppPlans","suppPlanUnits","notifyMethod","promoCd","password","secretQuestion","secretQuestionAnswer","firstName","mi","lastName","companyName","address1","address2","city","locality","stateProv","country","postalCd","phone","phoneExt","cellPhone","workPhone","workPhoneExt","email","birthdate","billFirstName","billMi","billLastName","billCompanyName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billCountry","billPostalCd","billPhone","billPhoneExt","billCellPhone","billWorkPhone","billWorkPhoneExt","billEmail","payMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankAcctNo","bankRoutingNo","respLevelCd","seniorAcctNo","seniorAcctUserId","clientSeniorAcctId","functionalAcctGroups","collectionsAcctGroups","suppFieldNames","suppFieldValues","testAcctInd","statusUntilAltStart","balanceForward","altBillDay","doFullInvoicing","doProratedInvoicing","masterPlanAltRateSchedNo","suppPlanAltRateSchedNo","clientReceiptId","currencyCd","cvv","taxpayerId","billAgreementId","retroactiveStartDate","couponCodes","newAcctCustomRates","altMsgTemplateNo","seqFuncGroupNo","newAcctPlanContracts","address3","billAddress3","usageAccumulationConfig","enableUsagePoolingPlanNo","clientFuncAcctGroupIds","clientCollAcctGroupIds","trackData1","trackData2","doWrite","taxExemptionLevel","cnAltMsgTemplateNo","invoiceApprovalRequired"})
 @XmlRootElement(name = "create_acct_complete")
 public class CreateAcctComplete {
 
@@ -130,6 +130,10 @@ public class CreateAcctComplete {
     protected Long respLevelCd;
     @XmlElement(name = "senior_acct_no")
     protected Long seniorAcctNo;
+    @XmlElement(name = "senior_acct_user_id")
+    protected String seniorAcctUserId;
+    @XmlElement(name = "client_senior_acct_id")
+    protected String clientSeniorAcctId;
     @XmlElement(name = "functional_acct_groups")
     protected FunctionalAcctGroupsArray functionalAcctGroups;
     @XmlElement(name = "collections_acct_groups")
@@ -198,6 +202,8 @@ public class CreateAcctComplete {
     protected Long taxExemptionLevel;
     @XmlElement(name = "cn_alt_msg_template_no")
     protected Long cnAltMsgTemplateNo;
+    @XmlElement(name = "invoice_approval_required")
+    protected String invoiceApprovalRequired;
     
     public long getClientNo() {
         return clientNo;
@@ -663,6 +669,22 @@ public class CreateAcctComplete {
         this.seniorAcctNo = value;
     }
     
+    public String getSeniorAcctUserId() {
+        return seniorAcctUserId;
+    }
+
+    public void setSeniorAcctUserId(String value) {
+        this.seniorAcctUserId = value;
+    }
+    
+    public String getClientSeniorAcctId() {
+        return clientSeniorAcctId;
+    }
+
+    public void setClientSeniorAcctId(String value) {
+        this.clientSeniorAcctId = value;
+    }
+    
     public FunctionalAcctGroupsArray getFunctionalAcctGroups() {
         return functionalAcctGroups;
     }
@@ -933,6 +955,14 @@ public class CreateAcctComplete {
 
     public void setCnAltMsgTemplateNo(Long value) {
         this.cnAltMsgTemplateNo = value;
+    }
+    
+    public String getInvoiceApprovalRequired() {
+        return invoiceApprovalRequired;
+    }
+
+    public void setInvoiceApprovalRequired(String value) {
+        this.invoiceApprovalRequired = value;
     }
     
     

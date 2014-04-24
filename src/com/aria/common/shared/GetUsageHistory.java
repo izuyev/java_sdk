@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","dateRangeStart","specifiedUsageTypeNo","dateRangeEnd","specifiedUsageTypeCode","usageQualifier1","usageQualifier2","usageQualifier3","usageQualifier4"})
+    "authKey","acctNo","dateRangeStart","specifiedUsageTypeNo","dateRangeEnd","specifiedUsageTypeCode","usageQualifier1","usageQualifier2","usageQualifier3","usageQualifier4","limit","offset"})
 @XmlRootElement(name = "get_usage_history")
 public class GetUsageHistory {
 
@@ -36,6 +36,10 @@ public class GetUsageHistory {
     protected UsageQualifier3Array usageQualifier3;
     @XmlElement(name = "usage_qualifier_4")
     protected UsageQualifier4Array usageQualifier4;
+    @XmlElement(name = "limit")
+    protected Long limit;
+    @XmlElement(name = "offset")
+    protected Long offset;
     
     public long getClientNo() {
         return clientNo;
@@ -123,6 +127,22 @@ public class GetUsageHistory {
 
     public void setUsageQualifier4(UsageQualifier4Array value) {
         this.usageQualifier4 = value;
+    }
+    
+    public Long getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Long value) {
+        this.limit = value;
+    }
+    
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long value) {
+        this.offset = value;
     }
     
     

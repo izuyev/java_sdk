@@ -1139,7 +1139,7 @@ public class AriaServiceClientTest {
     //@Test
     public void setPaymentResponsibility() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().setPaymentResponsibility(getClientNo(), getAuthKey(), 1L, 1L, 1L);
+        hashMapReturnValues = getBaseAriaBilling().setPaymentResponsibility(getClientNo(), getAuthKey(), 1L, 1L, 1L, "", "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "setPaymentResponsibility - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -1781,7 +1781,7 @@ public class AriaServiceClientTest {
         com.aria.common.shared.ClientFuncAcctGroupIdsArray clientFuncAcctGroupIdsArray = new com.aria.common.shared.ClientFuncAcctGroupIdsArray();
         com.aria.common.shared.ClientCollAcctGroupIdsArray clientCollAcctGroupIdsArray = new com.aria.common.shared.ClientCollAcctGroupIdsArray();
         
-        hashMapReturnValues = getBaseAriaBilling().createAcctComplete(getClientNo(), getAuthKey(), 1L, "", "", "", 1L, 1L, suppPlansArray, suppPlanUnitsArray, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", 1L, 1L, functionalAcctGroupsArray, collectionsAcctGroupsArray, suppFieldNamesArray, suppFieldValuesArray, 1L, 1L, 1d, 1L, "", "", 1L, suppPlanAltRateSchedNoArray, "", "", "", "", "", "", couponCodesArray, newAcctCustomRatesArray, 1L, 1L, newAcctPlanContractsArray, "", "", usageAccumulationConfigArray, enableUsagePoolingPlanNoArray, clientFuncAcctGroupIdsArray, clientCollAcctGroupIdsArray, "", "", "", 1L, 1L);
+        hashMapReturnValues = getBaseAriaBilling().createAcctComplete(getClientNo(), getAuthKey(), 1L, "", "", "", 1L, 1L, suppPlansArray, suppPlanUnitsArray, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", 1L, 1L, "", "", functionalAcctGroupsArray, collectionsAcctGroupsArray, suppFieldNamesArray, suppFieldValuesArray, 1L, 1L, 1d, 1L, "", "", 1L, suppPlanAltRateSchedNoArray, "", "", "", "", "", "", couponCodesArray, newAcctCustomRatesArray, 1L, 1L, newAcctPlanContractsArray, "", "", usageAccumulationConfigArray, enableUsagePoolingPlanNoArray, clientFuncAcctGroupIdsArray, clientCollAcctGroupIdsArray, "", "", "", 1L, 1L, "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -1902,7 +1902,7 @@ public class AriaServiceClientTest {
         com.aria.common.shared.UsageQualifier3Array usageQualifier3Array = new com.aria.common.shared.UsageQualifier3Array();
         com.aria.common.shared.UsageQualifier4Array usageQualifier4Array = new com.aria.common.shared.UsageQualifier4Array();
         
-        hashMapReturnValues = getBaseAriaBilling().getUsageHistory(getClientNo(), getAuthKey(), 1L, "", 1L, "", "", usageQualifier1Array, usageQualifier2Array, usageQualifier3Array, usageQualifier4Array);
+        hashMapReturnValues = getBaseAriaBilling().getUsageHistory(getClientNo(), getAuthKey(), 1L, "", 1L, "", "", usageQualifier1Array, usageQualifier2Array, usageQualifier3Array, usageQualifier4Array, 1L, 1L);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getUsageHistory - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -1961,7 +1961,7 @@ public class AriaServiceClientTest {
         com.aria.common.shared.EnableUsagePoolingPlanNoArray enableUsagePoolingPlanNoArray = new com.aria.common.shared.EnableUsagePoolingPlanNoArray();
         com.aria.common.shared.DisableUsagePoolingPlanNoArray disableUsagePoolingPlanNoArray = new com.aria.common.shared.DisableUsagePoolingPlanNoArray();
         
-        hashMapReturnValues = getBaseAriaBilling().updateAcctComplete(getClientNo(), getAuthKey(), 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", 1L, 1L, 1L, 1L, updateAcctSuppFieldArray, updateAcctFuncGroupArray, updateAcctCollGroupArray, 1L, 1L, "", "", "", "", 1L, 1L, 1L, "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", usageAccumulationConfigArray, enableUsagePoolingPlanNoArray, disableUsagePoolingPlanNoArray, "", "", "", 1L, 1L, 1L, "", "", "");
+        hashMapReturnValues = getBaseAriaBilling().updateAcctComplete(getClientNo(), getAuthKey(), 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", 1L, 1L, 1L, 1L, updateAcctSuppFieldArray, updateAcctFuncGroupArray, updateAcctCollGroupArray, 1L, 1L, "", "", "", "", 1L, 1L, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", usageAccumulationConfigArray, enableUsagePoolingPlanNoArray, disableUsagePoolingPlanNoArray, "", "", "", 1L, 1L, 1L, "", "", "", "", "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "updateAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -2343,7 +2343,7 @@ public class AriaServiceClientTest {
     //@Test
     public void getUnbilledUsageSummary() throws Exception {
         
-        hashMapReturnValues = getBaseAriaBilling().getUnbilledUsageSummary(getClientNo(), getAuthKey(), 1L);
+        hashMapReturnValues = getBaseAriaBilling().getUnbilledUsageSummary(getClientNo(), getAuthKey(), 1L, "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getUnbilledUsageSummary - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -2808,7 +2808,7 @@ public class AriaServiceClientTest {
     public void recordExternalPayment() throws Exception {
         com.aria.common.shared.SpecificChargeTransactionIdArray specificChargeTransactionIdArray = new com.aria.common.shared.SpecificChargeTransactionIdArray();
         
-        hashMapReturnValues = getBaseAriaBilling().recordExternalPayment(getClientNo(), getAuthKey(), 1L, 1d, "", "", "", specificChargeTransactionIdArray, 1L, "");
+        hashMapReturnValues = getBaseAriaBilling().recordExternalPayment(getClientNo(), getAuthKey(), 1L, "", 1d, "", "", specificChargeTransactionIdArray, 1L, "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "recordExternalPayment - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {

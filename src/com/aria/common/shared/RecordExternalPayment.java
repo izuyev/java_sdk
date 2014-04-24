@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","paymentAmount","referenceCode","comments","clientReceiptId","specificChargeTransactionId","externalDestinationId","externalId"})
+    "authKey","accountNo","referenceCode","paymentAmount","comments","clientReceiptId","specificChargeTransactionId","externalDestinationId","externalId"})
 @XmlRootElement(name = "record_external_payment")
 public class RecordExternalPayment {
 
@@ -20,10 +20,10 @@ public class RecordExternalPayment {
     protected String authKey;
     @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "payment_amount")
-    protected Double paymentAmount;
     @XmlElement(name = "reference_code")
     protected String referenceCode;
+    @XmlElement(name = "payment_amount")
+    protected Double paymentAmount;
     @XmlElement(name = "comments")
     protected String comments;
     @XmlElement(name = "client_receipt_id")
@@ -59,20 +59,20 @@ public class RecordExternalPayment {
         this.accountNo = value;
     }
     
-    public Double getPaymentAmount() {
-        return paymentAmount;
-    }
-
-    public void setPaymentAmount(Double value) {
-        this.paymentAmount = value;
-    }
-    
     public String getReferenceCode() {
         return referenceCode;
     }
 
     public void setReferenceCode(String value) {
         this.referenceCode = value;
+    }
+    
+    public Double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(Double value) {
+        this.paymentAmount = value;
     }
     
     public String getComments() {

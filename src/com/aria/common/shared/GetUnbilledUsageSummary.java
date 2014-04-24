@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo"})
+    "authKey","acctNo","usageDetailsFlag"})
 @XmlRootElement(name = "get_unbilled_usage_summary")
 public class GetUnbilledUsageSummary {
 
@@ -20,6 +20,8 @@ public class GetUnbilledUsageSummary {
     protected String authKey;
     @XmlElement(name = "acct_no")
     protected Long acctNo;
+    @XmlElement(name = "usage_details_flag")
+    protected String usageDetailsFlag;
     
     public long getClientNo() {
         return clientNo;
@@ -43,6 +45,14 @@ public class GetUnbilledUsageSummary {
 
     public void setAcctNo(Long value) {
         this.acctNo = value;
+    }
+    
+    public String getUsageDetailsFlag() {
+        return usageDetailsFlag;
+    }
+
+    public void setUsageDetailsFlag(String value) {
+        this.usageDetailsFlag = value;
     }
     
     

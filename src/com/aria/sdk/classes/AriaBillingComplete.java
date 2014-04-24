@@ -1021,11 +1021,13 @@ public interface AriaBillingComplete {
     * @param account_no - Type: Long
     * @param resp_level_cd - Type: Long
     * @param senior_account_no - Type: Long
+    * @param senior_acct_user_id - Type: java.lang.String
+    * @param client_senior_acct_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> setPaymentResponsibility(Long client_no, java.lang.String auth_key, Long account_no, Long resp_level_cd, Long senior_account_no);
+    abstract Map<String,Object> setPaymentResponsibility(Long client_no, java.lang.String auth_key, Long account_no, Long resp_level_cd, Long senior_account_no, java.lang.String senior_acct_user_id, java.lang.String client_senior_acct_id);
 
     abstract Map<String,Object> setPaymentResponsibility(Map<String,Object> map);
 
@@ -2158,6 +2160,8 @@ public interface AriaBillingComplete {
     * @param bank_routing_no - Type: java.lang.String
     * @param resp_level_cd - Type: Long
     * @param senior_acct_no - Type: Long
+    * @param senior_acct_user_id - Type: java.lang.String
+    * @param client_senior_acct_id - Type: java.lang.String
     * @param functional_acct_groups - Type: com.aria.common.shared.FunctionalAcctGroupsArray
     * @param collections_acct_groups - Type: com.aria.common.shared.CollectionsAcctGroupsArray
     * @param supp_field_names - Type: com.aria.common.shared.SuppFieldNamesArray
@@ -2192,6 +2196,7 @@ public interface AriaBillingComplete {
     * @param do_write - Type: java.lang.String
     * @param tax_exemption_level - Type: Long
     * @param cn_alt_msg_template_no - Type: Long
+    * @param invoice_approval_required - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -2217,7 +2222,7 @@ public interface AriaBillingComplete {
     *   new_acct_invoice_line_items - Type: ArrayList&#60;NewAcctInvoiceLineItemsReturnElement&#62;<br>
     *   third_party_errors - Type: ArrayList&#60;ThirdPartyErrorsReturnElement&#62;<br>
     */
-    abstract Map<String,Object> createAcctComplete(Long client_no, java.lang.String auth_key, Long master_plan_no, java.lang.String alt_start_date, java.lang.String client_acct_id, java.lang.String userid, Long status_cd, Long master_plan_units, com.aria.common.shared.SuppPlansArray supp_plans, com.aria.common.shared.SuppPlanUnitsArray supp_plan_units, Long notify_method, java.lang.String promo_cd, java.lang.String password, java.lang.String secret_question, java.lang.String secret_question_answer, java.lang.String first_name, java.lang.String mi, java.lang.String last_name, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state_prov, java.lang.String country, java.lang.String postal_cd, java.lang.String phone, java.lang.String phone_ext, java.lang.String cell_phone, java.lang.String work_phone, java.lang.String work_phone_ext, java.lang.String email, java.lang.String birthdate, java.lang.String bill_first_name, java.lang.String bill_mi, java.lang.String bill_last_name, java.lang.String bill_company_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_country, java.lang.String bill_postal_cd, java.lang.String bill_phone, java.lang.String bill_phone_ext, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_ext, java.lang.String bill_email, Long pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_acct_no, java.lang.String bank_routing_no, Long resp_level_cd, Long senior_acct_no, com.aria.common.shared.FunctionalAcctGroupsArray functional_acct_groups, com.aria.common.shared.CollectionsAcctGroupsArray collections_acct_groups, com.aria.common.shared.SuppFieldNamesArray supp_field_names, com.aria.common.shared.SuppFieldValuesArray supp_field_values, Long test_acct_ind, Long status_until_alt_start, java.lang.Double balance_forward, Long alt_bill_day, java.lang.String do_full_invoicing, java.lang.String do_prorated_invoicing, Long master_plan_alt_rate_sched_no, com.aria.common.shared.SuppPlanAltRateSchedNoArray supp_plan_alt_rate_sched_no, java.lang.String client_receipt_id, java.lang.String currency_cd, java.lang.String cvv, java.lang.String taxpayer_id, java.lang.String bill_agreement_id, java.lang.String retroactive_start_date, com.aria.common.shared.CouponCodesArray coupon_codes, com.aria.common.shared.NewAcctCustomRatesArray new_acct_custom_rates, Long alt_msg_template_no, Long seq_func_group_no, com.aria.common.shared.NewAcctPlanContractsArray new_acct_plan_contracts, java.lang.String address3, java.lang.String bill_address3, com.aria.common.shared.UsageAccumulationConfigArray usage_accumulation_config, com.aria.common.shared.EnableUsagePoolingPlanNoArray enable_usage_pooling_plan_no, com.aria.common.shared.ClientFuncAcctGroupIdsArray client_func_acct_group_ids, com.aria.common.shared.ClientCollAcctGroupIdsArray client_coll_acct_group_ids, java.lang.String track_data1, java.lang.String track_data2, java.lang.String do_write, Long tax_exemption_level, Long cn_alt_msg_template_no);
+    abstract Map<String,Object> createAcctComplete(Long client_no, java.lang.String auth_key, Long master_plan_no, java.lang.String alt_start_date, java.lang.String client_acct_id, java.lang.String userid, Long status_cd, Long master_plan_units, com.aria.common.shared.SuppPlansArray supp_plans, com.aria.common.shared.SuppPlanUnitsArray supp_plan_units, Long notify_method, java.lang.String promo_cd, java.lang.String password, java.lang.String secret_question, java.lang.String secret_question_answer, java.lang.String first_name, java.lang.String mi, java.lang.String last_name, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state_prov, java.lang.String country, java.lang.String postal_cd, java.lang.String phone, java.lang.String phone_ext, java.lang.String cell_phone, java.lang.String work_phone, java.lang.String work_phone_ext, java.lang.String email, java.lang.String birthdate, java.lang.String bill_first_name, java.lang.String bill_mi, java.lang.String bill_last_name, java.lang.String bill_company_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_country, java.lang.String bill_postal_cd, java.lang.String bill_phone, java.lang.String bill_phone_ext, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_ext, java.lang.String bill_email, Long pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_acct_no, java.lang.String bank_routing_no, Long resp_level_cd, Long senior_acct_no, java.lang.String senior_acct_user_id, java.lang.String client_senior_acct_id, com.aria.common.shared.FunctionalAcctGroupsArray functional_acct_groups, com.aria.common.shared.CollectionsAcctGroupsArray collections_acct_groups, com.aria.common.shared.SuppFieldNamesArray supp_field_names, com.aria.common.shared.SuppFieldValuesArray supp_field_values, Long test_acct_ind, Long status_until_alt_start, java.lang.Double balance_forward, Long alt_bill_day, java.lang.String do_full_invoicing, java.lang.String do_prorated_invoicing, Long master_plan_alt_rate_sched_no, com.aria.common.shared.SuppPlanAltRateSchedNoArray supp_plan_alt_rate_sched_no, java.lang.String client_receipt_id, java.lang.String currency_cd, java.lang.String cvv, java.lang.String taxpayer_id, java.lang.String bill_agreement_id, java.lang.String retroactive_start_date, com.aria.common.shared.CouponCodesArray coupon_codes, com.aria.common.shared.NewAcctCustomRatesArray new_acct_custom_rates, Long alt_msg_template_no, Long seq_func_group_no, com.aria.common.shared.NewAcctPlanContractsArray new_acct_plan_contracts, java.lang.String address3, java.lang.String bill_address3, com.aria.common.shared.UsageAccumulationConfigArray usage_accumulation_config, com.aria.common.shared.EnableUsagePoolingPlanNoArray enable_usage_pooling_plan_no, com.aria.common.shared.ClientFuncAcctGroupIdsArray client_func_acct_group_ids, com.aria.common.shared.ClientCollAcctGroupIdsArray client_coll_acct_group_ids, java.lang.String track_data1, java.lang.String track_data2, java.lang.String do_write, Long tax_exemption_level, Long cn_alt_msg_template_no, java.lang.String invoice_approval_required);
 
     abstract Map<String,Object> createAcctComplete(Map<String,Object> map);
 
@@ -2377,12 +2382,14 @@ public interface AriaBillingComplete {
     * @param usage_qualifier_2 - Type: com.aria.common.shared.UsageQualifier2Array
     * @param usage_qualifier_3 - Type: com.aria.common.shared.UsageQualifier3Array
     * @param usage_qualifier_4 - Type: com.aria.common.shared.UsageQualifier4Array
+    * @param limit - Type: Long
+    * @param offset - Type: Long
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   usage_history_records - Type: ArrayList&#60;UsageHistoryRecordsReturnElement&#62;<br>
     */
-    abstract Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String date_range_start, Long specified_usage_type_no, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4);
+    abstract Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String date_range_start, Long specified_usage_type_no, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4, Long limit, Long offset);
 
     abstract Map<String,Object> getUsageHistory(Map<String,Object> map);
 
@@ -2537,6 +2544,8 @@ public interface AriaBillingComplete {
     * @param test_acct_ind - Type: Long
     * @param resp_level_cd - Type: Long
     * @param senior_acct_no - Type: Long
+    * @param senior_acct_user_id - Type: java.lang.String
+    * @param client_senior_acct_id - Type: java.lang.String
     * @param client_acct_id - Type: java.lang.String
     * @param do_collect - Type: java.lang.String
     * @param change_status_after_coll - Type: java.lang.String
@@ -2566,6 +2575,8 @@ public interface AriaBillingComplete {
     * @param promo_cd - Type: java.lang.String
     * @param invoice_unbilled_usage - Type: java.lang.String
     * @param coupon_code - Type: java.lang.String
+    * @param userid - Type: java.lang.String
+    * @param invoice_approval_required - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -2592,7 +2603,7 @@ public interface AriaBillingComplete {
     *   cancelled_supp_plans - Type: ArrayList&#60;CancelledSuppPlansReturnElement&#62;<br>
     *   third_party_errors - Type: ArrayList&#60;ThirdPartyErrorsReturnElement&#62;<br>
     */
-    abstract Map<String,Object> updateAcctComplete(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state_prov, java.lang.String country, java.lang.String postal_cd, java.lang.String phone, java.lang.String phone_ext, java.lang.String cell_phone, java.lang.String work_phone, java.lang.String work_phone_ext, java.lang.String email, java.lang.String birthdate, java.lang.String bill_first_name, java.lang.String bill_last_name, java.lang.String bill_middle_initial, java.lang.String bill_company_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_country, java.lang.String bill_postal_cd, java.lang.String bill_phone, java.lang.String bill_phone_ext, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_ext, java.lang.String bill_email, Long pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, Long master_plan_no, Long master_plan_alt_rate_sched_no, Long master_plan_units, Long master_plan_assign_directive, com.aria.common.shared.UpdateAcctSuppFieldArray update_acct_supp_field, com.aria.common.shared.UpdateAcctFuncGroupArray update_acct_func_group, com.aria.common.shared.UpdateAcctCollGroupArray update_acct_coll_group, Long status_cd, Long notify_method, java.lang.String password, java.lang.String secret_question, java.lang.String secret_question_answer, java.lang.String pin, Long test_acct_ind, Long resp_level_cd, Long senior_acct_no, java.lang.String client_acct_id, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id, java.lang.String alt_do_dunning, java.lang.String force_currency_change, java.lang.String cvv, java.lang.String taxpayer_id, java.lang.String bill_agreement_id, java.lang.String auto_cancel_supp_plans, Long offset_months, java.lang.String alt_proration_start_date, Long alt_msg_template_no, Long seq_func_group_no, java.lang.String address3, java.lang.String bill_address3, com.aria.common.shared.UsageAccumulationConfigArray usage_accumulation_config, com.aria.common.shared.EnableUsagePoolingPlanNoArray enable_usage_pooling_plan_no, com.aria.common.shared.DisableUsagePoolingPlanNoArray disable_usage_pooling_plan_no, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, Long offset_interval, Long tax_exemption_level, Long cn_alt_msg_template_no, java.lang.String promo_cd, java.lang.String invoice_unbilled_usage, java.lang.String coupon_code);
+    abstract Map<String,Object> updateAcctComplete(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state_prov, java.lang.String country, java.lang.String postal_cd, java.lang.String phone, java.lang.String phone_ext, java.lang.String cell_phone, java.lang.String work_phone, java.lang.String work_phone_ext, java.lang.String email, java.lang.String birthdate, java.lang.String bill_first_name, java.lang.String bill_last_name, java.lang.String bill_middle_initial, java.lang.String bill_company_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_country, java.lang.String bill_postal_cd, java.lang.String bill_phone, java.lang.String bill_phone_ext, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_ext, java.lang.String bill_email, Long pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, Long master_plan_no, Long master_plan_alt_rate_sched_no, Long master_plan_units, Long master_plan_assign_directive, com.aria.common.shared.UpdateAcctSuppFieldArray update_acct_supp_field, com.aria.common.shared.UpdateAcctFuncGroupArray update_acct_func_group, com.aria.common.shared.UpdateAcctCollGroupArray update_acct_coll_group, Long status_cd, Long notify_method, java.lang.String password, java.lang.String secret_question, java.lang.String secret_question_answer, java.lang.String pin, Long test_acct_ind, Long resp_level_cd, Long senior_acct_no, java.lang.String senior_acct_user_id, java.lang.String client_senior_acct_id, java.lang.String client_acct_id, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id, java.lang.String alt_do_dunning, java.lang.String force_currency_change, java.lang.String cvv, java.lang.String taxpayer_id, java.lang.String bill_agreement_id, java.lang.String auto_cancel_supp_plans, Long offset_months, java.lang.String alt_proration_start_date, Long alt_msg_template_no, Long seq_func_group_no, java.lang.String address3, java.lang.String bill_address3, com.aria.common.shared.UsageAccumulationConfigArray usage_accumulation_config, com.aria.common.shared.EnableUsagePoolingPlanNoArray enable_usage_pooling_plan_no, com.aria.common.shared.DisableUsagePoolingPlanNoArray disable_usage_pooling_plan_no, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, Long offset_interval, Long tax_exemption_level, Long cn_alt_msg_template_no, java.lang.String promo_cd, java.lang.String invoice_unbilled_usage, java.lang.String coupon_code, java.lang.String userid, java.lang.String invoice_approval_required);
 
     abstract Map<String,Object> updateAcctComplete(Map<String,Object> map);
 
@@ -3064,6 +3075,7 @@ public interface AriaBillingComplete {
     * @param client_no - Type: Long
     * @param auth_key - Type: java.lang.String
     * @param acct_no - Type: Long
+    * @param usage_details_flag - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -3088,7 +3100,7 @@ public interface AriaBillingComplete {
     *   unapp_svc_credit_delta_amount - Type: javax.xml.ws.Holder<br>
     *   unbilled_usage_recs - Type: ArrayList&#60;UnbilledUsageRecsReturnElement&#62;<br>
     */
-    abstract Map<String,Object> getUnbilledUsageSummary(Long client_no, java.lang.String auth_key, Long acct_no);
+    abstract Map<String,Object> getUnbilledUsageSummary(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String usage_details_flag);
 
     abstract Map<String,Object> getUnbilledUsageSummary(Map<String,Object> map);
 
@@ -3809,8 +3821,8 @@ public interface AriaBillingComplete {
     * @param client_no - Type: Long
     * @param auth_key - Type: java.lang.String
     * @param account_no - Type: Long
-    * @param payment_amount - Type: java.lang.Double
     * @param reference_code - Type: java.lang.String
+    * @param payment_amount - Type: java.lang.Double
     * @param comments - Type: java.lang.String
     * @param client_receipt_id - Type: java.lang.String
     * @param specific_charge_transaction_id - Type: com.aria.common.shared.SpecificChargeTransactionIdArray
@@ -3821,7 +3833,7 @@ public interface AriaBillingComplete {
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> recordExternalPayment(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double payment_amount, java.lang.String reference_code, java.lang.String comments, java.lang.String client_receipt_id, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id, Long external_destination_id, java.lang.String external_id);
+    abstract Map<String,Object> recordExternalPayment(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String reference_code, java.lang.Double payment_amount, java.lang.String comments, java.lang.String client_receipt_id, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id, Long external_destination_id, java.lang.String external_id);
 
     abstract Map<String,Object> recordExternalPayment(Map<String,Object> map);
 
