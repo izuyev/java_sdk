@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","invoiceNo","acctNo","actionDirective","billSeq","altPayMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankRoutingNum","bankAcctNum","billCompanyName","billFirstName","billMiddleInitial","billLastName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billZip","billCountry","billEmail","billPhone","billPhoneExtension","billCellPhone","billWorkPhone","billWorkPhoneExtension","cvv","altCollectOnApprove","altSendStatementOnApprove","cancelOrdersOnDiscard","billAddress3","trackData1","trackData2"})
+    "authKey","invoiceNo","acctNo","actionDirective","billSeq","altPayMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankRoutingNum","bankAcctNum","billCompanyName","billFirstName","billMiddleInitial","billLastName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billZip","billCountry","billEmail","billPhone","billPhoneExtension","billCellPhone","billWorkPhone","billWorkPhoneExtension","cvv","altCollectOnApprove","altSendStatementOnApprove","cancelOrdersOnDiscard","billAddress3","trackData1","trackData2","clientReceiptId"})
 @XmlRootElement(name = "manage_pending_invoice")
 public class ManagePendingInvoice {
 
@@ -86,6 +86,8 @@ public class ManagePendingInvoice {
     protected String trackData1;
     @XmlElement(name = "track_data2")
     protected String trackData2;
+    @XmlElement(name = "client_receipt_id")
+    protected String clientReceiptId;
     
     public long getClientNo() {
         return clientNo;
@@ -373,6 +375,14 @@ public class ManagePendingInvoice {
 
     public void setTrackData2(String value) {
         this.trackData2 = value;
+    }
+    
+    public String getClientReceiptId() {
+        return clientReceiptId;
+    }
+
+    public void setClientReceiptId(String value) {
+        this.clientReceiptId = value;
     }
     
     

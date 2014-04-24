@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","seqNo","address1","address2","city","state","zip","country","ccExpireMm","ccExpireYyyy","phoneNpa","phoneNxx","phoneSuffix","phoneExt","phoneCountryCd","intlPhone","email","locality","cellPhoneNpa","cellPhoneNxx","cellPhoneSuffix","workPhoneNpa","workPhoneNxx","workPhoneSuffix","workPhoneExt","doCollect","changeStatusAfterColl","resetDatesAfterStatus","address3"})
+    "authKey","acctNo","seqNo","address1","address2","city","state","zip","country","ccExpireMm","ccExpireYyyy","phoneNpa","phoneNxx","phoneSuffix","phoneExt","phoneCountryCd","intlPhone","email","locality","cellPhoneNpa","cellPhoneNxx","cellPhoneSuffix","workPhoneNpa","workPhoneNxx","workPhoneSuffix","workPhoneExt","doCollect","changeStatusAfterColl","resetDatesAfterStatus","address3","clientReceiptId"})
 @XmlRootElement(name = "update_existing_billing_info")
 public class UpdateExistingBillingInfo {
 
@@ -76,6 +76,8 @@ public class UpdateExistingBillingInfo {
     protected String resetDatesAfterStatus;
     @XmlElement(name = "address3")
     protected String address3;
+    @XmlElement(name = "client_receipt_id")
+    protected String clientReceiptId;
     
     public long getClientNo() {
         return clientNo;
@@ -323,6 +325,14 @@ public class UpdateExistingBillingInfo {
 
     public void setAddress3(String value) {
         this.address3 = value;
+    }
+    
+    public String getClientReceiptId() {
+        return clientReceiptId;
+    }
+
+    public void setClientReceiptId(String value) {
+        this.clientReceiptId = value;
     }
     
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "usage_history_records_ReturnElement", propOrder = {"billableAcctNo", "incurringAcctNo", "usageTypeNo", "usageTypeDescription", "usageDate", "usageTime", "units", "unitsDescription", "invoiceTransactionId", "telcoTo", "telcoFrom", "specificRecordChargeAmount", "isExcluded", "exclusionComments", "comments", "preRatedRate", "qualifier1", "qualifier2", "qualifier3", "qualifier4", "recordedUnits", "usageRecNo", "usageParentRecNo", "usageTypeCode", "clientRecordId", "excludeReasonCd"})
+@XmlType(name = "usage_history_records_ReturnElement", propOrder = {"billableAcctNo", "incurringAcctNo", "usageTypeNo", "usageTypeDescription", "usageDate", "usageTime", "units", "unitsDescription", "usageUnitsDescription", "invoiceTransactionId", "telcoTo", "telcoFrom", "specificRecordChargeAmount", "isExcluded", "exclusionComments", "comments", "preRatedRate", "qualifier1", "qualifier2", "qualifier3", "qualifier4", "recordedUnits", "usageRecNo", "usageParentRecNo", "usageTypeCode", "clientRecordId", "excludeReasonCd"})
 public class UsageHistoryRecordsReturnElement {
 
     @XmlElement(name = "billable_acct_no")
@@ -29,6 +29,8 @@ public class UsageHistoryRecordsReturnElement {
     protected Double units;
     @XmlElement(name = "units_description")
     protected String unitsDescription;
+    @XmlElement(name = "usage_units_description")
+    protected String usageUnitsDescription;
     @XmlElement(name = "invoice_transaction_id")
     protected Long invoiceTransactionId;
     @XmlElement(name = "telco_to")
@@ -128,6 +130,14 @@ public class UsageHistoryRecordsReturnElement {
 
     public void setUnitsDescription(String value) {
         this.unitsDescription = value;
+    }
+
+    public String getUsageUnitsDescription() {
+        return usageUnitsDescription;
+    }
+
+    public void setUsageUnitsDescription(String value) {
+        this.usageUnitsDescription = value;
     }
 
     public Long getInvoiceTransactionId() {

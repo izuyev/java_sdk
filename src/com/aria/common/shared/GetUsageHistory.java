@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","specifiedUsageTypeNo","dateRangeStart","dateRangeEnd","specifiedUsageTypeCode","usageQualifier1","usageQualifier2","usageQualifier3","usageQualifier4"})
+    "authKey","acctNo","dateRangeStart","specifiedUsageTypeNo","dateRangeEnd","specifiedUsageTypeCode","usageQualifier1","usageQualifier2","usageQualifier3","usageQualifier4"})
 @XmlRootElement(name = "get_usage_history")
 public class GetUsageHistory {
 
@@ -20,10 +20,10 @@ public class GetUsageHistory {
     protected String authKey;
     @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "specified_usage_type_no")
-    protected Long specifiedUsageTypeNo;
     @XmlElement(name = "date_range_start")
     protected String dateRangeStart;
+    @XmlElement(name = "specified_usage_type_no")
+    protected Long specifiedUsageTypeNo;
     @XmlElement(name = "date_range_end")
     protected String dateRangeEnd;
     @XmlElement(name = "specified_usage_type_code")
@@ -61,20 +61,20 @@ public class GetUsageHistory {
         this.acctNo = value;
     }
     
-    public Long getSpecifiedUsageTypeNo() {
-        return specifiedUsageTypeNo;
-    }
-
-    public void setSpecifiedUsageTypeNo(Long value) {
-        this.specifiedUsageTypeNo = value;
-    }
-    
     public String getDateRangeStart() {
         return dateRangeStart;
     }
 
     public void setDateRangeStart(String value) {
         this.dateRangeStart = value;
+    }
+    
+    public Long getSpecifiedUsageTypeNo() {
+        return specifiedUsageTypeNo;
+    }
+
+    public void setSpecifiedUsageTypeNo(Long value) {
+        this.specifiedUsageTypeNo = value;
     }
     
     public String getDateRangeEnd() {

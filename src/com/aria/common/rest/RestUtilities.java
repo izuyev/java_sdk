@@ -1230,6 +1230,24 @@ public class RestUtilities {
         return returnElement;
     }
 
+    public static ArrayList<CustomRateReturnElement> buildCustomRateReturnElement(JSONArray jsonArray) {
+        ArrayList<CustomRateReturnElement> returnElement = new ArrayList<CustomRateReturnElement>();
+        if (jsonArray == null) return returnElement;
+        for (int i = 0;i < jsonArray.size();i++) {
+            CustomRateReturnElement entity = new CustomRateReturnElement();
+            JSONObject jsonObject=(JSONObject)jsonArray.get(i);
+
+            entity.setCustomRateServiceNo(getLongValue(jsonObject,"custom_rate_service_no"));
+            entity.setCustomRateSeqNo(getLongValue(jsonObject,"custom_rate_seq_no"));
+            entity.setCustomRateFromUnit(getLongValue(jsonObject,"custom_rate_from_unit"));
+            entity.setCustomRateToUnit(getLongValue(jsonObject,"custom_rate_to_unit"));
+            entity.setCustomRatePerUnit(getDoubleValue(jsonObject,"custom_rate_per_unit"));
+            
+            returnElement.add(entity);
+        }
+        return returnElement;
+    }
+
     public static ArrayList<QueuedPlansReturnElement> buildQueuedPlansReturnElement(JSONArray jsonArray) {
         ArrayList<QueuedPlansReturnElement> returnElement = new ArrayList<QueuedPlansReturnElement>();
         if (jsonArray == null) return returnElement;
@@ -1246,6 +1264,11 @@ public class RestUtilities {
             entity.setClientReceiptId(getStringValue(jsonObject,"client_receipt_id"));
             entity.setNewPlanUnits(getDoubleValue(jsonObject,"new_plan_units"));
             entity.setNewPlanType(getStringValue(jsonObject,"new_plan_type"));
+            
+            ArrayList<CustomRateReturnElement> arrayListCustomRateReturnElement = buildCustomRateReturnElement((JSONArray)jsonObject.get("custom_rate"));
+            for (CustomRateReturnElement element : arrayListCustomRateReturnElement){
+                entity.getCustomRate().add(element);
+            }
             
             returnElement.add(entity);
         }
@@ -2003,6 +2026,7 @@ public class RestUtilities {
             entity.setUsageTime(getStringValue(jsonObject,"usage_time"));
             entity.setUnits(getDoubleValue(jsonObject,"units"));
             entity.setUnitsDescription(getStringValue(jsonObject,"units_description"));
+            entity.setUsageUnitsDescription(getStringValue(jsonObject,"usage_units_description"));
             entity.setInvoiceTransactionId(getLongValue(jsonObject,"invoice_transaction_id"));
             entity.setTelcoTo(getStringValue(jsonObject,"telco_to"));
             entity.setTelcoFrom(getStringValue(jsonObject,"telco_from"));
@@ -2843,6 +2867,9 @@ public class RestUtilities {
             entity.setPlanName(getStringValue(jsonObject,"plan_name"));
             entity.setCreditReasonCodeDescription(getStringValue(jsonObject,"credit_reason_code_description"));
             entity.setCsrComments(getStringValue(jsonObject,"csr_comments"));
+            entity.setClientSku(getStringValue(jsonObject,"client_sku"));
+            entity.setOrderNo(getLongValue(jsonObject,"order_no"));
+            entity.setItemNo(getLongValue(jsonObject,"item_no"));
             
             returnElement.add(entity);
         }
@@ -3156,6 +3183,7 @@ public class RestUtilities {
 
             entity.setRecNo(getLongValue(jsonObject,"rec_no"));
             entity.setCreatedBy(getStringValue(jsonObject,"created_by"));
+            entity.setCreatedDate(getStringValue(jsonObject,"created_date"));
             entity.setAmount(getDoubleValue(jsonObject,"amount"));
             entity.setInvoiceNo(getLongValue(jsonObject,"invoice_no"));
             entity.setInvoiceDate(getStringValue(jsonObject,"invoice_date"));

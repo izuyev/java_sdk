@@ -10,13 +10,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "write_off_info_ReturnElement", propOrder = {"recNo", "createdBy", "amount", "invoiceNo", "invoiceDate", "invoiceAmt", "writeoffDetails", "disputeCreationDate", "disputeExpDate", "reasonCode", "secondaryReasonCode", "comments", "disputeInd", "canUnsettle"})
+@XmlType(name = "write_off_info_ReturnElement", propOrder = {"recNo", "createdBy", "createdDate", "amount", "invoiceNo", "invoiceDate", "invoiceAmt", "writeoffDetails", "disputeCreationDate", "disputeExpDate", "reasonCode", "secondaryReasonCode", "comments", "disputeInd", "canUnsettle"})
 public class WriteOffInfoReturnElement {
 
     @XmlElement(name = "rec_no")
     protected Long recNo;
     @XmlElement(name = "created_by")
     protected String createdBy;
+    @XmlElement(name = "created_date")
+    protected String createdDate;
     @XmlElement(name = "amount")
     protected Double amount;
     @XmlElement(name = "invoice_no")
@@ -56,6 +58,14 @@ public class WriteOffInfoReturnElement {
 
     public void setCreatedBy(String value) {
         this.createdBy = value;
+    }
+
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String value) {
+        this.createdDate = value;
     }
 
     public Double getAmount() {

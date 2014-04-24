@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "units", "ratePerUnit", "amount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName", "creditReasonCodeDescription", "csrComments"})
+@XmlType(name = "invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "units", "ratePerUnit", "amount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName", "creditReasonCodeDescription", "csrComments", "clientSku", "orderNo", "itemNo"})
 public class InvoiceLineItemsReturnElement {
 
     @XmlElement(name = "line_no")
@@ -41,6 +41,12 @@ public class InvoiceLineItemsReturnElement {
     protected String creditReasonCodeDescription;
     @XmlElement(name = "csr_comments")
     protected String csrComments;
+    @XmlElement(name = "client_sku")
+    protected String clientSku;
+    @XmlElement(name = "order_no")
+    protected Long orderNo;
+    @XmlElement(name = "item_no")
+    protected Long itemNo;
     
     public Long getLineNo() {
         return lineNo;
@@ -152,6 +158,30 @@ public class InvoiceLineItemsReturnElement {
 
     public void setCsrComments(String value) {
         this.csrComments = value;
+    }
+
+    public String getClientSku() {
+        return clientSku;
+    }
+
+    public void setClientSku(String value) {
+        this.clientSku = value;
+    }
+
+    public Long getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(Long value) {
+        this.orderNo = value;
+    }
+
+    public Long getItemNo() {
+        return itemNo;
+    }
+
+    public void setItemNo(Long value) {
+        this.itemNo = value;
     }
 
     

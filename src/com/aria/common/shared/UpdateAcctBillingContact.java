@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","firstName","lastName","middleInitial","companyName","address1","address2","city","locality","state","country","zip","intlPhone","email","doCollect","changeStatusAfterColl","resetDatesAfterStatus","address3"})
+    "authKey","accountNo","firstName","lastName","middleInitial","companyName","address1","address2","city","locality","state","country","zip","intlPhone","email","doCollect","changeStatusAfterColl","resetDatesAfterStatus","address3","clientReceiptId"})
 @XmlRootElement(name = "update_acct_billing_contact")
 public class UpdateAcctBillingContact {
 
@@ -54,6 +54,8 @@ public class UpdateAcctBillingContact {
     protected String resetDatesAfterStatus;
     @XmlElement(name = "address3")
     protected String address3;
+    @XmlElement(name = "client_receipt_id")
+    protected String clientReceiptId;
     
     public long getClientNo() {
         return clientNo;
@@ -213,6 +215,14 @@ public class UpdateAcctBillingContact {
 
     public void setAddress3(String value) {
         this.address3 = value;
+    }
+    
+    public String getClientReceiptId() {
+        return clientReceiptId;
+    }
+
+    public void setClientReceiptId(String value) {
+        this.clientReceiptId = value;
     }
     
     

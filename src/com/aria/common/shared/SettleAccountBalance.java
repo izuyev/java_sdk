@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","altPayMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankRoutingNum","bankAcctNum","billCompanyName","billFirstName","billMiddleInitial","billLastName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billZip","billCountry","billEmail","billPhone","billPhoneExtension","billCellPhone","billWorkPhone","billWorkPhoneExtension","cvv","billAddress3","altClientAcctGroupId","trackData1","trackData2","forceBalanceScope"})
+    "authKey","accountNo","altPayMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankRoutingNum","bankAcctNum","billCompanyName","billFirstName","billMiddleInitial","billLastName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billZip","billCountry","billEmail","billPhone","billPhoneExtension","billCellPhone","billWorkPhone","billWorkPhoneExtension","cvv","billAddress3","altClientAcctGroupId","trackData1","trackData2","forceBalanceScope","clientReceiptId"})
 @XmlRootElement(name = "settle_account_balance")
 public class SettleAccountBalance {
 
@@ -78,6 +78,8 @@ public class SettleAccountBalance {
     protected String trackData2;
     @XmlElement(name = "force_balance_scope")
     protected String forceBalanceScope;
+    @XmlElement(name = "client_receipt_id")
+    protected String clientReceiptId;
     
     public long getClientNo() {
         return clientNo;
@@ -333,6 +335,14 @@ public class SettleAccountBalance {
 
     public void setForceBalanceScope(String value) {
         this.forceBalanceScope = value;
+    }
+    
+    public String getClientReceiptId() {
+        return clientReceiptId;
+    }
+
+    public void setClientReceiptId(String value) {
+        this.clientReceiptId = value;
     }
     
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "queued_plans_ReturnElement", propOrder = {"originalPlan", "originalPlanNo", "newPlan", "newPlanNo", "changeDate", "newRateScheduleNo", "clientReceiptId", "newPlanUnits", "newPlanType"})
+@XmlType(name = "queued_plans_ReturnElement", propOrder = {"originalPlan", "originalPlanNo", "newPlan", "newPlanNo", "changeDate", "newRateScheduleNo", "clientReceiptId", "newPlanUnits", "newPlanType", "customRate"})
 public class QueuedPlansReturnElement {
 
     @XmlElement(name = "original_plan")
@@ -31,6 +31,8 @@ public class QueuedPlansReturnElement {
     protected Double newPlanUnits;
     @XmlElement(name = "new_plan_type")
     protected String newPlanType;
+    @XmlElement(name = "custom_rate")
+    protected List<CustomRateReturnElement> customRate;
     
     public String getOriginalPlan() {
         return originalPlan;
@@ -104,5 +106,10 @@ public class QueuedPlansReturnElement {
         this.newPlanType = value;
     }
 
-    
+    public List<CustomRateReturnElement> getCustomRate() {
+        if (this.customRate == null) {
+            this.customRate = new ArrayList<CustomRateReturnElement>();
+        }
+        return this.customRate;
+    }
 }

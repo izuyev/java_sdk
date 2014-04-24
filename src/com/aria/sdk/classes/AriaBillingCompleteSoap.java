@@ -1576,7 +1576,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> updateAcctBillingContact(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state, java.lang.String country, java.lang.String zip, java.lang.String intl_phone, java.lang.String email, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3){
+    public Map<String,Object> updateAcctBillingContact(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state, java.lang.String country, java.lang.String zip, java.lang.String intl_phone, java.lang.String email, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -1602,7 +1602,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_proc_merch_comments = new javax.xml.ws.Holder();
 
         
-        getCompletePort().updateAcctBillingContact(client_no, auth_key, account_no, first_name, last_name, middle_initial, company_name, address1, address2, city, locality, state, country, zip, intl_phone, email, do_collect, change_status_after_coll, reset_dates_after_status, address3, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
+        getCompletePort().updateAcctBillingContact(client_no, auth_key, account_no, first_name, last_name, middle_initial, company_name, address1, address2, city, locality, state, country, zip, intl_phone, email, do_collect, change_status_after_coll, reset_dates_after_status, address3, client_receipt_id, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -1641,8 +1641,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
         String address3 = (java.lang.String) map.get("address3");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return updateAcctBillingContact(client_no, auth_key, account_no, first_name, last_name, middle_initial, company_name, address1, address2, city, locality, state, country, zip, intl_phone, email, do_collect, change_status_after_coll, reset_dates_after_status, address3);
+        return updateAcctBillingContact(client_no, auth_key, account_no, first_name, last_name, middle_initial, company_name, address1, address2, city, locality, state, country, zip, intl_phone, email, do_collect, change_status_after_coll, reset_dates_after_status, address3, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -1699,7 +1700,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> setPayMethodBankDraft(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status){
+    public Map<String,Object> setPayMethodBankDraft(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -1725,7 +1726,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_proc_merch_comments = new javax.xml.ws.Holder();
 
         
-        getCompletePort().setPayMethodBankDraft(client_no, auth_key, account_no, bank_routing_num, bank_acct_num, do_collect, change_status_after_coll, reset_dates_after_status, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
+        getCompletePort().setPayMethodBankDraft(client_no, auth_key, account_no, bank_routing_num, bank_acct_num, do_collect, change_status_after_coll, reset_dates_after_status, client_receipt_id, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -1752,12 +1753,13 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String do_collect = (java.lang.String) map.get("do_collect");
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return setPayMethodBankDraft(client_no, auth_key, account_no, bank_routing_num, bank_acct_num, do_collect, change_status_after_coll, reset_dates_after_status);
+        return setPayMethodBankDraft(client_no, auth_key, account_no, bank_routing_num, bank_acct_num, do_collect, change_status_after_coll, reset_dates_after_status, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> setPayMethodCc(Long client_no, java.lang.String auth_key, Long account_no, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String cc_number, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status){
+    public Map<String,Object> setPayMethodCc(Long client_no, java.lang.String auth_key, Long account_no, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String cc_number, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -1783,7 +1785,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_proc_merch_comments = new javax.xml.ws.Holder();
 
         
-        getCompletePort().setPayMethodCc(client_no, auth_key, account_no, cc_expire_mm, cc_expire_yyyy, cc_number, do_collect, change_status_after_coll, reset_dates_after_status, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
+        getCompletePort().setPayMethodCc(client_no, auth_key, account_no, cc_expire_mm, cc_expire_yyyy, cc_number, do_collect, change_status_after_coll, reset_dates_after_status, client_receipt_id, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -1811,8 +1813,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String do_collect = (java.lang.String) map.get("do_collect");
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return setPayMethodCc(client_no, auth_key, account_no, cc_expire_mm, cc_expire_yyyy, cc_number, do_collect, change_status_after_coll, reset_dates_after_status);
+        return setPayMethodCc(client_no, auth_key, account_no, cc_expire_mm, cc_expire_yyyy, cc_number, do_collect, change_status_after_coll, reset_dates_after_status, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -2245,13 +2248,13 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> cancelQueuedServicePlan(Long client_no, java.lang.String auth_key, Long account_number, com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove, java.lang.String remove_all_queued_plan_no){
+    public Map<String,Object> cancelQueuedServicePlan(Long client_no, java.lang.String auth_key, Long account_number, com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove, java.lang.String remove_all_queued_plan_no, java.lang.String remove_terminate_pending){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
 
         
-        getCompletePort().cancelQueuedServicePlan(client_no, auth_key, account_number, plan_no_to_remove, remove_all_queued_plan_no, h_error_code, h_error_msg);
+        getCompletePort().cancelQueuedServicePlan(client_no, auth_key, account_number, plan_no_to_remove, remove_all_queued_plan_no, remove_terminate_pending, h_error_code, h_error_msg);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -2265,8 +2268,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         Long account_number = (Long) map.get("account_number");
         com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove = (com.aria.common.shared.PlanNoToRemoveArray) map.get("plan_no_to_remove");
         String remove_all_queued_plan_no = (java.lang.String) map.get("remove_all_queued_plan_no");
+        String remove_terminate_pending = (java.lang.String) map.get("remove_terminate_pending");
         
-        return cancelQueuedServicePlan(client_no, auth_key, account_number, plan_no_to_remove, remove_all_queued_plan_no);
+        return cancelQueuedServicePlan(client_no, auth_key, account_number, plan_no_to_remove, remove_all_queued_plan_no, remove_terminate_pending);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -2856,7 +2860,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> updateExistingBillingInfo(Long client_no, java.lang.String auth_key, Long acct_no, Long seq_no, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String state, java.lang.String zip, java.lang.String country, Long cc_expire_mm, Long cc_expire_yyyy, Long phone_npa, Long phone_nxx, java.lang.String phone_suffix, java.lang.String phone_ext, java.lang.String phone_country_cd, java.lang.String intl_phone, java.lang.String email, java.lang.String locality, Long cell_phone_npa, Long cell_phone_nxx, java.lang.String cell_phone_suffix, Long work_phone_npa, Long work_phone_nxx, java.lang.String work_phone_suffix, java.lang.String work_phone_ext, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3){
+    public Map<String,Object> updateExistingBillingInfo(Long client_no, java.lang.String auth_key, Long acct_no, Long seq_no, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String state, java.lang.String zip, java.lang.String country, Long cc_expire_mm, Long cc_expire_yyyy, Long phone_npa, Long phone_nxx, java.lang.String phone_suffix, java.lang.String phone_ext, java.lang.String phone_country_cd, java.lang.String intl_phone, java.lang.String email, java.lang.String locality, Long cell_phone_npa, Long cell_phone_nxx, java.lang.String cell_phone_suffix, Long work_phone_npa, Long work_phone_nxx, java.lang.String work_phone_suffix, java.lang.String work_phone_ext, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -2882,7 +2886,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_proc_merch_comments = new javax.xml.ws.Holder();
 
         
-        getCompletePort().updateExistingBillingInfo(client_no, auth_key, acct_no, seq_no, address1, address2, city, state, zip, country, cc_expire_mm, cc_expire_yyyy, phone_npa, phone_nxx, phone_suffix, phone_ext, phone_country_cd, intl_phone, email, locality, cell_phone_npa, cell_phone_nxx, cell_phone_suffix, work_phone_npa, work_phone_nxx, work_phone_suffix, work_phone_ext, do_collect, change_status_after_coll, reset_dates_after_status, address3, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
+        getCompletePort().updateExistingBillingInfo(client_no, auth_key, acct_no, seq_no, address1, address2, city, state, zip, country, cc_expire_mm, cc_expire_yyyy, phone_npa, phone_nxx, phone_suffix, phone_ext, phone_country_cd, intl_phone, email, locality, cell_phone_npa, cell_phone_nxx, cell_phone_suffix, work_phone_npa, work_phone_nxx, work_phone_suffix, work_phone_ext, do_collect, change_status_after_coll, reset_dates_after_status, address3, client_receipt_id, h_error_code, h_error_msg, h_collection_error_code, h_collection_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -2932,8 +2936,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
         String address3 = (java.lang.String) map.get("address3");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return updateExistingBillingInfo(client_no, auth_key, acct_no, seq_no, address1, address2, city, state, zip, country, cc_expire_mm, cc_expire_yyyy, phone_npa, phone_nxx, phone_suffix, phone_ext, phone_country_cd, intl_phone, email, locality, cell_phone_npa, cell_phone_nxx, cell_phone_suffix, work_phone_npa, work_phone_nxx, work_phone_suffix, work_phone_ext, do_collect, change_status_after_coll, reset_dates_after_status, address3);
+        return updateExistingBillingInfo(client_no, auth_key, acct_no, seq_no, address1, address2, city, state, zip, country, cc_expire_mm, cc_expire_yyyy, phone_npa, phone_nxx, phone_suffix, phone_ext, phone_country_cd, intl_phone, email, locality, cell_phone_npa, cell_phone_nxx, cell_phone_suffix, work_phone_npa, work_phone_nxx, work_phone_suffix, work_phone_ext, do_collect, change_status_after_coll, reset_dates_after_status, address3, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -4272,7 +4277,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, Long specified_usage_type_no, java.lang.String date_range_start, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4){
+    public Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String date_range_start, Long specified_usage_type_no, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -4280,7 +4285,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_usage_history_records = new javax.xml.ws.Holder();
 
         
-        getCompletePort().getUsageHistory(client_no, auth_key, acct_no, specified_usage_type_no, date_range_start, date_range_end, specified_usage_type_code, usage_qualifier_1, usage_qualifier_2, usage_qualifier_3, usage_qualifier_4, h_error_code, h_error_msg, h_usage_history_records);
+        getCompletePort().getUsageHistory(client_no, auth_key, acct_no, date_range_start, specified_usage_type_no, date_range_end, specified_usage_type_code, usage_qualifier_1, usage_qualifier_2, usage_qualifier_3, usage_qualifier_4, h_error_code, h_error_msg, h_usage_history_records);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -4293,8 +4298,8 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         Long client_no = (Long) map.get("client_no");
         String auth_key = (String) map.get("auth_key");
         Long acct_no = (Long) map.get("acct_no");
-        Long specified_usage_type_no = (Long) map.get("specified_usage_type_no");
         String date_range_start = (java.lang.String) map.get("date_range_start");
+        Long specified_usage_type_no = (Long) map.get("specified_usage_type_no");
         String date_range_end = (java.lang.String) map.get("date_range_end");
         String specified_usage_type_code = (java.lang.String) map.get("specified_usage_type_code");
         com.aria.common.shared.UsageQualifier1Array usage_qualifier_1 = (com.aria.common.shared.UsageQualifier1Array) map.get("usage_qualifier_1");
@@ -4302,7 +4307,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         com.aria.common.shared.UsageQualifier3Array usage_qualifier_3 = (com.aria.common.shared.UsageQualifier3Array) map.get("usage_qualifier_3");
         com.aria.common.shared.UsageQualifier4Array usage_qualifier_4 = (com.aria.common.shared.UsageQualifier4Array) map.get("usage_qualifier_4");
         
-        return getUsageHistory(client_no, auth_key, acct_no, specified_usage_type_no, date_range_start, date_range_end, specified_usage_type_code, usage_qualifier_1, usage_qualifier_2, usage_qualifier_3, usage_qualifier_4);
+        return getUsageHistory(client_no, auth_key, acct_no, date_range_start, specified_usage_type_no, date_range_end, specified_usage_type_code, usage_qualifier_1, usage_qualifier_2, usage_qualifier_3, usage_qualifier_4);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -6507,7 +6512,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> transferAccountBalance(Long client_no, java.lang.String auth_key, Long source_account_no, Long target_account_no){
+    public Map<String,Object> transferAccountBalance(Long client_no, java.lang.String auth_key, Long source_account_no, Long target_account_no, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_transaction_id = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_balance_transferred = new javax.xml.ws.Holder();
@@ -6517,7 +6522,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
 
         
-        getCompletePort().transferAccountBalance(client_no, auth_key, source_account_no, target_account_no, h_transaction_id, h_balance_transferred, h_error_code, h_error_msg);
+        getCompletePort().transferAccountBalance(client_no, auth_key, source_account_no, target_account_no, client_receipt_id, h_transaction_id, h_balance_transferred, h_error_code, h_error_msg);
 
         getHashMapReturnValues().put("transaction_id",((javax.xml.ws.Holder)h_transaction_id).value);
         getHashMapReturnValues().put("balance_transferred",((javax.xml.ws.Holder)h_balance_transferred).value);
@@ -6532,8 +6537,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String auth_key = (String) map.get("auth_key");
         Long source_account_no = (Long) map.get("source_account_no");
         Long target_account_no = (Long) map.get("target_account_no");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return transferAccountBalance(client_no, auth_key, source_account_no, target_account_no);
+        return transferAccountBalance(client_no, auth_key, source_account_no, target_account_no, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -6659,7 +6665,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> settleAccountBalance(Long client_no, java.lang.String auth_key, Long account_no, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, java.lang.String force_balance_scope){
+    public Map<String,Object> settleAccountBalance(Long client_no, java.lang.String auth_key, Long account_no, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, java.lang.String force_balance_scope, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_transaction_id = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_proc_cvv_response = new javax.xml.ws.Holder();
@@ -6683,7 +6689,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
 
         
-        getCompletePort().settleAccountBalance(client_no, auth_key, account_no, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, bill_address3, alt_client_acct_group_id, track_data1, track_data2, force_balance_scope, h_transaction_id, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments, h_error_code, h_error_msg);
+        getCompletePort().settleAccountBalance(client_no, auth_key, account_no, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, bill_address3, alt_client_acct_group_id, track_data1, track_data2, force_balance_scope, client_receipt_id, h_transaction_id, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments, h_error_code, h_error_msg);
 
         getHashMapReturnValues().put("transaction_id",((javax.xml.ws.Holder)h_transaction_id).value);
         getHashMapReturnValues().put("proc_cvv_response",((javax.xml.ws.Holder)h_proc_cvv_response).value);
@@ -6733,8 +6739,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String track_data1 = (java.lang.String) map.get("track_data1");
         String track_data2 = (java.lang.String) map.get("track_data2");
         String force_balance_scope = (java.lang.String) map.get("force_balance_scope");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return settleAccountBalance(client_no, auth_key, account_no, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, bill_address3, alt_client_acct_group_id, track_data1, track_data2, force_balance_scope);
+        return settleAccountBalance(client_no, auth_key, account_no, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, bill_address3, alt_client_acct_group_id, track_data1, track_data2, force_balance_scope, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -6912,7 +6919,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> applyCashCredit(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double credit_amount, Long credit_reason_code, java.lang.String comments, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id){
+    public Map<String,Object> applyCashCredit(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double credit_amount, Long credit_reason_code, java.lang.String comments, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_transaction_id = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
@@ -6920,7 +6927,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
 
         
-        getCompletePort().applyCashCredit(client_no, auth_key, account_no, credit_amount, credit_reason_code, comments, specific_charge_transaction_id, h_transaction_id, h_error_code, h_error_msg);
+        getCompletePort().applyCashCredit(client_no, auth_key, account_no, credit_amount, credit_reason_code, comments, specific_charge_transaction_id, client_receipt_id, h_transaction_id, h_error_code, h_error_msg);
 
         getHashMapReturnValues().put("transaction_id",((javax.xml.ws.Holder)h_transaction_id).value);
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
@@ -6937,8 +6944,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         Long credit_reason_code = (Long) map.get("credit_reason_code");
         String comments = (java.lang.String) map.get("comments");
         com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id = (com.aria.common.shared.SpecificChargeTransactionIdArray) map.get("specific_charge_transaction_id");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return applyCashCredit(client_no, auth_key, account_no, credit_amount, credit_reason_code, comments, specific_charge_transaction_id);
+        return applyCashCredit(client_no, auth_key, account_no, credit_amount, credit_reason_code, comments, specific_charge_transaction_id, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -7505,7 +7513,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> managePendingInvoice(Long client_no, java.lang.String auth_key, Long invoice_no, Long acct_no, Long action_directive, Long bill_seq, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String alt_collect_on_approve, java.lang.String alt_send_statement_on_approve, java.lang.String cancel_orders_on_discard, java.lang.String bill_address3, java.lang.String track_data1, java.lang.String track_data2){
+    public Map<String,Object> managePendingInvoice(Long client_no, java.lang.String auth_key, Long invoice_no, Long acct_no, Long action_directive, Long bill_seq, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String alt_collect_on_approve, java.lang.String alt_send_statement_on_approve, java.lang.String cancel_orders_on_discard, java.lang.String bill_address3, java.lang.String track_data1, java.lang.String track_data2, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_new_invoice_no = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_collection_error_code = new javax.xml.ws.Holder();
@@ -7537,7 +7545,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
 
         
-        getCompletePort().managePendingInvoice(client_no, auth_key, invoice_no, acct_no, action_directive, bill_seq, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, alt_collect_on_approve, alt_send_statement_on_approve, cancel_orders_on_discard, bill_address3, track_data1, track_data2, h_new_invoice_no, h_collection_error_code, h_collection_error_msg, h_statement_error_code, h_statement_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments, h_error_code, h_error_msg);
+        getCompletePort().managePendingInvoice(client_no, auth_key, invoice_no, acct_no, action_directive, bill_seq, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, alt_collect_on_approve, alt_send_statement_on_approve, cancel_orders_on_discard, bill_address3, track_data1, track_data2, client_receipt_id, h_new_invoice_no, h_collection_error_code, h_collection_error_msg, h_statement_error_code, h_statement_error_msg, h_proc_cvv_response, h_proc_avs_response, h_proc_cavv_response, h_proc_status_code, h_proc_status_text, h_proc_payment_id, h_proc_auth_code, h_proc_merch_comments, h_error_code, h_error_msg);
 
         getHashMapReturnValues().put("new_invoice_no",((javax.xml.ws.Holder)h_new_invoice_no).value);
         getHashMapReturnValues().put("collection_error_code",((javax.xml.ws.Holder)h_collection_error_code).value);
@@ -7595,8 +7603,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String bill_address3 = (java.lang.String) map.get("bill_address3");
         String track_data1 = (java.lang.String) map.get("track_data1");
         String track_data2 = (java.lang.String) map.get("track_data2");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return managePendingInvoice(client_no, auth_key, invoice_no, acct_no, action_directive, bill_seq, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, alt_collect_on_approve, alt_send_statement_on_approve, cancel_orders_on_discard, bill_address3, track_data1, track_data2);
+        return managePendingInvoice(client_no, auth_key, invoice_no, acct_no, action_directive, bill_seq, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, alt_collect_on_approve, alt_send_statement_on_approve, cancel_orders_on_discard, bill_address3, track_data1, track_data2, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -7821,7 +7830,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse){
+    public Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -7835,7 +7844,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_reversed_invoice_lines = new javax.xml.ws.Holder();
 
         
-        getCompletePort().issueRefundToAcct(client_no, auth_key, acct_no, payment_transaction_id, reason_code, total_refund_amount, refund_check_number, comments, do_write, auto_calc_refund, invoices_to_reverse, h_error_code, h_error_msg, h_applied_total_refund_amount, h_applied_total_reversal_amount, h_transaction_id, h_reversed_invoice_lines);
+        getCompletePort().issueRefundToAcct(client_no, auth_key, acct_no, payment_transaction_id, reason_code, total_refund_amount, refund_check_number, comments, do_write, auto_calc_refund, invoices_to_reverse, client_receipt_id, h_error_code, h_error_msg, h_applied_total_refund_amount, h_applied_total_reversal_amount, h_transaction_id, h_reversed_invoice_lines);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -7859,8 +7868,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         String do_write = (java.lang.String) map.get("do_write");
         String auto_calc_refund = (java.lang.String) map.get("auto_calc_refund");
         com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse = (com.aria.common.shared.InvoicesToReverseArray) map.get("invoices_to_reverse");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return issueRefundToAcct(client_no, auth_key, acct_no, payment_transaction_id, reason_code, total_refund_amount, refund_check_number, comments, do_write, auto_calc_refund, invoices_to_reverse);
+        return issueRefundToAcct(client_no, auth_key, acct_no, payment_transaction_id, reason_code, total_refund_amount, refund_check_number, comments, do_write, auto_calc_refund, invoices_to_reverse, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -8064,7 +8074,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> createWriteoffOrDispute(Long client_no, java.lang.String auth_key, Long acct_no, Long invoice_no, java.lang.Double amount, Long reason_code, java.lang.String comments, Long do_dispute){
+    public Map<String,Object> createWriteoffOrDispute(Long client_no, java.lang.String auth_key, Long acct_no, Long invoice_no, java.lang.Double amount, Long reason_code, java.lang.String comments, Long do_dispute, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -8092,7 +8102,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_can_unsettle = new javax.xml.ws.Holder();
 
         
-        getCompletePort().createWriteoffOrDispute(client_no, auth_key, acct_no, h_invoice_no, h_amount, h_reason_code, h_comments, do_dispute, h_error_code, h_error_msg, h_rec_no, h_created_by, h_invoice_date, h_invoice_amt, h_dispute_creation_date, h_dispute_exp_date, h_secondary_reason_code, h_dispute_ind, h_can_unsettle);
+        getCompletePort().createWriteoffOrDispute(client_no, auth_key, acct_no, h_invoice_no, h_amount, h_reason_code, h_comments, do_dispute, client_receipt_id, h_error_code, h_error_msg, h_rec_no, h_created_by, h_invoice_date, h_invoice_amt, h_dispute_creation_date, h_dispute_exp_date, h_secondary_reason_code, h_dispute_ind, h_can_unsettle);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -8122,8 +8132,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         Long reason_code = (Long) map.get("reason_code");
         String comments = (java.lang.String) map.get("comments");
         Long do_dispute = (Long) map.get("do_dispute");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return createWriteoffOrDispute(client_no, auth_key, acct_no, invoice_no, amount, reason_code, comments, do_dispute);
+        return createWriteoffOrDispute(client_no, auth_key, acct_no, invoice_no, amount, reason_code, comments, do_dispute, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
@@ -8181,7 +8192,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})
-    public Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments){
+    public Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments, java.lang.String client_receipt_id){
         javax.xml.ws.Holder h_error_code = new javax.xml.ws.Holder();
 
         javax.xml.ws.Holder h_error_msg = new javax.xml.ws.Holder();
@@ -8212,7 +8223,7 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         javax.xml.ws.Holder h_can_unsettle = new javax.xml.ws.Holder();
 
         
-        getCompletePort().settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action, h_comments, h_error_code, h_error_msg, h_rec_no, h_created_by, h_amount, h_invoice_no, h_invoice_date, h_invoice_amt, h_dispute_creation_date, h_dispute_exp_date, h_reason_code, h_secondary_reason_code, h_dispute_ind, h_can_unsettle);
+        getCompletePort().settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action, h_comments, client_receipt_id, h_error_code, h_error_msg, h_rec_no, h_created_by, h_amount, h_invoice_no, h_invoice_date, h_invoice_amt, h_dispute_creation_date, h_dispute_exp_date, h_reason_code, h_secondary_reason_code, h_dispute_ind, h_can_unsettle);
 
         getHashMapReturnValues().put("error_code",((javax.xml.ws.Holder)h_error_code).value);
         getHashMapReturnValues().put("error_msg",((javax.xml.ws.Holder)h_error_msg).value);
@@ -8240,8 +8251,9 @@ public class AriaBillingCompleteSoap extends BaseAriaBilling implements AriaBill
         Long dispute_no = (Long) map.get("dispute_no");
         Long settlement_action = (Long) map.get("settlement_action");
         String comments = (java.lang.String) map.get("comments");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action, comments);
+        return settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action, comments, client_receipt_id);
     }
 
     @SuppressWarnings({"rawtypes","unchecked"})

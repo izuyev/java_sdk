@@ -1637,7 +1637,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return updateAcctSuppFields(client_no, auth_key, account_no, field_name, value_text);
     }
 
-    public Map<String,Object> updateAcctBillingContact(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state, java.lang.String country, java.lang.String zip, java.lang.String intl_phone, java.lang.String email, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3){
+    public Map<String,Object> updateAcctBillingContact(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state, java.lang.String country, java.lang.String zip, java.lang.String intl_phone, java.lang.String email, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -1659,6 +1659,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"change_status_after_coll",getValue("String", change_status_after_coll));
         addParameters(parameters,"reset_dates_after_status",getValue("String", reset_dates_after_status));
         addParameters(parameters,"address3",getValue("String", address3));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("update_acct_billing_contact"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -1702,8 +1703,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
         String address3 = (java.lang.String) map.get("address3");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return updateAcctBillingContact(client_no, auth_key, account_no, first_name, last_name, middle_initial, company_name, address1, address2, city, locality, state, country, zip, intl_phone, email, do_collect, change_status_after_coll, reset_dates_after_status, address3);
+        return updateAcctBillingContact(client_no, auth_key, account_no, first_name, last_name, middle_initial, company_name, address1, address2, city, locality, state, country, zip, intl_phone, email, do_collect, change_status_after_coll, reset_dates_after_status, address3, client_receipt_id);
     }
 
     public Map<String,Object> updateAcctNotifyMethod(Long client_no, java.lang.String auth_key, Long account_no, Long notify_method){
@@ -1760,7 +1762,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return getAcctNotifyMethod(client_no, auth_key, account_no);
     }
 
-    public Map<String,Object> setPayMethodBankDraft(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status){
+    public Map<String,Object> setPayMethodBankDraft(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -1770,6 +1772,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"do_collect",getValue("String", do_collect));
         addParameters(parameters,"change_status_after_coll",getValue("String", change_status_after_coll));
         addParameters(parameters,"reset_dates_after_status",getValue("String", reset_dates_after_status));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("set_pay_method_bank_draft"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -1801,11 +1804,12 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String do_collect = (java.lang.String) map.get("do_collect");
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return setPayMethodBankDraft(client_no, auth_key, account_no, bank_routing_num, bank_acct_num, do_collect, change_status_after_coll, reset_dates_after_status);
+        return setPayMethodBankDraft(client_no, auth_key, account_no, bank_routing_num, bank_acct_num, do_collect, change_status_after_coll, reset_dates_after_status, client_receipt_id);
     }
 
-    public Map<String,Object> setPayMethodCc(Long client_no, java.lang.String auth_key, Long account_no, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String cc_number, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status){
+    public Map<String,Object> setPayMethodCc(Long client_no, java.lang.String auth_key, Long account_no, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String cc_number, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -1816,6 +1820,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"do_collect",getValue("String", do_collect));
         addParameters(parameters,"change_status_after_coll",getValue("String", change_status_after_coll));
         addParameters(parameters,"reset_dates_after_status",getValue("String", reset_dates_after_status));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("set_pay_method_cc"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -1848,8 +1853,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String do_collect = (java.lang.String) map.get("do_collect");
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return setPayMethodCc(client_no, auth_key, account_no, cc_expire_mm, cc_expire_yyyy, cc_number, do_collect, change_status_after_coll, reset_dates_after_status);
+        return setPayMethodCc(client_no, auth_key, account_no, cc_expire_mm, cc_expire_yyyy, cc_number, do_collect, change_status_after_coll, reset_dates_after_status, client_receipt_id);
     }
 
     public Map<String,Object> setPayMethodNetTerms(Long client_no, java.lang.String auth_key, Long account_no, Long pay_method){
@@ -2350,13 +2356,14 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return getQueuedServicePlans(client_no, auth_key, account_number);
     }
 
-    public Map<String,Object> cancelQueuedServicePlan(Long client_no, java.lang.String auth_key, Long account_number, com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove, java.lang.String remove_all_queued_plan_no){
+    public Map<String,Object> cancelQueuedServicePlan(Long client_no, java.lang.String auth_key, Long account_number, com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove, java.lang.String remove_all_queued_plan_no, java.lang.String remove_terminate_pending){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
         addParameters(parameters,"account_number",getValue("Long", account_number));
         RestUtilities.addParameterValuesFromArray(parameters,plan_no_to_remove);
         addParameters(parameters,"remove_all_queued_plan_no",getValue("String", remove_all_queued_plan_no));
+        addParameters(parameters,"remove_terminate_pending",getValue("String", remove_terminate_pending));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("cancel_queued_service_plan"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -2375,8 +2382,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         Long account_number = (Long) map.get("account_number");
         com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove = (com.aria.common.shared.PlanNoToRemoveArray) map.get("plan_no_to_remove");
         String remove_all_queued_plan_no = (java.lang.String) map.get("remove_all_queued_plan_no");
+        String remove_terminate_pending = (java.lang.String) map.get("remove_terminate_pending");
         
-        return cancelQueuedServicePlan(client_no, auth_key, account_number, plan_no_to_remove, remove_all_queued_plan_no);
+        return cancelQueuedServicePlan(client_no, auth_key, account_number, plan_no_to_remove, remove_all_queued_plan_no, remove_terminate_pending);
     }
 
     public Map<String,Object> getAcctStatusHistory(Long client_no, java.lang.String auth_key, Long account_number){
@@ -2761,7 +2769,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return getFamilyTransHistory(client_no, auth_key, parent_acct_no, do_multi_level, trans_type, start_date, end_date, record_limit, include_void_transactions);
     }
 
-    public Map<String,Object> updateExistingBillingInfo(Long client_no, java.lang.String auth_key, Long acct_no, Long seq_no, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String state, java.lang.String zip, java.lang.String country, Long cc_expire_mm, Long cc_expire_yyyy, Long phone_npa, Long phone_nxx, java.lang.String phone_suffix, java.lang.String phone_ext, java.lang.String phone_country_cd, java.lang.String intl_phone, java.lang.String email, java.lang.String locality, Long cell_phone_npa, Long cell_phone_nxx, java.lang.String cell_phone_suffix, Long work_phone_npa, Long work_phone_nxx, java.lang.String work_phone_suffix, java.lang.String work_phone_ext, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3){
+    public Map<String,Object> updateExistingBillingInfo(Long client_no, java.lang.String auth_key, Long acct_no, Long seq_no, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String state, java.lang.String zip, java.lang.String country, Long cc_expire_mm, Long cc_expire_yyyy, Long phone_npa, Long phone_nxx, java.lang.String phone_suffix, java.lang.String phone_ext, java.lang.String phone_country_cd, java.lang.String intl_phone, java.lang.String email, java.lang.String locality, Long cell_phone_npa, Long cell_phone_nxx, java.lang.String cell_phone_suffix, Long work_phone_npa, Long work_phone_nxx, java.lang.String work_phone_suffix, java.lang.String work_phone_ext, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -2794,6 +2802,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"change_status_after_coll",getValue("String", change_status_after_coll));
         addParameters(parameters,"reset_dates_after_status",getValue("String", reset_dates_after_status));
         addParameters(parameters,"address3",getValue("String", address3));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("update_existing_billing_info"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -2848,8 +2857,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String change_status_after_coll = (java.lang.String) map.get("change_status_after_coll");
         String reset_dates_after_status = (java.lang.String) map.get("reset_dates_after_status");
         String address3 = (java.lang.String) map.get("address3");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return updateExistingBillingInfo(client_no, auth_key, acct_no, seq_no, address1, address2, city, state, zip, country, cc_expire_mm, cc_expire_yyyy, phone_npa, phone_nxx, phone_suffix, phone_ext, phone_country_cd, intl_phone, email, locality, cell_phone_npa, cell_phone_nxx, cell_phone_suffix, work_phone_npa, work_phone_nxx, work_phone_suffix, work_phone_ext, do_collect, change_status_after_coll, reset_dates_after_status, address3);
+        return updateExistingBillingInfo(client_no, auth_key, acct_no, seq_no, address1, address2, city, state, zip, country, cc_expire_mm, cc_expire_yyyy, phone_npa, phone_nxx, phone_suffix, phone_ext, phone_country_cd, intl_phone, email, locality, cell_phone_npa, cell_phone_nxx, cell_phone_suffix, work_phone_npa, work_phone_nxx, work_phone_suffix, work_phone_ext, do_collect, change_status_after_coll, reset_dates_after_status, address3, client_receipt_id);
     }
 
     public Map<String,Object> sendAcctEmail(Long client_no, java.lang.String auth_key, java.lang.String user_id, java.lang.String template_class, Long template_no, java.lang.String client_receipt_id){
@@ -4261,13 +4271,13 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return cancelAcctPlanContract(client_no, auth_key, acct_no, contract_no, update_comments, close_status);
     }
 
-    public Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, Long specified_usage_type_no, java.lang.String date_range_start, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4){
+    public Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String date_range_start, Long specified_usage_type_no, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
         addParameters(parameters,"acct_no",getValue("Long", acct_no));
-        addParameters(parameters,"specified_usage_type_no",getValue("Long", specified_usage_type_no));
         addParameters(parameters,"date_range_start",getValue("String", date_range_start));
+        addParameters(parameters,"specified_usage_type_no",getValue("Long", specified_usage_type_no));
         addParameters(parameters,"date_range_end",getValue("String", date_range_end));
         addParameters(parameters,"specified_usage_type_code",getValue("String", specified_usage_type_code));
         RestUtilities.addParameterValuesFromArray(parameters,usage_qualifier_1);
@@ -4291,8 +4301,8 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         Long client_no = (Long) map.get("client_no");
         String auth_key = (String) map.get("auth_key");
         Long acct_no = (Long) map.get("acct_no");
-        Long specified_usage_type_no = (Long) map.get("specified_usage_type_no");
         String date_range_start = (java.lang.String) map.get("date_range_start");
+        Long specified_usage_type_no = (Long) map.get("specified_usage_type_no");
         String date_range_end = (java.lang.String) map.get("date_range_end");
         String specified_usage_type_code = (java.lang.String) map.get("specified_usage_type_code");
         com.aria.common.shared.UsageQualifier1Array usage_qualifier_1 = (com.aria.common.shared.UsageQualifier1Array) map.get("usage_qualifier_1");
@@ -4300,7 +4310,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         com.aria.common.shared.UsageQualifier3Array usage_qualifier_3 = (com.aria.common.shared.UsageQualifier3Array) map.get("usage_qualifier_3");
         com.aria.common.shared.UsageQualifier4Array usage_qualifier_4 = (com.aria.common.shared.UsageQualifier4Array) map.get("usage_qualifier_4");
         
-        return getUsageHistory(client_no, auth_key, acct_no, specified_usage_type_no, date_range_start, date_range_end, specified_usage_type_code, usage_qualifier_1, usage_qualifier_2, usage_qualifier_3, usage_qualifier_4);
+        return getUsageHistory(client_no, auth_key, acct_no, date_range_start, specified_usage_type_no, date_range_end, specified_usage_type_code, usage_qualifier_1, usage_qualifier_2, usage_qualifier_3, usage_qualifier_4);
     }
 
     public Map<String,Object> getAcctMessage(Long client_no, java.lang.String auth_key, Long message_id, Long acct_no, java.lang.String do_encoding){
@@ -6514,12 +6524,13 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return reinstateTransaction(client_no, auth_key, account_no, transaction_id, comments);
     }
 
-    public Map<String,Object> transferAccountBalance(Long client_no, java.lang.String auth_key, Long source_account_no, Long target_account_no){
+    public Map<String,Object> transferAccountBalance(Long client_no, java.lang.String auth_key, Long source_account_no, Long target_account_no, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
         addParameters(parameters,"source_account_no",getValue("Long", source_account_no));
         addParameters(parameters,"target_account_no",getValue("Long", target_account_no));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("transfer_account_balance"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -6539,8 +6550,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String auth_key = (String) map.get("auth_key");
         Long source_account_no = (Long) map.get("source_account_no");
         Long target_account_no = (Long) map.get("target_account_no");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return transferAccountBalance(client_no, auth_key, source_account_no, target_account_no);
+        return transferAccountBalance(client_no, auth_key, source_account_no, target_account_no, client_receipt_id);
     }
 
     public Map<String,Object> createOrder(Long client_no, java.lang.String auth_key, Long account_no, Long bill_immediately, com.aria.common.shared.OrderLineItemsArray order_line_items, Long bill_seq, java.lang.String client_order_id, java.lang.String client_receipt_id, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String do_write, java.lang.String coupon_cd, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, Long alt_inv_template_no){
@@ -6661,7 +6673,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return createOrder(client_no, auth_key, account_no, bill_immediately, order_line_items, bill_seq, client_order_id, client_receipt_id, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, bill_address3, do_write, coupon_cd, alt_client_acct_group_id, track_data1, track_data2, alt_inv_template_no);
     }
 
-    public Map<String,Object> settleAccountBalance(Long client_no, java.lang.String auth_key, Long account_no, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, java.lang.String force_balance_scope){
+    public Map<String,Object> settleAccountBalance(Long client_no, java.lang.String auth_key, Long account_no, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, java.lang.String force_balance_scope, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -6695,6 +6707,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"track_data1",getValue("String", track_data1));
         addParameters(parameters,"track_data2",getValue("String", track_data2));
         addParameters(parameters,"force_balance_scope",getValue("String", force_balance_scope));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("settle_account_balance"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -6749,8 +6762,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String track_data1 = (java.lang.String) map.get("track_data1");
         String track_data2 = (java.lang.String) map.get("track_data2");
         String force_balance_scope = (java.lang.String) map.get("force_balance_scope");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return settleAccountBalance(client_no, auth_key, account_no, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, bill_address3, alt_client_acct_group_id, track_data1, track_data2, force_balance_scope);
+        return settleAccountBalance(client_no, auth_key, account_no, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, bill_address3, alt_client_acct_group_id, track_data1, track_data2, force_balance_scope, client_receipt_id);
     }
 
     public Map<String,Object> collectFromAccount(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double amount_to_collect, Long bill_seq, java.lang.String client_receipt_id, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, Long payment_application_method){
@@ -6957,7 +6971,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return applyServiceCredit(client_no, auth_key, account_no, credit_amount, credit_reason_code, comments);
     }
 
-    public Map<String,Object> applyCashCredit(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double credit_amount, Long credit_reason_code, java.lang.String comments, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id){
+    public Map<String,Object> applyCashCredit(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double credit_amount, Long credit_reason_code, java.lang.String comments, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -6966,6 +6980,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"credit_reason_code",getValue("Long", credit_reason_code));
         addParameters(parameters,"comments",getValue("String", comments));
         RestUtilities.addParameterValuesFromArray(parameters,specific_charge_transaction_id);
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("apply_cash_credit"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -6987,8 +7002,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         Long credit_reason_code = (Long) map.get("credit_reason_code");
         String comments = (java.lang.String) map.get("comments");
         com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id = (com.aria.common.shared.SpecificChargeTransactionIdArray) map.get("specific_charge_transaction_id");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return applyCashCredit(client_no, auth_key, account_no, credit_amount, credit_reason_code, comments, specific_charge_transaction_id);
+        return applyCashCredit(client_no, auth_key, account_no, credit_amount, credit_reason_code, comments, specific_charge_transaction_id, client_receipt_id);
     }
 
     public Map<String,Object> recordStandingOrder(Long client_no, java.lang.String auth_key, Long account_no, Long billing_interval_units, Long times_to_bill, java.lang.String billing_interval_type, java.lang.String first_bill_date, com.aria.common.shared.StandingOrderArray standing_order, java.lang.String client_order_id, java.lang.String client_receipt_id){
@@ -7608,7 +7624,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return getAllActionsByReceiptId(client_no, auth_key, acct_no, client_receipt_id);
     }
 
-    public Map<String,Object> managePendingInvoice(Long client_no, java.lang.String auth_key, Long invoice_no, Long acct_no, Long action_directive, Long bill_seq, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String alt_collect_on_approve, java.lang.String alt_send_statement_on_approve, java.lang.String cancel_orders_on_discard, java.lang.String bill_address3, java.lang.String track_data1, java.lang.String track_data2){
+    public Map<String,Object> managePendingInvoice(Long client_no, java.lang.String auth_key, Long invoice_no, Long acct_no, Long action_directive, Long bill_seq, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String alt_collect_on_approve, java.lang.String alt_send_statement_on_approve, java.lang.String cancel_orders_on_discard, java.lang.String bill_address3, java.lang.String track_data1, java.lang.String track_data2, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -7646,6 +7662,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"bill_address3",getValue("String", bill_address3));
         addParameters(parameters,"track_data1",getValue("String", track_data1));
         addParameters(parameters,"track_data2",getValue("String", track_data2));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("manage_pending_invoice"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -7708,8 +7725,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String bill_address3 = (java.lang.String) map.get("bill_address3");
         String track_data1 = (java.lang.String) map.get("track_data1");
         String track_data2 = (java.lang.String) map.get("track_data2");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return managePendingInvoice(client_no, auth_key, invoice_no, acct_no, action_directive, bill_seq, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, alt_collect_on_approve, alt_send_statement_on_approve, cancel_orders_on_discard, bill_address3, track_data1, track_data2);
+        return managePendingInvoice(client_no, auth_key, invoice_no, acct_no, action_directive, bill_seq, alt_pay_method, cc_number, cc_expire_mm, cc_expire_yyyy, bank_routing_num, bank_acct_num, bill_company_name, bill_first_name, bill_middle_initial, bill_last_name, bill_address1, bill_address2, bill_city, bill_locality, bill_state_prov, bill_zip, bill_country, bill_email, bill_phone, bill_phone_extension, bill_cell_phone, bill_work_phone, bill_work_phone_extension, cvv, alt_collect_on_approve, alt_send_statement_on_approve, cancel_orders_on_discard, bill_address3, track_data1, track_data2, client_receipt_id);
     }
 
     public Map<String,Object> cancelOrder(Long client_no, java.lang.String auth_key, Long acct_no, Long order_no){
@@ -7939,7 +7957,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return getReversibleInvsByPayment(client_no, auth_key, acct_no, payment_transaction_id);
     }
 
-    public Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse){
+    public Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -7952,6 +7970,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"do_write",getValue("String", do_write));
         addParameters(parameters,"auto_calc_refund",getValue("String", auto_calc_refund));
         RestUtilities.addParameterValuesFromArray(parameters,invoices_to_reverse);
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("issue_refund_to_acct"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -7980,8 +7999,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         String do_write = (java.lang.String) map.get("do_write");
         String auto_calc_refund = (java.lang.String) map.get("auto_calc_refund");
         com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse = (com.aria.common.shared.InvoicesToReverseArray) map.get("invoices_to_reverse");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return issueRefundToAcct(client_no, auth_key, acct_no, payment_transaction_id, reason_code, total_refund_amount, refund_check_number, comments, do_write, auto_calc_refund, invoices_to_reverse);
+        return issueRefundToAcct(client_no, auth_key, acct_no, payment_transaction_id, reason_code, total_refund_amount, refund_check_number, comments, do_write, auto_calc_refund, invoices_to_reverse, client_receipt_id);
     }
 
     public Map<String,Object> updateRefundCheckNo(Long client_no, java.lang.String auth_key, Long transaction_id, Long refund_check_number, Long acct_no, java.lang.String acct_user_id, java.lang.String client_acct_id){
@@ -8197,7 +8217,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return discardUsage(client_no, auth_key, usage_record_nos, client_record_ids, exclusion_reason_cd, exclusion_comment);
     }
 
-    public Map<String,Object> createWriteoffOrDispute(Long client_no, java.lang.String auth_key, Long acct_no, Long invoice_no, java.lang.Double amount, Long reason_code, java.lang.String comments, Long do_dispute){
+    public Map<String,Object> createWriteoffOrDispute(Long client_no, java.lang.String auth_key, Long acct_no, Long invoice_no, java.lang.Double amount, Long reason_code, java.lang.String comments, Long do_dispute, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -8207,6 +8227,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"reason_code",getValue("Long", reason_code));
         addParameters(parameters,"comments",getValue("String", comments));
         addParameters(parameters,"do_dispute",getValue("Long", do_dispute));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("create_writeoff_or_dispute"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -8241,8 +8262,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         Long reason_code = (Long) map.get("reason_code");
         String comments = (java.lang.String) map.get("comments");
         Long do_dispute = (Long) map.get("do_dispute");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return createWriteoffOrDispute(client_no, auth_key, acct_no, invoice_no, amount, reason_code, comments, do_dispute);
+        return createWriteoffOrDispute(client_no, auth_key, acct_no, invoice_no, amount, reason_code, comments, do_dispute, client_receipt_id);
     }
 
     public Map<String,Object> getAcctWriteoffOrDisputes(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_or_writeoff_flag, Long details_flag){
@@ -8301,7 +8323,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         return getInvoicesToWriteoffOrDispute(client_no, auth_key, acct_no);
     }
 
-    public Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments){
+    public Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments, java.lang.String client_receipt_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -8309,6 +8331,7 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         addParameters(parameters,"dispute_no",getValue("Long", dispute_no));
         addParameters(parameters,"settlement_action",getValue("Long", settlement_action));
         addParameters(parameters,"comments",getValue("String", comments));
+        addParameters(parameters,"client_receipt_id",getValue("String", client_receipt_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("settle_dispute_hold"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -8341,8 +8364,9 @@ public class AriaBillingCompleteRest extends BaseAriaBilling implements AriaBill
         Long dispute_no = (Long) map.get("dispute_no");
         Long settlement_action = (Long) map.get("settlement_action");
         String comments = (java.lang.String) map.get("comments");
+        String client_receipt_id = (java.lang.String) map.get("client_receipt_id");
         
-        return settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action, comments);
+        return settleDisputeHold(client_no, auth_key, acct_no, dispute_no, settlement_action, comments, client_receipt_id);
     }
 
     public Map<String,Object> setSessionAuth(Long client_no, java.lang.String auth_key, java.lang.String user_id, java.lang.String password){

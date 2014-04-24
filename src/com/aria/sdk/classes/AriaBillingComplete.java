@@ -893,6 +893,7 @@ public interface AriaBillingComplete {
     * @param change_status_after_coll - Type: java.lang.String
     * @param reset_dates_after_status - Type: java.lang.String
     * @param address3 - Type: java.lang.String
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -907,7 +908,7 @@ public interface AriaBillingComplete {
     *   proc_auth_code - Type: javax.xml.ws.Holder<br>
     *   proc_merch_comments - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> updateAcctBillingContact(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state, java.lang.String country, java.lang.String zip, java.lang.String intl_phone, java.lang.String email, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3);
+    abstract Map<String,Object> updateAcctBillingContact(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String first_name, java.lang.String last_name, java.lang.String middle_initial, java.lang.String company_name, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String locality, java.lang.String state, java.lang.String country, java.lang.String zip, java.lang.String intl_phone, java.lang.String email, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> updateAcctBillingContact(Map<String,Object> map);
 
@@ -950,6 +951,7 @@ public interface AriaBillingComplete {
     * @param do_collect - Type: java.lang.String
     * @param change_status_after_coll - Type: java.lang.String
     * @param reset_dates_after_status - Type: java.lang.String
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -964,7 +966,7 @@ public interface AriaBillingComplete {
     *   proc_auth_code - Type: javax.xml.ws.Holder<br>
     *   proc_merch_comments - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> setPayMethodBankDraft(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status);
+    abstract Map<String,Object> setPayMethodBankDraft(Long client_no, java.lang.String auth_key, Long account_no, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> setPayMethodBankDraft(Map<String,Object> map);
 
@@ -979,6 +981,7 @@ public interface AriaBillingComplete {
     * @param do_collect - Type: java.lang.String
     * @param change_status_after_coll - Type: java.lang.String
     * @param reset_dates_after_status - Type: java.lang.String
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -993,7 +996,7 @@ public interface AriaBillingComplete {
     *   proc_auth_code - Type: javax.xml.ws.Holder<br>
     *   proc_merch_comments - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> setPayMethodCc(Long client_no, java.lang.String auth_key, Long account_no, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String cc_number, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status);
+    abstract Map<String,Object> setPayMethodCc(Long client_no, java.lang.String auth_key, Long account_no, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String cc_number, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> setPayMethodCc(Map<String,Object> map);
 
@@ -1273,11 +1276,12 @@ public interface AriaBillingComplete {
     * @param account_number - Type: Long
     * @param plan_no_to_remove - Type: com.aria.common.shared.PlanNoToRemoveArray
     * @param remove_all_queued_plan_no - Type: java.lang.String
+    * @param remove_terminate_pending - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> cancelQueuedServicePlan(Long client_no, java.lang.String auth_key, Long account_number, com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove, java.lang.String remove_all_queued_plan_no);
+    abstract Map<String,Object> cancelQueuedServicePlan(Long client_no, java.lang.String auth_key, Long account_number, com.aria.common.shared.PlanNoToRemoveArray plan_no_to_remove, java.lang.String remove_all_queued_plan_no, java.lang.String remove_terminate_pending);
 
     abstract Map<String,Object> cancelQueuedServicePlan(Map<String,Object> map);
 
@@ -1568,6 +1572,7 @@ public interface AriaBillingComplete {
     * @param change_status_after_coll - Type: java.lang.String
     * @param reset_dates_after_status - Type: java.lang.String
     * @param address3 - Type: java.lang.String
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -1582,7 +1587,7 @@ public interface AriaBillingComplete {
     *   proc_auth_code - Type: javax.xml.ws.Holder<br>
     *   proc_merch_comments - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> updateExistingBillingInfo(Long client_no, java.lang.String auth_key, Long acct_no, Long seq_no, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String state, java.lang.String zip, java.lang.String country, Long cc_expire_mm, Long cc_expire_yyyy, Long phone_npa, Long phone_nxx, java.lang.String phone_suffix, java.lang.String phone_ext, java.lang.String phone_country_cd, java.lang.String intl_phone, java.lang.String email, java.lang.String locality, Long cell_phone_npa, Long cell_phone_nxx, java.lang.String cell_phone_suffix, Long work_phone_npa, Long work_phone_nxx, java.lang.String work_phone_suffix, java.lang.String work_phone_ext, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3);
+    abstract Map<String,Object> updateExistingBillingInfo(Long client_no, java.lang.String auth_key, Long acct_no, Long seq_no, java.lang.String address1, java.lang.String address2, java.lang.String city, java.lang.String state, java.lang.String zip, java.lang.String country, Long cc_expire_mm, Long cc_expire_yyyy, Long phone_npa, Long phone_nxx, java.lang.String phone_suffix, java.lang.String phone_ext, java.lang.String phone_country_cd, java.lang.String intl_phone, java.lang.String email, java.lang.String locality, Long cell_phone_npa, Long cell_phone_nxx, java.lang.String cell_phone_suffix, Long work_phone_npa, Long work_phone_nxx, java.lang.String work_phone_suffix, java.lang.String work_phone_ext, java.lang.String do_collect, java.lang.String change_status_after_coll, java.lang.String reset_dates_after_status, java.lang.String address3, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> updateExistingBillingInfo(Map<String,Object> map);
 
@@ -2364,8 +2369,8 @@ public interface AriaBillingComplete {
     * @param client_no - Type: Long
     * @param auth_key - Type: java.lang.String
     * @param acct_no - Type: Long
-    * @param specified_usage_type_no - Type: Long
     * @param date_range_start - Type: java.lang.String
+    * @param specified_usage_type_no - Type: Long
     * @param date_range_end - Type: java.lang.String
     * @param specified_usage_type_code - Type: java.lang.String
     * @param usage_qualifier_1 - Type: com.aria.common.shared.UsageQualifier1Array
@@ -2377,7 +2382,7 @@ public interface AriaBillingComplete {
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   usage_history_records - Type: ArrayList&#60;UsageHistoryRecordsReturnElement&#62;<br>
     */
-    abstract Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, Long specified_usage_type_no, java.lang.String date_range_start, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4);
+    abstract Map<String,Object> getUsageHistory(Long client_no, java.lang.String auth_key, Long acct_no, java.lang.String date_range_start, Long specified_usage_type_no, java.lang.String date_range_end, java.lang.String specified_usage_type_code, com.aria.common.shared.UsageQualifier1Array usage_qualifier_1, com.aria.common.shared.UsageQualifier2Array usage_qualifier_2, com.aria.common.shared.UsageQualifier3Array usage_qualifier_3, com.aria.common.shared.UsageQualifier4Array usage_qualifier_4);
 
     abstract Map<String,Object> getUsageHistory(Map<String,Object> map);
 
@@ -3611,13 +3616,14 @@ public interface AriaBillingComplete {
     * @param auth_key - Type: java.lang.String
     * @param source_account_no - Type: Long
     * @param target_account_no - Type: Long
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   transaction_id - Type: javax.xml.ws.Holder<br>
     *   balance_transferred - Type: javax.xml.ws.Holder<br>
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> transferAccountBalance(Long client_no, java.lang.String auth_key, Long source_account_no, Long target_account_no);
+    abstract Map<String,Object> transferAccountBalance(Long client_no, java.lang.String auth_key, Long source_account_no, Long target_account_no, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> transferAccountBalance(Map<String,Object> map);
 
@@ -3725,6 +3731,7 @@ public interface AriaBillingComplete {
     * @param track_data1 - Type: java.lang.String
     * @param track_data2 - Type: java.lang.String
     * @param force_balance_scope - Type: java.lang.String
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   transaction_id - Type: javax.xml.ws.Holder<br>
     *   proc_cvv_response - Type: javax.xml.ws.Holder<br>
@@ -3738,7 +3745,7 @@ public interface AriaBillingComplete {
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> settleAccountBalance(Long client_no, java.lang.String auth_key, Long account_no, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, java.lang.String force_balance_scope);
+    abstract Map<String,Object> settleAccountBalance(Long client_no, java.lang.String auth_key, Long account_no, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String bill_address3, java.lang.String alt_client_acct_group_id, java.lang.String track_data1, java.lang.String track_data2, java.lang.String force_balance_scope, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> settleAccountBalance(Map<String,Object> map);
 
@@ -3861,12 +3868,13 @@ public interface AriaBillingComplete {
     * @param credit_reason_code - Type: Long
     * @param comments - Type: java.lang.String
     * @param specific_charge_transaction_id - Type: com.aria.common.shared.SpecificChargeTransactionIdArray
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   transaction_id - Type: javax.xml.ws.Holder<br>
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> applyCashCredit(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double credit_amount, Long credit_reason_code, java.lang.String comments, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id);
+    abstract Map<String,Object> applyCashCredit(Long client_no, java.lang.String auth_key, Long account_no, java.lang.Double credit_amount, Long credit_reason_code, java.lang.String comments, com.aria.common.shared.SpecificChargeTransactionIdArray specific_charge_transaction_id, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> applyCashCredit(Map<String,Object> map);
 
@@ -4237,6 +4245,7 @@ public interface AriaBillingComplete {
     * @param bill_address3 - Type: java.lang.String
     * @param track_data1 - Type: java.lang.String
     * @param track_data2 - Type: java.lang.String
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   new_invoice_no - Type: javax.xml.ws.Holder<br>
     *   collection_error_code - Type: javax.xml.ws.Holder<br>
@@ -4254,7 +4263,7 @@ public interface AriaBillingComplete {
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> managePendingInvoice(Long client_no, java.lang.String auth_key, Long invoice_no, Long acct_no, Long action_directive, Long bill_seq, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String alt_collect_on_approve, java.lang.String alt_send_statement_on_approve, java.lang.String cancel_orders_on_discard, java.lang.String bill_address3, java.lang.String track_data1, java.lang.String track_data2);
+    abstract Map<String,Object> managePendingInvoice(Long client_no, java.lang.String auth_key, Long invoice_no, Long acct_no, Long action_directive, Long bill_seq, Long alt_pay_method, java.lang.String cc_number, Long cc_expire_mm, Long cc_expire_yyyy, java.lang.String bank_routing_num, java.lang.String bank_acct_num, java.lang.String bill_company_name, java.lang.String bill_first_name, java.lang.String bill_middle_initial, java.lang.String bill_last_name, java.lang.String bill_address1, java.lang.String bill_address2, java.lang.String bill_city, java.lang.String bill_locality, java.lang.String bill_state_prov, java.lang.String bill_zip, java.lang.String bill_country, java.lang.String bill_email, java.lang.String bill_phone, java.lang.String bill_phone_extension, java.lang.String bill_cell_phone, java.lang.String bill_work_phone, java.lang.String bill_work_phone_extension, java.lang.String cvv, java.lang.String alt_collect_on_approve, java.lang.String alt_send_statement_on_approve, java.lang.String cancel_orders_on_discard, java.lang.String bill_address3, java.lang.String track_data1, java.lang.String track_data2, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> managePendingInvoice(Map<String,Object> map);
 
@@ -4398,6 +4407,7 @@ public interface AriaBillingComplete {
     * @param do_write - Type: java.lang.String
     * @param auto_calc_refund - Type: java.lang.String
     * @param invoices_to_reverse - Type: com.aria.common.shared.InvoicesToReverseArray
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -4406,7 +4416,7 @@ public interface AriaBillingComplete {
     *   transaction_id - Type: javax.xml.ws.Holder<br>
     *   reversed_invoice_lines - Type: ArrayList&#60;ReversedInvoiceLinesReturnElement&#62;<br>
     */
-    abstract Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse);
+    abstract Map<String,Object> issueRefundToAcct(Long client_no, java.lang.String auth_key, Long acct_no, Long payment_transaction_id, Long reason_code, java.lang.Double total_refund_amount, java.lang.String refund_check_number, java.lang.String comments, java.lang.String do_write, java.lang.String auto_calc_refund, com.aria.common.shared.InvoicesToReverseArray invoices_to_reverse, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> issueRefundToAcct(Map<String,Object> map);
 
@@ -4534,6 +4544,7 @@ public interface AriaBillingComplete {
     * @param reason_code - Type: Long
     * @param comments - Type: java.lang.String
     * @param do_dispute - Type: Long
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -4551,7 +4562,7 @@ public interface AriaBillingComplete {
     *   dispute_ind - Type: javax.xml.ws.Holder<br>
     *   can_unsettle - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> createWriteoffOrDispute(Long client_no, java.lang.String auth_key, Long acct_no, Long invoice_no, java.lang.Double amount, Long reason_code, java.lang.String comments, Long do_dispute);
+    abstract Map<String,Object> createWriteoffOrDispute(Long client_no, java.lang.String auth_key, Long acct_no, Long invoice_no, java.lang.Double amount, Long reason_code, java.lang.String comments, Long do_dispute, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> createWriteoffOrDispute(Map<String,Object> map);
 
@@ -4593,6 +4604,7 @@ public interface AriaBillingComplete {
     * @param dispute_no - Type: Long
     * @param settlement_action - Type: Long
     * @param comments - Type: java.lang.String
+    * @param client_receipt_id - Type: java.lang.String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -4610,7 +4622,7 @@ public interface AriaBillingComplete {
     *   dispute_ind - Type: javax.xml.ws.Holder<br>
     *   can_unsettle - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments);
+    abstract Map<String,Object> settleDisputeHold(Long client_no, java.lang.String auth_key, Long acct_no, Long dispute_no, Long settlement_action, java.lang.String comments, java.lang.String client_receipt_id);
 
     abstract Map<String,Object> settleDisputeHold(Map<String,Object> map);
 

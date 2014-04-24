@@ -28,7 +28,7 @@ public abstract class BaseAriaBilling {
     protected int timeout = 120;
     protected boolean debug;
     protected String wsdlName = "complete-doc_literal_wrapped.wsdl";
-    protected String wsdlVersion = "6.14";
+    protected String wsdlVersion = "6.19";
     public String URL;
     public javax.xml.ws.Holder<java.lang.String> errorMsg;
     public javax.xml.ws.Holder<java.lang.Long> errorCode;
