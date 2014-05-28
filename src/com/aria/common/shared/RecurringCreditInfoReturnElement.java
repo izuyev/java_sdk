@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "recurring_credit_info_ReturnElement", propOrder = {"recurringCreditNo", "createDate", "createUser", "updateDate", "updateUser", "firstCreditDate", "lastCreditDate", "nextCreditDate", "creditAmount", "currencyCd", "creditsCompleted", "creditsRemaining", "creditIntervalMonths", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "serviceNoToApply", "serviceNameToApply", "creditStatusCd", "creditStatusLabel", "creditReasonCd", "creditReasonText", "comments", "cancelDate", "cancelUser", "cancelComments"})
+@XmlType(name = "recurring_credit_info_ReturnElement", propOrder = {"recurringCreditNo", "createDate", "createUser", "updateDate", "updateUser", "firstCreditDate", "lastCreditDate", "nextCreditDate", "creditAmount", "currencyCd", "creditsCompleted", "creditsRemaining", "creditIntervalMonths", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "serviceNoToApply", "serviceNameToApply", "creditStatusCd", "creditStatusLabel", "creditReasonCd", "creditReasonText", "comments", "cancelDate", "cancelUser", "cancelComments", "eligibleServiceTypes"})
 public class RecurringCreditInfoReturnElement {
 
     @XmlElement(name = "recurring_credit_no")
@@ -67,6 +67,8 @@ public class RecurringCreditInfoReturnElement {
     protected String cancelUser;
     @XmlElement(name = "cancel_comments")
     protected String cancelComments;
+    @XmlElement(name = "eligible_service_types")
+    protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
     
     public Long getRecurringCreditNo() {
         return recurringCreditNo;
@@ -284,5 +286,10 @@ public class RecurringCreditInfoReturnElement {
         this.cancelComments = value;
     }
 
-    
+    public List<EligibleServiceTypesReturnElement> getEligibleServiceTypes() {
+        if (this.eligibleServiceTypes == null) {
+            this.eligibleServiceTypes = new ArrayList<EligibleServiceTypesReturnElement>();
+        }
+        return this.eligibleServiceTypes;
+    }
 }

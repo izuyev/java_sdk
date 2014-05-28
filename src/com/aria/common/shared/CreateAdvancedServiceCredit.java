@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","amount","reasonCode","comments","eligiblePlanNo","eligibleServiceNo","altServiceNoToApply","frequencyNo","frequencyIntervalMonths","initialCreditDate","percentAmount","percentEvalPlanNo","percentEvalServiceNo"})
+    "authKey","acctNo","amount","reasonCode","comments","eligiblePlanNo","eligibleServiceNo","altServiceNoToApply","frequencyNo","frequencyIntervalMonths","initialCreditDate","percentAmount","percentEvalPlanNo","percentEvalServiceNo","eligibleServiceTypes"})
 @XmlRootElement(name = "create_advanced_service_credit")
 public class CreateAdvancedServiceCredit {
 
@@ -44,6 +44,8 @@ public class CreateAdvancedServiceCredit {
     protected Long percentEvalPlanNo;
     @XmlElement(name = "percent_eval_service_no")
     protected Long percentEvalServiceNo;
+    @XmlElement(name = "eligible_service_types")
+    protected EligibleServiceTypesArray eligibleServiceTypes;
     
     public long getClientNo() {
         return clientNo;
@@ -163,6 +165,14 @@ public class CreateAdvancedServiceCredit {
 
     public void setPercentEvalServiceNo(Long value) {
         this.percentEvalServiceNo = value;
+    }
+    
+    public EligibleServiceTypesArray getEligibleServiceTypes() {
+        return eligibleServiceTypes;
+    }
+
+    public void setEligibleServiceTypes(EligibleServiceTypesArray value) {
+        this.eligibleServiceTypes = value;
     }
     
     

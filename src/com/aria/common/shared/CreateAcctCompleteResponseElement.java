@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "acctNo", "outUserid", "invoicingErrorCode", "invoicingErrorMsg", "invoiceNo", "procCvvResponse", "procAvsResponse", "procCavvResponse", "procStatusCode", "procStatusText", "procPaymentId", "procAuthCode", "procMerchComments", "outNewAcctPlanContracts", "invoiceChargesBeforeTax", "invoiceTaxCharges", "invoiceChargesAfterTax", "invoiceCreditAmount", "invoiceTotalAmount", "newAcctInvoiceLineItems", "thirdPartyErrors"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "acctNo", "outUserid", "invoicingErrorCode", "invoicingErrorMsg", "invoiceNo", "procCvvResponse", "procAvsResponse", "procCavvResponse", "procStatusCode", "procStatusText", "procPaymentId", "procAuthCode", "procMerchComments", "outNewAcctPlanContracts", "invoiceChargesBeforeTax", "invoiceTaxCharges", "invoiceChargesAfterTax", "invoiceCreditAmount", "invoiceTotalAmount", "newAcctInvoiceLineItems", "thirdPartyErrors", "sessionId"})
 @XmlRootElement(name = "create_acct_completeResponseElement")
 public class CreateAcctCompleteResponseElement {
 
@@ -60,6 +60,8 @@ public class CreateAcctCompleteResponseElement {
     protected List<NewAcctInvoiceLineItemsReturnElement> newAcctInvoiceLineItems;
     @XmlElement(name = "third_party_errors")
     protected List<ThirdPartyErrorsReturnElement> thirdPartyErrors;
+    @XmlElement(name = "session_id")
+    protected String sessionId;
     
     public Long getErrorCode() {
         return errorCode;
@@ -236,5 +238,13 @@ public class CreateAcctCompleteResponseElement {
             this.thirdPartyErrors = new ArrayList<ThirdPartyErrorsReturnElement>();
         }
         return this.thirdPartyErrors;
+    }public String getSessionId() {
+        return sessionId;
     }
+
+    public void setSessionId(String value) {
+        this.sessionId = value;
+    }
+
+    
 }

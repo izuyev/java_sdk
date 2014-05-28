@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","orderLineItems","cartSuppPlans","clientOrderId","couponCode","comments","doWrite","clientReceiptId","billSeq","altPayMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankRoutingNum","bankAcctNum","billCompanyName","billFirstName","billMiddleInitial","billLastName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billZip","billCountry","billEmail","billPhone","billPhoneExtension","billCellPhone","billWorkPhone","billWorkPhoneExtension","cvv","billAddress3","trackData1","trackData2","altInvTemplateNo"})
+    "authKey","acctNo","orderLineItems","cartSuppPlans","clientOrderId","couponCode","comments","doWrite","clientReceiptId","billSeq","altPayMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankRoutingNum","bankAcctNum","billCompanyName","billFirstName","billMiddleInitial","billLastName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billZip","billCountry","billEmail","billPhone","billPhoneExtension","billCellPhone","billWorkPhone","billWorkPhoneExtension","cvv","billAddress3","trackData1","trackData2","altInvTemplateNo","syncMstrBillDatesOverride","multipleCoupons"})
 @XmlRootElement(name = "create_order_with_plans")
 public class CreateOrderWithPlans {
 
@@ -92,6 +92,10 @@ public class CreateOrderWithPlans {
     protected String trackData2;
     @XmlElement(name = "alt_inv_template_no")
     protected Long altInvTemplateNo;
+    @XmlElement(name = "sync_mstr_bill_dates_override")
+    protected Long syncMstrBillDatesOverride;
+    @XmlElement(name = "multiple_coupons")
+    protected MultipleCouponsArray multipleCoupons;
     
     public long getClientNo() {
         return clientNo;
@@ -403,6 +407,22 @@ public class CreateOrderWithPlans {
 
     public void setAltInvTemplateNo(Long value) {
         this.altInvTemplateNo = value;
+    }
+    
+    public Long getSyncMstrBillDatesOverride() {
+        return syncMstrBillDatesOverride;
+    }
+
+    public void setSyncMstrBillDatesOverride(Long value) {
+        this.syncMstrBillDatesOverride = value;
+    }
+    
+    public MultipleCouponsArray getMultipleCoupons() {
+        return multipleCoupons;
+    }
+
+    public void setMultipleCoupons(MultipleCouponsArray value) {
+        this.multipleCoupons = value;
     }
     
     

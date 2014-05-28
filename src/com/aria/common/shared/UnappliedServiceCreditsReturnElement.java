@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "unapplied_service_credits_ReturnElement", propOrder = {"creditId", "createDate", "createUser", "initialAmount", "amountLeftToApply", "reasonCd", "reasonText", "comments", "currencyCd", "serviceNoToApply", "serviceNameToApply", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName"})
+@XmlType(name = "unapplied_service_credits_ReturnElement", propOrder = {"creditId", "createDate", "createUser", "initialAmount", "amountLeftToApply", "reasonCd", "reasonText", "comments", "currencyCd", "serviceNoToApply", "serviceNameToApply", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "eligibleServiceTypes"})
 public class UnappliedServiceCreditsReturnElement {
 
     @XmlElement(name = "credit_id")
@@ -43,6 +43,8 @@ public class UnappliedServiceCreditsReturnElement {
     protected Long eligibleServiceNo;
     @XmlElement(name = "eligible_service_name")
     protected String eligibleServiceName;
+    @XmlElement(name = "eligible_service_types")
+    protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
     
     public Long getCreditId() {
         return creditId;
@@ -164,5 +166,10 @@ public class UnappliedServiceCreditsReturnElement {
         this.eligibleServiceName = value;
     }
 
-    
+    public List<EligibleServiceTypesReturnElement> getEligibleServiceTypes() {
+        if (this.eligibleServiceTypes == null) {
+            this.eligibleServiceTypes = new ArrayList<EligibleServiceTypesReturnElement>();
+        }
+        return this.eligibleServiceTypes;
+    }
 }

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","existingSuppPlanNo","newSuppPlanNo","altRateScheduleNo","numPlanUnits","couponCode","assignmentDirective","comments","doWrite","clientReceiptId","offsetMonths","autoOffsetMonthsOption","altClientAcctGroupId","newAcctCustomRates","effectiveDate","offsetInterval","invoiceUnbilledUsage"})
+    "authKey","acctNo","existingSuppPlanNo","newSuppPlanNo","altRateScheduleNo","numPlanUnits","couponCode","assignmentDirective","comments","doWrite","clientReceiptId","offsetMonths","autoOffsetMonthsOption","altClientAcctGroupId","newAcctCustomRates","effectiveDate","offsetInterval","invoiceUnbilledUsage","syncMstrBillDatesOverride"})
 @XmlRootElement(name = "replace_supp_plan")
 public class ReplaceSuppPlan {
 
@@ -52,6 +52,8 @@ public class ReplaceSuppPlan {
     protected Long offsetInterval;
     @XmlElement(name = "invoice_unbilled_usage")
     protected String invoiceUnbilledUsage;
+    @XmlElement(name = "sync_mstr_bill_dates_override")
+    protected Long syncMstrBillDatesOverride;
     
     public long getClientNo() {
         return clientNo;
@@ -203,6 +205,14 @@ public class ReplaceSuppPlan {
 
     public void setInvoiceUnbilledUsage(String value) {
         this.invoiceUnbilledUsage = value;
+    }
+    
+    public Long getSyncMstrBillDatesOverride() {
+        return syncMstrBillDatesOverride;
+    }
+
+    public void setSyncMstrBillDatesOverride(Long value) {
+        this.syncMstrBillDatesOverride = value;
     }
     
     

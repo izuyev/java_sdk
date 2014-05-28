@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","suppPlanNo","altRateScheduleNo","numPlanUnits","couponCode","assignmentDirective","comments","doWrite","clientReceiptId","contractTypeNo","contractAltRecurFee","contractLengthMonths","contractCancelFee","contractComments","contractStartDate","offsetMonths","autoOffsetMonthsOption","altProrationStartDate","altClientAcctGroupId","newAcctCustomRates","effectiveDate","offsetInterval","contractEndDate"})
+    "authKey","acctNo","suppPlanNo","altRateScheduleNo","numPlanUnits","couponCode","assignmentDirective","comments","doWrite","clientReceiptId","contractTypeNo","contractAltRecurFee","contractLengthMonths","contractCancelFee","contractComments","contractStartDate","offsetMonths","autoOffsetMonthsOption","altProrationStartDate","altClientAcctGroupId","newAcctCustomRates","effectiveDate","offsetInterval","contractEndDate","syncMstrBillDatesOverride"})
 @XmlRootElement(name = "assign_supp_plan")
 public class AssignSuppPlan {
 
@@ -64,6 +64,8 @@ public class AssignSuppPlan {
     protected Long offsetInterval;
     @XmlElement(name = "contract_end_date")
     protected String contractEndDate;
+    @XmlElement(name = "sync_mstr_bill_dates_override")
+    protected Long syncMstrBillDatesOverride;
     
     public long getClientNo() {
         return clientNo;
@@ -263,6 +265,14 @@ public class AssignSuppPlan {
 
     public void setContractEndDate(String value) {
         this.contractEndDate = value;
+    }
+    
+    public Long getSyncMstrBillDatesOverride() {
+        return syncMstrBillDatesOverride;
+    }
+
+    public void setSyncMstrBillDatesOverride(Long value) {
+        this.syncMstrBillDatesOverride = value;
     }
     
     

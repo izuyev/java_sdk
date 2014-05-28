@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","suppPlansToAssign","assignmentDirective","doWrite","comments","clientReceiptId","altProrationStartDate","couponCodes","effectiveDate"})
+    "authKey","acctNo","suppPlansToAssign","assignmentDirective","doWrite","comments","clientReceiptId","altProrationStartDate","couponCodes","effectiveDate","syncMstrBillDatesOverride"})
 @XmlRootElement(name = "assign_supp_plan_multi")
 public class AssignSuppPlanMulti {
 
@@ -36,6 +36,8 @@ public class AssignSuppPlanMulti {
     protected CouponCodesArray couponCodes;
     @XmlElement(name = "effective_date")
     protected String effectiveDate;
+    @XmlElement(name = "sync_mstr_bill_dates_override")
+    protected Long syncMstrBillDatesOverride;
     
     public long getClientNo() {
         return clientNo;
@@ -123,6 +125,14 @@ public class AssignSuppPlanMulti {
 
     public void setEffectiveDate(String value) {
         this.effectiveDate = value;
+    }
+    
+    public Long getSyncMstrBillDatesOverride() {
+        return syncMstrBillDatesOverride;
+    }
+
+    public void setSyncMstrBillDatesOverride(Long value) {
+        this.syncMstrBillDatesOverride = value;
     }
     
     

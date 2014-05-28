@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "credit_templates_ReturnElement", propOrder = {"creditTemplateNo", "templateName", "flatAmount", "percentAmount", "percentEvalPlanNo", "percentEvalServiceNo", "currencyCd", "eligiblePlanNo", "eligibleServiceNo", "altServiceNo2Apply", "numCreditsRequired", "creditIntervalMonths"})
+@XmlType(name = "credit_templates_ReturnElement", propOrder = {"creditTemplateNo", "templateName", "flatAmount", "percentAmount", "percentEvalPlanNo", "percentEvalServiceNo", "currencyCd", "eligiblePlanNo", "eligibleServiceNo", "altServiceNo2Apply", "numCreditsRequired", "creditIntervalMonths", "eligibleServiceTypes"})
 public class CreditTemplatesReturnElement {
 
     @XmlElement(name = "credit_template_no")
@@ -37,6 +37,8 @@ public class CreditTemplatesReturnElement {
     protected Double numCreditsRequired;
     @XmlElement(name = "credit_interval_months")
     protected Long creditIntervalMonths;
+    @XmlElement(name = "eligible_service_types")
+    protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
     
     public Long getCreditTemplateNo() {
         return creditTemplateNo;
@@ -134,5 +136,10 @@ public class CreditTemplatesReturnElement {
         this.creditIntervalMonths = value;
     }
 
-    
+    public List<EligibleServiceTypesReturnElement> getEligibleServiceTypes() {
+        if (this.eligibleServiceTypes == null) {
+            this.eligibleServiceTypes = new ArrayList<EligibleServiceTypesReturnElement>();
+        }
+        return this.eligibleServiceTypes;
+    }
 }

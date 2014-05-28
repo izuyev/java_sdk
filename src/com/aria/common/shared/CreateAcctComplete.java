@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","masterPlanNo","altStartDate","clientAcctId","userid","statusCd","masterPlanUnits","suppPlans","suppPlanUnits","notifyMethod","promoCd","password","secretQuestion","secretQuestionAnswer","firstName","mi","lastName","companyName","address1","address2","city","locality","stateProv","country","postalCd","phone","phoneExt","cellPhone","workPhone","workPhoneExt","email","birthdate","billFirstName","billMi","billLastName","billCompanyName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billCountry","billPostalCd","billPhone","billPhoneExt","billCellPhone","billWorkPhone","billWorkPhoneExt","billEmail","payMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankAcctNo","bankRoutingNo","respLevelCd","seniorAcctNo","seniorAcctUserId","clientSeniorAcctId","functionalAcctGroups","collectionsAcctGroups","suppFieldNames","suppFieldValues","testAcctInd","statusUntilAltStart","balanceForward","altBillDay","doFullInvoicing","doProratedInvoicing","masterPlanAltRateSchedNo","suppPlanAltRateSchedNo","clientReceiptId","currencyCd","cvv","taxpayerId","billAgreementId","retroactiveStartDate","couponCodes","newAcctCustomRates","altMsgTemplateNo","seqFuncGroupNo","newAcctPlanContracts","address3","billAddress3","usageAccumulationConfig","enableUsagePoolingPlanNo","clientFuncAcctGroupIds","clientCollAcctGroupIds","trackData1","trackData2","doWrite","taxExemptionLevel","cnAltMsgTemplateNo","invoiceApprovalRequired"})
+    "authKey","masterPlanNo","altStartDate","clientAcctId","userid","statusCd","masterPlanUnits","suppPlans","suppPlanUnits","notifyMethod","promoCd","password","secretQuestion","secretQuestionAnswer","firstName","mi","lastName","companyName","address1","address2","city","locality","stateProv","country","postalCd","phone","phoneExt","cellPhone","workPhone","workPhoneExt","email","birthdate","billFirstName","billMi","billLastName","billCompanyName","billAddress1","billAddress2","billCity","billLocality","billStateProv","billCountry","billPostalCd","billPhone","billPhoneExt","billCellPhone","billWorkPhone","billWorkPhoneExt","billEmail","payMethod","ccNumber","ccExpireMm","ccExpireYyyy","bankAcctNo","bankRoutingNo","respLevelCd","seniorAcctNo","seniorAcctUserId","clientSeniorAcctId","functionalAcctGroups","collectionsAcctGroups","suppFieldNames","suppFieldValues","testAcctInd","statusUntilAltStart","balanceForward","altBillDay","doFullInvoicing","doProratedInvoicing","masterPlanAltRateSchedNo","suppPlanAltRateSchedNo","clientReceiptId","currencyCd","cvv","taxpayerId","billAgreementId","retroactiveStartDate","couponCodes","newAcctCustomRates","altMsgTemplateNo","seqFuncGroupNo","newAcctPlanContracts","address3","billAddress3","usageAccumulationConfig","enableUsagePoolingPlanNo","clientFuncAcctGroupIds","clientCollAcctGroupIds","trackData1","trackData2","doWrite","taxExemptionLevel","cnAltMsgTemplateNo","invoiceApprovalRequired","createSession"})
 @XmlRootElement(name = "create_acct_complete")
 public class CreateAcctComplete {
 
@@ -204,6 +204,8 @@ public class CreateAcctComplete {
     protected Long cnAltMsgTemplateNo;
     @XmlElement(name = "invoice_approval_required")
     protected String invoiceApprovalRequired;
+    @XmlElement(name = "create_session")
+    protected String createSession;
     
     public long getClientNo() {
         return clientNo;
@@ -963,6 +965,14 @@ public class CreateAcctComplete {
 
     public void setInvoiceApprovalRequired(String value) {
         this.invoiceApprovalRequired = value;
+    }
+    
+    public String getCreateSession() {
+        return createSession;
+    }
+
+    public void setCreateSession(String value) {
+        this.createSession = value;
     }
     
     

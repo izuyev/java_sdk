@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "a1ErrorCode", "a1ErrorMsg", "a1AcctNo", "a1OutUserid", "a1OutClientAcctId", "a1InvoicingErrorCode", "a1InvoicingErrorMsg", "a1InvoiceNo", "a1ProcCvvResponse", "a1ProcAvsResponse", "a1ProcCavvResponse", "a1ProcStatusCode", "a1ProcStatusText", "a1ProcPaymentId", "a1ProcAuthCode", "a1ProcMerchComments", "a1OutNewAcctPlanContracts", "a1InvoiceChargesBeforeTax", "a1InvoiceTaxCharges", "a1InvoiceChargesAfterTax", "a1InvoiceCreditAmount", "a1InvoiceTotalAmount", "a1NewAcctInvoiceLineItems", "a1ThirdPartyErrors", "a2ErrorCode", "a2ErrorMsg", "a2AcctNo", "a2OutUserid", "a2OutClientAcctId", "a2InvoicingErrorCode", "a2InvoicingErrorMsg", "a2InvoiceNo", "a2ProcCvvResponse", "a2ProcAvsResponse", "a2ProcCavvResponse", "a2ProcStatusCode", "a2ProcStatusText", "a2ProcPaymentId", "a2ProcAuthCode", "a2ProcMerchComments", "a2OutNewAcctPlanContracts", "a2InvoiceChargesBeforeTax", "a2InvoiceTaxCharges", "a2InvoiceChargesAfterTax", "a2InvoiceCreditAmount", "a2InvoiceTotalAmount", "a2NewAcctInvoiceLineItems", "a2ThirdPartyErrors", "a3ErrorCode", "a3ErrorMsg", "a3AcctNo", "a3OutUserid", "a3OutClientAcctId", "a3InvoicingErrorCode", "a3InvoicingErrorMsg", "a3InvoiceNo", "a3ProcCvvResponse", "a3ProcAvsResponse", "a3ProcCavvResponse", "a3ProcStatusCode", "a3ProcStatusText", "a3ProcPaymentId", "a3ProcAuthCode", "a3ProcMerchComments", "a3OutNewAcctPlanContracts", "a3InvoiceChargesBeforeTax", "a3InvoiceTaxCharges", "a3InvoiceChargesAfterTax", "a3InvoiceCreditAmount", "a3InvoiceTotalAmount", "a3NewAcctInvoiceLineItems", "a3ThirdPartyErrors", "a4ErrorCode", "a4ErrorMsg", "a4AcctNo", "a4OutUserid", "a4OutClientAcctId", "a4InvoicingErrorCode", "a4InvoicingErrorMsg", "a4InvoiceNo", "a4ProcCvvResponse", "a4ProcAvsResponse", "a4ProcCavvResponse", "a4ProcStatusCode", "a4ProcStatusText", "a4ProcPaymentId", "a4ProcAuthCode", "a4ProcMerchComments", "a4OutNewAcctPlanContracts", "a4InvoiceChargesBeforeTax", "a4InvoiceTaxCharges", "a4InvoiceChargesAfterTax", "a4InvoiceCreditAmount", "a4InvoiceTotalAmount", "a4NewAcctInvoiceLineItems", "a4ThirdPartyErrors", "a5ErrorCode", "a5ErrorMsg", "a5AcctNo", "a5OutUserid", "a5OutClientAcctId", "a5InvoicingErrorCode", "a5InvoicingErrorMsg", "a5InvoiceNo", "a5ProcCvvResponse", "a5ProcAvsResponse", "a5ProcCavvResponse", "a5ProcStatusCode", "a5ProcStatusText", "a5ProcPaymentId", "a5ProcAuthCode", "a5ProcMerchComments", "a5OutNewAcctPlanContracts", "a5InvoiceChargesBeforeTax", "a5InvoiceTaxCharges", "a5InvoiceChargesAfterTax", "a5InvoiceCreditAmount", "a5InvoiceTotalAmount", "a5NewAcctInvoiceLineItems", "a5ThirdPartyErrors"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "a1ErrorCode", "a1ErrorMsg", "a1AcctNo", "a1OutUserid", "a1OutClientAcctId", "a1InvoicingErrorCode", "a1InvoicingErrorMsg", "a1InvoiceNo", "a1ProcCvvResponse", "a1ProcAvsResponse", "a1ProcCavvResponse", "a1ProcStatusCode", "a1ProcStatusText", "a1ProcPaymentId", "a1ProcAuthCode", "a1ProcMerchComments", "a1OutNewAcctPlanContracts", "a1InvoiceChargesBeforeTax", "a1InvoiceTaxCharges", "a1InvoiceChargesAfterTax", "a1InvoiceCreditAmount", "a1InvoiceTotalAmount", "a1NewAcctInvoiceLineItems", "a1ThirdPartyErrors", "a1SessionId", "a2ErrorCode", "a2ErrorMsg", "a2AcctNo", "a2OutUserid", "a2OutClientAcctId", "a2InvoicingErrorCode", "a2InvoicingErrorMsg", "a2InvoiceNo", "a2ProcCvvResponse", "a2ProcAvsResponse", "a2ProcCavvResponse", "a2ProcStatusCode", "a2ProcStatusText", "a2ProcPaymentId", "a2ProcAuthCode", "a2ProcMerchComments", "a2OutNewAcctPlanContracts", "a2InvoiceChargesBeforeTax", "a2InvoiceTaxCharges", "a2InvoiceChargesAfterTax", "a2InvoiceCreditAmount", "a2InvoiceTotalAmount", "a2NewAcctInvoiceLineItems", "a2ThirdPartyErrors", "a2SessionId", "a3ErrorCode", "a3ErrorMsg", "a3AcctNo", "a3OutUserid", "a3OutClientAcctId", "a3InvoicingErrorCode", "a3InvoicingErrorMsg", "a3InvoiceNo", "a3ProcCvvResponse", "a3ProcAvsResponse", "a3ProcCavvResponse", "a3ProcStatusCode", "a3ProcStatusText", "a3ProcPaymentId", "a3ProcAuthCode", "a3ProcMerchComments", "a3OutNewAcctPlanContracts", "a3InvoiceChargesBeforeTax", "a3InvoiceTaxCharges", "a3InvoiceChargesAfterTax", "a3InvoiceCreditAmount", "a3InvoiceTotalAmount", "a3NewAcctInvoiceLineItems", "a3ThirdPartyErrors", "a3SessionId", "a4ErrorCode", "a4ErrorMsg", "a4AcctNo", "a4OutUserid", "a4OutClientAcctId", "a4InvoicingErrorCode", "a4InvoicingErrorMsg", "a4InvoiceNo", "a4ProcCvvResponse", "a4ProcAvsResponse", "a4ProcCavvResponse", "a4ProcStatusCode", "a4ProcStatusText", "a4ProcPaymentId", "a4ProcAuthCode", "a4ProcMerchComments", "a4OutNewAcctPlanContracts", "a4InvoiceChargesBeforeTax", "a4InvoiceTaxCharges", "a4InvoiceChargesAfterTax", "a4InvoiceCreditAmount", "a4InvoiceTotalAmount", "a4NewAcctInvoiceLineItems", "a4ThirdPartyErrors", "a4SessionId", "a5ErrorCode", "a5ErrorMsg", "a5AcctNo", "a5OutUserid", "a5OutClientAcctId", "a5InvoicingErrorCode", "a5InvoicingErrorMsg", "a5InvoiceNo", "a5ProcCvvResponse", "a5ProcAvsResponse", "a5ProcCavvResponse", "a5ProcStatusCode", "a5ProcStatusText", "a5ProcPaymentId", "a5ProcAuthCode", "a5ProcMerchComments", "a5OutNewAcctPlanContracts", "a5InvoiceChargesBeforeTax", "a5InvoiceTaxCharges", "a5InvoiceChargesAfterTax", "a5InvoiceCreditAmount", "a5InvoiceTotalAmount", "a5NewAcctInvoiceLineItems", "a5ThirdPartyErrors", "a5SessionId"})
 @XmlRootElement(name = "create_acct_hierarchyResponseElement")
 public class CreateAcctHierarchyResponseElement {
 
@@ -66,6 +66,8 @@ public class CreateAcctHierarchyResponseElement {
     protected List<A1NewAcctInvoiceLineItemsReturnElement> a1NewAcctInvoiceLineItems;
     @XmlElement(name = "a1_third_party_errors")
     protected List<A1ThirdPartyErrorsReturnElement> a1ThirdPartyErrors;
+    @XmlElement(name = "a1_session_id")
+    protected String a1SessionId;
     @XmlElement(name = "a2_error_code")
     protected Long a2ErrorCode;
     @XmlElement(name = "a2_error_msg")
@@ -114,6 +116,8 @@ public class CreateAcctHierarchyResponseElement {
     protected List<A2NewAcctInvoiceLineItemsReturnElement> a2NewAcctInvoiceLineItems;
     @XmlElement(name = "a2_third_party_errors")
     protected List<A2ThirdPartyErrorsReturnElement> a2ThirdPartyErrors;
+    @XmlElement(name = "a2_session_id")
+    protected String a2SessionId;
     @XmlElement(name = "a3_error_code")
     protected Long a3ErrorCode;
     @XmlElement(name = "a3_error_msg")
@@ -162,6 +166,8 @@ public class CreateAcctHierarchyResponseElement {
     protected List<A3NewAcctInvoiceLineItemsReturnElement> a3NewAcctInvoiceLineItems;
     @XmlElement(name = "a3_third_party_errors")
     protected List<A3ThirdPartyErrorsReturnElement> a3ThirdPartyErrors;
+    @XmlElement(name = "a3_session_id")
+    protected String a3SessionId;
     @XmlElement(name = "a4_error_code")
     protected Long a4ErrorCode;
     @XmlElement(name = "a4_error_msg")
@@ -210,6 +216,8 @@ public class CreateAcctHierarchyResponseElement {
     protected List<A4NewAcctInvoiceLineItemsReturnElement> a4NewAcctInvoiceLineItems;
     @XmlElement(name = "a4_third_party_errors")
     protected List<A4ThirdPartyErrorsReturnElement> a4ThirdPartyErrors;
+    @XmlElement(name = "a4_session_id")
+    protected String a4SessionId;
     @XmlElement(name = "a5_error_code")
     protected Long a5ErrorCode;
     @XmlElement(name = "a5_error_msg")
@@ -258,6 +266,8 @@ public class CreateAcctHierarchyResponseElement {
     protected List<A5NewAcctInvoiceLineItemsReturnElement> a5NewAcctInvoiceLineItems;
     @XmlElement(name = "a5_third_party_errors")
     protected List<A5ThirdPartyErrorsReturnElement> a5ThirdPartyErrors;
+    @XmlElement(name = "a5_session_id")
+    protected String a5SessionId;
     
     public Long getErrorCode() {
         return errorCode;
@@ -458,7 +468,15 @@ public class CreateAcctHierarchyResponseElement {
             this.a1ThirdPartyErrors = new ArrayList<A1ThirdPartyErrorsReturnElement>();
         }
         return this.a1ThirdPartyErrors;
-    }public Long getA2ErrorCode() {
+    }public String getA1SessionId() {
+        return a1SessionId;
+    }
+
+    public void setA1SessionId(String value) {
+        this.a1SessionId = value;
+    }
+
+    public Long getA2ErrorCode() {
         return a2ErrorCode;
     }
 
@@ -641,7 +659,15 @@ public class CreateAcctHierarchyResponseElement {
             this.a2ThirdPartyErrors = new ArrayList<A2ThirdPartyErrorsReturnElement>();
         }
         return this.a2ThirdPartyErrors;
-    }public Long getA3ErrorCode() {
+    }public String getA2SessionId() {
+        return a2SessionId;
+    }
+
+    public void setA2SessionId(String value) {
+        this.a2SessionId = value;
+    }
+
+    public Long getA3ErrorCode() {
         return a3ErrorCode;
     }
 
@@ -824,7 +850,15 @@ public class CreateAcctHierarchyResponseElement {
             this.a3ThirdPartyErrors = new ArrayList<A3ThirdPartyErrorsReturnElement>();
         }
         return this.a3ThirdPartyErrors;
-    }public Long getA4ErrorCode() {
+    }public String getA3SessionId() {
+        return a3SessionId;
+    }
+
+    public void setA3SessionId(String value) {
+        this.a3SessionId = value;
+    }
+
+    public Long getA4ErrorCode() {
         return a4ErrorCode;
     }
 
@@ -1007,7 +1041,15 @@ public class CreateAcctHierarchyResponseElement {
             this.a4ThirdPartyErrors = new ArrayList<A4ThirdPartyErrorsReturnElement>();
         }
         return this.a4ThirdPartyErrors;
-    }public Long getA5ErrorCode() {
+    }public String getA4SessionId() {
+        return a4SessionId;
+    }
+
+    public void setA4SessionId(String value) {
+        this.a4SessionId = value;
+    }
+
+    public Long getA5ErrorCode() {
         return a5ErrorCode;
     }
 
@@ -1190,5 +1232,13 @@ public class CreateAcctHierarchyResponseElement {
             this.a5ThirdPartyErrors = new ArrayList<A5ThirdPartyErrorsReturnElement>();
         }
         return this.a5ThirdPartyErrors;
+    }public String getA5SessionId() {
+        return a5SessionId;
     }
+
+    public void setA5SessionId(String value) {
+        this.a5SessionId = value;
+    }
+
+    
 }

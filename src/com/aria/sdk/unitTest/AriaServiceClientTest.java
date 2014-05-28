@@ -1596,7 +1596,7 @@ public class AriaServiceClientTest {
     public void assignSuppPlan() throws Exception {
         com.aria.common.shared.NewAcctCustomRatesArray newAcctCustomRatesArray = new com.aria.common.shared.NewAcctCustomRatesArray();
         
-        hashMapReturnValues = getBaseAriaBilling().assignSuppPlan(getClientNo(), getAuthKey(), 1L, 1L, 1L, 1L, "", 1L, "", "", "", 1L, 1d, 1L, 1d, "", "", 1L, 1L, "", "", newAcctCustomRatesArray, "", 1L, "");
+        hashMapReturnValues = getBaseAriaBilling().assignSuppPlan(getClientNo(), getAuthKey(), 1L, 1L, 1L, 1L, "", 1L, "", "", "", 1L, 1d, 1L, 1d, "", "", 1L, 1L, "", "", newAcctCustomRatesArray, "", 1L, "", 1L);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "assignSuppPlan - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -1637,7 +1637,7 @@ public class AriaServiceClientTest {
     public void replaceSuppPlan() throws Exception {
         com.aria.common.shared.NewAcctCustomRatesArray newAcctCustomRatesArray = new com.aria.common.shared.NewAcctCustomRatesArray();
         
-        hashMapReturnValues = getBaseAriaBilling().replaceSuppPlan(getClientNo(), getAuthKey(), 1L, 1L, 1L, 1L, 1L, "", 1L, "", "", "", 1L, 1L, "", newAcctCustomRatesArray, "", 1L, "");
+        hashMapReturnValues = getBaseAriaBilling().replaceSuppPlan(getClientNo(), getAuthKey(), 1L, 1L, 1L, 1L, 1L, "", 1L, "", "", "", 1L, 1L, "", newAcctCustomRatesArray, "", 1L, "", 1L);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "replaceSuppPlan - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -1781,7 +1781,7 @@ public class AriaServiceClientTest {
         com.aria.common.shared.ClientFuncAcctGroupIdsArray clientFuncAcctGroupIdsArray = new com.aria.common.shared.ClientFuncAcctGroupIdsArray();
         com.aria.common.shared.ClientCollAcctGroupIdsArray clientCollAcctGroupIdsArray = new com.aria.common.shared.ClientCollAcctGroupIdsArray();
         
-        hashMapReturnValues = getBaseAriaBilling().createAcctComplete(getClientNo(), getAuthKey(), 1L, "", "", "", 1L, 1L, suppPlansArray, suppPlanUnitsArray, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", 1L, 1L, "", "", functionalAcctGroupsArray, collectionsAcctGroupsArray, suppFieldNamesArray, suppFieldValuesArray, 1L, 1L, 1d, 1L, "", "", 1L, suppPlanAltRateSchedNoArray, "", "", "", "", "", "", couponCodesArray, newAcctCustomRatesArray, 1L, 1L, newAcctPlanContractsArray, "", "", usageAccumulationConfigArray, enableUsagePoolingPlanNoArray, clientFuncAcctGroupIdsArray, clientCollAcctGroupIdsArray, "", "", "", 1L, 1L, "");
+        hashMapReturnValues = getBaseAriaBilling().createAcctComplete(getClientNo(), getAuthKey(), 1L, "", "", "", 1L, 1L, suppPlansArray, suppPlanUnitsArray, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, "", 1L, 1L, "", "", 1L, 1L, "", "", functionalAcctGroupsArray, collectionsAcctGroupsArray, suppFieldNamesArray, suppFieldValuesArray, 1L, 1L, 1d, 1L, "", "", 1L, suppPlanAltRateSchedNoArray, "", "", "", "", "", "", couponCodesArray, newAcctCustomRatesArray, 1L, 1L, newAcctPlanContractsArray, "", "", usageAccumulationConfigArray, enableUsagePoolingPlanNoArray, clientFuncAcctGroupIdsArray, clientCollAcctGroupIdsArray, "", "", "", 1L, 1L, "", "");
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -1806,8 +1806,9 @@ public class AriaServiceClientTest {
 
     //@Test
     public void createAdvancedServiceCredit() throws Exception {
+        com.aria.common.shared.EligibleServiceTypesArray eligibleServiceTypesArray = new com.aria.common.shared.EligibleServiceTypesArray();
         
-        hashMapReturnValues = getBaseAriaBilling().createAdvancedServiceCredit(getClientNo(), getAuthKey(), 1L, 1d, 1L, "", 1L, 1L, 1L, 1L, 1L, "", 1d, 1L, 1L);
+        hashMapReturnValues = getBaseAriaBilling().createAdvancedServiceCredit(getClientNo(), getAuthKey(), 1L, 1d, 1L, "", 1L, 1L, 1L, 1L, 1L, "", 1d, 1L, 1L, eligibleServiceTypesArray);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createAdvancedServiceCredit - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -2264,7 +2265,7 @@ public class AriaServiceClientTest {
         com.aria.common.shared.SuppPlansToAssignArray suppPlansToAssignArray = new com.aria.common.shared.SuppPlansToAssignArray();
         com.aria.common.shared.CouponCodesArray couponCodesArray = new com.aria.common.shared.CouponCodesArray();
         
-        hashMapReturnValues = getBaseAriaBilling().assignSuppPlanMulti(getClientNo(), getAuthKey(), 1L, suppPlansToAssignArray, 1L, "", "", "", "", couponCodesArray, "");
+        hashMapReturnValues = getBaseAriaBilling().assignSuppPlanMulti(getClientNo(), getAuthKey(), 1L, suppPlansToAssignArray, 1L, "", "", "", "", couponCodesArray, "", 1L);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "assignSuppPlanMulti - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
@@ -3153,8 +3154,9 @@ public class AriaServiceClientTest {
     public void createOrderWithPlans() throws Exception {
         com.aria.common.shared.OrderLineItemsArray orderLineItemsArray = new com.aria.common.shared.OrderLineItemsArray();
         com.aria.common.shared.CartSuppPlansArray cartSuppPlansArray = new com.aria.common.shared.CartSuppPlansArray();
+        com.aria.common.shared.MultipleCouponsArray multipleCouponsArray = new com.aria.common.shared.MultipleCouponsArray();
         
-        hashMapReturnValues = getBaseAriaBilling().createOrderWithPlans(getClientNo(), getAuthKey(), 1L, orderLineItemsArray, cartSuppPlansArray, "", "", "", "", "", 1L, 1L, "", 1L, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L);
+        hashMapReturnValues = getBaseAriaBilling().createOrderWithPlans(getClientNo(), getAuthKey(), 1L, orderLineItemsArray, cartSuppPlansArray, "", "", "", "", "", 1L, 1L, "", 1L, 1L, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 1L, 1L, multipleCouponsArray);
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createOrderWithPlans - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
