@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "multi_sp_invoice_line_items_ReturnElement", propOrder = {"lineNo", "lineType", "serviceNo", "serviceName", "lineUnits", "ratePerUnit", "lineAmount", "lineBaseUnits", "prorationFactor", "description", "dateRangeStart", "dateRangeEnd", "creditCouponCode", "planNo", "planName"})
+@XmlType(name = "multi_sp_invoice_line_items_ReturnElement", propOrder = {"lineNo", "lineType", "serviceNo", "serviceName", "lineUnits", "ratePerUnit", "lineAmount", "lineBaseUnits", "prorationFactor", "description", "dateRangeStart", "dateRangeEnd", "creditCouponCode", "planNo", "planName", "clientServiceId", "clientPlanId"})
 public class MultiSpInvoiceLineItemsReturnElement {
 
     @XmlElement(name = "line_no")
@@ -43,6 +43,10 @@ public class MultiSpInvoiceLineItemsReturnElement {
     protected Long planNo;
     @XmlElement(name = "plan_name")
     protected String planName;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
     
     public Long getLineNo() {
         return lineNo;
@@ -162,6 +166,22 @@ public class MultiSpInvoiceLineItemsReturnElement {
 
     public void setPlanName(String value) {
         this.planName = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
     }
 
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cancelled_supp_plans_ReturnElement", propOrder = {"suppPlanNo", "suppPlanName", "suppProrationResultAmount"})
+@XmlType(name = "cancelled_supp_plans_ReturnElement", propOrder = {"suppPlanNo", "suppPlanName", "suppProrationResultAmount", "clientSuppPlanId"})
 public class CancelledSuppPlansReturnElement {
 
     @XmlElement(name = "supp_plan_no")
@@ -19,6 +19,8 @@ public class CancelledSuppPlansReturnElement {
     protected String suppPlanName;
     @XmlElement(name = "supp_proration_result_amount")
     protected Double suppProrationResultAmount;
+    @XmlElement(name = "client_supp_plan_id")
+    protected String clientSuppPlanId;
     
     public Long getSuppPlanNo() {
         return suppPlanNo;
@@ -42,6 +44,14 @@ public class CancelledSuppPlansReturnElement {
 
     public void setSuppProrationResultAmount(Double value) {
         this.suppProrationResultAmount = value;
+    }
+
+    public String getClientSuppPlanId() {
+        return clientSuppPlanId;
+    }
+
+    public void setClientSuppPlanId(String value) {
+        this.clientSuppPlanId = value;
     }
 
     

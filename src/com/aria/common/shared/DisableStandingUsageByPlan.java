@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","planNo","comments"})
+    "authKey",    "acctNo",    "planNo",    "comments",    "clientPlanId"})
 @XmlRootElement(name = "disable_standing_usage_by_plan")
 public class DisableStandingUsageByPlan {
 
@@ -18,12 +18,14 @@ public class DisableStandingUsageByPlan {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "plan_no")
+        @XmlElement(name = "plan_no")
     protected Long planNo;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
+        @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
     
     public long getClientNo() {
         return clientNo;
@@ -48,22 +50,26 @@ public class DisableStandingUsageByPlan {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getPlanNo() {
+            public Long getPlanNo() {
         return planNo;
     }
 
     public void setPlanNo(Long value) {
         this.planNo = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    
+            public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+            
 }

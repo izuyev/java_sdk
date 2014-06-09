@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "queuedPlans", "currentRateScheduleNo"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "queuedPlans", "currentRateScheduleNo", "clientCurrentRateScheduleId"})
 @XmlRootElement(name = "get_queued_service_plansResponseElement")
 public class GetQueuedServicePlansResponseElement {
 
@@ -22,6 +22,8 @@ public class GetQueuedServicePlansResponseElement {
     protected List<QueuedPlansReturnElement> queuedPlans;
     @XmlElement(name = "current_rate_schedule_no")
     protected Long currentRateScheduleNo;
+    @XmlElement(name = "client_current_rate_schedule_id")
+    protected String clientCurrentRateScheduleId;
     
     public Long getErrorCode() {
         return errorCode;
@@ -50,6 +52,14 @@ public class GetQueuedServicePlansResponseElement {
 
     public void setCurrentRateScheduleNo(Long value) {
         this.currentRateScheduleNo = value;
+    }
+
+    public String getClientCurrentRateScheduleId() {
+        return clientCurrentRateScheduleId;
+    }
+
+    public void setClientCurrentRateScheduleId(String value) {
+        this.clientCurrentRateScheduleId = value;
     }
 
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "recurring_credit_info_ReturnElement", propOrder = {"recurringCreditNo", "createDate", "createUser", "updateDate", "updateUser", "firstCreditDate", "lastCreditDate", "nextCreditDate", "creditAmount", "currencyCd", "creditsCompleted", "creditsRemaining", "creditIntervalMonths", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "serviceNoToApply", "serviceNameToApply", "creditStatusCd", "creditStatusLabel", "creditReasonCd", "creditReasonText", "comments", "cancelDate", "cancelUser", "cancelComments", "eligibleServiceTypes"})
+@XmlType(name = "recurring_credit_info_ReturnElement", propOrder = {"recurringCreditNo", "createDate", "createUser", "updateDate", "updateUser", "firstCreditDate", "lastCreditDate", "nextCreditDate", "creditAmount", "currencyCd", "creditsCompleted", "creditsRemaining", "creditIntervalMonths", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "serviceNoToApply", "serviceNameToApply", "creditStatusCd", "creditStatusLabel", "creditReasonCd", "creditReasonText", "comments", "cancelDate", "cancelUser", "cancelComments", "clientEligiblePlanId", "clientEligibleServiceId", "clientServiceIdToApply", "eligibleServiceTypes"})
 public class RecurringCreditInfoReturnElement {
 
     @XmlElement(name = "recurring_credit_no")
@@ -67,6 +67,12 @@ public class RecurringCreditInfoReturnElement {
     protected String cancelUser;
     @XmlElement(name = "cancel_comments")
     protected String cancelComments;
+    @XmlElement(name = "client_eligible_plan_id")
+    protected String clientEligiblePlanId;
+    @XmlElement(name = "client_eligible_service_id")
+    protected String clientEligibleServiceId;
+    @XmlElement(name = "client_service_id_to_apply")
+    protected String clientServiceIdToApply;
     @XmlElement(name = "eligible_service_types")
     protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
     
@@ -284,6 +290,30 @@ public class RecurringCreditInfoReturnElement {
 
     public void setCancelComments(String value) {
         this.cancelComments = value;
+    }
+
+    public String getClientEligiblePlanId() {
+        return clientEligiblePlanId;
+    }
+
+    public void setClientEligiblePlanId(String value) {
+        this.clientEligiblePlanId = value;
+    }
+
+    public String getClientEligibleServiceId() {
+        return clientEligibleServiceId;
+    }
+
+    public void setClientEligibleServiceId(String value) {
+        this.clientEligibleServiceId = value;
+    }
+
+    public String getClientServiceIdToApply() {
+        return clientServiceIdToApply;
+    }
+
+    public void setClientServiceIdToApply(String value) {
+        this.clientServiceIdToApply = value;
     }
 
     public List<EligibleServiceTypesReturnElement> getEligibleServiceTypes() {

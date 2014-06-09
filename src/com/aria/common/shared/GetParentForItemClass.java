@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","filterClassNo"})
+    "authKey",    "filterClassNo"})
 @XmlRootElement(name = "get_parent_for_item_class")
 public class GetParentForItemClass {
 
@@ -18,7 +18,7 @@ public class GetParentForItemClass {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "filter_class_no")
+        @XmlElement(name = "filter_class_no")
     protected Long filterClassNo;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class GetParentForItemClass {
     public void setFilterClassNo(Long value) {
         this.filterClassNo = value;
     }
-    
-    
+            
 }

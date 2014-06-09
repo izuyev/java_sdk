@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","planNo","typeNo","lengthMonths","createComments","startDate","doAutoDiscard","endDate"})
+    "authKey",    "acctNo",    "planNo",    "typeNo",    "lengthMonths",    "createComments",    "startDate",    "doAutoDiscard",    "endDate",    "clientPlanId"})
 @XmlRootElement(name = "create_acct_multiplan_contract")
 public class CreateAcctMultiplanContract {
 
@@ -18,22 +18,24 @@ public class CreateAcctMultiplanContract {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "plan_no")
+        @XmlElement(name = "plan_no")
     protected PlanNoArray planNo;
-    @XmlElement(name = "type_no")
+        @XmlElement(name = "type_no")
     protected Long typeNo;
-    @XmlElement(name = "length_months")
+        @XmlElement(name = "length_months")
     protected Long lengthMonths;
-    @XmlElement(name = "create_comments")
+        @XmlElement(name = "create_comments")
     protected String createComments;
-    @XmlElement(name = "start_date")
+        @XmlElement(name = "start_date")
     protected String startDate;
-    @XmlElement(name = "do_auto_discard")
+        @XmlElement(name = "do_auto_discard")
     protected String doAutoDiscard;
-    @XmlElement(name = "end_date")
+        @XmlElement(name = "end_date")
     protected String endDate;
+        @XmlElement(name = "client_plan_id")
+    protected ClientPlanIdArray clientPlanId;
     
     public long getClientNo() {
         return clientNo;
@@ -58,62 +60,61 @@ public class CreateAcctMultiplanContract {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public PlanNoArray getPlanNo() {
+            public PlanNoArray getPlanNo() {
         return planNo;
     }
 
     public void setPlanNo(PlanNoArray value) {
         this.planNo = value;
     }
-    
-    public Long getTypeNo() {
+            public Long getTypeNo() {
         return typeNo;
     }
 
     public void setTypeNo(Long value) {
         this.typeNo = value;
     }
-    
-    public Long getLengthMonths() {
+            public Long getLengthMonths() {
         return lengthMonths;
     }
 
     public void setLengthMonths(Long value) {
         this.lengthMonths = value;
     }
-    
-    public String getCreateComments() {
+            public String getCreateComments() {
         return createComments;
     }
 
     public void setCreateComments(String value) {
         this.createComments = value;
     }
-    
-    public String getStartDate() {
+            public String getStartDate() {
         return startDate;
     }
 
     public void setStartDate(String value) {
         this.startDate = value;
     }
-    
-    public String getDoAutoDiscard() {
+            public String getDoAutoDiscard() {
         return doAutoDiscard;
     }
 
     public void setDoAutoDiscard(String value) {
         this.doAutoDiscard = value;
     }
-    
-    public String getEndDate() {
+            public String getEndDate() {
         return endDate;
     }
 
     public void setEndDate(String value) {
         this.endDate = value;
     }
-    
-    
+            public ClientPlanIdArray getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(ClientPlanIdArray value) {
+        this.clientPlanId = value;
+    }
+            
 }

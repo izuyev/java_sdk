@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "plan_hist_ReturnElement", propOrder = {"startDate", "endDate", "planName", "newPlan", "clientReceiptId", "planUnits"})
+@XmlType(name = "plan_hist_ReturnElement", propOrder = {"startDate", "endDate", "planName", "newPlan", "clientReceiptId", "planUnits", "clientNewPlanId"})
 public class PlanHistReturnElement {
 
     @XmlElement(name = "start_date")
@@ -25,6 +25,8 @@ public class PlanHistReturnElement {
     protected String clientReceiptId;
     @XmlElement(name = "plan_units")
     protected Double planUnits;
+    @XmlElement(name = "client_new_plan_id")
+    protected String clientNewPlanId;
     
     public String getStartDate() {
         return startDate;
@@ -72,6 +74,14 @@ public class PlanHistReturnElement {
 
     public void setPlanUnits(Double value) {
         this.planUnits = value;
+    }
+
+    public String getClientNewPlanId() {
+        return clientNewPlanId;
+    }
+
+    public void setClientNewPlanId(String value) {
+        this.clientNewPlanId = value;
     }
 
     

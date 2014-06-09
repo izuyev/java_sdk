@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","creditAmount","creditReasonCode","comments"})
+    "authKey",    "accountNo",    "creditAmount",    "creditReasonCode",    "comments"})
 @XmlRootElement(name = "apply_service_credit")
 public class ApplyServiceCredit {
 
@@ -18,13 +18,13 @@ public class ApplyServiceCredit {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_no")
+        @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "credit_amount")
+        @XmlElement(name = "credit_amount")
     protected Double creditAmount;
-    @XmlElement(name = "credit_reason_code")
+        @XmlElement(name = "credit_reason_code")
     protected Long creditReasonCode;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class ApplyServiceCredit {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-    
-    public Double getCreditAmount() {
+            public Double getCreditAmount() {
         return creditAmount;
     }
 
     public void setCreditAmount(Double value) {
         this.creditAmount = value;
     }
-    
-    public Long getCreditReasonCode() {
+            public Long getCreditReasonCode() {
         return creditReasonCode;
     }
 
     public void setCreditReasonCode(Long value) {
         this.creditReasonCode = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    
+            
 }

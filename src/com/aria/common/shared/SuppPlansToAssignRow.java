@@ -20,7 +20,9 @@ import javax.xml.bind.annotation.XmlType;
     "offsetMonths",
     "autoOffsetMonthsOption",
     "offsetInterval",
-    "contractEndDate"
+    "contractEndDate",
+    "clientSuppPlanId",
+    "clientAltRateScheduleId"
     })
 public class SuppPlansToAssignRow {
 
@@ -50,6 +52,10 @@ public class SuppPlansToAssignRow {
     protected Long offsetInterval;
     @XmlElement(name = "contract_end_date")
     protected String contractEndDate;
+    @XmlElement(name = "client_supp_plan_id")
+    protected String clientSuppPlanId;
+    @XmlElement(name = "client_alt_rate_schedule_id")
+    protected String clientAltRateScheduleId;
     public Long getSuppPlanNo() {
         return suppPlanNo;
     }
@@ -152,6 +158,22 @@ public class SuppPlansToAssignRow {
 
     public void setContractEndDate(String value) {
         this.contractEndDate = value;
+    }
+
+    public String getClientSuppPlanId() {
+        return clientSuppPlanId;
+    }
+
+    public void setClientSuppPlanId(String value) {
+        this.clientSuppPlanId = value;
+    }
+
+    public String getClientAltRateScheduleId() {
+        return clientAltRateScheduleId;
+    }
+
+    public void setClientAltRateScheduleId(String value) {
+        this.clientAltRateScheduleId = value;
     }
 
     

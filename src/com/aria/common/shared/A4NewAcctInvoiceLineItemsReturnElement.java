@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "a4_new_acct_invoice_line_items_ReturnElement", propOrder = {"a4InvoiceLineNo", "a4InvoicePlanNo", "a4InvoicePlanName", "a4InvoiceServiceNo", "a4InvoiceServiceName", "a4InvoiceServiceCoaId", "a4InvoiceUnits", "a4InvoiceRatePerUnit", "a4InvoiceLineAmount", "a4InvoiceLineDescription", "a4InvoiceStartDateRange", "a4InvoiceEndDateRange"})
+@XmlType(name = "a4_new_acct_invoice_line_items_ReturnElement", propOrder = {"a4InvoiceLineNo", "a4InvoicePlanNo", "a4InvoicePlanName", "a4InvoiceServiceNo", "a4InvoiceServiceName", "a4InvoiceServiceCoaId", "a4InvoiceUnits", "a4InvoiceRatePerUnit", "a4InvoiceLineAmount", "a4InvoiceLineDescription", "a4InvoiceStartDateRange", "a4InvoiceEndDateRange", "a4ClientInvoicePlanId", "a4ClientInvoiceServiceId", "a4ClientInvoiceServiceCoaCode"})
 public class A4NewAcctInvoiceLineItemsReturnElement {
 
     @XmlElement(name = "a4_invoice_line_no")
@@ -37,6 +37,12 @@ public class A4NewAcctInvoiceLineItemsReturnElement {
     protected String a4InvoiceStartDateRange;
     @XmlElement(name = "a4_invoice_end_date_range")
     protected String a4InvoiceEndDateRange;
+    @XmlElement(name = "a4_client_invoice_plan_id")
+    protected String a4ClientInvoicePlanId;
+    @XmlElement(name = "a4_client_invoice_service_id")
+    protected String a4ClientInvoiceServiceId;
+    @XmlElement(name = "a4_client_invoice_service_coa_code")
+    protected String a4ClientInvoiceServiceCoaCode;
     
     public Long getA4InvoiceLineNo() {
         return a4InvoiceLineNo;
@@ -132,6 +138,30 @@ public class A4NewAcctInvoiceLineItemsReturnElement {
 
     public void setA4InvoiceEndDateRange(String value) {
         this.a4InvoiceEndDateRange = value;
+    }
+
+    public String getA4ClientInvoicePlanId() {
+        return a4ClientInvoicePlanId;
+    }
+
+    public void setA4ClientInvoicePlanId(String value) {
+        this.a4ClientInvoicePlanId = value;
+    }
+
+    public String getA4ClientInvoiceServiceId() {
+        return a4ClientInvoiceServiceId;
+    }
+
+    public void setA4ClientInvoiceServiceId(String value) {
+        this.a4ClientInvoiceServiceId = value;
+    }
+
+    public String getA4ClientInvoiceServiceCoaCode() {
+        return a4ClientInvoiceServiceCoaCode;
+    }
+
+    public void setA4ClientInvoiceServiceCoaCode(String value) {
+        this.a4ClientInvoiceServiceCoaCode = value;
     }
 
     

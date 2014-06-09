@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","dateRangeStart","dateRangeEnd","doUrlEncoding"})
+    "authKey",    "acctNo",    "dateRangeStart",    "dateRangeEnd",    "doUrlEncoding"})
 @XmlRootElement(name = "get_acct_comments")
 public class GetAcctComments {
 
@@ -18,13 +18,13 @@ public class GetAcctComments {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "date_range_start")
+        @XmlElement(name = "date_range_start")
     protected String dateRangeStart;
-    @XmlElement(name = "date_range_end")
+        @XmlElement(name = "date_range_end")
     protected String dateRangeEnd;
-    @XmlElement(name = "do_url_encoding")
+        @XmlElement(name = "do_url_encoding")
     protected String doUrlEncoding;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class GetAcctComments {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public String getDateRangeStart() {
+            public String getDateRangeStart() {
         return dateRangeStart;
     }
 
     public void setDateRangeStart(String value) {
         this.dateRangeStart = value;
     }
-    
-    public String getDateRangeEnd() {
+            public String getDateRangeEnd() {
         return dateRangeEnd;
     }
 
     public void setDateRangeEnd(String value) {
         this.dateRangeEnd = value;
     }
-    
-    public String getDoUrlEncoding() {
+            public String getDoUrlEncoding() {
         return doUrlEncoding;
     }
 
     public void setDoUrlEncoding(String value) {
         this.doUrlEncoding = value;
     }
-    
-    
+            
 }

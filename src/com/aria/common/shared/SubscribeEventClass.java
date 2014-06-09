@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","classNo","doWrite"})
+    "authKey",    "classNo",    "doWrite"})
 @XmlRootElement(name = "subscribe_event_class")
 public class SubscribeEventClass {
 
@@ -18,9 +18,9 @@ public class SubscribeEventClass {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "class_no")
+        @XmlElement(name = "class_no")
     protected Long classNo;
-    @XmlElement(name = "do_write")
+        @XmlElement(name = "do_write")
     protected String doWrite;
     
     public long getClientNo() {
@@ -46,14 +46,12 @@ public class SubscribeEventClass {
     public void setClassNo(Long value) {
         this.classNo = value;
     }
-    
-    public String getDoWrite() {
+            public String getDoWrite() {
         return doWrite;
     }
 
     public void setDoWrite(String value) {
         this.doWrite = value;
     }
-    
-    
+            
 }

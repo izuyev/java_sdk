@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","setName"})
+    "authKey",    "setName"})
 @XmlRootElement(name = "clear_reg_uss_config_params")
 public class ClearRegUssConfigParams {
 
@@ -18,7 +18,7 @@ public class ClearRegUssConfigParams {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "set_name")
+        @XmlElement(name = "set_name")
     protected String setName;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class ClearRegUssConfigParams {
     public void setSetName(String value) {
         this.setName = value;
     }
-    
-    
+            
 }

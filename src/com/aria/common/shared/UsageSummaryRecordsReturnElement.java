@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "usage_summary_records_ReturnElement", propOrder = {"usageTypeNo", "usageTypeLabel", "billedInd", "totalUnits", "totalValueAmount", "totalValueCurrencyCode", "lastUsageDate"})
+@XmlType(name = "usage_summary_records_ReturnElement", propOrder = {"usageTypeNo", "usageTypeLabel", "billedInd", "totalUnits", "totalValueAmount", "totalValueCurrencyCode", "lastUsageDate", "usageTypeCd"})
 public class UsageSummaryRecordsReturnElement {
 
     @XmlElement(name = "usage_type_no")
@@ -27,6 +27,8 @@ public class UsageSummaryRecordsReturnElement {
     protected String totalValueCurrencyCode;
     @XmlElement(name = "last_usage_date")
     protected String lastUsageDate;
+    @XmlElement(name = "usage_type_cd")
+    protected String usageTypeCd;
     
     public Long getUsageTypeNo() {
         return usageTypeNo;
@@ -82,6 +84,14 @@ public class UsageSummaryRecordsReturnElement {
 
     public void setLastUsageDate(String value) {
         this.lastUsageDate = value;
+    }
+
+    public String getUsageTypeCd() {
+        return usageTypeCd;
+    }
+
+    public void setUsageTypeCd(String value) {
+        this.usageTypeCd = value;
     }
 
     

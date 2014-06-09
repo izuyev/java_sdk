@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "custom_rate_ReturnElement", propOrder = {"customRateServiceNo", "customRateSeqNo", "customRateFromUnit", "customRateToUnit", "customRatePerUnit"})
+@XmlType(name = "custom_rate_ReturnElement", propOrder = {"customRateServiceNo", "customRateSeqNo", "customRateFromUnit", "customRateToUnit", "customRatePerUnit", "clientCustomRateServiceId"})
 public class CustomRateReturnElement {
 
     @XmlElement(name = "custom_rate_service_no")
@@ -23,6 +23,8 @@ public class CustomRateReturnElement {
     protected Long customRateToUnit;
     @XmlElement(name = "custom_rate_per_unit")
     protected Double customRatePerUnit;
+    @XmlElement(name = "client_custom_rate_service_id")
+    protected String clientCustomRateServiceId;
     
     public Long getCustomRateServiceNo() {
         return customRateServiceNo;
@@ -62,6 +64,14 @@ public class CustomRateReturnElement {
 
     public void setCustomRatePerUnit(Double value) {
         this.customRatePerUnit = value;
+    }
+
+    public String getClientCustomRateServiceId() {
+        return clientCustomRateServiceId;
+    }
+
+    public void setClientCustomRateServiceId(String value) {
+        this.clientCustomRateServiceId = value;
     }
 
     

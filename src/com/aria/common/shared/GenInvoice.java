@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","forcePending","clientReceiptId","altBillDay"})
+    "authKey",    "acctNo",    "forcePending",    "clientReceiptId",    "altBillDay"})
 @XmlRootElement(name = "gen_invoice")
 public class GenInvoice {
 
@@ -18,13 +18,13 @@ public class GenInvoice {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "force_pending")
+        @XmlElement(name = "force_pending")
     protected String forcePending;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
-    @XmlElement(name = "alt_bill_day")
+        @XmlElement(name = "alt_bill_day")
     protected Long altBillDay;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class GenInvoice {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public String getForcePending() {
+            public String getForcePending() {
         return forcePending;
     }
 
     public void setForcePending(String value) {
         this.forcePending = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    public Long getAltBillDay() {
+            public Long getAltBillDay() {
         return altBillDay;
     }
 
     public void setAltBillDay(Long value) {
         this.altBillDay = value;
     }
-    
-    
+            
 }

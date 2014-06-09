@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","usageRecordNos","clientRecordIds","exclusionReasonCd","exclusionComment"})
+    "authKey",    "usageRecordNos",    "clientRecordIds",    "exclusionReasonCd",    "exclusionComment"})
 @XmlRootElement(name = "discard_usage")
 public class DiscardUsage {
 
@@ -18,13 +18,13 @@ public class DiscardUsage {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "usage_record_nos")
+        @XmlElement(name = "usage_record_nos")
     protected UsageRecordNosArray usageRecordNos;
-    @XmlElement(name = "client_record_ids")
+        @XmlElement(name = "client_record_ids")
     protected ClientRecordIdsArray clientRecordIds;
-    @XmlElement(name = "exclusion_reason_cd")
+        @XmlElement(name = "exclusion_reason_cd")
     protected Long exclusionReasonCd;
-    @XmlElement(name = "exclusion_comment")
+        @XmlElement(name = "exclusion_comment")
     protected String exclusionComment;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class DiscardUsage {
     public void setUsageRecordNos(UsageRecordNosArray value) {
         this.usageRecordNos = value;
     }
-    
-    public ClientRecordIdsArray getClientRecordIds() {
+            public ClientRecordIdsArray getClientRecordIds() {
         return clientRecordIds;
     }
 
     public void setClientRecordIds(ClientRecordIdsArray value) {
         this.clientRecordIds = value;
     }
-    
-    public Long getExclusionReasonCd() {
+            public Long getExclusionReasonCd() {
         return exclusionReasonCd;
     }
 
     public void setExclusionReasonCd(Long value) {
         this.exclusionReasonCd = value;
     }
-    
-    public String getExclusionComment() {
+            public String getExclusionComment() {
         return exclusionComment;
     }
 
     public void setExclusionComment(String value) {
         this.exclusionComment = value;
     }
-    
-    
+            
 }

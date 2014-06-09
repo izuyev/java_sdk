@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","transactionType","startDate","endDate","recordLimit","filterStatementNo","includeVoidTransactions"})
+    "authKey",    "accountNo",    "transactionType",    "startDate",    "endDate",    "recordLimit",    "filterStatementNo",    "includeVoidTransactions"})
 @XmlRootElement(name = "get_acct_trans_history")
 public class GetAcctTransHistory {
 
@@ -18,19 +18,19 @@ public class GetAcctTransHistory {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_no")
+        @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "transaction_type")
+        @XmlElement(name = "transaction_type")
     protected Long transactionType;
-    @XmlElement(name = "start_date")
+        @XmlElement(name = "start_date")
     protected String startDate;
-    @XmlElement(name = "end_date")
+        @XmlElement(name = "end_date")
     protected String endDate;
-    @XmlElement(name = "record_limit")
+        @XmlElement(name = "record_limit")
     protected Long recordLimit;
-    @XmlElement(name = "filter_statement_no")
+        @XmlElement(name = "filter_statement_no")
     protected Long filterStatementNo;
-    @XmlElement(name = "include_void_transactions")
+        @XmlElement(name = "include_void_transactions")
     protected String includeVoidTransactions;
     
     public long getClientNo() {
@@ -56,54 +56,47 @@ public class GetAcctTransHistory {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-    
-    public Long getTransactionType() {
+            public Long getTransactionType() {
         return transactionType;
     }
 
     public void setTransactionType(Long value) {
         this.transactionType = value;
     }
-    
-    public String getStartDate() {
+            public String getStartDate() {
         return startDate;
     }
 
     public void setStartDate(String value) {
         this.startDate = value;
     }
-    
-    public String getEndDate() {
+            public String getEndDate() {
         return endDate;
     }
 
     public void setEndDate(String value) {
         this.endDate = value;
     }
-    
-    public Long getRecordLimit() {
+            public Long getRecordLimit() {
         return recordLimit;
     }
 
     public void setRecordLimit(Long value) {
         this.recordLimit = value;
     }
-    
-    public Long getFilterStatementNo() {
+            public Long getFilterStatementNo() {
         return filterStatementNo;
     }
 
     public void setFilterStatementNo(Long value) {
         this.filterStatementNo = value;
     }
-    
-    public String getIncludeVoidTransactions() {
+            public String getIncludeVoidTransactions() {
         return includeVoidTransactions;
     }
 
     public void setIncludeVoidTransactions(String value) {
         this.includeVoidTransactions = value;
     }
-    
-    
+            
 }

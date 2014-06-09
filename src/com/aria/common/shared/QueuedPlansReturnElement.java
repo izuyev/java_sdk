@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "queued_plans_ReturnElement", propOrder = {"originalPlan", "originalPlanNo", "newPlan", "newPlanNo", "changeDate", "newRateScheduleNo", "clientReceiptId", "newPlanUnits", "newPlanType", "customRate"})
+@XmlType(name = "queued_plans_ReturnElement", propOrder = {"originalPlan", "originalPlanNo", "newPlan", "newPlanNo", "changeDate", "newRateScheduleNo", "clientReceiptId", "newPlanUnits", "newPlanType", "clientOriginalPlanId", "clientNewPlanId", "clientNewRateScheduleId", "customRate"})
 public class QueuedPlansReturnElement {
 
     @XmlElement(name = "original_plan")
@@ -31,6 +31,12 @@ public class QueuedPlansReturnElement {
     protected Double newPlanUnits;
     @XmlElement(name = "new_plan_type")
     protected String newPlanType;
+    @XmlElement(name = "client_original_plan_id")
+    protected String clientOriginalPlanId;
+    @XmlElement(name = "client_new_plan_id")
+    protected String clientNewPlanId;
+    @XmlElement(name = "client_new_rate_schedule_id")
+    protected String clientNewRateScheduleId;
     @XmlElement(name = "custom_rate")
     protected List<CustomRateReturnElement> customRate;
     
@@ -104,6 +110,30 @@ public class QueuedPlansReturnElement {
 
     public void setNewPlanType(String value) {
         this.newPlanType = value;
+    }
+
+    public String getClientOriginalPlanId() {
+        return clientOriginalPlanId;
+    }
+
+    public void setClientOriginalPlanId(String value) {
+        this.clientOriginalPlanId = value;
+    }
+
+    public String getClientNewPlanId() {
+        return clientNewPlanId;
+    }
+
+    public void setClientNewPlanId(String value) {
+        this.clientNewPlanId = value;
+    }
+
+    public String getClientNewRateScheduleId() {
+        return clientNewRateScheduleId;
+    }
+
+    public void setClientNewRateScheduleId(String value) {
+        this.clientNewRateScheduleId = value;
     }
 
     public List<CustomRateReturnElement> getCustomRate() {

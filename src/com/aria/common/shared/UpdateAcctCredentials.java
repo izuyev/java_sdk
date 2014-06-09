@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","password","secretQuestionAnswer","secretQuestion","pin"})
+    "authKey",    "accountNo",    "password",    "secretQuestionAnswer",    "secretQuestion",    "pin"})
 @XmlRootElement(name = "update_acct_credentials")
 public class UpdateAcctCredentials {
 
@@ -18,15 +18,15 @@ public class UpdateAcctCredentials {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_no")
+        @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "password")
+        @XmlElement(name = "password")
     protected String password;
-    @XmlElement(name = "secret_question_answer")
+        @XmlElement(name = "secret_question_answer")
     protected String secretQuestionAnswer;
-    @XmlElement(name = "secret_question")
+        @XmlElement(name = "secret_question")
     protected String secretQuestion;
-    @XmlElement(name = "pin")
+        @XmlElement(name = "pin")
     protected String pin;
     
     public long getClientNo() {
@@ -52,38 +52,33 @@ public class UpdateAcctCredentials {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-    
-    public String getPassword() {
+            public String getPassword() {
         return password;
     }
 
     public void setPassword(String value) {
         this.password = value;
     }
-    
-    public String getSecretQuestionAnswer() {
+            public String getSecretQuestionAnswer() {
         return secretQuestionAnswer;
     }
 
     public void setSecretQuestionAnswer(String value) {
         this.secretQuestionAnswer = value;
     }
-    
-    public String getSecretQuestion() {
+            public String getSecretQuestion() {
         return secretQuestion;
     }
 
     public void setSecretQuestion(String value) {
         this.secretQuestion = value;
     }
-    
-    public String getPin() {
+            public String getPin() {
         return pin;
     }
 
     public void setPin(String value) {
         this.pin = value;
     }
-    
-    
+            
 }

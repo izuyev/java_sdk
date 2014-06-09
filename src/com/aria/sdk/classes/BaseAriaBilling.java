@@ -28,12 +28,15 @@ public abstract class BaseAriaBilling {
     protected int timeout = 120;
     protected boolean debug;
     protected String wsdlName = "complete-doc_literal_wrapped.wsdl";
-    protected String wsdlVersion = "6.21";
+    protected String wsdlVersion = "6.22";
+    protected String objectQueryWsdlName = "integration_services-doc_literal_wrapped.wsdl";
+    protected String objectQueryWsdlVersion = "6.22";
     public String URL;
     public javax.xml.ws.Holder<java.lang.String> errorMsg;
     public javax.xml.ws.Holder<java.lang.Long> errorCode;
     public final String RESULT = "result";
     private OutPutFormat outPutFormat;
+    private LibraryType libraryType;
     private HashMap<String,Object> hashMapReturnValues;
     private static Logger logger;
     private static FileHandler fileHandler;
@@ -54,15 +57,26 @@ public abstract class BaseAriaBilling {
         setCallType(baseAriaBillingDTO.getCallType());
         setURL(baseAriaBillingDTO.getUrl());
         setOutPutFormat(baseAriaBillingDTO.getOutPutFormat());
+        setLibraryType(baseAriaBillingDTO.getLibraryType());
         validateOutPutFormat();
 
-        if (getCallType().equals(CallType.SOAP)){
+        if ((baseAriaBillingDTO.getLibraryType() == null || baseAriaBillingDTO.getLibraryType().equals(LibraryType.CORE)) && getCallType().equals(CallType.SOAP)){
             String dispatcherString = "ws/api_ws_class_dispatcher.php";
             if (getURL().contains(dispatcherString)){
                 String url = getURL().substring(0, getURL().indexOf(dispatcherString));
                 url += "Advanced/wsdl/";
                 url += getWsdlVersion()+"/";
                 url += getWsdlName();
+                setURL(url);
+            }
+        }
+        if (baseAriaBillingDTO.getLibraryType().equals(LibraryType.OBJECT_QUERY) && getCallType().equals(CallType.SOAP)){
+            String dispatcherString = "api/AriaQuery/objects.php";
+            if (getURL().contains(dispatcherString)){
+                String url = getURL().substring(0, getURL().indexOf(dispatcherString));
+                url += "api/AriaQuery/wsdl/";
+                url += objectQueryWsdlVersion+"/";
+                url += objectQueryWsdlName;
                 setURL(url);
             }
         }
@@ -117,7 +131,13 @@ public abstract class BaseAriaBilling {
 
     protected void buildHashMapReturnValues(String response,String[] returnValues) {
         if (getOutPutFormat().equals(OutPutFormat.OUTPUT_JSON)){
-            setHashMapReturnValues(RestUtilities.buildJSonReturn(response,returnValues));
+            if (getLibraryType() == null || getLibraryType().equals(LibraryType.CORE)) {
+                setHashMapReturnValues(RestUtilities.buildJSonReturn(response,returnValues));
+            } else if (getLibraryType().equals(LibraryType.ADMINTOOLS)) {
+                setHashMapReturnValues(com.aria.common.rest.admin.RestUtilities.buildJSonReturn(response,returnValues));
+            } else if (getLibraryType().equals(LibraryType.OBJECT_QUERY)) {
+                setHashMapReturnValues(com.aria.common.rest.object.RestUtilities.buildJSonReturn(response,returnValues));
+            }
         }else if (getOutPutFormat().equals(OutPutFormat.OUTPUT_WDDX)){
             /*
             InputSource source = new InputSource(new StringReader(response));
@@ -193,6 +213,10 @@ public abstract class BaseAriaBilling {
         return outPutFormat;
     }
 
+    public LibraryType getLibraryType() {
+        return libraryType;
+    }
+
     public String getWsdlName() {
         return wsdlName;
     }
@@ -237,6 +261,10 @@ public abstract class BaseAriaBilling {
 
     public void setOutPutFormat(OutPutFormat outPutFormat) {
         this.outPutFormat = outPutFormat;
+    }
+
+    public void setLibraryType(LibraryType libraryType) {
+        this.libraryType = libraryType;
     }
 
     public void setURL(String url) {

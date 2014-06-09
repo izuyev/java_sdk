@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","sessionId","paramNames"})
+    "authKey",    "sessionId",    "paramNames"})
 @XmlRootElement(name = "delete_reg_uss_params")
 public class DeleteRegUssParams {
 
@@ -18,9 +18,9 @@ public class DeleteRegUssParams {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "session_id")
+        @XmlElement(name = "session_id")
     protected String sessionId;
-    @XmlElement(name = "param_names")
+        @XmlElement(name = "param_names")
     protected ParamNamesArray paramNames;
     
     public long getClientNo() {
@@ -46,14 +46,12 @@ public class DeleteRegUssParams {
     public void setSessionId(String value) {
         this.sessionId = value;
     }
-    
-    public ParamNamesArray getParamNames() {
+            public ParamNamesArray getParamNames() {
         return paramNames;
     }
 
     public void setParamNames(ParamNamesArray value) {
         this.paramNames = value;
     }
-    
-    
+            
 }

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","userId","startDate","endDate"})
+    "authKey",    "acctNo",    "userId",    "startDate",    "endDate",    "includeInvoiceActivityEligibility"})
 @XmlRootElement(name = "get_acct_statement_history")
 public class GetAcctStatementHistory {
 
@@ -18,14 +18,16 @@ public class GetAcctStatementHistory {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "user_id")
+        @XmlElement(name = "user_id")
     protected String userId;
-    @XmlElement(name = "start_date")
+        @XmlElement(name = "start_date")
     protected String startDate;
-    @XmlElement(name = "end_date")
+        @XmlElement(name = "end_date")
     protected String endDate;
+        @XmlElement(name = "include_invoice_activity_eligibility")
+    protected String includeInvoiceActivityEligibility;
     
     public long getClientNo() {
         return clientNo;
@@ -50,30 +52,33 @@ public class GetAcctStatementHistory {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public String getUserId() {
+            public String getUserId() {
         return userId;
     }
 
     public void setUserId(String value) {
         this.userId = value;
     }
-    
-    public String getStartDate() {
+            public String getStartDate() {
         return startDate;
     }
 
     public void setStartDate(String value) {
         this.startDate = value;
     }
-    
-    public String getEndDate() {
+            public String getEndDate() {
         return endDate;
     }
 
     public void setEndDate(String value) {
         this.endDate = value;
     }
-    
-    
+            public String getIncludeInvoiceActivityEligibility() {
+        return includeInvoiceActivityEligibility;
+    }
+
+    public void setIncludeInvoiceActivityEligibility(String value) {
+        this.includeInvoiceActivityEligibility = value;
+    }
+            
 }

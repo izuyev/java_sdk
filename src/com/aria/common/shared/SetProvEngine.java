@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","onOffIndicator"})
+    "authKey",    "onOffIndicator"})
 @XmlRootElement(name = "set_prov_engine")
 public class SetProvEngine {
 
@@ -18,7 +18,7 @@ public class SetProvEngine {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "on_off_indicator")
+        @XmlElement(name = "on_off_indicator")
     protected String onOffIndicator;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class SetProvEngine {
     public void setOnOffIndicator(String value) {
         this.onOffIndicator = value;
     }
-    
-    
+            
 }

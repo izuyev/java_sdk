@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","parentAcctNo","doMultiLevel","transType","startDate","endDate","recordLimit","includeVoidTransactions"})
+    "authKey",    "parentAcctNo",    "doMultiLevel",    "transType",    "startDate",    "endDate",    "recordLimit",    "includeVoidTransactions"})
 @XmlRootElement(name = "get_family_trans_history")
 public class GetFamilyTransHistory {
 
@@ -18,19 +18,19 @@ public class GetFamilyTransHistory {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "parent_acct_no")
+        @XmlElement(name = "parent_acct_no")
     protected Long parentAcctNo;
-    @XmlElement(name = "do_multi_level")
+        @XmlElement(name = "do_multi_level")
     protected String doMultiLevel;
-    @XmlElement(name = "trans_type")
+        @XmlElement(name = "trans_type")
     protected Long transType;
-    @XmlElement(name = "start_date")
+        @XmlElement(name = "start_date")
     protected String startDate;
-    @XmlElement(name = "end_date")
+        @XmlElement(name = "end_date")
     protected String endDate;
-    @XmlElement(name = "record_limit")
+        @XmlElement(name = "record_limit")
     protected Long recordLimit;
-    @XmlElement(name = "include_void_transactions")
+        @XmlElement(name = "include_void_transactions")
     protected String includeVoidTransactions;
     
     public long getClientNo() {
@@ -56,54 +56,47 @@ public class GetFamilyTransHistory {
     public void setParentAcctNo(Long value) {
         this.parentAcctNo = value;
     }
-    
-    public String getDoMultiLevel() {
+            public String getDoMultiLevel() {
         return doMultiLevel;
     }
 
     public void setDoMultiLevel(String value) {
         this.doMultiLevel = value;
     }
-    
-    public Long getTransType() {
+            public Long getTransType() {
         return transType;
     }
 
     public void setTransType(Long value) {
         this.transType = value;
     }
-    
-    public String getStartDate() {
+            public String getStartDate() {
         return startDate;
     }
 
     public void setStartDate(String value) {
         this.startDate = value;
     }
-    
-    public String getEndDate() {
+            public String getEndDate() {
         return endDate;
     }
 
     public void setEndDate(String value) {
         this.endDate = value;
     }
-    
-    public Long getRecordLimit() {
+            public Long getRecordLimit() {
         return recordLimit;
     }
 
     public void setRecordLimit(Long value) {
         this.recordLimit = value;
     }
-    
-    public String getIncludeVoidTransactions() {
+            public String getIncludeVoidTransactions() {
         return includeVoidTransactions;
     }
 
     public void setIncludeVoidTransactions(String value) {
         this.includeVoidTransactions = value;
     }
-    
-    
+            
 }

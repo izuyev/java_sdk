@@ -13,7 +13,9 @@ import javax.xml.bind.annotation.XmlType;
     "a5CustomRateSeqNo",
     "a5CustomRateFromUnit",
     "a5CustomRateToUnit",
-    "a5CustomRatePerUnit"
+    "a5CustomRatePerUnit",
+    "a5ClientCustomRatePlanId",
+    "a5ClientCustomRateServiceId"
     })
 public class A5NewAcctCustomRatesRow {
 
@@ -29,6 +31,10 @@ public class A5NewAcctCustomRatesRow {
     protected Long a5CustomRateToUnit;
     @XmlElement(name = "a5_custom_rate_per_unit")
     protected Double a5CustomRatePerUnit;
+    @XmlElement(name = "a5_client_custom_rate_plan_id")
+    protected String a5ClientCustomRatePlanId;
+    @XmlElement(name = "a5_client_custom_rate_service_id")
+    protected String a5ClientCustomRateServiceId;
     public Long getA5CustomRatePlanNo() {
         return a5CustomRatePlanNo;
     }
@@ -75,6 +81,22 @@ public class A5NewAcctCustomRatesRow {
 
     public void setA5CustomRatePerUnit(Double value) {
         this.a5CustomRatePerUnit = value;
+    }
+
+    public String getA5ClientCustomRatePlanId() {
+        return a5ClientCustomRatePlanId;
+    }
+
+    public void setA5ClientCustomRatePlanId(String value) {
+        this.a5ClientCustomRatePlanId = value;
+    }
+
+    public String getA5ClientCustomRateServiceId() {
+        return a5ClientCustomRateServiceId;
+    }
+
+    public void setA5ClientCustomRateServiceId(String value) {
+        this.a5ClientCustomRateServiceId = value;
     }
 
     

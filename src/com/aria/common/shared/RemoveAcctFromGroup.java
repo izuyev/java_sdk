@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","groupNo","clientAcctGroupId"})
+    "authKey",    "acctNo",    "groupNo",    "clientAcctGroupId"})
 @XmlRootElement(name = "remove_acct_from_group")
 public class RemoveAcctFromGroup {
 
@@ -18,11 +18,11 @@ public class RemoveAcctFromGroup {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "group_no")
+        @XmlElement(name = "group_no")
     protected Long groupNo;
-    @XmlElement(name = "client_acct_group_id")
+        @XmlElement(name = "client_acct_group_id")
     protected String clientAcctGroupId;
     
     public long getClientNo() {
@@ -48,22 +48,19 @@ public class RemoveAcctFromGroup {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getGroupNo() {
+            public Long getGroupNo() {
         return groupNo;
     }
 
     public void setGroupNo(Long value) {
         this.groupNo = value;
     }
-    
-    public String getClientAcctGroupId() {
+            public String getClientAcctGroupId() {
         return clientAcctGroupId;
     }
 
     public void setClientAcctGroupId(String value) {
         this.clientAcctGroupId = value;
     }
-    
-    
+            
 }

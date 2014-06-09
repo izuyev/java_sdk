@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","resourceThresholdLevel","resourceBalance","resourceName","resourceUnitsLabel"})
+    "authKey",    "acctNo",    "resourceThresholdLevel",    "resourceBalance",    "resourceName",    "resourceUnitsLabel"})
 @XmlRootElement(name = "send_arc_threshold_email")
 public class SendArcThresholdEmail {
 
@@ -18,15 +18,15 @@ public class SendArcThresholdEmail {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "resource_threshold_level")
+        @XmlElement(name = "resource_threshold_level")
     protected Long resourceThresholdLevel;
-    @XmlElement(name = "resource_balance")
+        @XmlElement(name = "resource_balance")
     protected Long resourceBalance;
-    @XmlElement(name = "resource_name")
+        @XmlElement(name = "resource_name")
     protected String resourceName;
-    @XmlElement(name = "resource_units_label")
+        @XmlElement(name = "resource_units_label")
     protected String resourceUnitsLabel;
     
     public long getClientNo() {
@@ -52,38 +52,33 @@ public class SendArcThresholdEmail {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getResourceThresholdLevel() {
+            public Long getResourceThresholdLevel() {
         return resourceThresholdLevel;
     }
 
     public void setResourceThresholdLevel(Long value) {
         this.resourceThresholdLevel = value;
     }
-    
-    public Long getResourceBalance() {
+            public Long getResourceBalance() {
         return resourceBalance;
     }
 
     public void setResourceBalance(Long value) {
         this.resourceBalance = value;
     }
-    
-    public String getResourceName() {
+            public String getResourceName() {
         return resourceName;
     }
 
     public void setResourceName(String value) {
         this.resourceName = value;
     }
-    
-    public String getResourceUnitsLabel() {
+            public String getResourceUnitsLabel() {
         return resourceUnitsLabel;
     }
 
     public void setResourceUnitsLabel(String value) {
         this.resourceUnitsLabel = value;
     }
-    
-    
+            
 }

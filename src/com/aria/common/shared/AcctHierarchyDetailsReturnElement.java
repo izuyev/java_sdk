@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "acct_hierarchy_details_ReturnElement", propOrder = {"acctNo", "firstName", "mi", "lastName", "userid", "birthdate", "jobTitle", "salutation", "seniorAcctNo", "clientAcctId", "respLevelCd", "isTestAcct", "altEmail", "address1", "address2", "address3", "city", "stateProv", "locality", "postalCode", "country", "companyName", "faxPhone", "phone", "phoneExt", "cellPhone", "workPhone", "workPhoneExt", "billDay", "createdDate", "dateToExpire", "dateToSuspend", "lastArrearsBillThruDate", "lastBillDate", "lastBillThruDate", "nextBillDate", "planDate", "statusDate", "statusDegradeDate", "statusCd", "statusLabel", "masterPlanNo", "masterPlanName", "masterPlanUnits", "notifyMethod", "notifyMethodName", "password", "pin", "secretQuestion", "secretQuestionAnswer", "payMethod", "payMethodName", "currencyCd", "taxId", "billingEmail", "billingFirstName", "billingMiddleInitial", "billingLastName", "billingAddress1", "billingAddress2", "billingAddress3", "billingCity", "billingState", "billingLocality", "billingZip", "billingCountry", "ccSuffix", "ccExpireMm", "ccExpireYyyy", "ccId", "bankAcctSuffix", "bankRoutingNo", "billingCompanyName", "billingPhone", "billingPhoneExt", "billingCellPhone", "billingWorkPhoneExt", "balance", "acctCreateClientReceiptId", "planClientReceiptId", "statusClientReceiptId", "taxpayerId", "altMsgTemplateNo", "seqFuncGroupNo", "promoCd", "addressVerificationCode", "addressMatchScore", "billingAddressVerificationCode", "billingAddressMatchScore", "childAcctNo", "thisAcctSuppPlans", "thisAcctSuppFields"})
+@XmlType(name = "acct_hierarchy_details_ReturnElement", propOrder = {"acctNo", "firstName", "mi", "lastName", "userid", "birthdate", "jobTitle", "salutation", "seniorAcctNo", "clientAcctId", "respLevelCd", "isTestAcct", "altEmail", "address1", "address2", "address3", "city", "stateProv", "locality", "postalCode", "country", "companyName", "faxPhone", "phone", "phoneExt", "cellPhone", "workPhone", "workPhoneExt", "billDay", "createdDate", "dateToExpire", "dateToSuspend", "lastArrearsBillThruDate", "lastBillDate", "lastBillThruDate", "nextBillDate", "planDate", "statusDate", "statusDegradeDate", "statusCd", "statusLabel", "masterPlanNo", "masterPlanName", "masterPlanUnits", "notifyMethod", "notifyMethodName", "password", "pin", "secretQuestion", "secretQuestionAnswer", "payMethod", "payMethodName", "currencyCd", "taxId", "billingEmail", "billingFirstName", "billingMiddleInitial", "billingLastName", "billingAddress1", "billingAddress2", "billingAddress3", "billingCity", "billingState", "billingLocality", "billingZip", "billingCountry", "ccSuffix", "ccExpireMm", "ccExpireYyyy", "ccId", "bankAcctSuffix", "bankRoutingNo", "billingCompanyName", "billingPhone", "billingPhoneExt", "billingCellPhone", "billingWorkPhoneExt", "balance", "acctCreateClientReceiptId", "planClientReceiptId", "statusClientReceiptId", "taxpayerId", "altMsgTemplateNo", "seqFuncGroupNo", "promoCd", "addressVerificationCode", "addressMatchScore", "billingAddressVerificationCode", "billingAddressMatchScore", "clientMasterPlanId", "clientAltMsgTemplateId", "childAcctNo", "thisAcctSuppPlans", "thisAcctSuppFields"})
 public class AcctHierarchyDetailsReturnElement {
 
     @XmlElement(name = "acct_no")
@@ -191,6 +191,10 @@ public class AcctHierarchyDetailsReturnElement {
     protected String billingAddressVerificationCode;
     @XmlElement(name = "billing_address_match_score")
     protected Double billingAddressMatchScore;
+    @XmlElement(name = "client_master_plan_id")
+    protected String clientMasterPlanId;
+    @XmlElement(name = "client_alt_msg_template_id")
+    protected String clientAltMsgTemplateId;
     @XmlElement(name = "child_acct_no")
     protected List<ChildAcctNoReturnElement> childAcctNo;
     @XmlElement(name = "this_acct_supp_plans")
@@ -908,6 +912,22 @@ public class AcctHierarchyDetailsReturnElement {
 
     public void setBillingAddressMatchScore(Double value) {
         this.billingAddressMatchScore = value;
+    }
+
+    public String getClientMasterPlanId() {
+        return clientMasterPlanId;
+    }
+
+    public void setClientMasterPlanId(String value) {
+        this.clientMasterPlanId = value;
+    }
+
+    public String getClientAltMsgTemplateId() {
+        return clientAltMsgTemplateId;
+    }
+
+    public void setClientAltMsgTemplateId(String value) {
+        this.clientAltMsgTemplateId = value;
     }
 
     public List<ChildAcctNoReturnElement> getChildAcctNo() {

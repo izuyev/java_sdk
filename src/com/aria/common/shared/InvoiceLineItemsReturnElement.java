@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "units", "ratePerUnit", "amount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName", "creditReasonCodeDescription", "csrComments", "clientSku", "orderNo", "itemNo"})
+@XmlType(name = "invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "units", "ratePerUnit", "amount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName", "creditReasonCodeDescription", "csrComments", "clientSku", "orderNo", "itemNo", "clientServiceId", "usageTypeCd", "clientPlanId", "clientItemId"})
 public class InvoiceLineItemsReturnElement {
 
     @XmlElement(name = "line_no")
@@ -47,6 +47,14 @@ public class InvoiceLineItemsReturnElement {
     protected Long orderNo;
     @XmlElement(name = "item_no")
     protected Long itemNo;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "usage_type_cd")
+    protected String usageTypeCd;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
+    @XmlElement(name = "client_item_id")
+    protected String clientItemId;
     
     public Long getLineNo() {
         return lineNo;
@@ -182,6 +190,38 @@ public class InvoiceLineItemsReturnElement {
 
     public void setItemNo(Long value) {
         this.itemNo = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getUsageTypeCd() {
+        return usageTypeCd;
+    }
+
+    public void setUsageTypeCd(String value) {
+        this.usageTypeCd = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+
+    public String getClientItemId() {
+        return clientItemId;
+    }
+
+    public void setClientItemId(String value) {
+        this.clientItemId = value;
     }
 
     

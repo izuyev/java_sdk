@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "typeNo", "lengthMonths", "createComments", "updateComments", "createDate", "updateDate", "startDate", "endDate", "statusCode", "planNo", "planName"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "typeNo", "lengthMonths", "createComments", "updateComments", "createDate", "updateDate", "startDate", "endDate", "statusCode", "planNo", "planName", "clientPlanId"})
 @XmlRootElement(name = "get_acct_multiplan_contractResponseElement")
 public class GetAcctMultiplanContractResponseElement {
 
@@ -40,6 +40,8 @@ public class GetAcctMultiplanContractResponseElement {
     protected List<PlanNoReturnElement> planNo;
     @XmlElement(name = "plan_name")
     protected List<PlanNameReturnElement> planName;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
     
     public Long getErrorCode() {
         return errorCode;
@@ -139,5 +141,13 @@ public class GetAcctMultiplanContractResponseElement {
             this.planName = new ArrayList<PlanNameReturnElement>();
         }
         return this.planName;
+    }public String getClientPlanId() {
+        return clientPlanId;
     }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+
+    
 }

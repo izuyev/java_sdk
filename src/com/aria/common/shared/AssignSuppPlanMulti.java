@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","suppPlansToAssign","assignmentDirective","doWrite","comments","clientReceiptId","altProrationStartDate","couponCodes","effectiveDate","syncMstrBillDatesOverride"})
+    "authKey",    "acctNo",    "suppPlansToAssign",    "assignmentDirective",    "doWrite",    "comments",    "clientReceiptId",    "altProrationStartDate",    "couponCodes",    "effectiveDate",    "syncMstrBillDatesOverride"})
 @XmlRootElement(name = "assign_supp_plan_multi")
 public class AssignSuppPlanMulti {
 
@@ -18,25 +18,25 @@ public class AssignSuppPlanMulti {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "supp_plans_to_assign")
+        @XmlElement(name = "supp_plans_to_assign")
     protected SuppPlansToAssignArray suppPlansToAssign;
-    @XmlElement(name = "assignment_directive")
+        @XmlElement(name = "assignment_directive")
     protected Long assignmentDirective;
-    @XmlElement(name = "do_write")
+        @XmlElement(name = "do_write")
     protected String doWrite;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
-    @XmlElement(name = "alt_proration_start_date")
+        @XmlElement(name = "alt_proration_start_date")
     protected String altProrationStartDate;
-    @XmlElement(name = "coupon_codes")
+        @XmlElement(name = "coupon_codes")
     protected CouponCodesArray couponCodes;
-    @XmlElement(name = "effective_date")
+        @XmlElement(name = "effective_date")
     protected String effectiveDate;
-    @XmlElement(name = "sync_mstr_bill_dates_override")
+        @XmlElement(name = "sync_mstr_bill_dates_override")
     protected Long syncMstrBillDatesOverride;
     
     public long getClientNo() {
@@ -62,78 +62,68 @@ public class AssignSuppPlanMulti {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public SuppPlansToAssignArray getSuppPlansToAssign() {
+            public SuppPlansToAssignArray getSuppPlansToAssign() {
         return suppPlansToAssign;
     }
 
     public void setSuppPlansToAssign(SuppPlansToAssignArray value) {
         this.suppPlansToAssign = value;
     }
-    
-    public Long getAssignmentDirective() {
+            public Long getAssignmentDirective() {
         return assignmentDirective;
     }
 
     public void setAssignmentDirective(Long value) {
         this.assignmentDirective = value;
     }
-    
-    public String getDoWrite() {
+            public String getDoWrite() {
         return doWrite;
     }
 
     public void setDoWrite(String value) {
         this.doWrite = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    public String getAltProrationStartDate() {
+            public String getAltProrationStartDate() {
         return altProrationStartDate;
     }
 
     public void setAltProrationStartDate(String value) {
         this.altProrationStartDate = value;
     }
-    
-    public CouponCodesArray getCouponCodes() {
+            public CouponCodesArray getCouponCodes() {
         return couponCodes;
     }
 
     public void setCouponCodes(CouponCodesArray value) {
         this.couponCodes = value;
     }
-    
-    public String getEffectiveDate() {
+            public String getEffectiveDate() {
         return effectiveDate;
     }
 
     public void setEffectiveDate(String value) {
         this.effectiveDate = value;
     }
-    
-    public Long getSyncMstrBillDatesOverride() {
+            public Long getSyncMstrBillDatesOverride() {
         return syncMstrBillDatesOverride;
     }
 
     public void setSyncMstrBillDatesOverride(Long value) {
         this.syncMstrBillDatesOverride = value;
     }
-    
-    
+            
 }

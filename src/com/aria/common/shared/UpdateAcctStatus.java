@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","statusCd","queueDays","queueDate","forceBillDateReset","comments","clientReceiptId","altDoDunning"})
+    "authKey",    "accountNo",    "statusCd",    "queueDays",    "queueDate",    "forceBillDateReset",    "comments",    "clientReceiptId",    "altDoDunning"})
 @XmlRootElement(name = "update_acct_status")
 public class UpdateAcctStatus {
 
@@ -18,21 +18,21 @@ public class UpdateAcctStatus {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_no")
+        @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "status_cd")
+        @XmlElement(name = "status_cd")
     protected Long statusCd;
-    @XmlElement(name = "queue_days")
+        @XmlElement(name = "queue_days")
     protected Long queueDays;
-    @XmlElement(name = "queue_date")
+        @XmlElement(name = "queue_date")
     protected String queueDate;
-    @XmlElement(name = "force_bill_date_reset")
+        @XmlElement(name = "force_bill_date_reset")
     protected Long forceBillDateReset;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
-    @XmlElement(name = "alt_do_dunning")
+        @XmlElement(name = "alt_do_dunning")
     protected String altDoDunning;
     
     public long getClientNo() {
@@ -58,62 +58,54 @@ public class UpdateAcctStatus {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-    
-    public Long getStatusCd() {
+            public Long getStatusCd() {
         return statusCd;
     }
 
     public void setStatusCd(Long value) {
         this.statusCd = value;
     }
-    
-    public Long getQueueDays() {
+            public Long getQueueDays() {
         return queueDays;
     }
 
     public void setQueueDays(Long value) {
         this.queueDays = value;
     }
-    
-    public String getQueueDate() {
+            public String getQueueDate() {
         return queueDate;
     }
 
     public void setQueueDate(String value) {
         this.queueDate = value;
     }
-    
-    public Long getForceBillDateReset() {
+            public Long getForceBillDateReset() {
         return forceBillDateReset;
     }
 
     public void setForceBillDateReset(Long value) {
         this.forceBillDateReset = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    public String getAltDoDunning() {
+            public String getAltDoDunning() {
         return altDoDunning;
     }
 
     public void setAltDoDunning(String value) {
         this.altDoDunning = value;
     }
-    
-    
+            
 }

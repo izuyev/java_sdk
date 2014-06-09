@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "plan_services_ReturnElement", propOrder = {"serviceNo", "serviceDesc", "isRecurringInd", "isUsageBasedInd", "usageType", "taxableInd", "isTaxInd", "isArrearsInd", "isSetupInd", "isMiscInd", "isDonationInd", "isOrderBasedInd", "isCancellationInd", "coaId", "ledgerCode", "displayInd", "tieredPricingRule", "isMinFeeInd", "planServiceRates"})
+@XmlType(name = "plan_services_ReturnElement", propOrder = {"serviceNo", "serviceDesc", "isRecurringInd", "isUsageBasedInd", "usageType", "taxableInd", "isTaxInd", "isArrearsInd", "isSetupInd", "isMiscInd", "isDonationInd", "isOrderBasedInd", "isCancellationInd", "coaId", "ledgerCode", "displayInd", "tieredPricingRule", "isMinFeeInd", "clientServiceId", "usageTypeCd", "coaCode", "planServiceRates"})
 public class PlanServicesReturnElement {
 
     @XmlElement(name = "service_no")
@@ -49,6 +49,12 @@ public class PlanServicesReturnElement {
     protected Long tieredPricingRule;
     @XmlElement(name = "is_min_fee_ind")
     protected Long isMinFeeInd;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "usage_type_cd")
+    protected String usageTypeCd;
+    @XmlElement(name = "coa_code")
+    protected String coaCode;
     @XmlElement(name = "plan_service_rates")
     protected List<PlanServiceRatesReturnElement> planServiceRates;
     
@@ -194,6 +200,30 @@ public class PlanServicesReturnElement {
 
     public void setIsMinFeeInd(Long value) {
         this.isMinFeeInd = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getUsageTypeCd() {
+        return usageTypeCd;
+    }
+
+    public void setUsageTypeCd(String value) {
+        this.usageTypeCd = value;
+    }
+
+    public String getCoaCode() {
+        return coaCode;
+    }
+
+    public void setCoaCode(String value) {
+        this.coaCode = value;
     }
 
     public List<PlanServiceRatesReturnElement> getPlanServiceRates() {

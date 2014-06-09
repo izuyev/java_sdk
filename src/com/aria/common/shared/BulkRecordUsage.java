@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","usageRecords"})
+    "authKey",    "usageRecords"})
 @XmlRootElement(name = "bulk_record_usage")
 public class BulkRecordUsage {
 
@@ -18,7 +18,7 @@ public class BulkRecordUsage {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "usage_records")
+        @XmlElement(name = "usage_records")
     protected UsageRecordsArray usageRecords;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class BulkRecordUsage {
     public void setUsageRecords(UsageRecordsArray value) {
         this.usageRecords = value;
     }
-    
-    
+            
 }

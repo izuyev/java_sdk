@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "items_basic_ReturnElement", propOrder = {"itemNo", "itemLabel", "serviceNo", "serviceDesc", "clientSku", "itemPlan", "itemMonths", "stockLevel", "avgRatings", "numRatings", "numReviews", "itemType", "itemDesc", "activeInd", "modifyPriceInd", "subunitQty", "subunitLabel", "serviceType", "coaId", "clientCoaCode", "taxableInd", "taxGroup", "usageType"})
+@XmlType(name = "items_basic_ReturnElement", propOrder = {"itemNo", "itemLabel", "serviceNo", "serviceDesc", "clientSku", "itemPlan", "itemMonths", "stockLevel", "avgRatings", "numRatings", "numReviews", "itemType", "itemDesc", "activeInd", "modifyPriceInd", "subunitQty", "subunitLabel", "serviceType", "coaId", "clientCoaCode", "taxableInd", "taxGroup", "usageType", "clientItemId", "clientServiceId", "clientItemPlanId", "usageTypeCd"})
 public class ItemsBasicReturnElement {
 
     @XmlElement(name = "item_no")
@@ -59,6 +59,14 @@ public class ItemsBasicReturnElement {
     protected Long taxGroup;
     @XmlElement(name = "usage_type")
     protected Long usageType;
+    @XmlElement(name = "client_item_id")
+    protected String clientItemId;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "client_item_plan_id")
+    protected String clientItemPlanId;
+    @XmlElement(name = "usage_type_cd")
+    protected String usageTypeCd;
     
     public Long getItemNo() {
         return itemNo;
@@ -242,6 +250,38 @@ public class ItemsBasicReturnElement {
 
     public void setUsageType(Long value) {
         this.usageType = value;
+    }
+
+    public String getClientItemId() {
+        return clientItemId;
+    }
+
+    public void setClientItemId(String value) {
+        this.clientItemId = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getClientItemPlanId() {
+        return clientItemPlanId;
+    }
+
+    public void setClientItemPlanId(String value) {
+        this.clientItemPlanId = value;
+    }
+
+    public String getUsageTypeCd() {
+        return usageTypeCd;
+    }
+
+    public void setUsageTypeCd(String value) {
+        this.usageTypeCd = value;
     }
 
     

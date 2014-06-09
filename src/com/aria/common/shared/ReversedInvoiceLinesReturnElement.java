@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "reversed_invoice_lines_ReturnElement", propOrder = {"invoiceNo", "invoiceLineNo", "invoiceLineServiceNo", "invoiceLineReversedAmount", "invoiceLineReversingDate", "invoiceLineComments"})
+@XmlType(name = "reversed_invoice_lines_ReturnElement", propOrder = {"invoiceNo", "invoiceLineNo", "invoiceLineServiceNo", "invoiceLineReversedAmount", "invoiceLineReversingDate", "invoiceLineComments", "clientInvoiceLineServiceId"})
 public class ReversedInvoiceLinesReturnElement {
 
     @XmlElement(name = "invoice_no")
@@ -25,6 +25,8 @@ public class ReversedInvoiceLinesReturnElement {
     protected String invoiceLineReversingDate;
     @XmlElement(name = "invoice_line_comments")
     protected String invoiceLineComments;
+    @XmlElement(name = "client_invoice_line_service_id")
+    protected String clientInvoiceLineServiceId;
     
     public Long getInvoiceNo() {
         return invoiceNo;
@@ -72,6 +74,14 @@ public class ReversedInvoiceLinesReturnElement {
 
     public void setInvoiceLineComments(String value) {
         this.invoiceLineComments = value;
+    }
+
+    public String getClientInvoiceLineServiceId() {
+        return clientInvoiceLineServiceId;
+    }
+
+    public void setClientInvoiceLineServiceId(String value) {
+        this.clientInvoiceLineServiceId = value;
     }
 
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","masterPlanNo","altRateScheduleNo","numPlanUnits","assignmentDirective","doWrite","clientReceiptId","forceCurrencyChange","autoCancelSuppPlans","offsetMonths","altProrationStartDate","altClientAcctGroupId","newAcctCustomRates","effectiveDate","offsetInterval","invoiceUnbilledUsage","couponCode"})
+    "authKey",    "acctNo",    "masterPlanNo",    "altRateScheduleNo",    "numPlanUnits",    "assignmentDirective",    "doWrite",    "clientReceiptId",    "forceCurrencyChange",    "autoCancelSuppPlans",    "offsetMonths",    "altProrationStartDate",    "altClientAcctGroupId",    "newAcctCustomRates",    "effectiveDate",    "offsetInterval",    "invoiceUnbilledUsage",    "couponCode",    "clientMasterPlanId",    "clientAltRateScheduleId"})
 @XmlRootElement(name = "update_master_plan")
 public class UpdateMasterPlan {
 
@@ -18,40 +18,44 @@ public class UpdateMasterPlan {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "master_plan_no")
+        @XmlElement(name = "master_plan_no")
     protected Long masterPlanNo;
-    @XmlElement(name = "alt_rate_schedule_no")
+        @XmlElement(name = "alt_rate_schedule_no")
     protected Long altRateScheduleNo;
-    @XmlElement(name = "num_plan_units")
+        @XmlElement(name = "num_plan_units")
     protected Long numPlanUnits;
-    @XmlElement(name = "assignment_directive")
+        @XmlElement(name = "assignment_directive")
     protected Long assignmentDirective;
-    @XmlElement(name = "do_write")
+        @XmlElement(name = "do_write")
     protected String doWrite;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
-    @XmlElement(name = "force_currency_change")
+        @XmlElement(name = "force_currency_change")
     protected String forceCurrencyChange;
-    @XmlElement(name = "auto_cancel_supp_plans")
+        @XmlElement(name = "auto_cancel_supp_plans")
     protected String autoCancelSuppPlans;
-    @XmlElement(name = "offset_months")
+        @XmlElement(name = "offset_months")
     protected Long offsetMonths;
-    @XmlElement(name = "alt_proration_start_date")
+        @XmlElement(name = "alt_proration_start_date")
     protected String altProrationStartDate;
-    @XmlElement(name = "alt_client_acct_group_id")
+        @XmlElement(name = "alt_client_acct_group_id")
     protected String altClientAcctGroupId;
-    @XmlElement(name = "new_acct_custom_rates")
+        @XmlElement(name = "new_acct_custom_rates")
     protected NewAcctCustomRatesArray newAcctCustomRates;
-    @XmlElement(name = "effective_date")
+        @XmlElement(name = "effective_date")
     protected String effectiveDate;
-    @XmlElement(name = "offset_interval")
+        @XmlElement(name = "offset_interval")
     protected Long offsetInterval;
-    @XmlElement(name = "invoice_unbilled_usage")
+        @XmlElement(name = "invoice_unbilled_usage")
     protected String invoiceUnbilledUsage;
-    @XmlElement(name = "coupon_code")
+        @XmlElement(name = "coupon_code")
     protected String couponCode;
+        @XmlElement(name = "client_master_plan_id")
+    protected String clientMasterPlanId;
+        @XmlElement(name = "client_alt_rate_schedule_id")
+    protected String clientAltRateScheduleId;
     
     public long getClientNo() {
         return clientNo;
@@ -76,134 +80,131 @@ public class UpdateMasterPlan {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getMasterPlanNo() {
+            public Long getMasterPlanNo() {
         return masterPlanNo;
     }
 
     public void setMasterPlanNo(Long value) {
         this.masterPlanNo = value;
     }
-    
-    public Long getAltRateScheduleNo() {
+            public Long getAltRateScheduleNo() {
         return altRateScheduleNo;
     }
 
     public void setAltRateScheduleNo(Long value) {
         this.altRateScheduleNo = value;
     }
-    
-    public Long getNumPlanUnits() {
+            public Long getNumPlanUnits() {
         return numPlanUnits;
     }
 
     public void setNumPlanUnits(Long value) {
         this.numPlanUnits = value;
     }
-    
-    public Long getAssignmentDirective() {
+            public Long getAssignmentDirective() {
         return assignmentDirective;
     }
 
     public void setAssignmentDirective(Long value) {
         this.assignmentDirective = value;
     }
-    
-    public String getDoWrite() {
+            public String getDoWrite() {
         return doWrite;
     }
 
     public void setDoWrite(String value) {
         this.doWrite = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    public String getForceCurrencyChange() {
+            public String getForceCurrencyChange() {
         return forceCurrencyChange;
     }
 
     public void setForceCurrencyChange(String value) {
         this.forceCurrencyChange = value;
     }
-    
-    public String getAutoCancelSuppPlans() {
+            public String getAutoCancelSuppPlans() {
         return autoCancelSuppPlans;
     }
 
     public void setAutoCancelSuppPlans(String value) {
         this.autoCancelSuppPlans = value;
     }
-    
-    public Long getOffsetMonths() {
+            public Long getOffsetMonths() {
         return offsetMonths;
     }
 
     public void setOffsetMonths(Long value) {
         this.offsetMonths = value;
     }
-    
-    public String getAltProrationStartDate() {
+            public String getAltProrationStartDate() {
         return altProrationStartDate;
     }
 
     public void setAltProrationStartDate(String value) {
         this.altProrationStartDate = value;
     }
-    
-    public String getAltClientAcctGroupId() {
+            public String getAltClientAcctGroupId() {
         return altClientAcctGroupId;
     }
 
     public void setAltClientAcctGroupId(String value) {
         this.altClientAcctGroupId = value;
     }
-    
-    public NewAcctCustomRatesArray getNewAcctCustomRates() {
+            public NewAcctCustomRatesArray getNewAcctCustomRates() {
         return newAcctCustomRates;
     }
 
     public void setNewAcctCustomRates(NewAcctCustomRatesArray value) {
         this.newAcctCustomRates = value;
     }
-    
-    public String getEffectiveDate() {
+            public String getEffectiveDate() {
         return effectiveDate;
     }
 
     public void setEffectiveDate(String value) {
         this.effectiveDate = value;
     }
-    
-    public Long getOffsetInterval() {
+            public Long getOffsetInterval() {
         return offsetInterval;
     }
 
     public void setOffsetInterval(Long value) {
         this.offsetInterval = value;
     }
-    
-    public String getInvoiceUnbilledUsage() {
+            public String getInvoiceUnbilledUsage() {
         return invoiceUnbilledUsage;
     }
 
     public void setInvoiceUnbilledUsage(String value) {
         this.invoiceUnbilledUsage = value;
     }
-    
-    public String getCouponCode() {
+            public String getCouponCode() {
         return couponCode;
     }
 
     public void setCouponCode(String value) {
         this.couponCode = value;
     }
-    
-    
+            public String getClientMasterPlanId() {
+        return clientMasterPlanId;
+    }
+
+    public void setClientMasterPlanId(String value) {
+        this.clientMasterPlanId = value;
+    }
+            public String getClientAltRateScheduleId() {
+        return clientAltRateScheduleId;
+    }
+
+    public void setClientAltRateScheduleId(String value) {
+        this.clientAltRateScheduleId = value;
+    }
+            
 }

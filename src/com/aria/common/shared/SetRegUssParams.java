@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","sessionId","inRegUssParams","overrideTimeoutMinutes"})
+    "authKey",    "sessionId",    "inRegUssParams",    "overrideTimeoutMinutes"})
 @XmlRootElement(name = "set_reg_uss_params")
 public class SetRegUssParams {
 
@@ -18,11 +18,11 @@ public class SetRegUssParams {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "session_id")
+        @XmlElement(name = "session_id")
     protected String sessionId;
-    @XmlElement(name = "in_reg_uss_params")
+        @XmlElement(name = "in_reg_uss_params")
     protected InRegUssParamsArray inRegUssParams;
-    @XmlElement(name = "override_timeout_minutes")
+        @XmlElement(name = "override_timeout_minutes")
     protected Long overrideTimeoutMinutes;
     
     public long getClientNo() {
@@ -48,22 +48,19 @@ public class SetRegUssParams {
     public void setSessionId(String value) {
         this.sessionId = value;
     }
-    
-    public InRegUssParamsArray getInRegUssParams() {
+            public InRegUssParamsArray getInRegUssParams() {
         return inRegUssParams;
     }
 
     public void setInRegUssParams(InRegUssParamsArray value) {
         this.inRegUssParams = value;
     }
-    
-    public Long getOverrideTimeoutMinutes() {
+            public Long getOverrideTimeoutMinutes() {
         return overrideTimeoutMinutes;
     }
 
     public void setOverrideTimeoutMinutes(Long value) {
         this.overrideTimeoutMinutes = value;
     }
-    
-    
+            
 }

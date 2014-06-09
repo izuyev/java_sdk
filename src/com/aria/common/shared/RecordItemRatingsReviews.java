@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","clientSku","itemNo","ratings","reviews"})
+    "authKey",    "acctNo",    "clientSku",    "itemNo",    "ratings",    "reviews"})
 @XmlRootElement(name = "record_item_ratings_reviews")
 public class RecordItemRatingsReviews {
 
@@ -18,15 +18,15 @@ public class RecordItemRatingsReviews {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "client_sku")
+        @XmlElement(name = "client_sku")
     protected String clientSku;
-    @XmlElement(name = "item_no")
+        @XmlElement(name = "item_no")
     protected Long itemNo;
-    @XmlElement(name = "ratings")
+        @XmlElement(name = "ratings")
     protected Long ratings;
-    @XmlElement(name = "reviews")
+        @XmlElement(name = "reviews")
     protected String reviews;
     
     public long getClientNo() {
@@ -52,38 +52,33 @@ public class RecordItemRatingsReviews {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public String getClientSku() {
+            public String getClientSku() {
         return clientSku;
     }
 
     public void setClientSku(String value) {
         this.clientSku = value;
     }
-    
-    public Long getItemNo() {
+            public Long getItemNo() {
         return itemNo;
     }
 
     public void setItemNo(Long value) {
         this.itemNo = value;
     }
-    
-    public Long getRatings() {
+            public Long getRatings() {
         return ratings;
     }
 
     public void setRatings(Long value) {
         this.ratings = value;
     }
-    
-    public String getReviews() {
+            public String getReviews() {
         return reviews;
     }
 
     public void setReviews(String value) {
         this.reviews = value;
     }
-    
-    
+            
 }

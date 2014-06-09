@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "client_items_ReturnElement", propOrder = {"itemNo", "itemLabel", "serviceNo", "serviceDesc", "clientSku", "itemPlan", "itemMonths", "currencyCd", "classNo", "classLabel", "stockLevel", "avgRatings", "numRatings", "numReviews", "imageUrl", "imageText"})
+@XmlType(name = "client_items_ReturnElement", propOrder = {"itemNo", "itemLabel", "serviceNo", "serviceDesc", "clientSku", "itemPlan", "itemMonths", "currencyCd", "classNo", "classLabel", "stockLevel", "avgRatings", "numRatings", "numReviews", "imageUrl", "imageText", "clientItemId", "clientServiceId", "clientItemPlanId"})
 public class ClientItemsReturnElement {
 
     @XmlElement(name = "item_no")
@@ -45,6 +45,12 @@ public class ClientItemsReturnElement {
     protected String imageUrl;
     @XmlElement(name = "image_text")
     protected String imageText;
+    @XmlElement(name = "client_item_id")
+    protected String clientItemId;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "client_item_plan_id")
+    protected String clientItemPlanId;
     
     public Long getItemNo() {
         return itemNo;
@@ -172,6 +178,30 @@ public class ClientItemsReturnElement {
 
     public void setImageText(String value) {
         this.imageText = value;
+    }
+
+    public String getClientItemId() {
+        return clientItemId;
+    }
+
+    public void setClientItemId(String value) {
+        this.clientItemId = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getClientItemPlanId() {
+        return clientItemPlanId;
+    }
+
+    public void setClientItemPlanId(String value) {
+        this.clientItemPlanId = value;
     }
 
     

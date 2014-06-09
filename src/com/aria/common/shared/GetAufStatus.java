@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","fileName"})
+    "authKey",    "fileName"})
 @XmlRootElement(name = "get_auf_status")
 public class GetAufStatus {
 
@@ -18,7 +18,7 @@ public class GetAufStatus {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "file_name")
+        @XmlElement(name = "file_name")
     protected String fileName;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class GetAufStatus {
     public void setFileName(String value) {
         this.fileName = value;
     }
-    
-    
+            
 }

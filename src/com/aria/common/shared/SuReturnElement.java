@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "su_ReturnElement", propOrder = {"standingUsageRecNo", "usageType", "usageUnits", "nextUsageDate", "altDesc", "planNo", "firstUsageDate", "recurringInd", "usageTypeCode"})
+@XmlType(name = "su_ReturnElement", propOrder = {"standingUsageRecNo", "usageType", "usageUnits", "nextUsageDate", "altDesc", "planNo", "firstUsageDate", "recurringInd", "usageTypeCode", "clientPlanId"})
 public class SuReturnElement {
 
     @XmlElement(name = "standing_usage_rec_no")
@@ -31,6 +31,8 @@ public class SuReturnElement {
     protected Long recurringInd;
     @XmlElement(name = "usage_type_code")
     protected String usageTypeCode;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
     
     public Long getStandingUsageRecNo() {
         return standingUsageRecNo;
@@ -102,6 +104,14 @@ public class SuReturnElement {
 
     public void setUsageTypeCode(String value) {
         this.usageTypeCode = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
     }
 
     

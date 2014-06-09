@@ -11,7 +11,8 @@ import javax.xml.bind.annotation.XmlType;
     "itemNo",
     "clientSku",
     "updateDirective",
-    "updateAmount"
+    "updateAmount",
+    "clientItemId"
     })
 public class InventoryItemStockRow {
 
@@ -23,6 +24,8 @@ public class InventoryItemStockRow {
     protected Long updateDirective;
     @XmlElement(name = "update_amount")
     protected Double updateAmount;
+    @XmlElement(name = "client_item_id")
+    protected String clientItemId;
     public Long getItemNo() {
         return itemNo;
     }
@@ -53,6 +56,14 @@ public class InventoryItemStockRow {
 
     public void setUpdateAmount(Double value) {
         this.updateAmount = value;
+    }
+
+    public String getClientItemId() {
+        return clientItemId;
+    }
+
+    public void setClientItemId(String value) {
+        this.clientItemId = value;
     }
 
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","webValsIn"})
+    "authKey",    "webValsIn"})
 @XmlRootElement(name = "get_web_replacement_vals")
 public class GetWebReplacementVals {
 
@@ -18,7 +18,7 @@ public class GetWebReplacementVals {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "web_vals_in")
+        @XmlElement(name = "web_vals_in")
     protected WebValsInArray webValsIn;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class GetWebReplacementVals {
     public void setWebValsIn(WebValsInArray value) {
         this.webValsIn = value;
     }
-    
-    
+            
 }

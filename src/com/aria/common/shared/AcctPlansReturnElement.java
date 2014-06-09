@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "acct_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "planDate", "planUnits", "queuedPlanUnits", "unitsChangeDate", "lastBillDate", "nextBillDate", "billThruDate", "billDay", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "rateScheduleNo", "rateScheduleName", "rateSchedIsDefaultInd", "suppPlanInd", "suppPlanStatusCd", "suppPlanStatusLabel", "suppPlanStatusDate", "suppPlanActivateDate", "suppPlanTerminateDate", "clientReceiptId"})
+@XmlType(name = "acct_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "planDate", "planUnits", "queuedPlanUnits", "unitsChangeDate", "lastBillDate", "nextBillDate", "billThruDate", "billDay", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "rateScheduleNo", "rateScheduleName", "rateSchedIsDefaultInd", "suppPlanInd", "suppPlanStatusCd", "suppPlanStatusLabel", "suppPlanStatusDate", "suppPlanActivateDate", "suppPlanTerminateDate", "clientReceiptId", "clientPlanId", "clientRolloverPlanId", "clientPlan2AssignOnSusp", "clientRateScheduleId"})
 public class AcctPlansReturnElement {
 
     @XmlElement(name = "plan_no")
@@ -87,6 +87,14 @@ public class AcctPlansReturnElement {
     protected String suppPlanTerminateDate;
     @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
+    @XmlElement(name = "client_rollover_plan_id")
+    protected String clientRolloverPlanId;
+    @XmlElement(name = "client_plan_2_assign_on_susp")
+    protected String clientPlan2AssignOnSusp;
+    @XmlElement(name = "client_rate_schedule_id")
+    protected String clientRateScheduleId;
     
     public Long getPlanNo() {
         return planNo;
@@ -382,6 +390,38 @@ public class AcctPlansReturnElement {
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+
+    public String getClientRolloverPlanId() {
+        return clientRolloverPlanId;
+    }
+
+    public void setClientRolloverPlanId(String value) {
+        this.clientRolloverPlanId = value;
+    }
+
+    public String getClientPlan2AssignOnSusp() {
+        return clientPlan2AssignOnSusp;
+    }
+
+    public void setClientPlan2AssignOnSusp(String value) {
+        this.clientPlan2AssignOnSusp = value;
+    }
+
+    public String getClientRateScheduleId() {
+        return clientRateScheduleId;
+    }
+
+    public void setClientRateScheduleId(String value) {
+        this.clientRateScheduleId = value;
     }
 
     

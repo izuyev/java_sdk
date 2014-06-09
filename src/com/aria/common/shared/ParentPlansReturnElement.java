@@ -10,13 +10,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "parent_plans_ReturnElement", propOrder = {"parentPlanNo", "parentPlanName"})
+@XmlType(name = "parent_plans_ReturnElement", propOrder = {"parentPlanNo", "parentPlanName", "clientParentPlanId"})
 public class ParentPlansReturnElement {
 
     @XmlElement(name = "parent_plan_no")
     protected Long parentPlanNo;
     @XmlElement(name = "parent_plan_name")
     protected String parentPlanName;
+    @XmlElement(name = "client_parent_plan_id")
+    protected String clientParentPlanId;
     
     public Long getParentPlanNo() {
         return parentPlanNo;
@@ -32,6 +34,14 @@ public class ParentPlansReturnElement {
 
     public void setParentPlanName(String value) {
         this.parentPlanName = value;
+    }
+
+    public String getClientParentPlanId() {
+        return clientParentPlanId;
+    }
+
+    public void setClientParentPlanId(String value) {
+        this.clientParentPlanId = value;
     }
 
     

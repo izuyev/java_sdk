@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","paymentTransactionId","reasonCode","totalRefundAmount","refundCheckNumber","comments","doWrite","autoCalcRefund","invoicesToReverse","clientReceiptId"})
+    "authKey",    "acctNo",    "paymentTransactionId",    "reasonCode",    "totalRefundAmount",    "refundCheckNumber",    "comments",    "doWrite",    "autoCalcRefund",    "invoicesToReverse",    "clientReceiptId"})
 @XmlRootElement(name = "issue_refund_to_acct")
 public class IssueRefundToAcct {
 
@@ -18,25 +18,25 @@ public class IssueRefundToAcct {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "payment_transaction_id")
+        @XmlElement(name = "payment_transaction_id")
     protected Long paymentTransactionId;
-    @XmlElement(name = "reason_code")
+        @XmlElement(name = "reason_code")
     protected Long reasonCode;
-    @XmlElement(name = "total_refund_amount")
+        @XmlElement(name = "total_refund_amount")
     protected Double totalRefundAmount;
-    @XmlElement(name = "refund_check_number")
+        @XmlElement(name = "refund_check_number")
     protected String refundCheckNumber;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
-    @XmlElement(name = "do_write")
+        @XmlElement(name = "do_write")
     protected String doWrite;
-    @XmlElement(name = "auto_calc_refund")
+        @XmlElement(name = "auto_calc_refund")
     protected String autoCalcRefund;
-    @XmlElement(name = "invoices_to_reverse")
+        @XmlElement(name = "invoices_to_reverse")
     protected InvoicesToReverseArray invoicesToReverse;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
     
     public long getClientNo() {
@@ -62,78 +62,68 @@ public class IssueRefundToAcct {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getPaymentTransactionId() {
+            public Long getPaymentTransactionId() {
         return paymentTransactionId;
     }
 
     public void setPaymentTransactionId(Long value) {
         this.paymentTransactionId = value;
     }
-    
-    public Long getReasonCode() {
+            public Long getReasonCode() {
         return reasonCode;
     }
 
     public void setReasonCode(Long value) {
         this.reasonCode = value;
     }
-    
-    public Double getTotalRefundAmount() {
+            public Double getTotalRefundAmount() {
         return totalRefundAmount;
     }
 
     public void setTotalRefundAmount(Double value) {
         this.totalRefundAmount = value;
     }
-    
-    public String getRefundCheckNumber() {
+            public String getRefundCheckNumber() {
         return refundCheckNumber;
     }
 
     public void setRefundCheckNumber(String value) {
         this.refundCheckNumber = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    public String getDoWrite() {
+            public String getDoWrite() {
         return doWrite;
     }
 
     public void setDoWrite(String value) {
         this.doWrite = value;
     }
-    
-    public String getAutoCalcRefund() {
+            public String getAutoCalcRefund() {
         return autoCalcRefund;
     }
 
     public void setAutoCalcRefund(String value) {
         this.autoCalcRefund = value;
     }
-    
-    public InvoicesToReverseArray getInvoicesToReverse() {
+            public InvoicesToReverseArray getInvoicesToReverse() {
         return invoicesToReverse;
     }
 
     public void setInvoicesToReverse(InvoicesToReverseArray value) {
         this.invoicesToReverse = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    
+            
 }

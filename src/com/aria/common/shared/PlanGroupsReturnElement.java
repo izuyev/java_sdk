@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "plan_groups_ReturnElement", propOrder = {"planGroupNo", "planGroupName", "planGroupDesc", "planGroupUsage", "selectableInd"})
+@XmlType(name = "plan_groups_ReturnElement", propOrder = {"planGroupNo", "planGroupName", "planGroupDesc", "planGroupUsage", "selectableInd", "clientPlanGroupId"})
 public class PlanGroupsReturnElement {
 
     @XmlElement(name = "plan_group_no")
@@ -23,6 +23,8 @@ public class PlanGroupsReturnElement {
     protected String planGroupUsage;
     @XmlElement(name = "selectable_ind")
     protected Long selectableInd;
+    @XmlElement(name = "client_plan_group_id")
+    protected String clientPlanGroupId;
     
     public Long getPlanGroupNo() {
         return planGroupNo;
@@ -62,6 +64,14 @@ public class PlanGroupsReturnElement {
 
     public void setSelectableInd(Long value) {
         this.selectableInd = value;
+    }
+
+    public String getClientPlanGroupId() {
+        return clientPlanGroupId;
+    }
+
+    public void setClientPlanGroupId(String value) {
+        this.clientPlanGroupId = value;
     }
 
     

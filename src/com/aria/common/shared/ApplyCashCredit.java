@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","creditAmount","creditReasonCode","comments","specificChargeTransactionId","clientReceiptId"})
+    "authKey",    "accountNo",    "creditAmount",    "creditReasonCode",    "comments",    "specificChargeTransactionId",    "clientReceiptId"})
 @XmlRootElement(name = "apply_cash_credit")
 public class ApplyCashCredit {
 
@@ -18,17 +18,17 @@ public class ApplyCashCredit {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_no")
+        @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "credit_amount")
+        @XmlElement(name = "credit_amount")
     protected Double creditAmount;
-    @XmlElement(name = "credit_reason_code")
+        @XmlElement(name = "credit_reason_code")
     protected Long creditReasonCode;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
-    @XmlElement(name = "specific_charge_transaction_id")
+        @XmlElement(name = "specific_charge_transaction_id")
     protected SpecificChargeTransactionIdArray specificChargeTransactionId;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
     
     public long getClientNo() {
@@ -54,46 +54,40 @@ public class ApplyCashCredit {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-    
-    public Double getCreditAmount() {
+            public Double getCreditAmount() {
         return creditAmount;
     }
 
     public void setCreditAmount(Double value) {
         this.creditAmount = value;
     }
-    
-    public Long getCreditReasonCode() {
+            public Long getCreditReasonCode() {
         return creditReasonCode;
     }
 
     public void setCreditReasonCode(Long value) {
         this.creditReasonCode = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    public SpecificChargeTransactionIdArray getSpecificChargeTransactionId() {
+            public SpecificChargeTransactionIdArray getSpecificChargeTransactionId() {
         return specificChargeTransactionId;
     }
 
     public void setSpecificChargeTransactionId(SpecificChargeTransactionIdArray value) {
         this.specificChargeTransactionId = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    
+            
 }

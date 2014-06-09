@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "prorationResultAmount", "invoiceNo", "suppPlanLineItems", "totalChargesBeforeTax", "totalTaxCharges", "totalChargesAfterTax", "totalCredit", "totalTaxCredit", "totalCreditBeforeTax", "total", "prorationCreditResultAmount", "prorationCreditAmount", "prorationTaxAmount", "thirdPartyErrors"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "prorationResultAmount", "invoiceNo", "suppPlanLineItems", "totalChargesBeforeTax", "totalTaxCharges", "totalChargesAfterTax", "totalCredit", "totalTaxCredit", "totalCreditBeforeTax", "total", "prorationCreditResultAmount", "prorationCreditAmount", "prorationTaxAmount", "clientServiceId", "clientPlanId", "thirdPartyErrors"})
 @XmlRootElement(name = "cancel_supp_planResponseElement")
 public class CancelSuppPlanResponseElement {
 
@@ -44,6 +44,10 @@ public class CancelSuppPlanResponseElement {
     protected Double prorationCreditAmount;
     @XmlElement(name = "proration_tax_amount")
     protected Double prorationTaxAmount;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
     @XmlElement(name = "third_party_errors")
     protected List<ThirdPartyErrorsReturnElement> thirdPartyErrors;
     
@@ -162,6 +166,22 @@ public class CancelSuppPlanResponseElement {
 
     public void setProrationTaxAmount(Double value) {
         this.prorationTaxAmount = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
     }
 
     public List<ThirdPartyErrorsReturnElement> getThirdPartyErrors() {

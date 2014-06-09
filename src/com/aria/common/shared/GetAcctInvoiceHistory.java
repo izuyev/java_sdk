@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","userId","startBillDate","endBillDate","includeVoided"})
+    "authKey",    "acctNo",    "userId",    "startBillDate",    "endBillDate",    "includeVoided"})
 @XmlRootElement(name = "get_acct_invoice_history")
 public class GetAcctInvoiceHistory {
 
@@ -18,15 +18,15 @@ public class GetAcctInvoiceHistory {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "user_id")
+        @XmlElement(name = "user_id")
     protected String userId;
-    @XmlElement(name = "start_bill_date")
+        @XmlElement(name = "start_bill_date")
     protected String startBillDate;
-    @XmlElement(name = "end_bill_date")
+        @XmlElement(name = "end_bill_date")
     protected String endBillDate;
-    @XmlElement(name = "include_voided")
+        @XmlElement(name = "include_voided")
     protected String includeVoided;
     
     public long getClientNo() {
@@ -52,38 +52,33 @@ public class GetAcctInvoiceHistory {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public String getUserId() {
+            public String getUserId() {
         return userId;
     }
 
     public void setUserId(String value) {
         this.userId = value;
     }
-    
-    public String getStartBillDate() {
+            public String getStartBillDate() {
         return startBillDate;
     }
 
     public void setStartBillDate(String value) {
         this.startBillDate = value;
     }
-    
-    public String getEndBillDate() {
+            public String getEndBillDate() {
         return endBillDate;
     }
 
     public void setEndBillDate(String value) {
         this.endBillDate = value;
     }
-    
-    public String getIncludeVoided() {
+            public String getIncludeVoided() {
         return includeVoided;
     }
 
     public void setIncludeVoided(String value) {
         this.includeVoided = value;
     }
-    
-    
+            
 }

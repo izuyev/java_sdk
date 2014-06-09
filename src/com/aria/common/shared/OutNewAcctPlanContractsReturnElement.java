@@ -10,13 +10,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "out_new_acct_plan_contracts_ReturnElement", propOrder = {"outContractNo", "outContractPlanNo"})
+@XmlType(name = "out_new_acct_plan_contracts_ReturnElement", propOrder = {"outContractNo", "outContractPlanNo", "outClientContractPlanId"})
 public class OutNewAcctPlanContractsReturnElement {
 
     @XmlElement(name = "out_contract_no")
     protected Long outContractNo;
     @XmlElement(name = "out_contract_plan_no")
     protected Long outContractPlanNo;
+    @XmlElement(name = "out_client_contract_plan_id")
+    protected String outClientContractPlanId;
     
     public Long getOutContractNo() {
         return outContractNo;
@@ -32,6 +34,14 @@ public class OutNewAcctPlanContractsReturnElement {
 
     public void setOutContractPlanNo(Long value) {
         this.outContractPlanNo = value;
+    }
+
+    public String getOutClientContractPlanId() {
+        return outClientContractPlanId;
+    }
+
+    public void setOutClientContractPlanId(String value) {
+        this.outClientContractPlanId = value;
     }
 
     

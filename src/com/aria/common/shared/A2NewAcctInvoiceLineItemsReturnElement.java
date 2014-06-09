@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "a2_new_acct_invoice_line_items_ReturnElement", propOrder = {"a2InvoiceLineNo", "a2InvoicePlanNo", "a2InvoicePlanName", "a2InvoiceServiceNo", "a2InvoiceServiceName", "a2InvoiceServiceCoaId", "a2InvoiceUnits", "a2InvoiceRatePerUnit", "a2InvoiceLineAmount", "a2InvoiceLineDescription", "a2InvoiceStartDateRange", "a2InvoiceEndDateRange"})
+@XmlType(name = "a2_new_acct_invoice_line_items_ReturnElement", propOrder = {"a2InvoiceLineNo", "a2InvoicePlanNo", "a2InvoicePlanName", "a2InvoiceServiceNo", "a2InvoiceServiceName", "a2InvoiceServiceCoaId", "a2InvoiceUnits", "a2InvoiceRatePerUnit", "a2InvoiceLineAmount", "a2InvoiceLineDescription", "a2InvoiceStartDateRange", "a2InvoiceEndDateRange", "a2ClientInvoicePlanId", "a2ClientInvoiceServiceId", "a2ClientInvoiceServiceCoaCode"})
 public class A2NewAcctInvoiceLineItemsReturnElement {
 
     @XmlElement(name = "a2_invoice_line_no")
@@ -37,6 +37,12 @@ public class A2NewAcctInvoiceLineItemsReturnElement {
     protected String a2InvoiceStartDateRange;
     @XmlElement(name = "a2_invoice_end_date_range")
     protected String a2InvoiceEndDateRange;
+    @XmlElement(name = "a2_client_invoice_plan_id")
+    protected String a2ClientInvoicePlanId;
+    @XmlElement(name = "a2_client_invoice_service_id")
+    protected String a2ClientInvoiceServiceId;
+    @XmlElement(name = "a2_client_invoice_service_coa_code")
+    protected String a2ClientInvoiceServiceCoaCode;
     
     public Long getA2InvoiceLineNo() {
         return a2InvoiceLineNo;
@@ -132,6 +138,30 @@ public class A2NewAcctInvoiceLineItemsReturnElement {
 
     public void setA2InvoiceEndDateRange(String value) {
         this.a2InvoiceEndDateRange = value;
+    }
+
+    public String getA2ClientInvoicePlanId() {
+        return a2ClientInvoicePlanId;
+    }
+
+    public void setA2ClientInvoicePlanId(String value) {
+        this.a2ClientInvoicePlanId = value;
+    }
+
+    public String getA2ClientInvoiceServiceId() {
+        return a2ClientInvoiceServiceId;
+    }
+
+    public void setA2ClientInvoiceServiceId(String value) {
+        this.a2ClientInvoiceServiceId = value;
+    }
+
+    public String getA2ClientInvoiceServiceCoaCode() {
+        return a2ClientInvoiceServiceCoaCode;
+    }
+
+    public void setA2ClientInvoiceServiceCoaCode(String value) {
+        this.a2ClientInvoiceServiceCoaCode = value;
     }
 
     

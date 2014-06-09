@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","eventId"})
+    "authKey",    "eventId"})
 @XmlRootElement(name = "unsubscribe_event")
 public class UnsubscribeEvent {
 
@@ -18,7 +18,7 @@ public class UnsubscribeEvent {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "event_id")
+        @XmlElement(name = "event_id")
     protected Long eventId;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class UnsubscribeEvent {
     public void setEventId(Long value) {
         this.eventId = value;
     }
-    
-    
+            
 }

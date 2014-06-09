@@ -11,7 +11,9 @@ import javax.xml.bind.annotation.XmlType;
     "planItemServiceNo",
     "planItemPlanNo",
     "planItemUnits",
-    "planItemUnitAmount"
+    "planItemUnitAmount",
+    "clientPlanItemServiceId",
+    "clientPlanItemPlanId"
     })
 public class PreCalcPlanRow {
 
@@ -23,6 +25,10 @@ public class PreCalcPlanRow {
     protected Double planItemUnits;
     @XmlElement(name = "plan_item_unit_amount")
     protected Double planItemUnitAmount;
+    @XmlElement(name = "client_plan_item_service_id")
+    protected String clientPlanItemServiceId;
+    @XmlElement(name = "client_plan_item_plan_id")
+    protected String clientPlanItemPlanId;
     public Long getPlanItemServiceNo() {
         return planItemServiceNo;
     }
@@ -53,6 +59,22 @@ public class PreCalcPlanRow {
 
     public void setPlanItemUnitAmount(Double value) {
         this.planItemUnitAmount = value;
+    }
+
+    public String getClientPlanItemServiceId() {
+        return clientPlanItemServiceId;
+    }
+
+    public void setClientPlanItemServiceId(String value) {
+        this.clientPlanItemServiceId = value;
+    }
+
+    public String getClientPlanItemPlanId() {
+        return clientPlanItemPlanId;
+    }
+
+    public void setClientPlanItemPlanId(String value) {
+        this.clientPlanItemPlanId = value;
     }
 
     

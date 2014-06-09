@@ -9,7 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "a1_usage_accumulation_config_row", propOrder = {
     "a1UsageAccumulationPlanNo",
-    "a1UsageAccumulationResetMonths"
+    "a1UsageAccumulationResetMonths",
+    "a1ClientUsgAccumPlanId"
     })
 public class A1UsageAccumulationConfigRow {
 
@@ -17,6 +18,8 @@ public class A1UsageAccumulationConfigRow {
     protected Long a1UsageAccumulationPlanNo;
     @XmlElement(name = "a1_usage_accumulation_reset_months")
     protected Long a1UsageAccumulationResetMonths;
+    @XmlElement(name = "a1_client_usg_accum_plan_id")
+    protected String a1ClientUsgAccumPlanId;
     public Long getA1UsageAccumulationPlanNo() {
         return a1UsageAccumulationPlanNo;
     }
@@ -31,6 +34,14 @@ public class A1UsageAccumulationConfigRow {
 
     public void setA1UsageAccumulationResetMonths(Long value) {
         this.a1UsageAccumulationResetMonths = value;
+    }
+
+    public String getA1ClientUsgAccumPlanId() {
+        return a1ClientUsgAccumPlanId;
+    }
+
+    public void setA1ClientUsgAccumPlanId(String value) {
+        this.a1ClientUsgAccumPlanId = value;
     }
 
     

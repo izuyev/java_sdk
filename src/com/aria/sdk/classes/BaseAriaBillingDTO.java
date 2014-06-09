@@ -7,6 +7,7 @@ public class BaseAriaBillingDTO {
 	private Boolean debug;
 	private CallType callType;
 	private OutPutFormat outPutFormat;
+	private LibraryType libraryType;
 	/******************* END - CLASS ATTRIBUTES ********************/
 	
 	
@@ -26,6 +27,26 @@ public class BaseAriaBillingDTO {
 		this.debug = debug;
 		this.callType = calltype;
 		this.outPutFormat = outPutFormat;
+	}
+
+	/**
+	 * Constructor for the BaseAriaBillingDTO class.
+	 * @param url
+	 * @param logFile
+	 * @param debug
+	 * @param calltype
+	 * @param outPutFormat
+	 * @param libraryType
+	 */
+	public BaseAriaBillingDTO(String url, String logFile, Boolean debug,
+			CallType calltype, OutPutFormat outPutFormat, LibraryType libraryType) {
+		super();
+		this.url = url;
+		this.logFile = logFile;
+		this.debug = debug;
+		this.callType = calltype;
+		this.outPutFormat = outPutFormat;
+		this.libraryType = libraryType;
 	}
 
 	public BaseAriaBillingDTO() {
@@ -50,6 +71,10 @@ public class BaseAriaBillingDTO {
 	public OutPutFormat getOutPutFormat() {
 		return outPutFormat;
 	}
+
+	public LibraryType getLibraryType() {
+		return libraryType;
+	}
 	/******************* END - GETTERS ********************/
 
 	/******************* SETTERS ********************/
@@ -71,6 +96,10 @@ public class BaseAriaBillingDTO {
 
 	public void setOutPutFormat(OutPutFormat outPutFormat) {
 		this.outPutFormat = outPutFormat;
+	}
+
+	public void setLibraryType(LibraryType libraryType) {
+		this.libraryType = libraryType;
 	}
 	/******************* END - SETTERS ********************/
 }

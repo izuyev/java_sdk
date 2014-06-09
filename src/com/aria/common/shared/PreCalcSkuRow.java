@@ -11,7 +11,8 @@ import javax.xml.bind.annotation.XmlType;
     "sku",
     "skuPlanNo",
     "skuUnits",
-    "skuUnitAmount"
+    "skuUnitAmount",
+    "clientSkuPlanId"
     })
 public class PreCalcSkuRow {
 
@@ -23,6 +24,8 @@ public class PreCalcSkuRow {
     protected Double skuUnits;
     @XmlElement(name = "sku_unit_amount")
     protected Double skuUnitAmount;
+    @XmlElement(name = "client_sku_plan_id")
+    protected String clientSkuPlanId;
     public String getSku() {
         return sku;
     }
@@ -53,6 +56,14 @@ public class PreCalcSkuRow {
 
     public void setSkuUnitAmount(Double value) {
         this.skuUnitAmount = value;
+    }
+
+    public String getClientSkuPlanId() {
+        return clientSkuPlanId;
+    }
+
+    public void setClientSkuPlanId(String value) {
+        this.clientSkuPlanId = value;
     }
 
     

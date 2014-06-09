@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","notificationTemplateGroupId","acctNo","acctUserId","clientAcctId"})
+    "authKey",    "notificationTemplateGroupId",    "acctNo",    "acctUserId",    "clientAcctId"})
 @XmlRootElement(name = "set_acct_notify_tmplt_grp")
 public class SetAcctNotifyTmpltGrp {
 
@@ -18,13 +18,13 @@ public class SetAcctNotifyTmpltGrp {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "notification_template_group_id")
+        @XmlElement(name = "notification_template_group_id")
     protected String notificationTemplateGroupId;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "acct_user_id")
+        @XmlElement(name = "acct_user_id")
     protected String acctUserId;
-    @XmlElement(name = "client_acct_id")
+        @XmlElement(name = "client_acct_id")
     protected String clientAcctId;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class SetAcctNotifyTmpltGrp {
     public void setNotificationTemplateGroupId(String value) {
         this.notificationTemplateGroupId = value;
     }
-    
-    public Long getAcctNo() {
+            public Long getAcctNo() {
         return acctNo;
     }
 
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public String getAcctUserId() {
+            public String getAcctUserId() {
         return acctUserId;
     }
 
     public void setAcctUserId(String value) {
         this.acctUserId = value;
     }
-    
-    public String getClientAcctId() {
+            public String getClientAcctId() {
         return clientAcctId;
     }
 
     public void setClientAcctId(String value) {
         this.clientAcctId = value;
     }
-    
-    
+            
 }

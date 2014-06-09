@@ -8,18 +8,29 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "a3_enable_usage_pooling_plan_no_row", propOrder = {
-    "a3EnableUsagePoolingPlanNo"
+    "a3EnableUsagePoolingPlanNo",
+    "a3ClientEnableUsgPoolPlanId"
     })
 public class A3EnableUsagePoolingPlanNoRow {
 
     @XmlElement(name = "a3_enable_usage_pooling_plan_no")
     protected Long a3EnableUsagePoolingPlanNo;
+    @XmlElement(name = "a3_client_enable_usg_pool_plan_id")
+    protected String a3ClientEnableUsgPoolPlanId;
     public Long getA3EnableUsagePoolingPlanNo() {
         return a3EnableUsagePoolingPlanNo;
     }
 
     public void setA3EnableUsagePoolingPlanNo(Long value) {
         this.a3EnableUsagePoolingPlanNo = value;
+    }
+
+    public String getA3ClientEnableUsgPoolPlanId() {
+        return a3ClientEnableUsgPoolPlanId;
+    }
+
+    public void setA3ClientEnableUsgPoolPlanId(String value) {
+        this.a3ClientEnableUsgPoolPlanId = value;
     }
 
     

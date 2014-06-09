@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","transactionId","reasonCode","comments","clientReceiptId"})
+    "authKey",    "accountNo",    "transactionId",    "reasonCode",    "comments",    "clientReceiptId"})
 @XmlRootElement(name = "void_transaction")
 public class VoidTransaction {
 
@@ -18,15 +18,15 @@ public class VoidTransaction {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_no")
+        @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "transaction_id")
+        @XmlElement(name = "transaction_id")
     protected Long transactionId;
-    @XmlElement(name = "reason_code")
+        @XmlElement(name = "reason_code")
     protected Long reasonCode;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
     
     public long getClientNo() {
@@ -52,38 +52,33 @@ public class VoidTransaction {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-    
-    public Long getTransactionId() {
+            public Long getTransactionId() {
         return transactionId;
     }
 
     public void setTransactionId(Long value) {
         this.transactionId = value;
     }
-    
-    public Long getReasonCode() {
+            public Long getReasonCode() {
         return reasonCode;
     }
 
     public void setReasonCode(Long value) {
         this.reasonCode = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    
+            
 }

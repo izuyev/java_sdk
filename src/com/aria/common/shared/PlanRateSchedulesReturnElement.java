@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "plan_rate_schedules_ReturnElement", propOrder = {"scheduleNo", "scheduleName", "scheduleCurrency", "scheduleDefaultInd", "scheduleDefaultIndCurr", "scheduleDisplayInd"})
+@XmlType(name = "plan_rate_schedules_ReturnElement", propOrder = {"scheduleNo", "scheduleName", "scheduleCurrency", "scheduleDefaultInd", "scheduleDefaultIndCurr", "scheduleDisplayInd", "clientRateScheduleId"})
 public class PlanRateSchedulesReturnElement {
 
     @XmlElement(name = "schedule_no")
@@ -25,6 +25,8 @@ public class PlanRateSchedulesReturnElement {
     protected Long scheduleDefaultIndCurr;
     @XmlElement(name = "schedule_display_ind")
     protected Long scheduleDisplayInd;
+    @XmlElement(name = "client_rate_schedule_id")
+    protected String clientRateScheduleId;
     
     public Long getScheduleNo() {
         return scheduleNo;
@@ -72,6 +74,14 @@ public class PlanRateSchedulesReturnElement {
 
     public void setScheduleDisplayInd(Long value) {
         this.scheduleDisplayInd = value;
+    }
+
+    public String getClientRateScheduleId() {
+        return clientRateScheduleId;
+    }
+
+    public void setClientRateScheduleId(String value) {
+        this.clientRateScheduleId = value;
     }
 
     

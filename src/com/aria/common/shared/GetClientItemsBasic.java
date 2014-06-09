@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","filterCurrencyCd","returnNoCostItems","filterItemNo","includeInactiveItems"})
+    "authKey",    "filterCurrencyCd",    "returnNoCostItems",    "filterItemNo",    "includeInactiveItems",    "filterClientItemId"})
 @XmlRootElement(name = "get_client_items_basic")
 public class GetClientItemsBasic {
 
@@ -18,14 +18,16 @@ public class GetClientItemsBasic {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "filter_currency_cd")
+        @XmlElement(name = "filter_currency_cd")
     protected String filterCurrencyCd;
-    @XmlElement(name = "return_no_cost_items")
+        @XmlElement(name = "return_no_cost_items")
     protected String returnNoCostItems;
-    @XmlElement(name = "filter_item_no")
+        @XmlElement(name = "filter_item_no")
     protected Long filterItemNo;
-    @XmlElement(name = "include_inactive_items")
+        @XmlElement(name = "include_inactive_items")
     protected String includeInactiveItems;
+        @XmlElement(name = "filter_client_item_id")
+    protected String filterClientItemId;
     
     public long getClientNo() {
         return clientNo;
@@ -50,30 +52,33 @@ public class GetClientItemsBasic {
     public void setFilterCurrencyCd(String value) {
         this.filterCurrencyCd = value;
     }
-    
-    public String getReturnNoCostItems() {
+            public String getReturnNoCostItems() {
         return returnNoCostItems;
     }
 
     public void setReturnNoCostItems(String value) {
         this.returnNoCostItems = value;
     }
-    
-    public Long getFilterItemNo() {
+            public Long getFilterItemNo() {
         return filterItemNo;
     }
 
     public void setFilterItemNo(Long value) {
         this.filterItemNo = value;
     }
-    
-    public String getIncludeInactiveItems() {
+            public String getIncludeInactiveItems() {
         return includeInactiveItems;
     }
 
     public void setIncludeInactiveItems(String value) {
         this.includeInactiveItems = value;
     }
-    
-    
+            public String getFilterClientItemId() {
+        return filterClientItemId;
+    }
+
+    public void setFilterClientItemId(String value) {
+        this.filterClientItemId = value;
+    }
+            
 }

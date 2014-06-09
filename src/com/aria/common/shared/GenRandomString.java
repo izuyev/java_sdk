@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","randType","randLength","randCase"})
+    "authKey",    "randType",    "randLength",    "randCase"})
 @XmlRootElement(name = "gen_random_string")
 public class GenRandomString {
 
@@ -18,11 +18,11 @@ public class GenRandomString {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "rand_type")
+        @XmlElement(name = "rand_type")
     protected String randType;
-    @XmlElement(name = "rand_length")
+        @XmlElement(name = "rand_length")
     protected Long randLength;
-    @XmlElement(name = "rand_case")
+        @XmlElement(name = "rand_case")
     protected String randCase;
     
     public long getClientNo() {
@@ -48,22 +48,19 @@ public class GenRandomString {
     public void setRandType(String value) {
         this.randType = value;
     }
-    
-    public Long getRandLength() {
+            public Long getRandLength() {
         return randLength;
     }
 
     public void setRandLength(Long value) {
         this.randLength = value;
     }
-    
-    public String getRandCase() {
+            public String getRandCase() {
         return randCase;
     }
 
     public void setRandCase(String value) {
         this.randCase = value;
     }
-    
-    
+            
 }

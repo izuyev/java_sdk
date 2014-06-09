@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","contractNo","updateComments","closeStatus"})
+    "authKey",    "acctNo",    "contractNo",    "updateComments",    "closeStatus"})
 @XmlRootElement(name = "cancel_acct_plan_contract")
 public class CancelAcctPlanContract {
 
@@ -18,13 +18,13 @@ public class CancelAcctPlanContract {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "contract_no")
+        @XmlElement(name = "contract_no")
     protected Long contractNo;
-    @XmlElement(name = "update_comments")
+        @XmlElement(name = "update_comments")
     protected String updateComments;
-    @XmlElement(name = "close_status")
+        @XmlElement(name = "close_status")
     protected Long closeStatus;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class CancelAcctPlanContract {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getContractNo() {
+            public Long getContractNo() {
         return contractNo;
     }
 
     public void setContractNo(Long value) {
         this.contractNo = value;
     }
-    
-    public String getUpdateComments() {
+            public String getUpdateComments() {
         return updateComments;
     }
 
     public void setUpdateComments(String value) {
         this.updateComments = value;
     }
-    
-    public Long getCloseStatus() {
+            public Long getCloseStatus() {
         return closeStatus;
     }
 
     public void setCloseStatus(Long value) {
         this.closeStatus = value;
     }
-    
-    
+            
 }

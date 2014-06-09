@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","token"})
+    "authKey",    "acctNo",    "token"})
 @XmlRootElement(name = "save_paypal_bill_agreement")
 public class SavePaypalBillAgreement {
 
@@ -18,9 +18,9 @@ public class SavePaypalBillAgreement {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "token")
+        @XmlElement(name = "token")
     protected String token;
     
     public long getClientNo() {
@@ -46,14 +46,12 @@ public class SavePaypalBillAgreement {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public String getToken() {
+            public String getToken() {
         return token;
     }
 
     public void setToken(String value) {
         this.token = value;
     }
-    
-    
+            
 }

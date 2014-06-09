@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","sessionId"})
+    "authKey",    "sessionId"})
 @XmlRootElement(name = "keep_alive")
 public class KeepAlive {
 
@@ -18,7 +18,7 @@ public class KeepAlive {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "session_id")
+        @XmlElement(name = "session_id")
     protected String sessionId;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class KeepAlive {
     public void setSessionId(String value) {
         this.sessionId = value;
     }
-    
-    
+            
 }

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "supp_plan_hist_ReturnElement", propOrder = {"suppPlanNo", "oldStatusCd", "newStatusCd", "oldPlanUnits", "newPlanUnits", "oldScheduleNo", "newScheduleNo", "comments", "updateDate"})
+@XmlType(name = "supp_plan_hist_ReturnElement", propOrder = {"suppPlanNo", "oldStatusCd", "newStatusCd", "oldPlanUnits", "newPlanUnits", "oldScheduleNo", "newScheduleNo", "comments", "updateDate", "clientSuppPlanId", "clientOldScheduleId", "clientNewScheduleId"})
 public class SuppPlanHistReturnElement {
 
     @XmlElement(name = "supp_plan_no")
@@ -31,6 +31,12 @@ public class SuppPlanHistReturnElement {
     protected String comments;
     @XmlElement(name = "update_date")
     protected String updateDate;
+    @XmlElement(name = "client_supp_plan_id")
+    protected String clientSuppPlanId;
+    @XmlElement(name = "client_old_schedule_id")
+    protected String clientOldScheduleId;
+    @XmlElement(name = "client_new_schedule_id")
+    protected String clientNewScheduleId;
     
     public Long getSuppPlanNo() {
         return suppPlanNo;
@@ -102,6 +108,30 @@ public class SuppPlanHistReturnElement {
 
     public void setUpdateDate(String value) {
         this.updateDate = value;
+    }
+
+    public String getClientSuppPlanId() {
+        return clientSuppPlanId;
+    }
+
+    public void setClientSuppPlanId(String value) {
+        this.clientSuppPlanId = value;
+    }
+
+    public String getClientOldScheduleId() {
+        return clientOldScheduleId;
+    }
+
+    public void setClientOldScheduleId(String value) {
+        this.clientOldScheduleId = value;
+    }
+
+    public String getClientNewScheduleId() {
+        return clientNewScheduleId;
+    }
+
+    public void setClientNewScheduleId(String value) {
+        this.clientNewScheduleId = value;
     }
 
     

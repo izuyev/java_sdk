@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNo","planNo","clientReceiptId"})
+    "authKey",    "accountNo",    "planNo",    "clientReceiptId",    "clientPlanId"})
 @XmlRootElement(name = "set_service_plan_immediately")
 public class SetServicePlanImmediately {
 
@@ -18,12 +18,14 @@ public class SetServicePlanImmediately {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_no")
+        @XmlElement(name = "account_no")
     protected Long accountNo;
-    @XmlElement(name = "plan_no")
+        @XmlElement(name = "plan_no")
     protected Long planNo;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
+        @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
     
     public long getClientNo() {
         return clientNo;
@@ -48,22 +50,26 @@ public class SetServicePlanImmediately {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-    
-    public Long getPlanNo() {
+            public Long getPlanNo() {
         return planNo;
     }
 
     public void setPlanNo(Long value) {
         this.planNo = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    
+            public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+            
 }

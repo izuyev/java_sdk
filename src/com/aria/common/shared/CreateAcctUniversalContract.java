@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","typeNo","lengthMonths","createComments","startDate","endDate"})
+    "authKey",    "acctNo",    "typeNo",    "lengthMonths",    "createComments",    "startDate",    "endDate"})
 @XmlRootElement(name = "create_acct_universal_contract")
 public class CreateAcctUniversalContract {
 
@@ -18,17 +18,17 @@ public class CreateAcctUniversalContract {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "type_no")
+        @XmlElement(name = "type_no")
     protected Long typeNo;
-    @XmlElement(name = "length_months")
+        @XmlElement(name = "length_months")
     protected Long lengthMonths;
-    @XmlElement(name = "create_comments")
+        @XmlElement(name = "create_comments")
     protected String createComments;
-    @XmlElement(name = "start_date")
+        @XmlElement(name = "start_date")
     protected String startDate;
-    @XmlElement(name = "end_date")
+        @XmlElement(name = "end_date")
     protected String endDate;
     
     public long getClientNo() {
@@ -54,46 +54,40 @@ public class CreateAcctUniversalContract {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getTypeNo() {
+            public Long getTypeNo() {
         return typeNo;
     }
 
     public void setTypeNo(Long value) {
         this.typeNo = value;
     }
-    
-    public Long getLengthMonths() {
+            public Long getLengthMonths() {
         return lengthMonths;
     }
 
     public void setLengthMonths(Long value) {
         this.lengthMonths = value;
     }
-    
-    public String getCreateComments() {
+            public String getCreateComments() {
         return createComments;
     }
 
     public void setCreateComments(String value) {
         this.createComments = value;
     }
-    
-    public String getStartDate() {
+            public String getStartDate() {
         return startDate;
     }
 
     public void setStartDate(String value) {
         this.startDate = value;
     }
-    
-    public String getEndDate() {
+            public String getEndDate() {
         return endDate;
     }
 
     public void setEndDate(String value) {
         this.endDate = value;
     }
-    
-    
+            
 }

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","paymentTransactionId"})
+    "authKey",    "acctNo",    "paymentTransactionId"})
 @XmlRootElement(name = "get_reversible_invs_by_payment")
 public class GetReversibleInvsByPayment {
 
@@ -18,9 +18,9 @@ public class GetReversibleInvsByPayment {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "payment_transaction_id")
+        @XmlElement(name = "payment_transaction_id")
     protected Long paymentTransactionId;
     
     public long getClientNo() {
@@ -46,14 +46,12 @@ public class GetReversibleInvsByPayment {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getPaymentTransactionId() {
+            public Long getPaymentTransactionId() {
         return paymentTransactionId;
     }
 
     public void setPaymentTransactionId(Long value) {
         this.paymentTransactionId = value;
     }
-    
-    
+            
 }

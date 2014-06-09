@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","offsetHours"})
+    "authKey",    "offsetHours"})
 @XmlRootElement(name = "advance_virtual_datetime")
 public class AdvanceVirtualDatetime {
 
@@ -18,7 +18,7 @@ public class AdvanceVirtualDatetime {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "offset_hours")
+        @XmlElement(name = "offset_hours")
     protected Long offsetHours;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class AdvanceVirtualDatetime {
     public void setOffsetHours(Long value) {
         this.offsetHours = value;
     }
-    
-    
+            
 }

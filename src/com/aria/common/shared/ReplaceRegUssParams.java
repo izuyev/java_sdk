@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","sessionId","inRegUssParams"})
+    "authKey",    "sessionId",    "inRegUssParams"})
 @XmlRootElement(name = "replace_reg_uss_params")
 public class ReplaceRegUssParams {
 
@@ -18,9 +18,9 @@ public class ReplaceRegUssParams {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "session_id")
+        @XmlElement(name = "session_id")
     protected String sessionId;
-    @XmlElement(name = "in_reg_uss_params")
+        @XmlElement(name = "in_reg_uss_params")
     protected InRegUssParamsArray inRegUssParams;
     
     public long getClientNo() {
@@ -46,14 +46,12 @@ public class ReplaceRegUssParams {
     public void setSessionId(String value) {
         this.sessionId = value;
     }
-    
-    public InRegUssParamsArray getInRegUssParams() {
+            public InRegUssParamsArray getInRegUssParams() {
         return inRegUssParams;
     }
 
     public void setInRegUssParams(InRegUssParamsArray value) {
         this.inRegUssParams = value;
     }
-    
-    
+            
 }

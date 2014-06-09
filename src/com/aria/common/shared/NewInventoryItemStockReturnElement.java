@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "new_inventory_item_stock_ReturnElement", propOrder = {"outItemNo", "outClientSku", "newStockLevel"})
+@XmlType(name = "new_inventory_item_stock_ReturnElement", propOrder = {"outItemNo", "outClientSku", "newStockLevel", "outClientItemId"})
 public class NewInventoryItemStockReturnElement {
 
     @XmlElement(name = "out_item_no")
@@ -19,6 +19,8 @@ public class NewInventoryItemStockReturnElement {
     protected String outClientSku;
     @XmlElement(name = "new_stock_level")
     protected Double newStockLevel;
+    @XmlElement(name = "out_client_item_id")
+    protected String outClientItemId;
     
     public Long getOutItemNo() {
         return outItemNo;
@@ -42,6 +44,14 @@ public class NewInventoryItemStockReturnElement {
 
     public void setNewStockLevel(Double value) {
         this.newStockLevel = value;
+    }
+
+    public String getOutClientItemId() {
+        return outClientItemId;
+    }
+
+    public void setOutClientItemId(String value) {
+        this.outClientItemId = value;
     }
 
     

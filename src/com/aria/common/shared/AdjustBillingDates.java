@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","actionDirective","adjustmentDays","comments"})
+    "authKey",    "acctNo",    "actionDirective",    "adjustmentDays",    "comments"})
 @XmlRootElement(name = "adjust_billing_dates")
 public class AdjustBillingDates {
 
@@ -18,13 +18,13 @@ public class AdjustBillingDates {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "action_directive")
+        @XmlElement(name = "action_directive")
     protected Long actionDirective;
-    @XmlElement(name = "adjustment_days")
+        @XmlElement(name = "adjustment_days")
     protected Long adjustmentDays;
-    @XmlElement(name = "comments")
+        @XmlElement(name = "comments")
     protected String comments;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class AdjustBillingDates {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getActionDirective() {
+            public Long getActionDirective() {
         return actionDirective;
     }
 
     public void setActionDirective(Long value) {
         this.actionDirective = value;
     }
-    
-    public Long getAdjustmentDays() {
+            public Long getAdjustmentDays() {
         return adjustmentDays;
     }
 
     public void setAdjustmentDays(Long value) {
         this.adjustmentDays = value;
     }
-    
-    public String getComments() {
+            public String getComments() {
         return comments;
     }
 
     public void setComments(String value) {
         this.comments = value;
     }
-    
-    
+            
 }

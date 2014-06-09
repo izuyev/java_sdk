@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "promotional_plan_sets_ReturnElement", propOrder = {"promoSetNo", "promoSetName", "promoSetDesc", "promotionsForSet"})
+@XmlType(name = "promotional_plan_sets_ReturnElement", propOrder = {"promoSetNo", "promoSetName", "promoSetDesc", "promotionsForSet", "clientPromoSetId"})
 public class PromotionalPlanSetsReturnElement {
 
     @XmlElement(name = "promo_set_no")
@@ -21,6 +21,8 @@ public class PromotionalPlanSetsReturnElement {
     protected String promoSetDesc;
     @XmlElement(name = "promotions_for_set")
     protected List<PromotionsForSetReturnElement> promotionsForSet;
+    @XmlElement(name = "client_promo_set_id")
+    protected String clientPromoSetId;
     
     public Long getPromoSetNo() {
         return promoSetNo;
@@ -51,5 +53,13 @@ public class PromotionalPlanSetsReturnElement {
             this.promotionsForSet = new ArrayList<PromotionsForSetReturnElement>();
         }
         return this.promotionsForSet;
+    }public String getClientPromoSetId() {
+        return clientPromoSetId;
     }
+
+    public void setClientPromoSetId(String value) {
+        this.clientPromoSetId = value;
+    }
+
+    
 }

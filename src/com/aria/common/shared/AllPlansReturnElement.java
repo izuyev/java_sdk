@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "all_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "planServices"})
+@XmlType(name = "all_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "clientPlanId", "clientRolloverPlanId", "clientPlan2AssignOnSusp", "planServices"})
 public class AllPlansReturnElement {
 
     @XmlElement(name = "plan_no")
@@ -51,6 +51,12 @@ public class AllPlansReturnElement {
     protected Long prepaidInd;
     @XmlElement(name = "currency_cd")
     protected String currencyCd;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
+    @XmlElement(name = "client_rollover_plan_id")
+    protected String clientRolloverPlanId;
+    @XmlElement(name = "client_plan_2_assign_on_susp")
+    protected String clientPlan2AssignOnSusp;
     @XmlElement(name = "plan_services")
     protected List<PlanServicesReturnElement> planServices;
     
@@ -204,6 +210,30 @@ public class AllPlansReturnElement {
 
     public void setCurrencyCd(String value) {
         this.currencyCd = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+
+    public String getClientRolloverPlanId() {
+        return clientRolloverPlanId;
+    }
+
+    public void setClientRolloverPlanId(String value) {
+        this.clientRolloverPlanId = value;
+    }
+
+    public String getClientPlan2AssignOnSusp() {
+        return clientPlan2AssignOnSusp;
+    }
+
+    public void setClientPlan2AssignOnSusp(String value) {
+        this.clientPlan2AssignOnSusp = value;
     }
 
     public List<PlanServicesReturnElement> getPlanServices() {

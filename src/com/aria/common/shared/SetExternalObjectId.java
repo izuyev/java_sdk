@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","destinationId","sourceTypeId","objectId","externalId","actionDirective"})
+    "authKey",    "destinationId",    "sourceTypeId",    "objectId",    "externalId",    "actionDirective"})
 @XmlRootElement(name = "set_external_object_id")
 public class SetExternalObjectId {
 
@@ -18,15 +18,15 @@ public class SetExternalObjectId {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "destination_id")
+        @XmlElement(name = "destination_id")
     protected Long destinationId;
-    @XmlElement(name = "source_type_id")
+        @XmlElement(name = "source_type_id")
     protected Long sourceTypeId;
-    @XmlElement(name = "object_id")
+        @XmlElement(name = "object_id")
     protected Long objectId;
-    @XmlElement(name = "external_id")
+        @XmlElement(name = "external_id")
     protected String externalId;
-    @XmlElement(name = "action_directive")
+        @XmlElement(name = "action_directive")
     protected Long actionDirective;
     
     public long getClientNo() {
@@ -52,38 +52,33 @@ public class SetExternalObjectId {
     public void setDestinationId(Long value) {
         this.destinationId = value;
     }
-    
-    public Long getSourceTypeId() {
+            public Long getSourceTypeId() {
         return sourceTypeId;
     }
 
     public void setSourceTypeId(Long value) {
         this.sourceTypeId = value;
     }
-    
-    public Long getObjectId() {
+            public Long getObjectId() {
         return objectId;
     }
 
     public void setObjectId(Long value) {
         this.objectId = value;
     }
-    
-    public String getExternalId() {
+            public String getExternalId() {
         return externalId;
     }
 
     public void setExternalId(String value) {
         this.externalId = value;
     }
-    
-    public Long getActionDirective() {
+            public Long getActionDirective() {
         return actionDirective;
     }
 
     public void setActionDirective(Long value) {
         this.actionDirective = value;
     }
-    
-    
+            
 }

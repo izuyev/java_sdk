@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","batchDate"})
+    "authKey",    "batchDate"})
 @XmlRootElement(name = "get_daily_batch_status")
 public class GetDailyBatchStatus {
 
@@ -18,7 +18,7 @@ public class GetDailyBatchStatus {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "batch_date")
+        @XmlElement(name = "batch_date")
     protected String batchDate;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class GetDailyBatchStatus {
     public void setBatchDate(String value) {
         this.batchDate = value;
     }
-    
-    
+            
 }

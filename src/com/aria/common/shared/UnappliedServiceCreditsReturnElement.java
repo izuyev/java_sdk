@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "unapplied_service_credits_ReturnElement", propOrder = {"creditId", "createDate", "createUser", "initialAmount", "amountLeftToApply", "reasonCd", "reasonText", "comments", "currencyCd", "serviceNoToApply", "serviceNameToApply", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "eligibleServiceTypes"})
+@XmlType(name = "unapplied_service_credits_ReturnElement", propOrder = {"creditId", "createDate", "createUser", "initialAmount", "amountLeftToApply", "reasonCd", "reasonText", "comments", "currencyCd", "serviceNoToApply", "serviceNameToApply", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "clientServiceIdToApply", "clientEligiblePlanId", "clientEligibleServiceId", "eligibleServiceTypes"})
 public class UnappliedServiceCreditsReturnElement {
 
     @XmlElement(name = "credit_id")
@@ -43,6 +43,12 @@ public class UnappliedServiceCreditsReturnElement {
     protected Long eligibleServiceNo;
     @XmlElement(name = "eligible_service_name")
     protected String eligibleServiceName;
+    @XmlElement(name = "client_service_id_to_apply")
+    protected String clientServiceIdToApply;
+    @XmlElement(name = "client_eligible_plan_id")
+    protected String clientEligiblePlanId;
+    @XmlElement(name = "client_eligible_service_id")
+    protected String clientEligibleServiceId;
     @XmlElement(name = "eligible_service_types")
     protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
     
@@ -164,6 +170,30 @@ public class UnappliedServiceCreditsReturnElement {
 
     public void setEligibleServiceName(String value) {
         this.eligibleServiceName = value;
+    }
+
+    public String getClientServiceIdToApply() {
+        return clientServiceIdToApply;
+    }
+
+    public void setClientServiceIdToApply(String value) {
+        this.clientServiceIdToApply = value;
+    }
+
+    public String getClientEligiblePlanId() {
+        return clientEligiblePlanId;
+    }
+
+    public void setClientEligiblePlanId(String value) {
+        this.clientEligiblePlanId = value;
+    }
+
+    public String getClientEligibleServiceId() {
+        return clientEligibleServiceId;
+    }
+
+    public void setClientEligibleServiceId(String value) {
+        this.clientEligibleServiceId = value;
     }
 
     public List<EligibleServiceTypesReturnElement> getEligibleServiceTypes() {

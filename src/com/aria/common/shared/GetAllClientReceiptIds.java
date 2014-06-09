@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","startDateRange","endDateRange"})
+    "authKey",    "startDateRange",    "endDateRange"})
 @XmlRootElement(name = "get_all_client_receipt_ids")
 public class GetAllClientReceiptIds {
 
@@ -18,9 +18,9 @@ public class GetAllClientReceiptIds {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "start_date_range")
+        @XmlElement(name = "start_date_range")
     protected String startDateRange;
-    @XmlElement(name = "end_date_range")
+        @XmlElement(name = "end_date_range")
     protected String endDateRange;
     
     public long getClientNo() {
@@ -46,14 +46,12 @@ public class GetAllClientReceiptIds {
     public void setStartDateRange(String value) {
         this.startDateRange = value;
     }
-    
-    public String getEndDateRange() {
+            public String getEndDateRange() {
         return endDateRange;
     }
 
     public void setEndDateRange(String value) {
         this.endDateRange = value;
     }
-    
-    
+            
 }

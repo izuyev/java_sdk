@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","userId","templateClass","templateNo","clientReceiptId"})
+    "authKey",    "userId",    "templateClass",    "templateNo",    "clientReceiptId",    "clientTemplateId"})
 @XmlRootElement(name = "send_acct_email")
 public class SendAcctEmail {
 
@@ -18,14 +18,16 @@ public class SendAcctEmail {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "user_id")
+        @XmlElement(name = "user_id")
     protected String userId;
-    @XmlElement(name = "template_class")
+        @XmlElement(name = "template_class")
     protected String templateClass;
-    @XmlElement(name = "template_no")
+        @XmlElement(name = "template_no")
     protected Long templateNo;
-    @XmlElement(name = "client_receipt_id")
+        @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
+        @XmlElement(name = "client_template_id")
+    protected String clientTemplateId;
     
     public long getClientNo() {
         return clientNo;
@@ -50,30 +52,33 @@ public class SendAcctEmail {
     public void setUserId(String value) {
         this.userId = value;
     }
-    
-    public String getTemplateClass() {
+            public String getTemplateClass() {
         return templateClass;
     }
 
     public void setTemplateClass(String value) {
         this.templateClass = value;
     }
-    
-    public Long getTemplateNo() {
+            public Long getTemplateNo() {
         return templateNo;
     }
 
     public void setTemplateNo(Long value) {
         this.templateNo = value;
     }
-    
-    public String getClientReceiptId() {
+            public String getClientReceiptId() {
         return clientReceiptId;
     }
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
     }
-    
-    
+            public String getClientTemplateId() {
+        return clientTemplateId;
+    }
+
+    public void setClientTemplateId(String value) {
+        this.clientTemplateId = value;
+    }
+            
 }

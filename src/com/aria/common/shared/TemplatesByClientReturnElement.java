@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "templates_by_client_ReturnElement", propOrder = {"templateNo", "templateName", "templateClass"})
+@XmlType(name = "templates_by_client_ReturnElement", propOrder = {"templateNo", "templateName", "templateClass", "clientEmailTemplateId"})
 public class TemplatesByClientReturnElement {
 
     @XmlElement(name = "template_no")
@@ -19,6 +19,8 @@ public class TemplatesByClientReturnElement {
     protected String templateName;
     @XmlElement(name = "template_class")
     protected String templateClass;
+    @XmlElement(name = "client_email_template_id")
+    protected String clientEmailTemplateId;
     
     public Long getTemplateNo() {
         return templateNo;
@@ -42,6 +44,14 @@ public class TemplatesByClientReturnElement {
 
     public void setTemplateClass(String value) {
         this.templateClass = value;
+    }
+
+    public String getClientEmailTemplateId() {
+        return clientEmailTemplateId;
+    }
+
+    public void setClientEmailTemplateId(String value) {
+        this.clientEmailTemplateId = value;
     }
 
     

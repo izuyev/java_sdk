@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","acctNo","disputeOrWriteoffFlag","detailsFlag"})
+    "authKey",    "acctNo",    "disputeOrWriteoffFlag",    "detailsFlag"})
 @XmlRootElement(name = "get_acct_writeoff_or_disputes")
 public class GetAcctWriteoffOrDisputes {
 
@@ -18,11 +18,11 @@ public class GetAcctWriteoffOrDisputes {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "acct_no")
+        @XmlElement(name = "acct_no")
     protected Long acctNo;
-    @XmlElement(name = "dispute_or_writeoff_flag")
+        @XmlElement(name = "dispute_or_writeoff_flag")
     protected Long disputeOrWriteoffFlag;
-    @XmlElement(name = "details_flag")
+        @XmlElement(name = "details_flag")
     protected Long detailsFlag;
     
     public long getClientNo() {
@@ -48,22 +48,19 @@ public class GetAcctWriteoffOrDisputes {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-    
-    public Long getDisputeOrWriteoffFlag() {
+            public Long getDisputeOrWriteoffFlag() {
         return disputeOrWriteoffFlag;
     }
 
     public void setDisputeOrWriteoffFlag(Long value) {
         this.disputeOrWriteoffFlag = value;
     }
-    
-    public Long getDetailsFlag() {
+            public Long getDetailsFlag() {
         return detailsFlag;
     }
 
     public void setDetailsFlag(Long value) {
         this.detailsFlag = value;
     }
-    
-    
+            
 }

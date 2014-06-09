@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "a3_new_acct_invoice_line_items_ReturnElement", propOrder = {"a3InvoiceLineNo", "a3InvoicePlanNo", "a3InvoicePlanName", "a3InvoiceServiceNo", "a3InvoiceServiceName", "a3InvoiceServiceCoaId", "a3InvoiceUnits", "a3InvoiceRatePerUnit", "a3InvoiceLineAmount", "a3InvoiceLineDescription", "a3InvoiceStartDateRange", "a3InvoiceEndDateRange"})
+@XmlType(name = "a3_new_acct_invoice_line_items_ReturnElement", propOrder = {"a3InvoiceLineNo", "a3InvoicePlanNo", "a3InvoicePlanName", "a3InvoiceServiceNo", "a3InvoiceServiceName", "a3InvoiceServiceCoaId", "a3InvoiceUnits", "a3InvoiceRatePerUnit", "a3InvoiceLineAmount", "a3InvoiceLineDescription", "a3InvoiceStartDateRange", "a3InvoiceEndDateRange", "a3ClientInvoicePlanId", "a3ClientInvoiceServiceId", "a3ClientInvoiceServiceCoaCode"})
 public class A3NewAcctInvoiceLineItemsReturnElement {
 
     @XmlElement(name = "a3_invoice_line_no")
@@ -37,6 +37,12 @@ public class A3NewAcctInvoiceLineItemsReturnElement {
     protected String a3InvoiceStartDateRange;
     @XmlElement(name = "a3_invoice_end_date_range")
     protected String a3InvoiceEndDateRange;
+    @XmlElement(name = "a3_client_invoice_plan_id")
+    protected String a3ClientInvoicePlanId;
+    @XmlElement(name = "a3_client_invoice_service_id")
+    protected String a3ClientInvoiceServiceId;
+    @XmlElement(name = "a3_client_invoice_service_coa_code")
+    protected String a3ClientInvoiceServiceCoaCode;
     
     public Long getA3InvoiceLineNo() {
         return a3InvoiceLineNo;
@@ -132,6 +138,30 @@ public class A3NewAcctInvoiceLineItemsReturnElement {
 
     public void setA3InvoiceEndDateRange(String value) {
         this.a3InvoiceEndDateRange = value;
+    }
+
+    public String getA3ClientInvoicePlanId() {
+        return a3ClientInvoicePlanId;
+    }
+
+    public void setA3ClientInvoicePlanId(String value) {
+        this.a3ClientInvoicePlanId = value;
+    }
+
+    public String getA3ClientInvoiceServiceId() {
+        return a3ClientInvoiceServiceId;
+    }
+
+    public void setA3ClientInvoiceServiceId(String value) {
+        this.a3ClientInvoiceServiceId = value;
+    }
+
+    public String getA3ClientInvoiceServiceCoaCode() {
+        return a3ClientInvoiceServiceCoaCode;
+    }
+
+    public void setA3ClientInvoiceServiceCoaCode(String value) {
+        this.a3ClientInvoiceServiceCoaCode = value;
     }
 
     

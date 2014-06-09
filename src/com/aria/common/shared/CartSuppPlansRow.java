@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "cart_supp_plans_row", propOrder = {
     "suppPlanNo",
     "suppPlanUnits",
-    "assignmentDirective"
+    "assignmentDirective",
+    "clientSuppPlanIds"
     })
 public class CartSuppPlansRow {
 
@@ -20,6 +21,8 @@ public class CartSuppPlansRow {
     protected Long suppPlanUnits;
     @XmlElement(name = "assignment_directive")
     protected Long assignmentDirective;
+    @XmlElement(name = "client_supp_plan_ids")
+    protected String clientSuppPlanIds;
     public Long getSuppPlanNo() {
         return suppPlanNo;
     }
@@ -42,6 +45,14 @@ public class CartSuppPlansRow {
 
     public void setAssignmentDirective(Long value) {
         this.assignmentDirective = value;
+    }
+
+    public String getClientSuppPlanIds() {
+        return clientSuppPlanIds;
+    }
+
+    public void setClientSuppPlanIds(String value) {
+        this.clientSuppPlanIds = value;
     }
 
     

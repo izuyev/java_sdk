@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "new_acct_invoice_line_items_ReturnElement", propOrder = {"invoiceLineNo", "invoicePlanNo", "invoicePlanName", "invoiceServiceNo", "invoiceServiceName", "invoiceServiceCoaId", "invoiceUnits", "invoiceRatePerUnit", "invoiceLineAmount", "invoiceLineDescription", "invoiceStartDateRange", "invoiceEndDateRange"})
+@XmlType(name = "new_acct_invoice_line_items_ReturnElement", propOrder = {"invoiceLineNo", "invoicePlanNo", "invoicePlanName", "invoiceServiceNo", "invoiceServiceName", "invoiceServiceCoaId", "invoiceUnits", "invoiceRatePerUnit", "invoiceLineAmount", "invoiceLineDescription", "invoiceStartDateRange", "invoiceEndDateRange", "clientInvoicePlanId", "clientInvoiceServiceId", "clientInvoiceServiceCoaCode"})
 public class NewAcctInvoiceLineItemsReturnElement {
 
     @XmlElement(name = "invoice_line_no")
@@ -37,6 +37,12 @@ public class NewAcctInvoiceLineItemsReturnElement {
     protected String invoiceStartDateRange;
     @XmlElement(name = "invoice_end_date_range")
     protected String invoiceEndDateRange;
+    @XmlElement(name = "client_invoice_plan_id")
+    protected String clientInvoicePlanId;
+    @XmlElement(name = "client_invoice_service_id")
+    protected String clientInvoiceServiceId;
+    @XmlElement(name = "client_invoice_service_coa_code")
+    protected String clientInvoiceServiceCoaCode;
     
     public Long getInvoiceLineNo() {
         return invoiceLineNo;
@@ -132,6 +138,30 @@ public class NewAcctInvoiceLineItemsReturnElement {
 
     public void setInvoiceEndDateRange(String value) {
         this.invoiceEndDateRange = value;
+    }
+
+    public String getClientInvoicePlanId() {
+        return clientInvoicePlanId;
+    }
+
+    public void setClientInvoicePlanId(String value) {
+        this.clientInvoicePlanId = value;
+    }
+
+    public String getClientInvoiceServiceId() {
+        return clientInvoiceServiceId;
+    }
+
+    public void setClientInvoiceServiceId(String value) {
+        this.clientInvoiceServiceId = value;
+    }
+
+    public String getClientInvoiceServiceCoaCode() {
+        return clientInvoiceServiceCoaCode;
+    }
+
+    public void setClientInvoiceServiceCoaCode(String value) {
+        this.clientInvoiceServiceCoaCode = value;
     }
 
     

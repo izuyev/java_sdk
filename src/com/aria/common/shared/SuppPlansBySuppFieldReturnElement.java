@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "supp_plans_by_supp_field_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd"})
+@XmlType(name = "supp_plans_by_supp_field_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "clientPlanId", "clientRolloverPlanId", "clientPlanId2AssignOnSusp"})
 public class SuppPlansBySuppFieldReturnElement {
 
     @XmlElement(name = "plan_no")
@@ -37,6 +37,12 @@ public class SuppPlansBySuppFieldReturnElement {
     protected Long prepaidInd;
     @XmlElement(name = "currency_cd")
     protected String currencyCd;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
+    @XmlElement(name = "client_rollover_plan_id")
+    protected String clientRolloverPlanId;
+    @XmlElement(name = "client_plan_id_2_assign_on_susp")
+    protected String clientPlanId2AssignOnSusp;
     
     public Long getPlanNo() {
         return planNo;
@@ -132,6 +138,30 @@ public class SuppPlansBySuppFieldReturnElement {
 
     public void setCurrencyCd(String value) {
         this.currencyCd = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+
+    public String getClientRolloverPlanId() {
+        return clientRolloverPlanId;
+    }
+
+    public void setClientRolloverPlanId(String value) {
+        this.clientRolloverPlanId = value;
+    }
+
+    public String getClientPlanId2AssignOnSusp() {
+        return clientPlanId2AssignOnSusp;
+    }
+
+    public void setClientPlanId2AssignOnSusp(String value) {
+        this.clientPlanId2AssignOnSusp = value;
     }
 
     

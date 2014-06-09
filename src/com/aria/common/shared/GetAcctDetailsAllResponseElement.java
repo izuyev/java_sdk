@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"firstName", "mi", "lastName", "userid", "birthdate", "jobTitle", "salutation", "seniorAcctNo", "clientAcctId", "respLevelCd", "isTestAcct", "altEmail", "address1", "address2", "city", "stateProv", "locality", "postalCode", "country", "companyName", "cellPhoneNpa", "cellPhoneNxx", "cellPhoneSuffix", "faxPhone", "intlCellPhone", "intlPhone", "phoneExtension", "phoneNpa", "phoneNxx", "phoneSuffix", "workPhone", "workPhoneExtension", "workPhoneNpa", "workPhoneNxx", "workPhoneSuffix", "billDay", "created", "dateToExpire", "dateToSuspend", "lastArrearsBillThruDate", "lastBillDate", "lastBillThruDate", "nextBillDate", "planDate", "statusDate", "statusDegradeDate", "statusCd", "statusLabel", "planNo", "planName", "planUnits", "notifyMethod", "notifyMethodName", "password", "pin", "secretQuestion", "secretQuestionAnswer", "payMethod", "payMethodName", "currencyCd", "taxId", "billingEmail", "billingFirstName", "billingMiddleInitial", "billingLastName", "billingAddress1", "billingAddress2", "billingCity", "billingState", "billingLocality", "billingZip", "billingCountry", "ccSuffix", "ccExpireMm", "ccExpireYyyy", "ccId", "bankAcctSuffix", "bankRoutingNo", "billingCellPhone", "billingCellPhoneNpa", "billingCellPhoneNxx", "billingCellPhoneSuffix", "billingCompanyName", "billingIntlPhone", "billingPhoneExtension", "billingPhoneNpa", "billingPhoneNxx", "billingPhoneSuffix", "billingWorkPhone", "billingWorkPhoneExtension", "billingWorkPhoneNpa", "billingWorkPhoneNxx", "billingWorkPhoneSuffix", "balance", "acctCreateClientReceiptId", "planClientReceiptId", "statusClientReceiptId", "taxpayerId", "altMsgTemplateNo", "seqFuncGroupNo", "promoCd", "address3", "billingAddress3", "addressVerificationCode", "addressMatchScore", "billingAddressVerificationCode", "billingAddressMatchScore", "errorCode", "errorMsg"})
+@XmlType(name = "", propOrder = {"firstName", "mi", "lastName", "userid", "birthdate", "jobTitle", "salutation", "seniorAcctNo", "clientAcctId", "respLevelCd", "isTestAcct", "altEmail", "address1", "address2", "city", "stateProv", "locality", "postalCode", "country", "companyName", "cellPhoneNpa", "cellPhoneNxx", "cellPhoneSuffix", "faxPhone", "intlCellPhone", "intlPhone", "phoneExtension", "phoneNpa", "phoneNxx", "phoneSuffix", "workPhone", "workPhoneExtension", "workPhoneNpa", "workPhoneNxx", "workPhoneSuffix", "billDay", "created", "dateToExpire", "dateToSuspend", "lastArrearsBillThruDate", "lastBillDate", "lastBillThruDate", "nextBillDate", "planDate", "statusDate", "statusDegradeDate", "statusCd", "statusLabel", "planNo", "planName", "planUnits", "notifyMethod", "notifyMethodName", "password", "pin", "secretQuestion", "secretQuestionAnswer", "payMethod", "payMethodName", "currencyCd", "taxId", "billingEmail", "billingFirstName", "billingMiddleInitial", "billingLastName", "billingAddress1", "billingAddress2", "billingCity", "billingState", "billingLocality", "billingZip", "billingCountry", "ccSuffix", "ccExpireMm", "ccExpireYyyy", "ccId", "bankAcctSuffix", "bankRoutingNo", "billingCellPhone", "billingCellPhoneNpa", "billingCellPhoneNxx", "billingCellPhoneSuffix", "billingCompanyName", "billingIntlPhone", "billingPhoneExtension", "billingPhoneNpa", "billingPhoneNxx", "billingPhoneSuffix", "billingWorkPhone", "billingWorkPhoneExtension", "billingWorkPhoneNpa", "billingWorkPhoneNxx", "billingWorkPhoneSuffix", "balance", "acctCreateClientReceiptId", "planClientReceiptId", "statusClientReceiptId", "taxpayerId", "altMsgTemplateNo", "seqFuncGroupNo", "promoCd", "address3", "billingAddress3", "addressVerificationCode", "addressMatchScore", "billingAddressVerificationCode", "billingAddressMatchScore", "clientPlanId", "clientAltMsgTemplateId", "errorCode", "errorMsg"})
 @XmlRootElement(name = "get_acct_details_allResponseElement")
 public class GetAcctDetailsAllResponseElement {
 
@@ -228,6 +228,10 @@ public class GetAcctDetailsAllResponseElement {
     protected String billingAddressVerificationCode;
     @XmlElement(name = "billing_address_match_score")
     protected Double billingAddressMatchScore;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
+    @XmlElement(name = "client_alt_msg_template_id")
+    protected String clientAltMsgTemplateId;
     @XmlElement(name = "error_code")
     protected Long errorCode;
     @XmlElement(name = "error_msg")
@@ -1087,6 +1091,22 @@ public class GetAcctDetailsAllResponseElement {
 
     public void setBillingAddressMatchScore(Double value) {
         this.billingAddressMatchScore = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+
+    public String getClientAltMsgTemplateId() {
+        return clientAltMsgTemplateId;
+    }
+
+    public void setClientAltMsgTemplateId(String value) {
+        this.clientAltMsgTemplateId = value;
     }
 
     public Long getErrorCode() {

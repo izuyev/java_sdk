@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","ipAddress"})
+    "authKey",    "ipAddress"})
 @XmlRootElement(name = "get_country_from_ip")
 public class GetCountryFromIp {
 
@@ -18,7 +18,7 @@ public class GetCountryFromIp {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "ip_address")
+        @XmlElement(name = "ip_address")
     protected String ipAddress;
     
     public long getClientNo() {
@@ -44,6 +44,5 @@ public class GetCountryFromIp {
     public void setIpAddress(String value) {
         this.ipAddress = value;
     }
-    
-    
+            
 }

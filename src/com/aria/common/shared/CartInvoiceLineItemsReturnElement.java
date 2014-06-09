@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cart_invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "serviceIsTaxInd", "lineUnits", "ratePerUnit", "lineAmount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName"})
+@XmlType(name = "cart_invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "serviceIsTaxInd", "lineUnits", "ratePerUnit", "lineAmount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName", "clientServiceId", "usageTypeCd", "clientPlanId"})
 public class CartInvoiceLineItemsReturnElement {
 
     @XmlElement(name = "line_no")
@@ -39,6 +39,12 @@ public class CartInvoiceLineItemsReturnElement {
     protected Long planNo;
     @XmlElement(name = "plan_name")
     protected String planName;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "usage_type_cd")
+    protected String usageTypeCd;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
     
     public Long getLineNo() {
         return lineNo;
@@ -142,6 +148,30 @@ public class CartInvoiceLineItemsReturnElement {
 
     public void setPlanName(String value) {
         this.planName = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getUsageTypeCd() {
+        return usageTypeCd;
+    }
+
+    public void setUsageTypeCd(String value) {
+        this.usageTypeCd = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
     }
 
     

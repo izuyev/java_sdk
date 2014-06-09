@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "all_client_items_ReturnElement", propOrder = {"itemNo", "itemLabel", "serviceNo", "serviceDesc", "allServiceSuppFields", "clientSku", "itemPlan", "itemMonths", "stockLevel", "avgRatings", "numRatings", "numReviews", "itemType", "itemDesc", "activeInd", "modifyPriceInd", "subunitQty", "subunitLabel", "serviceType", "coaId", "clientCoaCode", "taxableInd", "taxGroup", "usageType", "allItemPrices", "allItemImages", "allItemSuppFields", "allItemClasses"})
+@XmlType(name = "all_client_items_ReturnElement", propOrder = {"itemNo", "itemLabel", "serviceNo", "serviceDesc", "clientItemId", "clientServiceId", "clientItemPlanId", "usageTypeCd", "allServiceSuppFields", "clientSku", "itemPlan", "itemMonths", "stockLevel", "avgRatings", "numRatings", "numReviews", "itemType", "itemDesc", "activeInd", "modifyPriceInd", "subunitQty", "subunitLabel", "serviceType", "coaId", "clientCoaCode", "taxableInd", "taxGroup", "usageType", "allItemPrices", "allItemImages", "allItemSuppFields", "allItemClasses"})
 public class AllClientItemsReturnElement {
 
     @XmlElement(name = "item_no")
@@ -21,6 +21,14 @@ public class AllClientItemsReturnElement {
     protected Long serviceNo;
     @XmlElement(name = "service_desc")
     protected String serviceDesc;
+    @XmlElement(name = "client_item_id")
+    protected String clientItemId;
+    @XmlElement(name = "client_service_id")
+    protected String clientServiceId;
+    @XmlElement(name = "client_item_plan_id")
+    protected String clientItemPlanId;
+    @XmlElement(name = "usage_type_cd")
+    protected String usageTypeCd;
     @XmlElement(name = "all_service_supp_fields")
     protected List<AllServiceSuppFieldsReturnElement> allServiceSuppFields;
     @XmlElement(name = "client_sku")
@@ -100,6 +108,38 @@ public class AllClientItemsReturnElement {
 
     public void setServiceDesc(String value) {
         this.serviceDesc = value;
+    }
+
+    public String getClientItemId() {
+        return clientItemId;
+    }
+
+    public void setClientItemId(String value) {
+        this.clientItemId = value;
+    }
+
+    public String getClientServiceId() {
+        return clientServiceId;
+    }
+
+    public void setClientServiceId(String value) {
+        this.clientServiceId = value;
+    }
+
+    public String getClientItemPlanId() {
+        return clientItemPlanId;
+    }
+
+    public void setClientItemPlanId(String value) {
+        this.clientItemPlanId = value;
+    }
+
+    public String getUsageTypeCd() {
+        return usageTypeCd;
+    }
+
+    public void setUsageTypeCd(String value) {
+        this.usageTypeCd = value;
     }
 
     public List<AllServiceSuppFieldsReturnElement> getAllServiceSuppFields() {

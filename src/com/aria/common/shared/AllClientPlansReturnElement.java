@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "all_client_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "suppPlanInd", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "planServices", "planRateSchedules", "planGroups", "promotionalPlanSets", "parentPlans", "planSuppFields", "firstRetrievalLevelInd", "childPlanNo"})
+@XmlType(name = "all_client_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "suppPlanInd", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "clientPlanId", "clientRolloverPlanId", "planServices", "planRateSchedules", "planGroups", "promotionalPlanSets", "parentPlans", "planSuppFields", "firstRetrievalLevelInd", "childPlanNo"})
 public class AllClientPlansReturnElement {
 
     @XmlElement(name = "plan_no")
@@ -53,6 +53,10 @@ public class AllClientPlansReturnElement {
     protected Long prepaidInd;
     @XmlElement(name = "currency_cd")
     protected String currencyCd;
+    @XmlElement(name = "client_plan_id")
+    protected String clientPlanId;
+    @XmlElement(name = "client_rollover_plan_id")
+    protected String clientRolloverPlanId;
     @XmlElement(name = "plan_services")
     protected List<PlanServicesReturnElement> planServices;
     @XmlElement(name = "plan_rate_schedules")
@@ -228,6 +232,22 @@ public class AllClientPlansReturnElement {
 
     public void setCurrencyCd(String value) {
         this.currencyCd = value;
+    }
+
+    public String getClientPlanId() {
+        return clientPlanId;
+    }
+
+    public void setClientPlanId(String value) {
+        this.clientPlanId = value;
+    }
+
+    public String getClientRolloverPlanId() {
+        return clientRolloverPlanId;
+    }
+
+    public void setClientRolloverPlanId(String value) {
+        this.clientRolloverPlanId = value;
     }
 
     public List<PlanServicesReturnElement> getPlanServices() {

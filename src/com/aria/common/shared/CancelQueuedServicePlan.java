@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey","accountNumber","planNoToRemove","removeAllQueuedPlanNo","removeTerminatePending"})
+    "authKey",    "accountNumber",    "planNoToRemove",    "removeAllQueuedPlanNo",    "removeTerminatePending"})
 @XmlRootElement(name = "cancel_queued_service_plan")
 public class CancelQueuedServicePlan {
 
@@ -18,13 +18,13 @@ public class CancelQueuedServicePlan {
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-    @XmlElement(name = "account_number")
+        @XmlElement(name = "account_number")
     protected Long accountNumber;
-    @XmlElement(name = "plan_no_to_remove")
+        @XmlElement(name = "plan_no_to_remove")
     protected PlanNoToRemoveArray planNoToRemove;
-    @XmlElement(name = "remove_all_queued_plan_no")
+        @XmlElement(name = "remove_all_queued_plan_no")
     protected String removeAllQueuedPlanNo;
-    @XmlElement(name = "remove_terminate_pending")
+        @XmlElement(name = "remove_terminate_pending")
     protected String removeTerminatePending;
     
     public long getClientNo() {
@@ -50,30 +50,26 @@ public class CancelQueuedServicePlan {
     public void setAccountNumber(Long value) {
         this.accountNumber = value;
     }
-    
-    public PlanNoToRemoveArray getPlanNoToRemove() {
+            public PlanNoToRemoveArray getPlanNoToRemove() {
         return planNoToRemove;
     }
 
     public void setPlanNoToRemove(PlanNoToRemoveArray value) {
         this.planNoToRemove = value;
     }
-    
-    public String getRemoveAllQueuedPlanNo() {
+            public String getRemoveAllQueuedPlanNo() {
         return removeAllQueuedPlanNo;
     }
 
     public void setRemoveAllQueuedPlanNo(String value) {
         this.removeAllQueuedPlanNo = value;
     }
-    
-    public String getRemoveTerminatePending() {
+            public String getRemoveTerminatePending() {
         return removeTerminatePending;
     }
 
     public void setRemoveTerminatePending(String value) {
         this.removeTerminatePending = value;
     }
-    
-    
+            
 }
