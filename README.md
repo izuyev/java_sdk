@@ -1,6 +1,6 @@
 #Aria Java SDK
 
-The Java SDK is a library that makes it easy to use the [Aria](http://www.ariasystems.com/) web services in your java application.
+The Java SDK is a library that makes it easy to use the [Aria](http://www.ariasystems.com/) web services of Core API/Object-Query API/AdminTools API in your java application.
 
 ## Installation
 
@@ -11,31 +11,41 @@ Make sure the java version is 1.7.
 * Java(TM) SE Runtime Environment (build 1.7.0_09-b05)
 * Java HotSpot(TM) Client VM (build 23.5-b02, mixed mode, sharing)
 ```
-Download the Java SDK library AriaSDK.jar and the dependent third-party libraries from the download folder of this java_sdk repository.
+Download the Java SDK library AriaSDK.jar from the dist folder and the dependent third-party libraries from the download folder of this java_sdk repository.
 
 Import the above libraries to the java application from where the Aria APIs are to be called.
 
 ## Usage
 
-1. Create an instance of the BaseAriaBillingDTO by specifying the dispatcher url and call type as CallType.REST or CallType.SOAP.
+1. Create an instance of the BaseAriaBillingDTO by specifying the dispatcher url and call type as CallType.REST or CallType.SOAP. Also specify the library type as LibraryType.CORE or LibraryType.ADMINTOOLS or LibraryType.OBJECT_QUERY. If library type is not specified, then it defaults to Core API.
 
             /*REST CALL*/
             BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
                         "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php", "logger",
-                        false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON);
+                        false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.OBJECT_QUERY);
 
             /*SOAP CALL*/
             BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
                         "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php", "logger",
-                        false/* Debug */, CallType.SOAP, OutPutFormat.OUTPUT_JSON);
+                        false/* Debug */, CallType.SOAP, OutPutFormat.OUTPUT_JSON, LibraryType.OBJECT_QUERY);
 
 	In the above example, "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" is the dispatcher url.
+	In case of Object-Query, the dispatcher url will be like "https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php".
+	In case of AdminTools, the dispatcher url will be like "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index".
 
-2. Instantiate the AriaBillingComplete with the above DTO. The AriaBillingComplete class has methods for each API of Aria.
+2. Instantiate the com.aria.sdk.classes.AriaBillingComplete with the above DTO. The AriaBillingComplete class has methods for each Core API of Aria.
 
             AriaBillingComplete ariaBillingComplete = AriaBillingBuilder.getAriaSDK(baseAriaBillingDTO);
 
-3. Call the desired API method on AriaBillingComplete instance by passing appropriate inputs objects, client_no and auth_key.
+Similarly to access the Object-Query APIs, instantiate the com.aria.sdk.classes.AriaBillingIntegration like below.
+
+            AriaBillingIntegration ariaBillingIntegration = AriaBillingBuilder.getAriaObjectSDK(baseAriaBillingDTO);
+
+Similarly to access the AdminTools APIs, instantiate the com.aria.sdk.classes.AriaBillingAdministration like below.
+
+            AriaBillingAdministration ariaBillingAdministration = AriaBillingBuilder.getAriaAdminSDK(baseAriaBillingDTO);
+
+3. Call the desired API method on the corresponding instance by passing appropriate inputs objects, client_no and auth_key.
 
 	In the below example, a sample client_no of 100 and auth_key as 'zzzzz' is used.
 
