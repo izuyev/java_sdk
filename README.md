@@ -37,11 +37,11 @@ Import the above libraries to the java application from where the Aria APIs are 
 
             AriaBillingComplete ariaBillingComplete = AriaBillingBuilder.getAriaSDK(baseAriaBillingDTO);
 
-Similarly to access the Object-Query APIs, instantiate the com.aria.sdk.classes.AriaBillingIntegration like below.
+      Similarly to access the Object-Query APIs, instantiate the com.aria.sdk.classes.AriaBillingIntegration like below.
 
             AriaBillingIntegration ariaBillingIntegration = AriaBillingBuilder.getAriaObjectSDK(baseAriaBillingDTO);
 
-Similarly to access the AdminTools APIs, instantiate the com.aria.sdk.classes.AriaBillingAdministration like below.
+      Similarly to access the AdminTools APIs, instantiate the com.aria.sdk.classes.AriaBillingAdministration like below.
 
             AriaBillingAdministration ariaBillingAdministration = AriaBillingBuilder.getAriaAdminSDK(baseAriaBillingDTO);
 
