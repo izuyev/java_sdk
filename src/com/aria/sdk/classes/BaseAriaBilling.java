@@ -70,7 +70,7 @@ public abstract class BaseAriaBilling {
                 setURL(url);
             }
         }
-        if (baseAriaBillingDTO.getLibraryType().equals(LibraryType.OBJECT_QUERY) && getCallType().equals(CallType.SOAP)){
+        if (baseAriaBillingDTO.getLibraryType() != null && baseAriaBillingDTO.getLibraryType().equals(LibraryType.OBJECT_QUERY) && getCallType().equals(CallType.SOAP)){
             String dispatcherString = "api/AriaQuery/objects.php";
             if (getURL().contains(dispatcherString)){
                 String url = getURL().substring(0, getURL().indexOf(dispatcherString));
