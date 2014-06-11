@@ -30,24 +30,23 @@ Import the above libraries to the java application from where the Aria APIs are 
                         false/* Debug */, CallType.SOAP, OutPutFormat.OUTPUT_JSON, LibraryType.OBJECT_QUERY);
 
 	In the above example, "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" is the dispatcher url.
-	In case of Object-Query, the dispatcher url will be like "https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php".
-	In case of AdminTools, the dispatcher url will be like "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index".
+	In the case of Object-Query, the dispatcher url will be similar to "https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php".
+	In the case of AdminTools, the dispatcher url will be similar to "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index".
 
 2. Instantiate the com.aria.sdk.classes.AriaBillingComplete with the above DTO. The AriaBillingComplete class has methods for each Core API of Aria.
 
             AriaBillingComplete ariaBillingComplete = AriaBillingBuilder.getAriaSDK(baseAriaBillingDTO);
 
-      Similarly to access the Object-Query APIs, instantiate the com.aria.sdk.classes.AriaBillingIntegration like below.
+      Similarly, to access the Object-Query APIs, instantiate the com.aria.sdk.classes.AriaBillingIntegration as follows.
 
             AriaBillingIntegration ariaBillingIntegration = AriaBillingBuilder.getAriaObjectSDK(baseAriaBillingDTO);
 
-      Similarly to access the AdminTools APIs, instantiate the com.aria.sdk.classes.AriaBillingAdministration like below.
-
+      Similarly, to access the AdminTools APIs, instantiate the com.aria.sdk.classes.AriaBillingAdministration as follows:
             AriaBillingAdministration ariaBillingAdministration = AriaBillingBuilder.getAriaAdminSDK(baseAriaBillingDTO);
 
 3. Call the desired API method on the corresponding instance by passing appropriate inputs objects, client_no and auth_key.
 
-	In the below example, a sample client_no of 100 and auth_key as 'zzzzz' is used.
+	In the following example, a sample client_no of 100 and auth_key as 'zzzzz' is used.
 
             // Form the api inputs
             com.aria.common.shared.EventListRow eventListRow1 = new com.aria.common.shared.EventListRow();
@@ -61,7 +60,7 @@ Import the above libraries to the java application from where the Aria APIs are 
             // Call the API
             Map<String,Object> hashMapReturnValues = ariaBillingComplete.subscribeEvents(100L,"zzzz", eventListArray);
 
-4. The API response values can be read from the Map object returned by the API method as below.
+4. The API response values can be read from the Map object returned by the API method as shown below.
 
             // Read the output from the map as below.
             System.out.println("error_code: " + hashMapReturnValues.get("error_code"));
