@@ -1,5 +1,8 @@
 package com.aria.common.shared.admin;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -7,12 +10,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "tier_row", propOrder = {
-    "from",
-    "to",
-    "rate"
-    })
-public class TierRow {
+@XmlType(name = "tier_ReturnElement", propOrder = {"from", "to", "rate"})
+public class TierReturnElement {
 
     @XmlElement(name = "from")
     protected Long from;
@@ -20,6 +19,7 @@ public class TierRow {
     protected Long to;
     @XmlElement(name = "rate")
     protected Long rate;
+    
     public Long getFrom() {
         return from;
     }

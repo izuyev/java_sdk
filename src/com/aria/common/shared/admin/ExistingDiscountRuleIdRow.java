@@ -13,12 +13,12 @@ import javax.xml.bind.annotation.XmlType;
 public class ExistingDiscountRuleIdRow {
 
     @XmlElement(name = "existing_discount_rule_ids")
-    protected String existingDiscountRuleIds;
-    public String getExistingDiscountRuleIds() {
+    protected Long existingDiscountRuleIds;
+    public Long getExistingDiscountRuleIds() {
         return existingDiscountRuleIds;
     }
 
-    public void setExistingDiscountRuleIds(String value) {
+    public void setExistingDiscountRuleIds(Long value) {
         this.existingDiscountRuleIds = value;
     }
 

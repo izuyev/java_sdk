@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "altStartDate",    "clientAcctId",    "userid",    "statusCd",    "masterPlanNo",    "masterPlanUnits",    "suppPlans",    "suppPlanUnits",    "notifyMethod",    "promoCd",    "password",    "secretQuestion",    "secretQuestionAnswer",    "firstName",    "mi",    "lastName",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billMi",    "billLastName",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankAcctNo",    "bankRoutingNo",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "functionalAcctGroups",    "collectionsAcctGroups",    "suppFieldNames",    "suppFieldValues",    "testAcctInd",    "statusUntilAltStart",    "balanceForward",    "altBillDay",    "doFullInvoicing",    "doProratedInvoicing",    "masterPlanAltRateSchedNo",    "suppPlanAltRateSchedNo",    "clientReceiptId",    "currencyCd",    "cvv",    "taxpayerId",    "billAgreementId",    "retroactiveStartDate",    "couponCodes",    "newAcctCustomRates",    "altMsgTemplateNo",    "seqFuncGroupNo",    "newAcctPlanContracts",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "clientFuncAcctGroupIds",    "clientCollAcctGroupIds",    "trackData1",    "trackData2",    "doWrite",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "invoiceApprovalRequired",    "createSession",    "clientMasterPlanId",    "clientSuppPlanIds",    "clientMpAltRateSchedId",    "clientSpAltRateSchedIds",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateNo",    "surchargeNo",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "altStartDate",    "clientAcctId",    "userid",    "statusCd",    "masterPlanNo",    "masterPlanUnits",    "suppPlans",    "suppPlanUnits",    "notifyMethod",    "promoCd",    "password",    "secretQuestion",    "secretQuestionAnswer",    "firstName",    "mi",    "lastName",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billMi",    "billLastName",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankAcctNo",    "bankRoutingNo",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "functionalAcctGroups",    "collectionsAcctGroups",    "suppFieldNames",    "suppFieldValues",    "testAcctInd",    "statusUntilAltStart",    "balanceForward",    "altBillDay",    "doFullInvoicing",    "doProratedInvoicing",    "masterPlanAltRateSchedNo",    "suppPlanAltRateSchedNo",    "clientReceiptId",    "currencyCd",    "cvv",    "taxpayerId",    "billAgreementId",    "retroactiveStartDate",    "couponCodes",    "newAcctCustomRates",    "altMsgTemplateNo",    "seqFuncGroupNo",    "newAcctPlanContracts",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "clientFuncAcctGroupIds",    "clientCollAcctGroupIds",    "trackData1",    "trackData2",    "doWrite",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "invoiceApprovalRequired",    "createSession",    "clientMasterPlanId",    "clientSuppPlanIds",    "clientMpAltRateSchedId",    "clientSpAltRateSchedIds",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateNo",    "surchargeNo"})
 @XmlRootElement(name = "create_acct_complete")
 public class CreateAcctComplete {
 
@@ -220,20 +220,6 @@ public class CreateAcctComplete {
     protected String clientCnAltMsgTemplateNo;
         @XmlElement(name = "surcharge_no")
     protected SurchargeNoArray surchargeNo;
-        @XmlElement(name = "iban")
-    protected String iban;
-        @XmlElement(name = "bank_check_digit")
-    protected Long bankCheckDigit;
-        @XmlElement(name = "bank_swift_cd")
-    protected String bankSwiftCd;
-        @XmlElement(name = "bank_country_cd")
-    protected String bankCountryCd;
-        @XmlElement(name = "mandate_id")
-    protected String mandateId;
-        @XmlElement(name = "bank_id_cd")
-    protected String bankIdCd;
-        @XmlElement(name = "bank_branch_cd")
-    protected String bankBranchCd;
     
     public long getClientNo() {
         return clientNo;
@@ -957,55 +943,6 @@ public class CreateAcctComplete {
 
     public void setSurchargeNo(SurchargeNoArray value) {
         this.surchargeNo = value;
-    }
-            public String getIban() {
-        return iban;
-    }
-
-    public void setIban(String value) {
-        this.iban = value;
-    }
-            public Long getBankCheckDigit() {
-        return bankCheckDigit;
-    }
-
-    public void setBankCheckDigit(Long value) {
-        this.bankCheckDigit = value;
-    }
-            public String getBankSwiftCd() {
-        return bankSwiftCd;
-    }
-
-    public void setBankSwiftCd(String value) {
-        this.bankSwiftCd = value;
-    }
-            public String getBankCountryCd() {
-        return bankCountryCd;
-    }
-
-    public void setBankCountryCd(String value) {
-        this.bankCountryCd = value;
-    }
-            public String getMandateId() {
-        return mandateId;
-    }
-
-    public void setMandateId(String value) {
-        this.mandateId = value;
-    }
-            public String getBankIdCd() {
-        return bankIdCd;
-    }
-
-    public void setBankIdCd(String value) {
-        this.bankIdCd = value;
-    }
-            public String getBankBranchCd() {
-        return bankBranchCd;
-    }
-
-    public void setBankBranchCd(String value) {
-        this.bankBranchCd = value;
     }
             
 }

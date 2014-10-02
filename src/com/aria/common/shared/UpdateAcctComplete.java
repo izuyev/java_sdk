@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "firstName",    "lastName",    "middleInitial",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billLastName",    "billMiddleInitial",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "masterPlanNo",    "masterPlanAltRateSchedNo",    "masterPlanUnits",    "masterPlanAssignDirective",    "updateAcctSuppField",    "updateAcctFuncGroup",    "updateAcctCollGroup",    "statusCd",    "notifyMethod",    "password",    "secretQuestion",    "secretQuestionAnswer",    "pin",    "testAcctInd",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "clientAcctId",    "doCollect",    "changeStatusAfterColl",    "resetDatesAfterStatus",    "clientReceiptId",    "altDoDunning",    "forceCurrencyChange",    "cvv",    "taxpayerId",    "billAgreementId",    "autoCancelSuppPlans",    "offsetMonths",    "altProrationStartDate",    "altMsgTemplateNo",    "seqFuncGroupNo",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "disableUsagePoolingPlanNo",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "offsetInterval",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "promoCd",    "invoiceUnbilledUsage",    "couponCode",    "userid",    "invoiceApprovalRequired",    "clientMasterPlanId",    "clientMpAltRateSchedId",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateId",    "updateSurcharge",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "acctNo",    "firstName",    "lastName",    "middleInitial",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billLastName",    "billMiddleInitial",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "masterPlanNo",    "masterPlanAltRateSchedNo",    "masterPlanUnits",    "masterPlanAssignDirective",    "updateAcctSuppField",    "updateAcctFuncGroup",    "updateAcctCollGroup",    "statusCd",    "notifyMethod",    "password",    "secretQuestion",    "secretQuestionAnswer",    "pin",    "testAcctInd",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "clientAcctId",    "doCollect",    "changeStatusAfterColl",    "resetDatesAfterStatus",    "clientReceiptId",    "altDoDunning",    "forceCurrencyChange",    "cvv",    "taxpayerId",    "billAgreementId",    "autoCancelSuppPlans",    "offsetMonths",    "altProrationStartDate",    "altMsgTemplateNo",    "seqFuncGroupNo",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "disableUsagePoolingPlanNo",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "offsetInterval",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "promoCd",    "invoiceUnbilledUsage",    "couponCode",    "userid",    "invoiceApprovalRequired",    "clientMasterPlanId",    "clientMpAltRateSchedId",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateId",    "updateSurcharge"})
 @XmlRootElement(name = "update_acct_complete")
 public class UpdateAcctComplete {
 
@@ -210,20 +210,6 @@ public class UpdateAcctComplete {
     protected String clientCnAltMsgTemplateId;
         @XmlElement(name = "update_surcharge")
     protected UpdateSurchargeArray updateSurcharge;
-        @XmlElement(name = "iban")
-    protected String iban;
-        @XmlElement(name = "bank_check_digit")
-    protected Long bankCheckDigit;
-        @XmlElement(name = "bank_swift_cd")
-    protected String bankSwiftCd;
-        @XmlElement(name = "bank_country_cd")
-    protected String bankCountryCd;
-        @XmlElement(name = "mandate_id")
-    protected String mandateId;
-        @XmlElement(name = "bank_id_cd")
-    protected String bankIdCd;
-        @XmlElement(name = "bank_branch_cd")
-    protected String bankBranchCd;
     
     public long getClientNo() {
         return clientNo;
@@ -912,55 +898,6 @@ public class UpdateAcctComplete {
 
     public void setUpdateSurcharge(UpdateSurchargeArray value) {
         this.updateSurcharge = value;
-    }
-            public String getIban() {
-        return iban;
-    }
-
-    public void setIban(String value) {
-        this.iban = value;
-    }
-            public Long getBankCheckDigit() {
-        return bankCheckDigit;
-    }
-
-    public void setBankCheckDigit(Long value) {
-        this.bankCheckDigit = value;
-    }
-            public String getBankSwiftCd() {
-        return bankSwiftCd;
-    }
-
-    public void setBankSwiftCd(String value) {
-        this.bankSwiftCd = value;
-    }
-            public String getBankCountryCd() {
-        return bankCountryCd;
-    }
-
-    public void setBankCountryCd(String value) {
-        this.bankCountryCd = value;
-    }
-            public String getMandateId() {
-        return mandateId;
-    }
-
-    public void setMandateId(String value) {
-        this.mandateId = value;
-    }
-            public String getBankIdCd() {
-        return bankIdCd;
-    }
-
-    public void setBankIdCd(String value) {
-        this.bankIdCd = value;
-    }
-            public String getBankBranchCd() {
-        return bankBranchCd;
-    }
-
-    public void setBankBranchCd(String value) {
-        this.bankBranchCd = value;
     }
             
 }

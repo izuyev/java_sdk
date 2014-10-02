@@ -22,11 +22,11 @@ public class CreditTemplateReturnElement {
     @XmlElement(name = "eligible_plan_no")
     protected Long eligiblePlanNo;
     @XmlElement(name = "eligible_client_plan_id")
-    protected String eligibleClientPlanId;
+    protected Long eligibleClientPlanId;
     @XmlElement(name = "eligible_service_no")
     protected Long eligibleServiceNo;
     @XmlElement(name = "eligible_client_service_id")
-    protected String eligibleClientServiceId;
+    protected Long eligibleClientServiceId;
     @XmlElement(name = "eligible_service_types")
     protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
     @XmlElement(name = "no_of_credits")
@@ -40,15 +40,15 @@ public class CreditTemplateReturnElement {
     @XmlElement(name = "percentage_plan_no")
     protected Long percentagePlanNo;
     @XmlElement(name = "percentage_client_plan_id")
-    protected String percentageClientPlanId;
+    protected Long percentageClientPlanId;
     @XmlElement(name = "percentage_service_no")
     protected Long percentageServiceNo;
     @XmlElement(name = "percentage_client_service_id")
-    protected String percentageClientServiceId;
+    protected Long percentageClientServiceId;
     @XmlElement(name = "alt_service_no")
     protected Long altServiceNo;
     @XmlElement(name = "alt_client_service_id")
-    protected String altClientServiceId;
+    protected Long altClientServiceId;
     
     public Long getCreditTemplateNo() {
         return creditTemplateNo;
@@ -82,11 +82,11 @@ public class CreditTemplateReturnElement {
         this.eligiblePlanNo = value;
     }
 
-    public String getEligibleClientPlanId() {
+    public Long getEligibleClientPlanId() {
         return eligibleClientPlanId;
     }
 
-    public void setEligibleClientPlanId(String value) {
+    public void setEligibleClientPlanId(Long value) {
         this.eligibleClientPlanId = value;
     }
 
@@ -98,11 +98,11 @@ public class CreditTemplateReturnElement {
         this.eligibleServiceNo = value;
     }
 
-    public String getEligibleClientServiceId() {
+    public Long getEligibleClientServiceId() {
         return eligibleClientServiceId;
     }
 
-    public void setEligibleClientServiceId(String value) {
+    public void setEligibleClientServiceId(Long value) {
         this.eligibleClientServiceId = value;
     }
 
@@ -151,11 +151,11 @@ public class CreditTemplateReturnElement {
         this.percentagePlanNo = value;
     }
 
-    public String getPercentageClientPlanId() {
+    public Long getPercentageClientPlanId() {
         return percentageClientPlanId;
     }
 
-    public void setPercentageClientPlanId(String value) {
+    public void setPercentageClientPlanId(Long value) {
         this.percentageClientPlanId = value;
     }
 
@@ -167,11 +167,11 @@ public class CreditTemplateReturnElement {
         this.percentageServiceNo = value;
     }
 
-    public String getPercentageClientServiceId() {
+    public Long getPercentageClientServiceId() {
         return percentageClientServiceId;
     }
 
-    public void setPercentageClientServiceId(String value) {
+    public void setPercentageClientServiceId(Long value) {
         this.percentageClientServiceId = value;
     }
 
@@ -183,11 +183,11 @@ public class CreditTemplateReturnElement {
         this.altServiceNo = value;
     }
 
-    public String getAltClientServiceId() {
+    public Long getAltClientServiceId() {
         return altClientServiceId;
     }
 
-    public void setAltClientServiceId(String value) {
+    public void setAltClientServiceId(Long value) {
         this.altClientServiceId = value;
     }
 

@@ -1977,27 +1977,6 @@ public interface CompletePort {
         @WebParam(name = "client_receipt_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         String clientReceiptId
 ,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
-,
         @WebParam(mode = WebParam.Mode.OUT, name = "seq_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> seqNo,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
@@ -2138,27 +2117,6 @@ public interface CompletePort {
 ,
         @WebParam(name = "record_cc_on_auth_failure", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         String recordCcOnAuthFailure
-,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
 ,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> errorCode,
@@ -3979,27 +3937,6 @@ public interface CompletePort {
 ,
         @WebParam(name = "surcharge_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         com.aria.common.shared.SurchargeNoArray surchargeNo,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
-,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> errorCode,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_msg", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
@@ -4831,27 +4768,6 @@ public interface CompletePort {
 ,
         @WebParam(name = "update_surcharge", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         com.aria.common.shared.UpdateSurchargeArray updateSurcharge,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
-,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> errorCode,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_msg", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
@@ -5288,9 +5204,6 @@ public interface CompletePort {
 ,
         @WebParam(name = "end_date", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         String endDate
-,
-        @WebParam(name = "include_invoice_activity_eligibility", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String includeInvoiceActivityEligibility
 ,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> errorCode,
@@ -6576,11 +6489,11 @@ public interface CompletePort {
         @WebParam(name = "account_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         Long accountNo
 ,
-        @WebParam(name = "order_line_items", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        com.aria.common.shared.OrderLineItemsArray orderLineItems,
         @WebParam(name = "bill_immediately", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         Long billImmediately
 ,
+        @WebParam(name = "order_line_items", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
+        com.aria.common.shared.OrderLineItemsArray orderLineItems,
         @WebParam(name = "bill_seq", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         Long billSeq
 ,
@@ -6685,27 +6598,6 @@ public interface CompletePort {
 ,
         @WebParam(name = "client_alt_inv_template_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         String clientAltInvTemplateId
-,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
 ,
         @WebParam(mode = WebParam.Mode.OUT, name = "order_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> orderNo,
@@ -6856,27 +6748,6 @@ public interface CompletePort {
         @WebParam(name = "client_receipt_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         String clientReceiptId
 ,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
-,
         @WebParam(mode = WebParam.Mode.OUT, name = "transaction_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> transactionId,
         @WebParam(mode = WebParam.Mode.OUT, name = "proc_cvv_response", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
@@ -7009,27 +6880,6 @@ public interface CompletePort {
 ,
         @WebParam(name = "payment_application_method", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         Long paymentApplicationMethod
-,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
 ,
         @WebParam(mode = WebParam.Mode.OUT, name = "transaction_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> transactionId,
@@ -7841,27 +7691,6 @@ public interface CompletePort {
         @WebParam(name = "client_receipt_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         String clientReceiptId
 ,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
-,
         @WebParam(mode = WebParam.Mode.OUT, name = "new_invoice_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> newInvoiceNo,
         @WebParam(mode = WebParam.Mode.OUT, name = "collection_error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
@@ -8063,27 +7892,6 @@ public interface CompletePort {
         com.aria.common.shared.MultipleCouponsArray multipleCoupons,
         @WebParam(name = "client_alt_inv_template_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         String clientAltInvTemplateId
-,
-        @WebParam(name = "iban", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String iban
-,
-        @WebParam(name = "bank_check_digit", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long bankCheckDigit
-,
-        @WebParam(name = "bank_swift_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankSwiftCd
-,
-        @WebParam(name = "bank_country_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankCountryCd
-,
-        @WebParam(name = "mandate_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String mandateId
-,
-        @WebParam(name = "bank_id_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankIdCd
-,
-        @WebParam(name = "bank_branch_cd", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String bankBranchCd
 ,
         @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<Long> errorCode,
@@ -8542,36 +8350,6 @@ public interface CompletePort {
         javax.xml.ws.Holder<Long> disputeInd,
         @WebParam(mode = WebParam.Mode.OUT, name = "can_unsettle", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
         javax.xml.ws.Holder<String> canUnsettle
-    );
-
-    @RequestWrapper(localName = "cancel_recurring_credits", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api", className = "com.aria.common.shared.CancelRecurringCredits")
-    @WebMethod(operationName = "cancel_recurring_credits", action = "cancel_recurring_credits")
-    @ResponseWrapper(localName = "cancel_recurring_creditsResponseElement", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api", className = "com.aria.common.shared.CancelRecurringCreditsResponseElement")
-    public void cancelRecurringCredits(
-        @WebParam(name = "client_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long clientNo,
-        @WebParam(name = "auth_key", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String authKey,
-        @WebParam(name = "acct_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        Long acctNo
-,
-        @WebParam(name = "userid", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String userid
-,
-        @WebParam(name = "client_acct_id", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String clientAcctId
-,
-        @WebParam(name = "recurring_credit_no", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        com.aria.common.shared.RecurringCreditNoArray recurringCreditNo,
-        @WebParam(name = "cancel_comments", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        String cancelComments
-,
-        @WebParam(mode = WebParam.Mode.OUT, name = "error_code", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        javax.xml.ws.Holder<Long> errorCode,
-        @WebParam(mode = WebParam.Mode.OUT, name = "error_msg", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        javax.xml.ws.Holder<String> errorMsg,
-        @WebParam(mode = WebParam.Mode.OUT, name = "error_codes", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api")
-        javax.xml.ws.Holder<java.util.List<com.aria.common.shared.ErrorCodesReturnElement>> errorCodes
     );
 
     @RequestWrapper(localName = "set_session_auth", targetNamespace = "urn:client:api:wsdl:document/literal_wrapped:vers:6.22:aria_complete_api", className = "com.aria.common.shared.SetSessionAuth")

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "doWrite",    "clientReceiptId",    "a1AltStartDate",    "a1ClientAcctId",    "a1Userid",    "a1StatusCd",    "a1MasterPlanNo",    "a1MasterPlanUnits",    "a1SuppPlans",    "a1SuppPlanUnits",    "a1NotifyMethod",    "a1PromoCd",    "a1Password",    "a1SecretQuestion",    "a1SecretQuestionAnswer",    "a1FirstName",    "a1Mi",    "a1LastName",    "a1CompanyName",    "a1Address1",    "a1Address2",    "a1City",    "a1Locality",    "a1StateProv",    "a1Country",    "a1PostalCd",    "a1Phone",    "a1PhoneExt",    "a1CellPhone",    "a1WorkPhone",    "a1WorkPhoneExt",    "a1Email",    "a1Birthdate",    "a1BillFirstName",    "a1BillMi",    "a1BillLastName",    "a1BillCompanyName",    "a1BillAddress1",    "a1BillAddress2",    "a1BillCity",    "a1BillLocality",    "a1BillStateProv",    "a1BillCountry",    "a1BillPostalCd",    "a1BillPhone",    "a1BillPhoneExt",    "a1BillCellPhone",    "a1BillWorkPhone",    "a1BillWorkPhoneExt",    "a1BillEmail",    "a1PayMethod",    "a1CcNumber",    "a1CcExpireMm",    "a1CcExpireYyyy",    "a1BankAcctNo",    "a1BankRoutingNo",    "a1RespLevelCd",    "a1FunctionalAcctGroups",    "a1CollectionsAcctGroups",    "a1SuppFieldNames",    "a1SuppFieldValues",    "a1TestAcctInd",    "a1StatusUntilAltStart",    "a1BalanceForward",    "a1AltBillDay",    "a1DoFullInvoicing",    "a1DoProratedInvoicing",    "a1MasterPlanAltRateSchedNo",    "a1SuppPlanAltRateSchedNo",    "a1CurrencyCd",    "a1Cvv",    "a1TaxpayerId",    "a1BillAgreementId",    "a1RetroactiveStartDate",    "a1CouponCodes",    "a1NewAcctCustomRates",    "a1AltMsgTemplateNo",    "a1SeqFuncGroupNo",    "a1NewAcctPlanContracts",    "a1Address3",    "a1BillAddress3",    "a1UsageAccumulationConfig",    "a1EnableUsagePoolingPlanNo",    "a1ClientFuncAcctGroupIds",    "a1ClientCollAcctGroupIds",    "a1TrackData1",    "a1TrackData2",    "a1TaxExemptionLevel",    "a1CnAltMsgTemplateNo",    "a1InvoiceApprovalRequired",    "a1CreateSession",    "a1ClientMasterPlanId",    "a1ClientSuppPlanIds",    "a1ClientMpAltRateSchedId",    "a1ClientSpAltRateSchedIds",    "a1ClientAltMsgTemplateId",    "a1ClientCnAltMsgTemplateNo",    "a1Iban",    "a1BankCheckDigit",    "a1BankSwiftCd",    "a1BankCountryCd",    "a1MandateId",    "a1BankIdCd",    "a1BankBranchCd",    "a1SurchargeNo",    "a2AltStartDate",    "a2ClientAcctId",    "a2Userid",    "a2StatusCd",    "a2MasterPlanNo",    "a2MasterPlanUnits",    "a2SuppPlans",    "a2SuppPlanUnits",    "a2NotifyMethod",    "a2PromoCd",    "a2Password",    "a2SecretQuestion",    "a2SecretQuestionAnswer",    "a2FirstName",    "a2Mi",    "a2LastName",    "a2CompanyName",    "a2Address1",    "a2Address2",    "a2City",    "a2Locality",    "a2StateProv",    "a2Country",    "a2PostalCd",    "a2Phone",    "a2PhoneExt",    "a2CellPhone",    "a2WorkPhone",    "a2WorkPhoneExt",    "a2Email",    "a2Birthdate",    "a2BillFirstName",    "a2BillMi",    "a2BillLastName",    "a2BillCompanyName",    "a2BillAddress1",    "a2BillAddress2",    "a2BillCity",    "a2BillLocality",    "a2BillStateProv",    "a2BillCountry",    "a2BillPostalCd",    "a2BillPhone",    "a2BillPhoneExt",    "a2BillCellPhone",    "a2BillWorkPhone",    "a2BillWorkPhoneExt",    "a2BillEmail",    "a2PayMethod",    "a2CcNumber",    "a2CcExpireMm",    "a2CcExpireYyyy",    "a2BankAcctNo",    "a2BankRoutingNo",    "a2RespLevelCd",    "a2FunctionalAcctGroups",    "a2CollectionsAcctGroups",    "a2SuppFieldNames",    "a2SuppFieldValues",    "a2TestAcctInd",    "a2StatusUntilAltStart",    "a2BalanceForward",    "a2AltBillDay",    "a2DoFullInvoicing",    "a2DoProratedInvoicing",    "a2MasterPlanAltRateSchedNo",    "a2SuppPlanAltRateSchedNo",    "a2CurrencyCd",    "a2Cvv",    "a2TaxpayerId",    "a2BillAgreementId",    "a2RetroactiveStartDate",    "a2CouponCodes",    "a2NewAcctCustomRates",    "a2AltMsgTemplateNo",    "a2SeqFuncGroupNo",    "a2NewAcctPlanContracts",    "a2Address3",    "a2BillAddress3",    "a2UsageAccumulationConfig",    "a2EnableUsagePoolingPlanNo",    "a2ClientFuncAcctGroupIds",    "a2ClientCollAcctGroupIds",    "a2TrackData1",    "a2TrackData2",    "a2TaxExemptionLevel",    "a2CnAltMsgTemplateNo",    "a2InvoiceApprovalRequired",    "a2CreateSession",    "a2ClientMasterPlanId",    "a2ClientSuppPlanIds",    "a2ClientMpAltRateSchedId",    "a2ClientSpAltRateSchedIds",    "a2ClientAltMsgTemplateId",    "a2ClientCnAltMsgTemplateNo",    "a2Iban",    "a2BankCheckDigit",    "a2BankSwiftCd",    "a2BankCountryCd",    "a2MandateId",    "a2BankIdCd",    "a2BankBranchCd",    "a2SurchargeNo",    "a3AltStartDate",    "a3ClientAcctId",    "a3Userid",    "a3StatusCd",    "a3MasterPlanNo",    "a3MasterPlanUnits",    "a3SuppPlans",    "a3SuppPlanUnits",    "a3NotifyMethod",    "a3PromoCd",    "a3Password",    "a3SecretQuestion",    "a3SecretQuestionAnswer",    "a3FirstName",    "a3Mi",    "a3LastName",    "a3CompanyName",    "a3Address1",    "a3Address2",    "a3City",    "a3Locality",    "a3StateProv",    "a3Country",    "a3PostalCd",    "a3Phone",    "a3PhoneExt",    "a3CellPhone",    "a3WorkPhone",    "a3WorkPhoneExt",    "a3Email",    "a3Birthdate",    "a3BillFirstName",    "a3BillMi",    "a3BillLastName",    "a3BillCompanyName",    "a3BillAddress1",    "a3BillAddress2",    "a3BillCity",    "a3BillLocality",    "a3BillStateProv",    "a3BillCountry",    "a3BillPostalCd",    "a3BillPhone",    "a3BillPhoneExt",    "a3BillCellPhone",    "a3BillWorkPhone",    "a3BillWorkPhoneExt",    "a3BillEmail",    "a3PayMethod",    "a3CcNumber",    "a3CcExpireMm",    "a3CcExpireYyyy",    "a3BankAcctNo",    "a3BankRoutingNo",    "a3RespLevelCd",    "a3FunctionalAcctGroups",    "a3CollectionsAcctGroups",    "a3SuppFieldNames",    "a3SuppFieldValues",    "a3TestAcctInd",    "a3StatusUntilAltStart",    "a3BalanceForward",    "a3AltBillDay",    "a3DoFullInvoicing",    "a3DoProratedInvoicing",    "a3MasterPlanAltRateSchedNo",    "a3SuppPlanAltRateSchedNo",    "a3CurrencyCd",    "a3Cvv",    "a3TaxpayerId",    "a3BillAgreementId",    "a3RetroactiveStartDate",    "a3CouponCodes",    "a3NewAcctCustomRates",    "a3AltMsgTemplateNo",    "a3SeqFuncGroupNo",    "a3NewAcctPlanContracts",    "a3Address3",    "a3BillAddress3",    "a3UsageAccumulationConfig",    "a3EnableUsagePoolingPlanNo",    "a3ClientFuncAcctGroupIds",    "a3ClientCollAcctGroupIds",    "a3TrackData1",    "a3TrackData2",    "a3TaxExemptionLevel",    "a3CnAltMsgTemplateNo",    "a3InvoiceApprovalRequired",    "a3CreateSession",    "a3ClientMasterPlanId",    "a3ClientSuppPlanIds",    "a3ClientMpAltRateSchedId",    "a3ClientSpAltRateSchedIds",    "a3ClientAltMsgTemplateId",    "a3ClientCnAltMsgTemplateNo",    "a3Iban",    "a3BankCheckDigit",    "a3BankSwiftCd",    "a3BankCountryCd",    "a3MandateId",    "a3BankIdCd",    "a3BankBranchCd",    "a3SurchargeNo",    "a4AltStartDate",    "a4ClientAcctId",    "a4Userid",    "a4StatusCd",    "a4MasterPlanNo",    "a4MasterPlanUnits",    "a4SuppPlans",    "a4SuppPlanUnits",    "a4NotifyMethod",    "a4PromoCd",    "a4Password",    "a4SecretQuestion",    "a4SecretQuestionAnswer",    "a4FirstName",    "a4Mi",    "a4LastName",    "a4CompanyName",    "a4Address1",    "a4Address2",    "a4City",    "a4Locality",    "a4StateProv",    "a4Country",    "a4PostalCd",    "a4Phone",    "a4PhoneExt",    "a4CellPhone",    "a4WorkPhone",    "a4WorkPhoneExt",    "a4Email",    "a4Birthdate",    "a4BillFirstName",    "a4BillMi",    "a4BillLastName",    "a4BillCompanyName",    "a4BillAddress1",    "a4BillAddress2",    "a4BillCity",    "a4BillLocality",    "a4BillStateProv",    "a4BillCountry",    "a4BillPostalCd",    "a4BillPhone",    "a4BillPhoneExt",    "a4BillCellPhone",    "a4BillWorkPhone",    "a4BillWorkPhoneExt",    "a4BillEmail",    "a4PayMethod",    "a4CcNumber",    "a4CcExpireMm",    "a4CcExpireYyyy",    "a4BankAcctNo",    "a4BankRoutingNo",    "a4RespLevelCd",    "a4FunctionalAcctGroups",    "a4CollectionsAcctGroups",    "a4SuppFieldNames",    "a4SuppFieldValues",    "a4TestAcctInd",    "a4StatusUntilAltStart",    "a4BalanceForward",    "a4AltBillDay",    "a4DoFullInvoicing",    "a4DoProratedInvoicing",    "a4MasterPlanAltRateSchedNo",    "a4SuppPlanAltRateSchedNo",    "a4CurrencyCd",    "a4Cvv",    "a4TaxpayerId",    "a4BillAgreementId",    "a4RetroactiveStartDate",    "a4CouponCodes",    "a4NewAcctCustomRates",    "a4AltMsgTemplateNo",    "a4SeqFuncGroupNo",    "a4NewAcctPlanContracts",    "a4Address3",    "a4BillAddress3",    "a4UsageAccumulationConfig",    "a4EnableUsagePoolingPlanNo",    "a4ClientFuncAcctGroupIds",    "a4ClientCollAcctGroupIds",    "a4TrackData1",    "a4TrackData2",    "a4TaxExemptionLevel",    "a4CnAltMsgTemplateNo",    "a4InvoiceApprovalRequired",    "a4CreateSession",    "a4ClientMasterPlanId",    "a4ClientSuppPlanIds",    "a4ClientMpAltRateSchedId",    "a4ClientSpAltRateSchedIds",    "a4ClientAltMsgTemplateId",    "a4ClientCnAltMsgTemplateNo",    "a4Iban",    "a4BankCheckDigit",    "a4BankSwiftCd",    "a4BankCountryCd",    "a4MandateId",    "a4BankIdCd",    "a4BankBranchCd",    "a4SurchargeNo",    "a5AltStartDate",    "a5ClientAcctId",    "a5Userid",    "a5StatusCd",    "a5MasterPlanNo",    "a5MasterPlanUnits",    "a5SuppPlans",    "a5SuppPlanUnits",    "a5NotifyMethod",    "a5PromoCd",    "a5Password",    "a5SecretQuestion",    "a5SecretQuestionAnswer",    "a5FirstName",    "a5Mi",    "a5LastName",    "a5CompanyName",    "a5Address1",    "a5Address2",    "a5City",    "a5Locality",    "a5StateProv",    "a5Country",    "a5PostalCd",    "a5Phone",    "a5PhoneExt",    "a5CellPhone",    "a5WorkPhone",    "a5WorkPhoneExt",    "a5Email",    "a5Birthdate",    "a5BillFirstName",    "a5BillMi",    "a5BillLastName",    "a5BillCompanyName",    "a5BillAddress1",    "a5BillAddress2",    "a5BillCity",    "a5BillLocality",    "a5BillStateProv",    "a5BillCountry",    "a5BillPostalCd",    "a5BillPhone",    "a5BillPhoneExt",    "a5BillCellPhone",    "a5BillWorkPhone",    "a5BillWorkPhoneExt",    "a5BillEmail",    "a5PayMethod",    "a5CcNumber",    "a5CcExpireMm",    "a5CcExpireYyyy",    "a5BankAcctNo",    "a5BankRoutingNo",    "a5RespLevelCd",    "a5FunctionalAcctGroups",    "a5CollectionsAcctGroups",    "a5SuppFieldNames",    "a5SuppFieldValues",    "a5TestAcctInd",    "a5StatusUntilAltStart",    "a5BalanceForward",    "a5AltBillDay",    "a5DoFullInvoicing",    "a5DoProratedInvoicing",    "a5MasterPlanAltRateSchedNo",    "a5SuppPlanAltRateSchedNo",    "a5CurrencyCd",    "a5Cvv",    "a5TaxpayerId",    "a5BillAgreementId",    "a5RetroactiveStartDate",    "a5CouponCodes",    "a5NewAcctCustomRates",    "a5AltMsgTemplateNo",    "a5SeqFuncGroupNo",    "a5NewAcctPlanContracts",    "a5Address3",    "a5BillAddress3",    "a5UsageAccumulationConfig",    "a5EnableUsagePoolingPlanNo",    "a5ClientFuncAcctGroupIds",    "a5ClientCollAcctGroupIds",    "a5TrackData1",    "a5TrackData2",    "a5TaxExemptionLevel",    "a5CnAltMsgTemplateNo",    "a5InvoiceApprovalRequired",    "a5CreateSession",    "a5ClientMasterPlanId",    "a5ClientSuppPlanIds",    "a5ClientMpAltRateSchedId",    "a5ClientSpAltRateSchedIds",    "a5ClientAltMsgTemplateId",    "a5ClientCnAltMsgTemplateNo",    "a5Iban",    "a5BankCheckDigit",    "a5BankSwiftCd",    "a5BankCountryCd",    "a5MandateId",    "a5BankIdCd",    "a5BankBranchCd",    "a5SurchargeNo"})
+    "authKey",    "doWrite",    "clientReceiptId",    "a1AltStartDate",    "a1ClientAcctId",    "a1Userid",    "a1StatusCd",    "a1MasterPlanNo",    "a1MasterPlanUnits",    "a1SuppPlans",    "a1SuppPlanUnits",    "a1NotifyMethod",    "a1PromoCd",    "a1Password",    "a1SecretQuestion",    "a1SecretQuestionAnswer",    "a1FirstName",    "a1Mi",    "a1LastName",    "a1CompanyName",    "a1Address1",    "a1Address2",    "a1City",    "a1Locality",    "a1StateProv",    "a1Country",    "a1PostalCd",    "a1Phone",    "a1PhoneExt",    "a1CellPhone",    "a1WorkPhone",    "a1WorkPhoneExt",    "a1Email",    "a1Birthdate",    "a1BillFirstName",    "a1BillMi",    "a1BillLastName",    "a1BillCompanyName",    "a1BillAddress1",    "a1BillAddress2",    "a1BillCity",    "a1BillLocality",    "a1BillStateProv",    "a1BillCountry",    "a1BillPostalCd",    "a1BillPhone",    "a1BillPhoneExt",    "a1BillCellPhone",    "a1BillWorkPhone",    "a1BillWorkPhoneExt",    "a1BillEmail",    "a1PayMethod",    "a1CcNumber",    "a1CcExpireMm",    "a1CcExpireYyyy",    "a1BankAcctNo",    "a1BankRoutingNo",    "a1RespLevelCd",    "a1FunctionalAcctGroups",    "a1CollectionsAcctGroups",    "a1SuppFieldNames",    "a1SuppFieldValues",    "a1TestAcctInd",    "a1StatusUntilAltStart",    "a1BalanceForward",    "a1AltBillDay",    "a1DoFullInvoicing",    "a1DoProratedInvoicing",    "a1MasterPlanAltRateSchedNo",    "a1SuppPlanAltRateSchedNo",    "a1CurrencyCd",    "a1Cvv",    "a1TaxpayerId",    "a1BillAgreementId",    "a1RetroactiveStartDate",    "a1CouponCodes",    "a1NewAcctCustomRates",    "a1AltMsgTemplateNo",    "a1SeqFuncGroupNo",    "a1NewAcctPlanContracts",    "a1Address3",    "a1BillAddress3",    "a1UsageAccumulationConfig",    "a1EnableUsagePoolingPlanNo",    "a1ClientFuncAcctGroupIds",    "a1ClientCollAcctGroupIds",    "a1TrackData1",    "a1TrackData2",    "a1TaxExemptionLevel",    "a1CnAltMsgTemplateNo",    "a1InvoiceApprovalRequired",    "a1CreateSession",    "a1ClientMasterPlanId",    "a1ClientSuppPlanIds",    "a1ClientMpAltRateSchedId",    "a1ClientSpAltRateSchedIds",    "a1ClientAltMsgTemplateId",    "a1ClientCnAltMsgTemplateNo",    "a2AltStartDate",    "a2ClientAcctId",    "a2Userid",    "a2StatusCd",    "a2MasterPlanNo",    "a2MasterPlanUnits",    "a2SuppPlans",    "a2SuppPlanUnits",    "a2NotifyMethod",    "a2PromoCd",    "a2Password",    "a2SecretQuestion",    "a2SecretQuestionAnswer",    "a2FirstName",    "a2Mi",    "a2LastName",    "a2CompanyName",    "a2Address1",    "a2Address2",    "a2City",    "a2Locality",    "a2StateProv",    "a2Country",    "a2PostalCd",    "a2Phone",    "a2PhoneExt",    "a2CellPhone",    "a2WorkPhone",    "a2WorkPhoneExt",    "a2Email",    "a2Birthdate",    "a2BillFirstName",    "a2BillMi",    "a2BillLastName",    "a2BillCompanyName",    "a2BillAddress1",    "a2BillAddress2",    "a2BillCity",    "a2BillLocality",    "a2BillStateProv",    "a2BillCountry",    "a2BillPostalCd",    "a2BillPhone",    "a2BillPhoneExt",    "a2BillCellPhone",    "a2BillWorkPhone",    "a2BillWorkPhoneExt",    "a2BillEmail",    "a2PayMethod",    "a2CcNumber",    "a2CcExpireMm",    "a2CcExpireYyyy",    "a2BankAcctNo",    "a2BankRoutingNo",    "a2RespLevelCd",    "a2FunctionalAcctGroups",    "a2CollectionsAcctGroups",    "a2SuppFieldNames",    "a2SuppFieldValues",    "a2TestAcctInd",    "a2StatusUntilAltStart",    "a2BalanceForward",    "a2AltBillDay",    "a2DoFullInvoicing",    "a2DoProratedInvoicing",    "a2MasterPlanAltRateSchedNo",    "a2SuppPlanAltRateSchedNo",    "a2CurrencyCd",    "a2Cvv",    "a2TaxpayerId",    "a2BillAgreementId",    "a2RetroactiveStartDate",    "a2CouponCodes",    "a2NewAcctCustomRates",    "a2AltMsgTemplateNo",    "a2SeqFuncGroupNo",    "a2NewAcctPlanContracts",    "a2Address3",    "a2BillAddress3",    "a2UsageAccumulationConfig",    "a2EnableUsagePoolingPlanNo",    "a2ClientFuncAcctGroupIds",    "a2ClientCollAcctGroupIds",    "a2TrackData1",    "a2TrackData2",    "a2TaxExemptionLevel",    "a2CnAltMsgTemplateNo",    "a2InvoiceApprovalRequired",    "a2CreateSession",    "a2ClientMasterPlanId",    "a2ClientSuppPlanIds",    "a2ClientMpAltRateSchedId",    "a2ClientSpAltRateSchedIds",    "a2ClientAltMsgTemplateId",    "a2ClientCnAltMsgTemplateNo",    "a3AltStartDate",    "a3ClientAcctId",    "a3Userid",    "a3StatusCd",    "a3MasterPlanNo",    "a3MasterPlanUnits",    "a3SuppPlans",    "a3SuppPlanUnits",    "a3NotifyMethod",    "a3PromoCd",    "a3Password",    "a3SecretQuestion",    "a3SecretQuestionAnswer",    "a3FirstName",    "a3Mi",    "a3LastName",    "a3CompanyName",    "a3Address1",    "a3Address2",    "a3City",    "a3Locality",    "a3StateProv",    "a3Country",    "a3PostalCd",    "a3Phone",    "a3PhoneExt",    "a3CellPhone",    "a3WorkPhone",    "a3WorkPhoneExt",    "a3Email",    "a3Birthdate",    "a3BillFirstName",    "a3BillMi",    "a3BillLastName",    "a3BillCompanyName",    "a3BillAddress1",    "a3BillAddress2",    "a3BillCity",    "a3BillLocality",    "a3BillStateProv",    "a3BillCountry",    "a3BillPostalCd",    "a3BillPhone",    "a3BillPhoneExt",    "a3BillCellPhone",    "a3BillWorkPhone",    "a3BillWorkPhoneExt",    "a3BillEmail",    "a3PayMethod",    "a3CcNumber",    "a3CcExpireMm",    "a3CcExpireYyyy",    "a3BankAcctNo",    "a3BankRoutingNo",    "a3RespLevelCd",    "a3FunctionalAcctGroups",    "a3CollectionsAcctGroups",    "a3SuppFieldNames",    "a3SuppFieldValues",    "a3TestAcctInd",    "a3StatusUntilAltStart",    "a3BalanceForward",    "a3AltBillDay",    "a3DoFullInvoicing",    "a3DoProratedInvoicing",    "a3MasterPlanAltRateSchedNo",    "a3SuppPlanAltRateSchedNo",    "a3CurrencyCd",    "a3Cvv",    "a3TaxpayerId",    "a3BillAgreementId",    "a3RetroactiveStartDate",    "a3CouponCodes",    "a3NewAcctCustomRates",    "a3AltMsgTemplateNo",    "a3SeqFuncGroupNo",    "a3NewAcctPlanContracts",    "a3Address3",    "a3BillAddress3",    "a3UsageAccumulationConfig",    "a3EnableUsagePoolingPlanNo",    "a3ClientFuncAcctGroupIds",    "a3ClientCollAcctGroupIds",    "a3TrackData1",    "a3TrackData2",    "a3TaxExemptionLevel",    "a3CnAltMsgTemplateNo",    "a3InvoiceApprovalRequired",    "a3CreateSession",    "a3ClientMasterPlanId",    "a3ClientSuppPlanIds",    "a3ClientMpAltRateSchedId",    "a3ClientSpAltRateSchedIds",    "a3ClientAltMsgTemplateId",    "a3ClientCnAltMsgTemplateNo",    "a4AltStartDate",    "a4ClientAcctId",    "a4Userid",    "a4StatusCd",    "a4MasterPlanNo",    "a4MasterPlanUnits",    "a4SuppPlans",    "a4SuppPlanUnits",    "a4NotifyMethod",    "a4PromoCd",    "a4Password",    "a4SecretQuestion",    "a4SecretQuestionAnswer",    "a4FirstName",    "a4Mi",    "a4LastName",    "a4CompanyName",    "a4Address1",    "a4Address2",    "a4City",    "a4Locality",    "a4StateProv",    "a4Country",    "a4PostalCd",    "a4Phone",    "a4PhoneExt",    "a4CellPhone",    "a4WorkPhone",    "a4WorkPhoneExt",    "a4Email",    "a4Birthdate",    "a4BillFirstName",    "a4BillMi",    "a4BillLastName",    "a4BillCompanyName",    "a4BillAddress1",    "a4BillAddress2",    "a4BillCity",    "a4BillLocality",    "a4BillStateProv",    "a4BillCountry",    "a4BillPostalCd",    "a4BillPhone",    "a4BillPhoneExt",    "a4BillCellPhone",    "a4BillWorkPhone",    "a4BillWorkPhoneExt",    "a4BillEmail",    "a4PayMethod",    "a4CcNumber",    "a4CcExpireMm",    "a4CcExpireYyyy",    "a4BankAcctNo",    "a4BankRoutingNo",    "a4RespLevelCd",    "a4FunctionalAcctGroups",    "a4CollectionsAcctGroups",    "a4SuppFieldNames",    "a4SuppFieldValues",    "a4TestAcctInd",    "a4StatusUntilAltStart",    "a4BalanceForward",    "a4AltBillDay",    "a4DoFullInvoicing",    "a4DoProratedInvoicing",    "a4MasterPlanAltRateSchedNo",    "a4SuppPlanAltRateSchedNo",    "a4CurrencyCd",    "a4Cvv",    "a4TaxpayerId",    "a4BillAgreementId",    "a4RetroactiveStartDate",    "a4CouponCodes",    "a4NewAcctCustomRates",    "a4AltMsgTemplateNo",    "a4SeqFuncGroupNo",    "a4NewAcctPlanContracts",    "a4Address3",    "a4BillAddress3",    "a4UsageAccumulationConfig",    "a4EnableUsagePoolingPlanNo",    "a4ClientFuncAcctGroupIds",    "a4ClientCollAcctGroupIds",    "a4TrackData1",    "a4TrackData2",    "a4TaxExemptionLevel",    "a4CnAltMsgTemplateNo",    "a4InvoiceApprovalRequired",    "a4CreateSession",    "a4ClientMasterPlanId",    "a4ClientSuppPlanIds",    "a4ClientMpAltRateSchedId",    "a4ClientSpAltRateSchedIds",    "a4ClientAltMsgTemplateId",    "a4ClientCnAltMsgTemplateNo",    "a5AltStartDate",    "a5ClientAcctId",    "a5Userid",    "a5StatusCd",    "a5MasterPlanNo",    "a5MasterPlanUnits",    "a5SuppPlans",    "a5SuppPlanUnits",    "a5NotifyMethod",    "a5PromoCd",    "a5Password",    "a5SecretQuestion",    "a5SecretQuestionAnswer",    "a5FirstName",    "a5Mi",    "a5LastName",    "a5CompanyName",    "a5Address1",    "a5Address2",    "a5City",    "a5Locality",    "a5StateProv",    "a5Country",    "a5PostalCd",    "a5Phone",    "a5PhoneExt",    "a5CellPhone",    "a5WorkPhone",    "a5WorkPhoneExt",    "a5Email",    "a5Birthdate",    "a5BillFirstName",    "a5BillMi",    "a5BillLastName",    "a5BillCompanyName",    "a5BillAddress1",    "a5BillAddress2",    "a5BillCity",    "a5BillLocality",    "a5BillStateProv",    "a5BillCountry",    "a5BillPostalCd",    "a5BillPhone",    "a5BillPhoneExt",    "a5BillCellPhone",    "a5BillWorkPhone",    "a5BillWorkPhoneExt",    "a5BillEmail",    "a5PayMethod",    "a5CcNumber",    "a5CcExpireMm",    "a5CcExpireYyyy",    "a5BankAcctNo",    "a5BankRoutingNo",    "a5RespLevelCd",    "a5FunctionalAcctGroups",    "a5CollectionsAcctGroups",    "a5SuppFieldNames",    "a5SuppFieldValues",    "a5TestAcctInd",    "a5StatusUntilAltStart",    "a5BalanceForward",    "a5AltBillDay",    "a5DoFullInvoicing",    "a5DoProratedInvoicing",    "a5MasterPlanAltRateSchedNo",    "a5SuppPlanAltRateSchedNo",    "a5CurrencyCd",    "a5Cvv",    "a5TaxpayerId",    "a5BillAgreementId",    "a5RetroactiveStartDate",    "a5CouponCodes",    "a5NewAcctCustomRates",    "a5AltMsgTemplateNo",    "a5SeqFuncGroupNo",    "a5NewAcctPlanContracts",    "a5Address3",    "a5BillAddress3",    "a5UsageAccumulationConfig",    "a5EnableUsagePoolingPlanNo",    "a5ClientFuncAcctGroupIds",    "a5ClientCollAcctGroupIds",    "a5TrackData1",    "a5TrackData2",    "a5TaxExemptionLevel",    "a5CnAltMsgTemplateNo",    "a5InvoiceApprovalRequired",    "a5CreateSession",    "a5ClientMasterPlanId",    "a5ClientSuppPlanIds",    "a5ClientMpAltRateSchedId",    "a5ClientSpAltRateSchedIds",    "a5ClientAltMsgTemplateId",    "a5ClientCnAltMsgTemplateNo"})
 @XmlRootElement(name = "create_acct_hierarchy")
 public class CreateAcctHierarchy {
 
@@ -212,22 +212,6 @@ public class CreateAcctHierarchy {
     protected String a1ClientAltMsgTemplateId;
         @XmlElement(name = "a1_client_cn_alt_msg_template_no")
     protected String a1ClientCnAltMsgTemplateNo;
-        @XmlElement(name = "a1_iban")
-    protected String a1Iban;
-        @XmlElement(name = "a1_bank_check_digit")
-    protected Long a1BankCheckDigit;
-        @XmlElement(name = "a1_bank_swift_cd")
-    protected String a1BankSwiftCd;
-        @XmlElement(name = "a1_bank_country_cd")
-    protected String a1BankCountryCd;
-        @XmlElement(name = "a1_mandate_id")
-    protected String a1MandateId;
-        @XmlElement(name = "a1_bank_id_cd")
-    protected String a1BankIdCd;
-        @XmlElement(name = "a1_bank_branch_cd")
-    protected String a1BankBranchCd;
-        @XmlElement(name = "a1_surcharge_no")
-    protected A1SurchargeNoArray a1SurchargeNo;
         @XmlElement(name = "a2_alt_start_date")
     protected String a2AltStartDate;
         @XmlElement(name = "a2_client_acct_id")
@@ -418,22 +402,6 @@ public class CreateAcctHierarchy {
     protected String a2ClientAltMsgTemplateId;
         @XmlElement(name = "a2_client_cn_alt_msg_template_no")
     protected String a2ClientCnAltMsgTemplateNo;
-        @XmlElement(name = "a2_iban")
-    protected String a2Iban;
-        @XmlElement(name = "a2_bank_check_digit")
-    protected Long a2BankCheckDigit;
-        @XmlElement(name = "a2_bank_swift_cd")
-    protected String a2BankSwiftCd;
-        @XmlElement(name = "a2_bank_country_cd")
-    protected String a2BankCountryCd;
-        @XmlElement(name = "a2_mandate_id")
-    protected String a2MandateId;
-        @XmlElement(name = "a2_bank_id_cd")
-    protected String a2BankIdCd;
-        @XmlElement(name = "a2_bank_branch_cd")
-    protected String a2BankBranchCd;
-        @XmlElement(name = "a2_surcharge_no")
-    protected A2SurchargeNoArray a2SurchargeNo;
         @XmlElement(name = "a3_alt_start_date")
     protected String a3AltStartDate;
         @XmlElement(name = "a3_client_acct_id")
@@ -624,22 +592,6 @@ public class CreateAcctHierarchy {
     protected String a3ClientAltMsgTemplateId;
         @XmlElement(name = "a3_client_cn_alt_msg_template_no")
     protected String a3ClientCnAltMsgTemplateNo;
-        @XmlElement(name = "a3_iban")
-    protected String a3Iban;
-        @XmlElement(name = "a3_bank_check_digit")
-    protected Long a3BankCheckDigit;
-        @XmlElement(name = "a3_bank_swift_cd")
-    protected String a3BankSwiftCd;
-        @XmlElement(name = "a3_bank_country_cd")
-    protected String a3BankCountryCd;
-        @XmlElement(name = "a3_mandate_id")
-    protected String a3MandateId;
-        @XmlElement(name = "a3_bank_id_cd")
-    protected String a3BankIdCd;
-        @XmlElement(name = "a3_bank_branch_cd")
-    protected String a3BankBranchCd;
-        @XmlElement(name = "a3_surcharge_no")
-    protected A3SurchargeNoArray a3SurchargeNo;
         @XmlElement(name = "a4_alt_start_date")
     protected String a4AltStartDate;
         @XmlElement(name = "a4_client_acct_id")
@@ -830,22 +782,6 @@ public class CreateAcctHierarchy {
     protected String a4ClientAltMsgTemplateId;
         @XmlElement(name = "a4_client_cn_alt_msg_template_no")
     protected String a4ClientCnAltMsgTemplateNo;
-        @XmlElement(name = "a4_iban")
-    protected String a4Iban;
-        @XmlElement(name = "a4_bank_check_digit")
-    protected Long a4BankCheckDigit;
-        @XmlElement(name = "a4_bank_swift_cd")
-    protected String a4BankSwiftCd;
-        @XmlElement(name = "a4_bank_country_cd")
-    protected String a4BankCountryCd;
-        @XmlElement(name = "a4_mandate_id")
-    protected String a4MandateId;
-        @XmlElement(name = "a4_bank_id_cd")
-    protected String a4BankIdCd;
-        @XmlElement(name = "a4_bank_branch_cd")
-    protected String a4BankBranchCd;
-        @XmlElement(name = "a4_surcharge_no")
-    protected A4SurchargeNoArray a4SurchargeNo;
         @XmlElement(name = "a5_alt_start_date")
     protected String a5AltStartDate;
         @XmlElement(name = "a5_client_acct_id")
@@ -1036,22 +972,6 @@ public class CreateAcctHierarchy {
     protected String a5ClientAltMsgTemplateId;
         @XmlElement(name = "a5_client_cn_alt_msg_template_no")
     protected String a5ClientCnAltMsgTemplateNo;
-        @XmlElement(name = "a5_iban")
-    protected String a5Iban;
-        @XmlElement(name = "a5_bank_check_digit")
-    protected Long a5BankCheckDigit;
-        @XmlElement(name = "a5_bank_swift_cd")
-    protected String a5BankSwiftCd;
-        @XmlElement(name = "a5_bank_country_cd")
-    protected String a5BankCountryCd;
-        @XmlElement(name = "a5_mandate_id")
-    protected String a5MandateId;
-        @XmlElement(name = "a5_bank_id_cd")
-    protected String a5BankIdCd;
-        @XmlElement(name = "a5_bank_branch_cd")
-    protected String a5BankBranchCd;
-        @XmlElement(name = "a5_surcharge_no")
-    protected A5SurchargeNoArray a5SurchargeNo;
     
     public long getClientNo() {
         return clientNo;
@@ -1748,62 +1668,6 @@ public class CreateAcctHierarchy {
     public void setA1ClientCnAltMsgTemplateNo(String value) {
         this.a1ClientCnAltMsgTemplateNo = value;
     }
-            public String getA1Iban() {
-        return a1Iban;
-    }
-
-    public void setA1Iban(String value) {
-        this.a1Iban = value;
-    }
-            public Long getA1BankCheckDigit() {
-        return a1BankCheckDigit;
-    }
-
-    public void setA1BankCheckDigit(Long value) {
-        this.a1BankCheckDigit = value;
-    }
-            public String getA1BankSwiftCd() {
-        return a1BankSwiftCd;
-    }
-
-    public void setA1BankSwiftCd(String value) {
-        this.a1BankSwiftCd = value;
-    }
-            public String getA1BankCountryCd() {
-        return a1BankCountryCd;
-    }
-
-    public void setA1BankCountryCd(String value) {
-        this.a1BankCountryCd = value;
-    }
-            public String getA1MandateId() {
-        return a1MandateId;
-    }
-
-    public void setA1MandateId(String value) {
-        this.a1MandateId = value;
-    }
-            public String getA1BankIdCd() {
-        return a1BankIdCd;
-    }
-
-    public void setA1BankIdCd(String value) {
-        this.a1BankIdCd = value;
-    }
-            public String getA1BankBranchCd() {
-        return a1BankBranchCd;
-    }
-
-    public void setA1BankBranchCd(String value) {
-        this.a1BankBranchCd = value;
-    }
-            public A1SurchargeNoArray getA1SurchargeNo() {
-        return a1SurchargeNo;
-    }
-
-    public void setA1SurchargeNo(A1SurchargeNoArray value) {
-        this.a1SurchargeNo = value;
-    }
             public String getA2AltStartDate() {
         return a2AltStartDate;
     }
@@ -2468,62 +2332,6 @@ public class CreateAcctHierarchy {
 
     public void setA2ClientCnAltMsgTemplateNo(String value) {
         this.a2ClientCnAltMsgTemplateNo = value;
-    }
-            public String getA2Iban() {
-        return a2Iban;
-    }
-
-    public void setA2Iban(String value) {
-        this.a2Iban = value;
-    }
-            public Long getA2BankCheckDigit() {
-        return a2BankCheckDigit;
-    }
-
-    public void setA2BankCheckDigit(Long value) {
-        this.a2BankCheckDigit = value;
-    }
-            public String getA2BankSwiftCd() {
-        return a2BankSwiftCd;
-    }
-
-    public void setA2BankSwiftCd(String value) {
-        this.a2BankSwiftCd = value;
-    }
-            public String getA2BankCountryCd() {
-        return a2BankCountryCd;
-    }
-
-    public void setA2BankCountryCd(String value) {
-        this.a2BankCountryCd = value;
-    }
-            public String getA2MandateId() {
-        return a2MandateId;
-    }
-
-    public void setA2MandateId(String value) {
-        this.a2MandateId = value;
-    }
-            public String getA2BankIdCd() {
-        return a2BankIdCd;
-    }
-
-    public void setA2BankIdCd(String value) {
-        this.a2BankIdCd = value;
-    }
-            public String getA2BankBranchCd() {
-        return a2BankBranchCd;
-    }
-
-    public void setA2BankBranchCd(String value) {
-        this.a2BankBranchCd = value;
-    }
-            public A2SurchargeNoArray getA2SurchargeNo() {
-        return a2SurchargeNo;
-    }
-
-    public void setA2SurchargeNo(A2SurchargeNoArray value) {
-        this.a2SurchargeNo = value;
     }
             public String getA3AltStartDate() {
         return a3AltStartDate;
@@ -3190,62 +2998,6 @@ public class CreateAcctHierarchy {
     public void setA3ClientCnAltMsgTemplateNo(String value) {
         this.a3ClientCnAltMsgTemplateNo = value;
     }
-            public String getA3Iban() {
-        return a3Iban;
-    }
-
-    public void setA3Iban(String value) {
-        this.a3Iban = value;
-    }
-            public Long getA3BankCheckDigit() {
-        return a3BankCheckDigit;
-    }
-
-    public void setA3BankCheckDigit(Long value) {
-        this.a3BankCheckDigit = value;
-    }
-            public String getA3BankSwiftCd() {
-        return a3BankSwiftCd;
-    }
-
-    public void setA3BankSwiftCd(String value) {
-        this.a3BankSwiftCd = value;
-    }
-            public String getA3BankCountryCd() {
-        return a3BankCountryCd;
-    }
-
-    public void setA3BankCountryCd(String value) {
-        this.a3BankCountryCd = value;
-    }
-            public String getA3MandateId() {
-        return a3MandateId;
-    }
-
-    public void setA3MandateId(String value) {
-        this.a3MandateId = value;
-    }
-            public String getA3BankIdCd() {
-        return a3BankIdCd;
-    }
-
-    public void setA3BankIdCd(String value) {
-        this.a3BankIdCd = value;
-    }
-            public String getA3BankBranchCd() {
-        return a3BankBranchCd;
-    }
-
-    public void setA3BankBranchCd(String value) {
-        this.a3BankBranchCd = value;
-    }
-            public A3SurchargeNoArray getA3SurchargeNo() {
-        return a3SurchargeNo;
-    }
-
-    public void setA3SurchargeNo(A3SurchargeNoArray value) {
-        this.a3SurchargeNo = value;
-    }
             public String getA4AltStartDate() {
         return a4AltStartDate;
     }
@@ -3911,62 +3663,6 @@ public class CreateAcctHierarchy {
     public void setA4ClientCnAltMsgTemplateNo(String value) {
         this.a4ClientCnAltMsgTemplateNo = value;
     }
-            public String getA4Iban() {
-        return a4Iban;
-    }
-
-    public void setA4Iban(String value) {
-        this.a4Iban = value;
-    }
-            public Long getA4BankCheckDigit() {
-        return a4BankCheckDigit;
-    }
-
-    public void setA4BankCheckDigit(Long value) {
-        this.a4BankCheckDigit = value;
-    }
-            public String getA4BankSwiftCd() {
-        return a4BankSwiftCd;
-    }
-
-    public void setA4BankSwiftCd(String value) {
-        this.a4BankSwiftCd = value;
-    }
-            public String getA4BankCountryCd() {
-        return a4BankCountryCd;
-    }
-
-    public void setA4BankCountryCd(String value) {
-        this.a4BankCountryCd = value;
-    }
-            public String getA4MandateId() {
-        return a4MandateId;
-    }
-
-    public void setA4MandateId(String value) {
-        this.a4MandateId = value;
-    }
-            public String getA4BankIdCd() {
-        return a4BankIdCd;
-    }
-
-    public void setA4BankIdCd(String value) {
-        this.a4BankIdCd = value;
-    }
-            public String getA4BankBranchCd() {
-        return a4BankBranchCd;
-    }
-
-    public void setA4BankBranchCd(String value) {
-        this.a4BankBranchCd = value;
-    }
-            public A4SurchargeNoArray getA4SurchargeNo() {
-        return a4SurchargeNo;
-    }
-
-    public void setA4SurchargeNo(A4SurchargeNoArray value) {
-        this.a4SurchargeNo = value;
-    }
             public String getA5AltStartDate() {
         return a5AltStartDate;
     }
@@ -4631,62 +4327,6 @@ public class CreateAcctHierarchy {
 
     public void setA5ClientCnAltMsgTemplateNo(String value) {
         this.a5ClientCnAltMsgTemplateNo = value;
-    }
-            public String getA5Iban() {
-        return a5Iban;
-    }
-
-    public void setA5Iban(String value) {
-        this.a5Iban = value;
-    }
-            public Long getA5BankCheckDigit() {
-        return a5BankCheckDigit;
-    }
-
-    public void setA5BankCheckDigit(Long value) {
-        this.a5BankCheckDigit = value;
-    }
-            public String getA5BankSwiftCd() {
-        return a5BankSwiftCd;
-    }
-
-    public void setA5BankSwiftCd(String value) {
-        this.a5BankSwiftCd = value;
-    }
-            public String getA5BankCountryCd() {
-        return a5BankCountryCd;
-    }
-
-    public void setA5BankCountryCd(String value) {
-        this.a5BankCountryCd = value;
-    }
-            public String getA5MandateId() {
-        return a5MandateId;
-    }
-
-    public void setA5MandateId(String value) {
-        this.a5MandateId = value;
-    }
-            public String getA5BankIdCd() {
-        return a5BankIdCd;
-    }
-
-    public void setA5BankIdCd(String value) {
-        this.a5BankIdCd = value;
-    }
-            public String getA5BankBranchCd() {
-        return a5BankBranchCd;
-    }
-
-    public void setA5BankBranchCd(String value) {
-        this.a5BankBranchCd = value;
-    }
-            public A5SurchargeNoArray getA5SurchargeNo() {
-        return a5SurchargeNo;
-    }
-
-    public void setA5SurchargeNo(A5SurchargeNoArray value) {
-        this.a5SurchargeNo = value;
     }
             
 }

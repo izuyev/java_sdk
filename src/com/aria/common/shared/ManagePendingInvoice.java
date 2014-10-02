@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "invoiceNo",    "acctNo",    "actionDirective",    "billSeq",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "altCollectOnApprove",    "altSendStatementOnApprove",    "cancelOrdersOnDiscard",    "billAddress3",    "trackData1",    "trackData2",    "clientReceiptId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "invoiceNo",    "acctNo",    "actionDirective",    "billSeq",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "altCollectOnApprove",    "altSendStatementOnApprove",    "cancelOrdersOnDiscard",    "billAddress3",    "trackData1",    "trackData2",    "clientReceiptId"})
 @XmlRootElement(name = "manage_pending_invoice")
 public class ManagePendingInvoice {
 
@@ -88,20 +88,6 @@ public class ManagePendingInvoice {
     protected String trackData2;
         @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
-        @XmlElement(name = "iban")
-    protected String iban;
-        @XmlElement(name = "bank_check_digit")
-    protected Long bankCheckDigit;
-        @XmlElement(name = "bank_swift_cd")
-    protected String bankSwiftCd;
-        @XmlElement(name = "bank_country_cd")
-    protected String bankCountryCd;
-        @XmlElement(name = "mandate_id")
-    protected String mandateId;
-        @XmlElement(name = "bank_id_cd")
-    protected String bankIdCd;
-        @XmlElement(name = "bank_branch_cd")
-    protected String bankBranchCd;
     
     public long getClientNo() {
         return clientNo;
@@ -363,55 +349,6 @@ public class ManagePendingInvoice {
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
-    }
-            public String getIban() {
-        return iban;
-    }
-
-    public void setIban(String value) {
-        this.iban = value;
-    }
-            public Long getBankCheckDigit() {
-        return bankCheckDigit;
-    }
-
-    public void setBankCheckDigit(Long value) {
-        this.bankCheckDigit = value;
-    }
-            public String getBankSwiftCd() {
-        return bankSwiftCd;
-    }
-
-    public void setBankSwiftCd(String value) {
-        this.bankSwiftCd = value;
-    }
-            public String getBankCountryCd() {
-        return bankCountryCd;
-    }
-
-    public void setBankCountryCd(String value) {
-        this.bankCountryCd = value;
-    }
-            public String getMandateId() {
-        return mandateId;
-    }
-
-    public void setMandateId(String value) {
-        this.mandateId = value;
-    }
-            public String getBankIdCd() {
-        return bankIdCd;
-    }
-
-    public void setBankIdCd(String value) {
-        this.bankIdCd = value;
-    }
-            public String getBankBranchCd() {
-        return bankBranchCd;
-    }
-
-    public void setBankBranchCd(String value) {
-        this.bankBranchCd = value;
     }
             
 }

@@ -1006,7 +1006,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
 
         returnValues[0] = "error_code";
         returnValues[1] = "error_msg";
-        returnValues[2] = "coupons";
+        returnValues[2] = "services";
         
         buildHashMapReturnValues(ret,returnValues);
         return getHashMapReturnValues();
@@ -1413,7 +1413,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         return deleteTemplates(client_no, auth_key, template_nos);
     }
 
-    public Map<String,Object> createDiscountRule(Long client_no, String auth_key, String label, String rule_id, String description, String ext_description, Long flat_percent_ind, Double amount, String currency, String duration_type_ind, String inline_offset_ind, Long service_code_to_use, Long scope_no, Long max_applicable_months, Long max_applications_per_acct, Long alt_service_no_2_apply, String alt_service_id_2_apply, String applicable_trans_scope, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id, String use_all_or_nth_subs_rule){
+    public Map<String,Object> createDiscountRule(Long client_no, String auth_key, String label, String rule_id, String description, String ext_description, Long flat_percent_ind, Double amount, String currency, String duration_type_ind, String inline_offset_ind, Long service_code_to_use, Long scope_no, Long max_applicable_months, Long max_applications_per_acct, Long alt_service_no_2_apply, Long alt_service_id_2_apply, String applicable_trans_scope, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id, String use_all_or_nth_subs_rule){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -1431,7 +1431,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         addParameters(parameters,"max_applicable_months",getValue("Long", max_applicable_months));
         addParameters(parameters,"max_applications_per_acct",getValue("Long", max_applications_per_acct));
         addParameters(parameters,"alt_service_no_2_apply",getValue("Long", alt_service_no_2_apply));
-        addParameters(parameters,"alt_service_id_2_apply",getValue("String", alt_service_id_2_apply));
+        addParameters(parameters,"alt_service_id_2_apply",getValue("Long", alt_service_id_2_apply));
         addParameters(parameters,"applicable_trans_scope",getValue("String", applicable_trans_scope));
         RestUtilities.addParameterValuesFromArray(parameters,plan_no);
         RestUtilities.addParameterValuesFromArray(parameters,client_plan_id);
@@ -1470,7 +1470,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
                 Long max_applicable_months = (Long) map.get("max_applicable_months");
                 Long max_applications_per_acct = (Long) map.get("max_applications_per_acct");
                 Long alt_service_no_2_apply = (Long) map.get("alt_service_no_2_apply");
-                String alt_service_id_2_apply = (String) map.get("alt_service_id_2_apply");
+                Long alt_service_id_2_apply = (Long) map.get("alt_service_id_2_apply");
                 String applicable_trans_scope = (String) map.get("applicable_trans_scope");
                 com.aria.common.shared.admin.PlanNoArray plan_no = (com.aria.common.shared.admin.PlanNoArray) map.get("plan_no");
                 com.aria.common.shared.admin.ClientPlanIdArray client_plan_id = (com.aria.common.shared.admin.ClientPlanIdArray) map.get("client_plan_id");
@@ -2524,12 +2524,12 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         return getPlanGroups(client_no, auth_key);
     }
 
-    public Map<String,Object> getPlanGroupDetails(Long client_no, String auth_key, Long group_no, String client_plan_change_group_id){
+    public Map<String,Object> getPlanGroupDetails(Long client_no, String auth_key, Long group_no, Long client_plan_change_group_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
         addParameters(parameters,"group_no",getValue("Long", group_no));
-        addParameters(parameters,"client_plan_change_group_id",getValue("String", client_plan_change_group_id));
+        addParameters(parameters,"client_plan_change_group_id",getValue("Long", client_plan_change_group_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("get_plan_group_details"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -2552,7 +2552,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         Long client_no = (Long) map.get("client_no");
         String auth_key = (String) map.get("auth_key");
         Long group_no = (Long) map.get("group_no");
-                String client_plan_change_group_id = (String) map.get("client_plan_change_group_id");
+                Long client_plan_change_group_id = (Long) map.get("client_plan_change_group_id");
                 
         return getPlanGroupDetails(client_no, auth_key, group_no, client_plan_change_group_id);
     }
@@ -2823,7 +2823,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         returnValues[20] = "item_no";
         returnValues[21] = "client_item_id";
         returnValues[22] = "plan_service";
-        returnValues[23] = "surcharge_tier";
+        returnValues[23] = "tier";
         
         buildHashMapReturnValues(ret,returnValues);
         return getHashMapReturnValues();
@@ -2838,7 +2838,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         return getSurchargeDetails(client_no, auth_key, surcharge_no, client_surcharge_id);
     }
 
-    public Map<String,Object> createSurcharge(Long client_no, String auth_key, String surcharge_name, String description, String ext_description, String currency_cd, String surcharge_type_cd, String inline_offset_ind, String apply_b4_or_after_discount_cd, Long scope_no, com.aria.common.shared.admin.SurchargeTierArray surcharge_tier, String client_surcharge_id, Long apply_to_zero_invoice_ind, Long tax_group, String gl_cd, String ar_gl_cd, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id){
+    public Map<String,Object> createSurcharge(Long client_no, String auth_key, String surcharge_name, String description, String ext_description, String currency_cd, String surcharge_type_cd, String inline_offset_ind, String apply_b4_or_after_discount_cd, Long scope_no, com.aria.common.shared.admin.TierArray tier, String client_surcharge_id, Long apply_to_zero_invoice_ind, Long tax_group, String gl_cd, String ar_gl_cd, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -2850,7 +2850,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         addParameters(parameters,"inline_offset_ind",getValue("String", inline_offset_ind));
         addParameters(parameters,"apply_b4_or_after_discount_cd",getValue("String", apply_b4_or_after_discount_cd));
         addParameters(parameters,"scope_no",getValue("Long", scope_no));
-        RestUtilities.addParameterValuesFromArray(parameters,surcharge_tier);
+        RestUtilities.addParameterValuesFromArray(parameters,tier);
         addParameters(parameters,"client_surcharge_id",getValue("String", client_surcharge_id));
         addParameters(parameters,"apply_to_zero_invoice_ind",getValue("Long", apply_to_zero_invoice_ind));
         addParameters(parameters,"tax_group",getValue("Long", tax_group));
@@ -2886,7 +2886,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
                 String inline_offset_ind = (String) map.get("inline_offset_ind");
                 String apply_b4_or_after_discount_cd = (String) map.get("apply_b4_or_after_discount_cd");
                 Long scope_no = (Long) map.get("scope_no");
-                com.aria.common.shared.admin.SurchargeTierArray surcharge_tier = (com.aria.common.shared.admin.SurchargeTierArray) map.get("surcharge_tier");
+                com.aria.common.shared.admin.TierArray tier = (com.aria.common.shared.admin.TierArray) map.get("tier");
                 String client_surcharge_id = (String) map.get("client_surcharge_id");
                 Long apply_to_zero_invoice_ind = (Long) map.get("apply_to_zero_invoice_ind");
                 Long tax_group = (Long) map.get("tax_group");
@@ -2899,10 +2899,10 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
                 com.aria.common.shared.admin.ItemNoArray item_no = (com.aria.common.shared.admin.ItemNoArray) map.get("item_no");
                 com.aria.common.shared.admin.ClientItemIdArray client_item_id = (com.aria.common.shared.admin.ClientItemIdArray) map.get("client_item_id");
                 
-        return createSurcharge(client_no, auth_key, surcharge_name, description, ext_description, currency_cd, surcharge_type_cd, inline_offset_ind, apply_b4_or_after_discount_cd, scope_no, surcharge_tier, client_surcharge_id, apply_to_zero_invoice_ind, tax_group, gl_cd, ar_gl_cd, plan_no, client_plan_id, service_no, client_service_id, item_no, client_item_id);
+        return createSurcharge(client_no, auth_key, surcharge_name, description, ext_description, currency_cd, surcharge_type_cd, inline_offset_ind, apply_b4_or_after_discount_cd, scope_no, tier, client_surcharge_id, apply_to_zero_invoice_ind, tax_group, gl_cd, ar_gl_cd, plan_no, client_plan_id, service_no, client_service_id, item_no, client_item_id);
     }
 
-    public Map<String,Object> editSurcharge(Long client_no, String auth_key, String surcharge_no, String surcharge_name, String client_surcharge_id, String description, String ext_description, String currency_cd, Long scope_no, com.aria.common.shared.admin.SurchargeTierArray surcharge_tier, Long apply_to_zero_invoice_ind, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id){
+    public Map<String,Object> editSurcharge(Long client_no, String auth_key, String surcharge_no, String surcharge_name, String client_surcharge_id, String description, String ext_description, String currency_cd, Long scope_no, com.aria.common.shared.admin.TierArray tier, Long apply_to_zero_invoice_ind, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -2913,7 +2913,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         addParameters(parameters,"ext_description",getValue("String", ext_description));
         addParameters(parameters,"currency_cd",getValue("String", currency_cd));
         addParameters(parameters,"scope_no",getValue("Long", scope_no));
-        RestUtilities.addParameterValuesFromArray(parameters,surcharge_tier);
+        RestUtilities.addParameterValuesFromArray(parameters,tier);
         addParameters(parameters,"apply_to_zero_invoice_ind",getValue("Long", apply_to_zero_invoice_ind));
         RestUtilities.addParameterValuesFromArray(parameters,plan_no);
         RestUtilities.addParameterValuesFromArray(parameters,client_plan_id);
@@ -2944,7 +2944,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
                 String ext_description = (String) map.get("ext_description");
                 String currency_cd = (String) map.get("currency_cd");
                 Long scope_no = (Long) map.get("scope_no");
-                com.aria.common.shared.admin.SurchargeTierArray surcharge_tier = (com.aria.common.shared.admin.SurchargeTierArray) map.get("surcharge_tier");
+                com.aria.common.shared.admin.TierArray tier = (com.aria.common.shared.admin.TierArray) map.get("tier");
                 Long apply_to_zero_invoice_ind = (Long) map.get("apply_to_zero_invoice_ind");
                 com.aria.common.shared.admin.PlanNoArray plan_no = (com.aria.common.shared.admin.PlanNoArray) map.get("plan_no");
                 com.aria.common.shared.admin.ClientPlanIdArray client_plan_id = (com.aria.common.shared.admin.ClientPlanIdArray) map.get("client_plan_id");
@@ -2953,7 +2953,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
                 com.aria.common.shared.admin.ItemNoArray item_no = (com.aria.common.shared.admin.ItemNoArray) map.get("item_no");
                 com.aria.common.shared.admin.ClientItemIdArray client_item_id = (com.aria.common.shared.admin.ClientItemIdArray) map.get("client_item_id");
                 
-        return editSurcharge(client_no, auth_key, surcharge_no, surcharge_name, client_surcharge_id, description, ext_description, currency_cd, scope_no, surcharge_tier, apply_to_zero_invoice_ind, plan_no, client_plan_id, service_no, client_service_id, item_no, client_item_id);
+        return editSurcharge(client_no, auth_key, surcharge_no, surcharge_name, client_surcharge_id, description, ext_description, currency_cd, scope_no, tier, apply_to_zero_invoice_ind, plan_no, client_plan_id, service_no, client_service_id, item_no, client_item_id);
     }
 
     public Map<String,Object> deleteSurcharge(Long client_no, String auth_key, com.aria.common.shared.admin.SurchargeNoArray surcharge_no, com.aria.common.shared.admin.ClientSurchargeIdArray client_surcharge_id){

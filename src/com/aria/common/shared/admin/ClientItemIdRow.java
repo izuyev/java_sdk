@@ -13,12 +13,12 @@ import javax.xml.bind.annotation.XmlType;
 public class ClientItemIdRow {
 
     @XmlElement(name = "client_item_ids")
-    protected String clientItemIds;
-    public String getClientItemIds() {
+    protected Long clientItemIds;
+    public Long getClientItemIds() {
         return clientItemIds;
     }
 
-    public void setClientItemIds(String value) {
+    public void setClientItemIds(Long value) {
         this.clientItemIds = value;
     }
 

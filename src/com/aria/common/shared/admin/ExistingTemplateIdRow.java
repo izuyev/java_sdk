@@ -13,12 +13,12 @@ import javax.xml.bind.annotation.XmlType;
 public class ExistingTemplateIdRow {
 
     @XmlElement(name = "existing_template_ids")
-    protected String existingTemplateIds;
-    public String getExistingTemplateIds() {
+    protected Long existingTemplateIds;
+    public Long getExistingTemplateIds() {
         return existingTemplateIds;
     }
 
-    public void setExistingTemplateIds(String value) {
+    public void setExistingTemplateIds(Long value) {
         this.existingTemplateIds = value;
     }
 

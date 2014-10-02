@@ -13,12 +13,12 @@ import javax.xml.bind.annotation.XmlType;
 public class ParentClientPlanIdsRow {
 
     @XmlElement(name = "parent_client_plan_id")
-    protected String parentClientPlanId;
-    public String getParentClientPlanId() {
+    protected Long parentClientPlanId;
+    public Long getParentClientPlanId() {
         return parentClientPlanId;
     }
 
-    public void setParentClientPlanId(String value) {
+    public void setParentClientPlanId(Long value) {
         this.parentClientPlanId = value;
     }
 

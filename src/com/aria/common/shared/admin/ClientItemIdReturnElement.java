@@ -10,28 +10,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "client_item_id_ReturnElement", propOrder = {"clientItemIds", "itemIds"})
+@XmlType(name = "client_item_id_ReturnElement", propOrder = {"clientItemIds"})
 public class ClientItemIdReturnElement {
 
     @XmlElement(name = "client_item_ids")
-    protected String clientItemIds;
-    @XmlElement(name = "item_ids")
-    protected String itemIds;
+    protected Long clientItemIds;
     
-    public String getClientItemIds() {
+    public Long getClientItemIds() {
         return clientItemIds;
     }
 
-    public void setClientItemIds(String value) {
+    public void setClientItemIds(Long value) {
         this.clientItemIds = value;
-    }
-
-    public String getItemIds() {
-        return itemIds;
-    }
-
-    public void setItemIds(String value) {
-        this.itemIds = value;
     }
 
     

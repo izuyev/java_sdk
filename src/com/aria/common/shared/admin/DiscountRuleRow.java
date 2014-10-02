@@ -61,7 +61,7 @@ public class DiscountRuleRow {
     @XmlElement(name = "alt_service_no_2_apply")
     protected Long altServiceNo2Apply;
     @XmlElement(name = "alt_service_id_2_apply")
-    protected String altServiceId2Apply;
+    protected Long altServiceId2Apply;
     @XmlElement(name = "applicable_trans_scope")
     protected String applicableTransScope;
     @XmlElement(name = "scope_no")
@@ -184,11 +184,11 @@ public class DiscountRuleRow {
         this.altServiceNo2Apply = value;
     }
 
-    public String getAltServiceId2Apply() {
+    public Long getAltServiceId2Apply() {
         return altServiceId2Apply;
     }
 
-    public void setAltServiceId2Apply(String value) {
+    public void setAltServiceId2Apply(Long value) {
         this.altServiceId2Apply = value;
     }
 

@@ -14,13 +14,13 @@ import javax.xml.bind.annotation.XmlType;
 public class RuleIdsReturnElement {
 
     @XmlElement(name = "rule")
-    protected String rule;
+    protected Long rule;
     
-    public String getRule() {
+    public Long getRule() {
         return rule;
     }
 
-    public void setRule(String value) {
+    public void setRule(Long value) {
         this.rule = value;
     }
 

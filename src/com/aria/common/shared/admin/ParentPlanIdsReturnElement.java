@@ -14,13 +14,13 @@ import javax.xml.bind.annotation.XmlType;
 public class ParentPlanIdsReturnElement {
 
     @XmlElement(name = "parent_plan_id")
-    protected String parentPlanId;
+    protected Long parentPlanId;
     
-    public String getParentPlanId() {
+    public Long getParentPlanId() {
         return parentPlanId;
     }
 
-    public void setParentPlanId(String value) {
+    public void setParentPlanId(Long value) {
         this.parentPlanId = value;
     }
 

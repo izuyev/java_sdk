@@ -297,7 +297,6 @@ public class AriaServiceClientTest {
         //getAcctWriteoffOrDisputes();
         //getInvoicesToWriteoffOrDispute();
         //settleDisputeHold();
-        //cancelRecurringCredits();
         //setSessionAuth();
         //setSession();
         //validateSession();
@@ -1497,13 +1496,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
-                , ""
-                , 1L
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "updatePaymentMethod - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -1547,13 +1539,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
-                , 1L
                 , ""
                 , ""
                 , ""
@@ -2391,13 +2376,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , surchargeNoArray
-                , ""
-                , 1L
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -2762,13 +2740,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , updateSurchargeArray
-                , ""
-                , 1L
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "updateAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -3036,7 +3007,6 @@ public class AriaServiceClientTest {
     public void getAcctStatementHistory() throws Exception {
         
         hashMapReturnValues = getBaseAriaBilling().getAcctStatementHistory(getClientNo(), getAuthKey()        , 1L
-                , ""
                 , ""
                 , ""
                 , ""
@@ -3776,9 +3746,9 @@ public class AriaServiceClientTest {
         com.aria.common.shared.OrderLineItemsArray orderLineItemsArray = new com.aria.common.shared.OrderLineItemsArray();
         
         hashMapReturnValues = getBaseAriaBilling().createOrder(getClientNo(), getAuthKey()        , 1L
+                , 1L
                 , orderLineItemsArray
                 , 1L
-                , 1L
                 , ""
                 , ""
                 , 1L
@@ -3812,13 +3782,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
-                , ""
-                , ""
-                , 1L
-                , ""
-                , ""
-                , ""
-                , ""
                 , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
@@ -3859,13 +3822,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
-                , 1L
                 , ""
                 , ""
                 , ""
@@ -3919,13 +3875,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
-                , ""
-                , 1L
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "collectFromAccount - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -4382,13 +4331,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
-                , ""
-                , 1L
-                , ""
-                , ""
-                , ""
-                , ""
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "managePendingInvoice - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -4475,13 +4417,6 @@ public class AriaServiceClientTest {
                 , 1L
                 , 1L
                 , multipleCouponsArray
-                , ""
-                , ""
-                , 1L
-                , ""
-                , ""
-                , ""
-                , ""
                 , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
@@ -4722,25 +4657,6 @@ public class AriaServiceClientTest {
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "settleDisputeHold - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
-    public void cancelRecurringCredits() throws Exception {
-        com.aria.common.shared.RecurringCreditNoArray recurringCreditNoArray = new com.aria.common.shared.RecurringCreditNoArray();
-        
-        hashMapReturnValues = getBaseAriaBilling().cancelRecurringCredits(getClientNo(), getAuthKey()        , 1L
-                , ""
-                , ""
-                , recurringCreditNoArray
-                , ""
-        );
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "cancelRecurringCredits - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
                 errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
             }

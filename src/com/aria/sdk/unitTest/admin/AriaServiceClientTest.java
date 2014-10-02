@@ -856,7 +856,7 @@ public class AriaServiceClientTest {
                 , 1L
                 , 1L
                 , 1L
-                , ""
+                , 1L
                 , ""
                 , planNoArray
                 , clientPlanIdArray
@@ -1415,7 +1415,7 @@ public class AriaServiceClientTest {
     public void getPlanGroupDetails() throws Exception {
         
         hashMapReturnValues = getBaseAriaBilling().getPlanGroupDetails(getClientNo(), getAuthKey()        , 1L
-                , ""
+                , 1L
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getPlanGroupDetails - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -1567,7 +1567,7 @@ public class AriaServiceClientTest {
 
     //@Test
     public void createSurcharge() throws Exception {
-        com.aria.common.shared.admin.SurchargeTierArray surchargeTierArray = new com.aria.common.shared.admin.SurchargeTierArray();
+        com.aria.common.shared.admin.TierArray tierArray = new com.aria.common.shared.admin.TierArray();
         com.aria.common.shared.admin.PlanNoArray planNoArray = new com.aria.common.shared.admin.PlanNoArray();
         com.aria.common.shared.admin.ClientPlanIdArray clientPlanIdArray = new com.aria.common.shared.admin.ClientPlanIdArray();
         com.aria.common.shared.admin.ServiceNoArray serviceNoArray = new com.aria.common.shared.admin.ServiceNoArray();
@@ -1583,7 +1583,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
-                , surchargeTierArray
+                , tierArray
                 , ""
                 , 1L
                 , 1L
@@ -1607,7 +1607,7 @@ public class AriaServiceClientTest {
 
     //@Test
     public void editSurcharge() throws Exception {
-        com.aria.common.shared.admin.SurchargeTierArray surchargeTierArray = new com.aria.common.shared.admin.SurchargeTierArray();
+        com.aria.common.shared.admin.TierArray tierArray = new com.aria.common.shared.admin.TierArray();
         com.aria.common.shared.admin.PlanNoArray planNoArray = new com.aria.common.shared.admin.PlanNoArray();
         com.aria.common.shared.admin.ClientPlanIdArray clientPlanIdArray = new com.aria.common.shared.admin.ClientPlanIdArray();
         com.aria.common.shared.admin.ServiceNoArray serviceNoArray = new com.aria.common.shared.admin.ServiceNoArray();
@@ -1622,7 +1622,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
-                , surchargeTierArray
+                , tierArray
                 , 1L
                 , planNoArray
                 , clientPlanIdArray
