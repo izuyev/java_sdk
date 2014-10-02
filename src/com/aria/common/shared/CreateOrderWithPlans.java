@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "orderLineItems",    "cartSuppPlans",    "clientOrderId",    "couponCode",    "comments",    "doWrite",    "clientReceiptId",    "billSeq",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "trackData1",    "trackData2",    "altInvTemplateNo",    "syncMstrBillDatesOverride",    "multipleCoupons",    "clientAltInvTemplateId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "acctNo",    "orderLineItems",    "cartSuppPlans",    "clientOrderId",    "couponCode",    "comments",    "doWrite",    "clientReceiptId",    "billSeq",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "trackData1",    "trackData2",    "altInvTemplateNo",    "syncMstrBillDatesOverride",    "multipleCoupons",    "clientAltInvTemplateId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "statementMessage"})
 @XmlRootElement(name = "create_order_with_plans")
 public class CreateOrderWithPlans {
 
@@ -112,6 +112,8 @@ public class CreateOrderWithPlans {
     protected String bankIdCd;
         @XmlElement(name = "bank_branch_cd")
     protected String bankBranchCd;
+        @XmlElement(name = "statement_message")
+    protected String statementMessage;
     
     public long getClientNo() {
         return clientNo;
@@ -457,6 +459,13 @@ public class CreateOrderWithPlans {
 
     public void setBankBranchCd(String value) {
         this.bankBranchCd = value;
+    }
+            public String getStatementMessage() {
+        return statementMessage;
+    }
+
+    public void setStatementMessage(String value) {
+        this.statementMessage = value;
     }
             
 }

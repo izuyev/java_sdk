@@ -3894,6 +3894,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createOrder - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -4100,6 +4101,7 @@ public class AriaServiceClientTest {
                 , standingOrderArray
                 , ""
                 , ""
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "recordStandingOrder - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -4146,6 +4148,7 @@ public class AriaServiceClientTest {
         com.aria.common.shared.UsageRecordsArray usageRecordsArray = new com.aria.common.shared.UsageRecordsArray();
         
         hashMapReturnValues = getBaseAriaBilling().bulkRecordUsage(getClientNo(), getAuthKey()        , usageRecordsArray
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "bulkRecordUsage - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -4177,6 +4180,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
+                , ""
                 , ""
                 , ""
                 , ""
@@ -4554,6 +4558,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
+                , ""
                 , ""
                 , ""
                 , ""

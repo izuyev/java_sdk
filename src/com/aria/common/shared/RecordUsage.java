@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "usageUnits",    "acctNo",    "userid",    "usageType",    "usageDate",    "billableUnits",    "amt",    "rate",    "telcoFrom",    "telcoTo",    "comments",    "excludeFromBilling",    "exclusionComments",    "qualifier1",    "qualifier2",    "qualifier3",    "qualifier4",    "parentUsageRecNo",    "usageTypeCode",    "clientRecordId",    "callerId"})
+    "authKey",    "usageUnits",    "acctNo",    "userid",    "usageType",    "usageDate",    "billableUnits",    "amt",    "rate",    "telcoFrom",    "telcoTo",    "comments",    "excludeFromBilling",    "exclusionComments",    "qualifier1",    "qualifier2",    "qualifier3",    "qualifier4",    "parentUsageRecNo",    "usageTypeCode",    "clientRecordId",    "callerId",    "clientReceiptId"})
 @XmlRootElement(name = "record_usage")
 public class RecordUsage {
 
@@ -60,6 +60,8 @@ public class RecordUsage {
     protected String clientRecordId;
         @XmlElement(name = "caller_id")
     protected String callerId;
+        @XmlElement(name = "client_receipt_id")
+    protected String clientReceiptId;
     
     public long getClientNo() {
         return clientNo;
@@ -223,6 +225,13 @@ public class RecordUsage {
 
     public void setCallerId(String value) {
         this.callerId = value;
+    }
+            public String getClientReceiptId() {
+        return clientReceiptId;
+    }
+
+    public void setClientReceiptId(String value) {
+        this.clientReceiptId = value;
     }
             
 }

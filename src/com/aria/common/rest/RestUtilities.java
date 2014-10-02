@@ -1627,6 +1627,18 @@ public class RestUtilities {
         return returnElement;
     }
 
+    public static ArrayList<AcctSuppFieldValuesReturnElement> buildAcctSuppFieldValuesReturnElement(JSONArray jsonArray) {
+        ArrayList<AcctSuppFieldValuesReturnElement> returnElement = new ArrayList<AcctSuppFieldValuesReturnElement>();
+        if (jsonArray == null) return returnElement;
+        for (int i = 0;i < jsonArray.size();i++) {
+            AcctSuppFieldValuesReturnElement entity = new AcctSuppFieldValuesReturnElement();
+            JSONObject jsonObject = (JSONObject)jsonArray.get(i);
+            entity.setSuppFieldValue(getStringValue(jsonObject,"supp_field_value"));
+            returnElement.add(entity);
+        }
+        return returnElement;
+    }
+
     public static ArrayList<SuppPlanLineItemsReturnElement> buildSuppPlanLineItemsReturnElement(JSONArray jsonArray) {
         ArrayList<SuppPlanLineItemsReturnElement> returnElement = new ArrayList<SuppPlanLineItemsReturnElement>();
         if (jsonArray == null) return returnElement;
@@ -2790,6 +2802,7 @@ public class RestUtilities {
             entity.setTransactionId(getLongValue(jsonObject,"transaction_id"));
             entity.setOrderCreateClientReceiptId(getStringValue(jsonObject,"order_create_client_receipt_id"));
             entity.setOrderStatusClientReceiptId(getStringValue(jsonObject,"order_status_client_receipt_id"));
+            entity.setStatementMessage(getStringValue(jsonObject,"statement_message"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2819,6 +2832,7 @@ public class RestUtilities {
             entity.setCancelComments(getStringValue(jsonObject,"cancel_comments"));
             entity.setClientOrderId(getStringValue(jsonObject,"client_order_id"));
             entity.setClientReceiptId(getStringValue(jsonObject,"client_receipt_id"));
+            entity.setStatementMessage(getStringValue(jsonObject,"statement_message"));
             returnElement.add(entity);
         }
         return returnElement;

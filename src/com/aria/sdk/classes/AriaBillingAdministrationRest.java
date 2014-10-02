@@ -2380,13 +2380,13 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         return updateUsageType(client_no, auth_key, usage_type_no, usage_type_name, usage_type_desc, usage_unit_type_no, usage_type_code, usage_type_display_string);
     }
 
-    public Map<String,Object> createSuppObjField(Long client_no, String auth_key, String field_name, String description, String min_no_sel, Long max_no_sel, String datatype, String form_input_type, String use_allowed_vals_ind, String option_value, String option_value_order){
+    public Map<String,Object> createSuppObjField(Long client_no, String auth_key, String field_name, String description, Long min_no_sel, Long max_no_sel, String datatype, String form_input_type, String use_allowed_vals_ind, String option_value, String option_value_order){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
         addParameters(parameters,"field_name",getValue("String", field_name));
         addParameters(parameters,"description",getValue("String", description));
-        addParameters(parameters,"min_no_sel",getValue("String", min_no_sel));
+        addParameters(parameters,"min_no_sel",getValue("Long", min_no_sel));
         addParameters(parameters,"max_no_sel",getValue("Long", max_no_sel));
         addParameters(parameters,"datatype",getValue("String", datatype));
         addParameters(parameters,"form_input_type",getValue("String", form_input_type));
@@ -2411,7 +2411,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         String auth_key = (String) map.get("auth_key");
         String field_name = (String) map.get("field_name");
                 String description = (String) map.get("description");
-                String min_no_sel = (String) map.get("min_no_sel");
+                Long min_no_sel = (Long) map.get("min_no_sel");
                 Long max_no_sel = (Long) map.get("max_no_sel");
                 String datatype = (String) map.get("datatype");
                 String form_input_type = (String) map.get("form_input_type");

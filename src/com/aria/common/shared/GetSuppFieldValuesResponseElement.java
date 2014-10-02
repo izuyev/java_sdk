@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "suppFieldValues"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "suppFieldValues", "acctSuppFieldValues"})
 @XmlRootElement(name = "get_supp_field_valuesResponseElement")
 public class GetSuppFieldValuesResponseElement {
 
@@ -20,6 +20,8 @@ public class GetSuppFieldValuesResponseElement {
     protected String errorMsg;
     @XmlElement(name = "supp_field_values")
     protected List<SuppFieldValuesReturnElement> suppFieldValues;
+    @XmlElement(name = "acct_supp_field_values")
+    protected List<AcctSuppFieldValuesReturnElement> acctSuppFieldValues;
     
     public Long getErrorCode() {
         return errorCode;
@@ -42,5 +44,10 @@ public class GetSuppFieldValuesResponseElement {
             this.suppFieldValues = new ArrayList<SuppFieldValuesReturnElement>();
         }
         return this.suppFieldValues;
+    }public List<AcctSuppFieldValuesReturnElement> getAcctSuppFieldValues() {
+        if (this.acctSuppFieldValues == null) {
+            this.acctSuppFieldValues = new ArrayList<AcctSuppFieldValuesReturnElement>();
+        }
+        return this.acctSuppFieldValues;
     }
 }

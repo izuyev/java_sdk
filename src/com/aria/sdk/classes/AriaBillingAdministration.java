@@ -1362,7 +1362,7 @@ public interface AriaBillingAdministration {
     * @param auth_key - Type: String
     * @param field_name - Type: String
     * @param description - Type: String
-    * @param min_no_sel - Type: String
+    * @param min_no_sel - Type: Long
     * @param max_no_sel - Type: Long
     * @param datatype - Type: String
     * @param form_input_type - Type: String
@@ -1374,7 +1374,7 @@ public interface AriaBillingAdministration {
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   field_no - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> createSuppObjField(Long client_no, String auth_key, String field_name, String description, String min_no_sel, Long max_no_sel, String datatype, String form_input_type, String use_allowed_vals_ind, String option_value, String option_value_order);
+    abstract Map<String,Object> createSuppObjField(Long client_no, String auth_key, String field_name, String description, Long min_no_sel, Long max_no_sel, String datatype, String form_input_type, String use_allowed_vals_ind, String option_value, String option_value_order);
 
     abstract Map<String,Object> createSuppObjField(Map<String,Object> map);
 

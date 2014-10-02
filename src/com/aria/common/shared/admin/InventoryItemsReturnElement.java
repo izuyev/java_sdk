@@ -26,7 +26,7 @@ public class InventoryItemsReturnElement {
     @XmlElement(name = "client_item_id")
     protected String clientItemId;
     @XmlElement(name = "stock_level")
-    protected Double stockLevel;
+    protected Long stockLevel;
     
     public Long getItemNo() {
         return itemNo;
@@ -76,11 +76,11 @@ public class InventoryItemsReturnElement {
         this.clientItemId = value;
     }
 
-    public Double getStockLevel() {
+    public Long getStockLevel() {
         return stockLevel;
     }
 
-    public void setStockLevel(Double value) {
+    public void setStockLevel(Long value) {
         this.stockLevel = value;
     }
 

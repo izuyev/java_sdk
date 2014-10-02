@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "so_ReturnElement", propOrder = {"standingOrderNo", "createDate", "updateDate", "comments", "numOrdersReq", "numOrdersComp", "numOrdersRemain", "intervalDays", "lastOrderDate", "nextOrderDate", "statusCd", "statusLabel", "statusDesc", "firstOrderDate", "cancelDate", "cancelComments", "clientOrderId", "clientReceiptId"})
+@XmlType(name = "so_ReturnElement", propOrder = {"standingOrderNo", "createDate", "updateDate", "comments", "numOrdersReq", "numOrdersComp", "numOrdersRemain", "intervalDays", "lastOrderDate", "nextOrderDate", "statusCd", "statusLabel", "statusDesc", "firstOrderDate", "cancelDate", "cancelComments", "clientOrderId", "clientReceiptId", "statementMessage"})
 public class SoReturnElement {
 
     @XmlElement(name = "standing_order_no")
@@ -49,6 +49,8 @@ public class SoReturnElement {
     protected String clientOrderId;
     @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
+    @XmlElement(name = "statement_message")
+    protected String statementMessage;
     
     public Long getStandingOrderNo() {
         return standingOrderNo;
@@ -192,6 +194,14 @@ public class SoReturnElement {
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
+    }
+
+    public String getStatementMessage() {
+        return statementMessage;
+    }
+
+    public void setStatementMessage(String value) {
+        this.statementMessage = value;
     }
 
     

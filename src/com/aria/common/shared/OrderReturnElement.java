@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "order_ReturnElement", propOrder = {"orderNo", "amount", "currencyCd", "statusLabel", "invoiceNo", "createDate", "updateDate", "comments", "clientOrderId", "transactionId", "orderCreateClientReceiptId", "orderStatusClientReceiptId"})
+@XmlType(name = "order_ReturnElement", propOrder = {"orderNo", "amount", "currencyCd", "statusLabel", "invoiceNo", "createDate", "updateDate", "comments", "clientOrderId", "transactionId", "orderCreateClientReceiptId", "orderStatusClientReceiptId", "statementMessage"})
 public class OrderReturnElement {
 
     @XmlElement(name = "order_no")
@@ -37,6 +37,8 @@ public class OrderReturnElement {
     protected String orderCreateClientReceiptId;
     @XmlElement(name = "order_status_client_receipt_id")
     protected String orderStatusClientReceiptId;
+    @XmlElement(name = "statement_message")
+    protected String statementMessage;
     
     public Long getOrderNo() {
         return orderNo;
@@ -132,6 +134,14 @@ public class OrderReturnElement {
 
     public void setOrderStatusClientReceiptId(String value) {
         this.orderStatusClientReceiptId = value;
+    }
+
+    public String getStatementMessage() {
+        return statementMessage;
+    }
+
+    public void setStatementMessage(String value) {
+        this.statementMessage = value;
     }
 
     

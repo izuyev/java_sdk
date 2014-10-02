@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "accountNo",    "billingIntervalUnits",    "timesToBill",    "billingIntervalType",    "firstBillDate",    "standingOrder",    "clientOrderId",    "clientReceiptId"})
+    "authKey",    "accountNo",    "billingIntervalUnits",    "timesToBill",    "billingIntervalType",    "firstBillDate",    "standingOrder",    "clientOrderId",    "clientReceiptId",    "statementMessage"})
 @XmlRootElement(name = "record_standing_order")
 public class RecordStandingOrder {
 
@@ -34,6 +34,8 @@ public class RecordStandingOrder {
     protected String clientOrderId;
         @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
+        @XmlElement(name = "statement_message")
+    protected String statementMessage;
     
     public long getClientNo() {
         return clientNo;
@@ -106,6 +108,13 @@ public class RecordStandingOrder {
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
+    }
+            public String getStatementMessage() {
+        return statementMessage;
+    }
+
+    public void setStatementMessage(String value) {
+        this.statementMessage = value;
     }
             
 }

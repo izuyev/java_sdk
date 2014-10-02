@@ -1344,7 +1344,7 @@ public class AriaServiceClientTest {
         
         hashMapReturnValues = getBaseAriaBilling().createSuppObjField(getClientNo(), getAuthKey()        , ""
                 , ""
-                , ""
+                , 1L
                 , 1L
                 , ""
                 , ""

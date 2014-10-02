@@ -193,7 +193,7 @@ public class RestUtilities {
             entity.setClientSku(getStringValue(jsonObject,"client_sku"));
             entity.setActiveInd(getLongValue(jsonObject,"active_ind"));
             entity.setClientItemId(getStringValue(jsonObject,"client_item_id"));
-            entity.setStockLevel(getDoubleValue(jsonObject,"stock_level"));
+            entity.setStockLevel(getLongValue(jsonObject,"stock_level"));
             returnElement.add(entity);
         }
         return returnElement;
