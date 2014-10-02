@@ -13,12 +13,12 @@ import javax.xml.bind.annotation.XmlType;
 public class ExistingDiscountBundleIdRow {
 
     @XmlElement(name = "existing_bundle_ids")
-    protected Long existingBundleIds;
-    public Long getExistingBundleIds() {
+    protected String existingBundleIds;
+    public String getExistingBundleIds() {
         return existingBundleIds;
     }
 
-    public void setExistingBundleIds(Long value) {
+    public void setExistingBundleIds(String value) {
         this.existingBundleIds = value;
     }
 

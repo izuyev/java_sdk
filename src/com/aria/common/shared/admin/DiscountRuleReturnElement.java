@@ -40,7 +40,7 @@ public class DiscountRuleReturnElement {
     @XmlElement(name = "alt_service_no_2_apply")
     protected Long altServiceNo2Apply;
     @XmlElement(name = "alt_service_id_2_apply")
-    protected Long altServiceId2Apply;
+    protected String altServiceId2Apply;
     @XmlElement(name = "scope_no")
     protected Long scopeNo;
     @XmlElement(name = "plan_no")
@@ -160,11 +160,11 @@ public class DiscountRuleReturnElement {
         this.altServiceNo2Apply = value;
     }
 
-    public Long getAltServiceId2Apply() {
+    public String getAltServiceId2Apply() {
         return altServiceId2Apply;
     }
 
-    public void setAltServiceId2Apply(Long value) {
+    public void setAltServiceId2Apply(String value) {
         this.altServiceId2Apply = value;
     }
 

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "statement_history_ReturnElement", propOrder = {"statementNo", "createDate", "currencyCd", "dueDate", "dueDatePlusGracePeriod", "newChargesAmount", "newPaymentsAmount", "balanceForwardAmount", "totalAmount", "isPaidInd"})
+@XmlType(name = "statement_history_ReturnElement", propOrder = {"statementNo", "createDate", "currencyCd", "dueDate", "dueDatePlusGracePeriod", "newChargesAmount", "newPaymentsAmount", "balanceForwardAmount", "totalAmount", "isPaidInd", "invoiceActivityInd"})
 public class StatementHistoryReturnElement {
 
     @XmlElement(name = "statement_no")
@@ -33,6 +33,8 @@ public class StatementHistoryReturnElement {
     protected Double totalAmount;
     @XmlElement(name = "is_paid_ind")
     protected Long isPaidInd;
+    @XmlElement(name = "invoice_activity_ind")
+    protected Long invoiceActivityInd;
     
     public Long getStatementNo() {
         return statementNo;
@@ -112,6 +114,14 @@ public class StatementHistoryReturnElement {
 
     public void setIsPaidInd(Long value) {
         this.isPaidInd = value;
+    }
+
+    public Long getInvoiceActivityInd() {
+        return invoiceActivityInd;
+    }
+
+    public void setInvoiceActivityInd(Long value) {
+        this.invoiceActivityInd = value;
     }
 
     

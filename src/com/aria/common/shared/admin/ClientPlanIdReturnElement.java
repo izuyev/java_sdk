@@ -14,13 +14,13 @@ import javax.xml.bind.annotation.XmlType;
 public class ClientPlanIdReturnElement {
 
     @XmlElement(name = "client_plan_ids")
-    protected Long clientPlanIds;
+    protected String clientPlanIds;
     
-    public Long getClientPlanIds() {
+    public String getClientPlanIds() {
         return clientPlanIds;
     }
 
-    public void setClientPlanIds(Long value) {
+    public void setClientPlanIds(String value) {
         this.clientPlanIds = value;
     }
 

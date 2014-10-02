@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "accountNo",    "billImmediately",    "orderLineItems",    "billSeq",    "clientOrderId",    "clientReceiptId",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "doWrite",    "couponCd",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "altInvTemplateNo",    "clientAltInvTemplateId"})
+    "authKey",    "accountNo",    "orderLineItems",    "billImmediately",    "billSeq",    "clientOrderId",    "clientReceiptId",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "doWrite",    "couponCd",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "altInvTemplateNo",    "clientAltInvTemplateId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
 @XmlRootElement(name = "create_order")
 public class CreateOrder {
 
@@ -20,10 +20,10 @@ public class CreateOrder {
     protected String authKey;
         @XmlElement(name = "account_no")
     protected Long accountNo;
-        @XmlElement(name = "bill_immediately")
-    protected Long billImmediately;
         @XmlElement(name = "order_line_items")
     protected OrderLineItemsArray orderLineItems;
+        @XmlElement(name = "bill_immediately")
+    protected Long billImmediately;
         @XmlElement(name = "bill_seq")
     protected Long billSeq;
         @XmlElement(name = "client_order_id")
@@ -94,6 +94,20 @@ public class CreateOrder {
     protected Long altInvTemplateNo;
         @XmlElement(name = "client_alt_inv_template_id")
     protected String clientAltInvTemplateId;
+        @XmlElement(name = "iban")
+    protected String iban;
+        @XmlElement(name = "bank_check_digit")
+    protected Long bankCheckDigit;
+        @XmlElement(name = "bank_swift_cd")
+    protected String bankSwiftCd;
+        @XmlElement(name = "bank_country_cd")
+    protected String bankCountryCd;
+        @XmlElement(name = "mandate_id")
+    protected String mandateId;
+        @XmlElement(name = "bank_id_cd")
+    protected String bankIdCd;
+        @XmlElement(name = "bank_branch_cd")
+    protected String bankBranchCd;
     
     public long getClientNo() {
         return clientNo;
@@ -118,19 +132,19 @@ public class CreateOrder {
     public void setAccountNo(Long value) {
         this.accountNo = value;
     }
-            public Long getBillImmediately() {
-        return billImmediately;
-    }
-
-    public void setBillImmediately(Long value) {
-        this.billImmediately = value;
-    }
             public OrderLineItemsArray getOrderLineItems() {
         return orderLineItems;
     }
 
     public void setOrderLineItems(OrderLineItemsArray value) {
         this.orderLineItems = value;
+    }
+            public Long getBillImmediately() {
+        return billImmediately;
+    }
+
+    public void setBillImmediately(Long value) {
+        this.billImmediately = value;
     }
             public Long getBillSeq() {
         return billSeq;
@@ -376,6 +390,55 @@ public class CreateOrder {
 
     public void setClientAltInvTemplateId(String value) {
         this.clientAltInvTemplateId = value;
+    }
+            public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String value) {
+        this.iban = value;
+    }
+            public Long getBankCheckDigit() {
+        return bankCheckDigit;
+    }
+
+    public void setBankCheckDigit(Long value) {
+        this.bankCheckDigit = value;
+    }
+            public String getBankSwiftCd() {
+        return bankSwiftCd;
+    }
+
+    public void setBankSwiftCd(String value) {
+        this.bankSwiftCd = value;
+    }
+            public String getBankCountryCd() {
+        return bankCountryCd;
+    }
+
+    public void setBankCountryCd(String value) {
+        this.bankCountryCd = value;
+    }
+            public String getMandateId() {
+        return mandateId;
+    }
+
+    public void setMandateId(String value) {
+        this.mandateId = value;
+    }
+            public String getBankIdCd() {
+        return bankIdCd;
+    }
+
+    public void setBankIdCd(String value) {
+        this.bankIdCd = value;
+    }
+            public String getBankBranchCd() {
+        return bankBranchCd;
+    }
+
+    public void setBankBranchCd(String value) {
+        this.bankBranchCd = value;
     }
             
 }

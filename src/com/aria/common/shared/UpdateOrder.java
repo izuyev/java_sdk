@@ -10,32 +10,20 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "orderLineItems",    "cartSuppPlans",    "clientOrderId",    "couponCode",    "comments",    "doWrite",    "clientReceiptId",    "billSeq",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "trackData1",    "trackData2",    "altInvTemplateNo",    "syncMstrBillDatesOverride",    "multipleCoupons",    "clientAltInvTemplateId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
-@XmlRootElement(name = "create_order_with_plans")
-public class CreateOrderWithPlans {
+    "authKey",    "accountNo",    "orderNo",    "billImmediately",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "doWrite",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "altInvTemplateNo",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+@XmlRootElement(name = "update_order")
+public class UpdateOrder {
 
     @XmlElement(name = "client_no")
     protected Long clientNo;
     @XmlElement(name = "auth_key")
     protected String authKey;
-        @XmlElement(name = "acct_no")
-    protected Long acctNo;
-        @XmlElement(name = "order_line_items")
-    protected OrderLineItemsArray orderLineItems;
-        @XmlElement(name = "cart_supp_plans")
-    protected CartSuppPlansArray cartSuppPlans;
-        @XmlElement(name = "client_order_id")
-    protected String clientOrderId;
-        @XmlElement(name = "coupon_code")
-    protected String couponCode;
-        @XmlElement(name = "comments")
-    protected String comments;
-        @XmlElement(name = "do_write")
-    protected String doWrite;
-        @XmlElement(name = "client_receipt_id")
-    protected String clientReceiptId;
-        @XmlElement(name = "bill_seq")
-    protected Long billSeq;
+        @XmlElement(name = "account_no")
+    protected Long accountNo;
+        @XmlElement(name = "order_no")
+    protected Long orderNo;
+        @XmlElement(name = "bill_immediately")
+    protected Long billImmediately;
         @XmlElement(name = "alt_pay_method")
     protected Long altPayMethod;
         @XmlElement(name = "cc_number")
@@ -74,10 +62,6 @@ public class CreateOrderWithPlans {
     protected String billEmail;
         @XmlElement(name = "bill_phone")
     protected String billPhone;
-        @XmlElement(name = "bill_phone_extension")
-    protected String billPhoneExtension;
-        @XmlElement(name = "bill_cell_phone")
-    protected String billCellPhone;
         @XmlElement(name = "bill_work_phone")
     protected String billWorkPhone;
         @XmlElement(name = "bill_work_phone_extension")
@@ -86,18 +70,16 @@ public class CreateOrderWithPlans {
     protected String cvv;
         @XmlElement(name = "bill_address3")
     protected String billAddress3;
+        @XmlElement(name = "do_write")
+    protected String doWrite;
+        @XmlElement(name = "alt_client_acct_group_id")
+    protected String altClientAcctGroupId;
         @XmlElement(name = "track_data1")
     protected String trackData1;
         @XmlElement(name = "track_data2")
     protected String trackData2;
         @XmlElement(name = "alt_inv_template_no")
     protected Long altInvTemplateNo;
-        @XmlElement(name = "sync_mstr_bill_dates_override")
-    protected Long syncMstrBillDatesOverride;
-        @XmlElement(name = "multiple_coupons")
-    protected MultipleCouponsArray multipleCoupons;
-        @XmlElement(name = "client_alt_inv_template_id")
-    protected String clientAltInvTemplateId;
         @XmlElement(name = "iban")
     protected String iban;
         @XmlElement(name = "bank_check_digit")
@@ -129,68 +111,26 @@ public class CreateOrderWithPlans {
         this.authKey = value;
     }
 
-    public Long getAcctNo() {
-        return acctNo;
+    public Long getAccountNo() {
+        return accountNo;
     }
 
-    public void setAcctNo(Long value) {
-        this.acctNo = value;
+    public void setAccountNo(Long value) {
+        this.accountNo = value;
     }
-            public OrderLineItemsArray getOrderLineItems() {
-        return orderLineItems;
-    }
-
-    public void setOrderLineItems(OrderLineItemsArray value) {
-        this.orderLineItems = value;
-    }
-            public CartSuppPlansArray getCartSuppPlans() {
-        return cartSuppPlans;
+            public Long getOrderNo() {
+        return orderNo;
     }
 
-    public void setCartSuppPlans(CartSuppPlansArray value) {
-        this.cartSuppPlans = value;
+    public void setOrderNo(Long value) {
+        this.orderNo = value;
     }
-            public String getClientOrderId() {
-        return clientOrderId;
-    }
-
-    public void setClientOrderId(String value) {
-        this.clientOrderId = value;
-    }
-            public String getCouponCode() {
-        return couponCode;
+            public Long getBillImmediately() {
+        return billImmediately;
     }
 
-    public void setCouponCode(String value) {
-        this.couponCode = value;
-    }
-            public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String value) {
-        this.comments = value;
-    }
-            public String getDoWrite() {
-        return doWrite;
-    }
-
-    public void setDoWrite(String value) {
-        this.doWrite = value;
-    }
-            public String getClientReceiptId() {
-        return clientReceiptId;
-    }
-
-    public void setClientReceiptId(String value) {
-        this.clientReceiptId = value;
-    }
-            public Long getBillSeq() {
-        return billSeq;
-    }
-
-    public void setBillSeq(Long value) {
-        this.billSeq = value;
+    public void setBillImmediately(Long value) {
+        this.billImmediately = value;
     }
             public Long getAltPayMethod() {
         return altPayMethod;
@@ -325,20 +265,6 @@ public class CreateOrderWithPlans {
     public void setBillPhone(String value) {
         this.billPhone = value;
     }
-            public String getBillPhoneExtension() {
-        return billPhoneExtension;
-    }
-
-    public void setBillPhoneExtension(String value) {
-        this.billPhoneExtension = value;
-    }
-            public String getBillCellPhone() {
-        return billCellPhone;
-    }
-
-    public void setBillCellPhone(String value) {
-        this.billCellPhone = value;
-    }
             public String getBillWorkPhone() {
         return billWorkPhone;
     }
@@ -367,6 +293,20 @@ public class CreateOrderWithPlans {
     public void setBillAddress3(String value) {
         this.billAddress3 = value;
     }
+            public String getDoWrite() {
+        return doWrite;
+    }
+
+    public void setDoWrite(String value) {
+        this.doWrite = value;
+    }
+            public String getAltClientAcctGroupId() {
+        return altClientAcctGroupId;
+    }
+
+    public void setAltClientAcctGroupId(String value) {
+        this.altClientAcctGroupId = value;
+    }
             public String getTrackData1() {
         return trackData1;
     }
@@ -387,27 +327,6 @@ public class CreateOrderWithPlans {
 
     public void setAltInvTemplateNo(Long value) {
         this.altInvTemplateNo = value;
-    }
-            public Long getSyncMstrBillDatesOverride() {
-        return syncMstrBillDatesOverride;
-    }
-
-    public void setSyncMstrBillDatesOverride(Long value) {
-        this.syncMstrBillDatesOverride = value;
-    }
-            public MultipleCouponsArray getMultipleCoupons() {
-        return multipleCoupons;
-    }
-
-    public void setMultipleCoupons(MultipleCouponsArray value) {
-        this.multipleCoupons = value;
-    }
-            public String getClientAltInvTemplateId() {
-        return clientAltInvTemplateId;
-    }
-
-    public void setClientAltInvTemplateId(String value) {
-        this.clientAltInvTemplateId = value;
     }
             public String getIban() {
         return iban;

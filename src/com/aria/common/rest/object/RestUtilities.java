@@ -349,6 +349,7 @@ public class RestUtilities {
             entity.setAmount(getDoubleValue(jsonObject,"amount"));
             entity.setCurrencyCd(getStringValue(jsonObject,"currency_cd"));
             entity.setLastUpdated(getStringValue(jsonObject,"last_updated"));
+            entity.setOrderStatus(getStringValue(jsonObject,"order_status"));
                         ArrayList<OrderItemReturnElement> arrayListOrderItemReturnElement = buildOrderItemReturnElement((JSONArray)jsonObject.get("order_item"));
             for (OrderItemReturnElement element : arrayListOrderItemReturnElement){
                 entity.getOrderItem().add(element);

@@ -2231,6 +2231,7 @@ public class RestUtilities {
             entity.setBalanceForwardAmount(getDoubleValue(jsonObject,"balance_forward_amount"));
             entity.setTotalAmount(getDoubleValue(jsonObject,"total_amount"));
             entity.setIsPaidInd(getLongValue(jsonObject,"is_paid_ind"));
+            entity.setInvoiceActivityInd(getLongValue(jsonObject,"invoice_activity_ind"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2327,6 +2328,8 @@ public class RestUtilities {
             entity.setCurrentPayMethod(getLongValue(jsonObject,"current_pay_method"));
             entity.setBillInfoApiReceiptId(getStringValue(jsonObject,"bill_info_api_receipt_id"));
             entity.setAddress3(getStringValue(jsonObject,"address3"));
+            entity.setFromDateTime(getStringValue(jsonObject,"from_date_time"));
+            entity.setToDateTime(getStringValue(jsonObject,"to_date_time"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2689,6 +2692,7 @@ public class RestUtilities {
             entity.setClientServiceId(getStringValue(jsonObject,"client_service_id"));
             entity.setUsageTypeCd(getStringValue(jsonObject,"usage_type_cd"));
             entity.setClientPlanId(getStringValue(jsonObject,"client_plan_id"));
+            entity.setRefChargeLineNo(getLongValue(jsonObject,"ref_charge_line_no"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -3159,6 +3163,20 @@ public class RestUtilities {
             entity.setInvoiceAmount(getDoubleValue(jsonObject,"invoice_amount"));
             entity.setTotalPaid(getDoubleValue(jsonObject,"total_paid"));
             entity.setBalanceDue(getDoubleValue(jsonObject,"balance_due"));
+            returnElement.add(entity);
+        }
+        return returnElement;
+    }
+
+    public static ArrayList<ErrorCodesReturnElement> buildErrorCodesReturnElement(JSONArray jsonArray) {
+        ArrayList<ErrorCodesReturnElement> returnElement = new ArrayList<ErrorCodesReturnElement>();
+        if (jsonArray == null) return returnElement;
+        for (int i = 0;i < jsonArray.size();i++) {
+            ErrorCodesReturnElement entity = new ErrorCodesReturnElement();
+            JSONObject jsonObject = (JSONObject)jsonArray.get(i);
+            entity.setRecurCreditNo(getLongValue(jsonObject,"recur_credit_no"));
+            entity.setErrorCode(getLongValue(jsonObject,"error_code"));
+            entity.setErrorMsg(getStringValue(jsonObject,"error_msg"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -3929,6 +3947,23 @@ public class RestUtilities {
         }
     }
 
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A1SurchargeNoArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A1SurchargeNoRow row : arrayList.getA1SurchargeNoRow()){
+            parameters.add("a1_surcharge_no["+i+"]", getValue("Long", row.getA1SurchargeNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A1SurchargeNoArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A1SurchargeNoRow row : arrayList.getA1SurchargeNoRow()){
+            parameters.add(paramPrefix + "a1_surcharge_no["+i+"]", getValue("Long", row.getA1SurchargeNo()));
+            i++;
+        }
+    }
+
     public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A2SuppPlansArray arrayList) {
         if (arrayList == null) return;
         int i = 0;
@@ -4231,6 +4266,23 @@ public class RestUtilities {
         int i = 0;
         for (com.aria.common.shared.A2ClientSpAltRateSchedIdsRow row : arrayList.getA2ClientSpAltRateSchedIdsRow()){
             parameters.add(paramPrefix + "a2_client_sp_alt_rate_sched_ids["+i+"]", getValue("String", row.getA2ClientSpAltRateSchedIds()));
+            i++;
+        }
+    }
+
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A2SurchargeNoArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A2SurchargeNoRow row : arrayList.getA2SurchargeNoRow()){
+            parameters.add("a2_surcharge_no["+i+"]", getValue("Long", row.getA2SurchargeNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A2SurchargeNoArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A2SurchargeNoRow row : arrayList.getA2SurchargeNoRow()){
+            parameters.add(paramPrefix + "a2_surcharge_no["+i+"]", getValue("Long", row.getA2SurchargeNo()));
             i++;
         }
     }
@@ -4541,6 +4593,23 @@ public class RestUtilities {
         }
     }
 
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A3SurchargeNoArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A3SurchargeNoRow row : arrayList.getA3SurchargeNoRow()){
+            parameters.add("a3_surcharge_no["+i+"]", getValue("Long", row.getA3SurchargeNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A3SurchargeNoArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A3SurchargeNoRow row : arrayList.getA3SurchargeNoRow()){
+            parameters.add(paramPrefix + "a3_surcharge_no["+i+"]", getValue("Long", row.getA3SurchargeNo()));
+            i++;
+        }
+    }
+
     public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A4SuppPlansArray arrayList) {
         if (arrayList == null) return;
         int i = 0;
@@ -4847,6 +4916,23 @@ public class RestUtilities {
         }
     }
 
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A4SurchargeNoArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A4SurchargeNoRow row : arrayList.getA4SurchargeNoRow()){
+            parameters.add("a4_surcharge_no["+i+"]", getValue("Long", row.getA4SurchargeNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A4SurchargeNoArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A4SurchargeNoRow row : arrayList.getA4SurchargeNoRow()){
+            parameters.add(paramPrefix + "a4_surcharge_no["+i+"]", getValue("Long", row.getA4SurchargeNo()));
+            i++;
+        }
+    }
+
     public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A5SuppPlansArray arrayList) {
         if (arrayList == null) return;
         int i = 0;
@@ -5149,6 +5235,23 @@ public class RestUtilities {
         int i = 0;
         for (com.aria.common.shared.A5ClientSpAltRateSchedIdsRow row : arrayList.getA5ClientSpAltRateSchedIdsRow()){
             parameters.add(paramPrefix + "a5_client_sp_alt_rate_sched_ids["+i+"]", getValue("String", row.getA5ClientSpAltRateSchedIds()));
+            i++;
+        }
+    }
+
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A5SurchargeNoArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A5SurchargeNoRow row : arrayList.getA5SurchargeNoRow()){
+            parameters.add("a5_surcharge_no["+i+"]", getValue("Long", row.getA5SurchargeNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.A5SurchargeNoArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.A5SurchargeNoRow row : arrayList.getA5SurchargeNoRow()){
+            parameters.add(paramPrefix + "a5_surcharge_no["+i+"]", getValue("Long", row.getA5SurchargeNo()));
             i++;
         }
     }
@@ -5799,6 +5902,23 @@ public class RestUtilities {
         int i = 0;
         for (com.aria.common.shared.ClientRecordIdsRow row : arrayList.getClientRecordIdsRow()){
             parameters.add(paramPrefix + "client_record_id["+i+"]", getValue("String", row.getClientRecordId()));
+            i++;
+        }
+    }
+
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.RecurringCreditNoArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.RecurringCreditNoRow row : arrayList.getRecurringCreditNoRow()){
+            parameters.add("recurring_credit_no["+i+"]", getValue("Long", row.getRecurringCreditNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.RecurringCreditNoArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.RecurringCreditNoRow row : arrayList.getRecurringCreditNoRow()){
+            parameters.add(paramPrefix + "recurring_credit_no["+i+"]", getValue("Long", row.getRecurringCreditNo()));
             i++;
         }
     }

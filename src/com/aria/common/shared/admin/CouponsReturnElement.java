@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "coupons_ReturnElement", propOrder = {"couponCd", "couponDesc", "couponMsg", "statusInd", "noOfUses", "startDate", "endDate"})
+@XmlType(name = "coupons_ReturnElement", propOrder = {"couponCd", "couponDesc", "couponMsg", "statusInd", "noOfUses", "startDate", "endDate", "expiresDesc", "couponNo"})
 public class CouponsReturnElement {
 
     @XmlElement(name = "coupon_cd")
@@ -27,6 +27,10 @@ public class CouponsReturnElement {
     protected String startDate;
     @XmlElement(name = "end_date")
     protected String endDate;
+    @XmlElement(name = "expires_desc")
+    protected String expiresDesc;
+    @XmlElement(name = "coupon_no")
+    protected Long couponNo;
     
     public String getCouponCd() {
         return couponCd;
@@ -82,6 +86,22 @@ public class CouponsReturnElement {
 
     public void setEndDate(String value) {
         this.endDate = value;
+    }
+
+    public String getExpiresDesc() {
+        return expiresDesc;
+    }
+
+    public void setExpiresDesc(String value) {
+        this.expiresDesc = value;
+    }
+
+    public Long getCouponNo() {
+        return couponNo;
+    }
+
+    public void setCouponNo(Long value) {
+        this.couponNo = value;
     }
 
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cart_invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "serviceIsTaxInd", "lineUnits", "ratePerUnit", "lineAmount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName", "clientServiceId", "usageTypeCd", "clientPlanId"})
+@XmlType(name = "cart_invoice_line_items_ReturnElement", propOrder = {"lineNo", "serviceNo", "serviceName", "serviceIsTaxInd", "lineUnits", "ratePerUnit", "lineAmount", "description", "dateRangeStart", "dateRangeEnd", "usageTypeNo", "planNo", "planName", "clientServiceId", "usageTypeCd", "clientPlanId", "refChargeLineNo"})
 public class CartInvoiceLineItemsReturnElement {
 
     @XmlElement(name = "line_no")
@@ -45,6 +45,8 @@ public class CartInvoiceLineItemsReturnElement {
     protected String usageTypeCd;
     @XmlElement(name = "client_plan_id")
     protected String clientPlanId;
+    @XmlElement(name = "ref_charge_line_no")
+    protected Long refChargeLineNo;
     
     public Long getLineNo() {
         return lineNo;
@@ -172,6 +174,14 @@ public class CartInvoiceLineItemsReturnElement {
 
     public void setClientPlanId(String value) {
         this.clientPlanId = value;
+    }
+
+    public Long getRefChargeLineNo() {
+        return refChargeLineNo;
+    }
+
+    public void setRefChargeLineNo(Long value) {
+        this.refChargeLineNo = value;
     }
 
     

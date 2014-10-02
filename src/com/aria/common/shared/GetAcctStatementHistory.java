@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "userId",    "startDate",    "endDate"})
+    "authKey",    "acctNo",    "userId",    "startDate",    "endDate",    "includeInvoiceActivityEligibility"})
 @XmlRootElement(name = "get_acct_statement_history")
 public class GetAcctStatementHistory {
 
@@ -26,6 +26,8 @@ public class GetAcctStatementHistory {
     protected String startDate;
         @XmlElement(name = "end_date")
     protected String endDate;
+        @XmlElement(name = "include_invoice_activity_eligibility")
+    protected String includeInvoiceActivityEligibility;
     
     public long getClientNo() {
         return clientNo;
@@ -70,6 +72,13 @@ public class GetAcctStatementHistory {
 
     public void setEndDate(String value) {
         this.endDate = value;
+    }
+            public String getIncludeInvoiceActivityEligibility() {
+        return includeInvoiceActivityEligibility;
+    }
+
+    public void setIncludeInvoiceActivityEligibility(String value) {
+        this.includeInvoiceActivityEligibility = value;
     }
             
 }

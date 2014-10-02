@@ -585,7 +585,7 @@ public interface AriaBillingAdministration {
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
-    *   services - Type: ArrayList&#60;ServicesReturnElement&#62;<br>
+    *   coupons - Type: ArrayList&#60;CouponsReturnElement&#62;<br>
     */
     abstract Map<String,Object> getCoupons(Long client_no, String auth_key);
 
@@ -828,7 +828,7 @@ public interface AriaBillingAdministration {
     * @param max_applicable_months - Type: Long
     * @param max_applications_per_acct - Type: Long
     * @param alt_service_no_2_apply - Type: Long
-    * @param alt_service_id_2_apply - Type: Long
+    * @param alt_service_id_2_apply - Type: String
     * @param applicable_trans_scope - Type: String
     * @param plan_no - Type: com.aria.common.shared.admin.PlanNoArray
     * @param client_plan_id - Type: com.aria.common.shared.admin.ClientPlanIdArray
@@ -842,7 +842,7 @@ public interface AriaBillingAdministration {
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   rule_no - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> createDiscountRule(Long client_no, String auth_key, String label, String rule_id, String description, String ext_description, Long flat_percent_ind, java.lang.Double amount, String currency, String duration_type_ind, String inline_offset_ind, Long service_code_to_use, Long scope_no, Long max_applicable_months, Long max_applications_per_acct, Long alt_service_no_2_apply, Long alt_service_id_2_apply, String applicable_trans_scope, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id, String use_all_or_nth_subs_rule);
+    abstract Map<String,Object> createDiscountRule(Long client_no, String auth_key, String label, String rule_id, String description, String ext_description, Long flat_percent_ind, java.lang.Double amount, String currency, String duration_type_ind, String inline_offset_ind, Long service_code_to_use, Long scope_no, Long max_applicable_months, Long max_applications_per_acct, Long alt_service_no_2_apply, String alt_service_id_2_apply, String applicable_trans_scope, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id, String use_all_or_nth_subs_rule);
 
     abstract Map<String,Object> createDiscountRule(Map<String,Object> map);
 
@@ -1441,7 +1441,7 @@ public interface AriaBillingAdministration {
     * @param client_no - Type: Long
     * @param auth_key - Type: String
     * @param group_no - Type: Long
-    * @param client_plan_change_group_id - Type: Long
+    * @param client_plan_change_group_id - Type: String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
@@ -1452,7 +1452,7 @@ public interface AriaBillingAdministration {
     *   group_usage - Type: javax.xml.ws.Holder<br>
     *   plans - Type: ArrayList&#60;PlansReturnElement&#62;<br>
     */
-    abstract Map<String,Object> getPlanGroupDetails(Long client_no, String auth_key, Long group_no, Long client_plan_change_group_id);
+    abstract Map<String,Object> getPlanGroupDetails(Long client_no, String auth_key, Long group_no, String client_plan_change_group_id);
 
     abstract Map<String,Object> getPlanGroupDetails(Map<String,Object> map);
 
@@ -1610,7 +1610,7 @@ public interface AriaBillingAdministration {
     *   item_no - Type: ArrayList&#60;ItemNoReturnElement&#62;<br>
     *   client_item_id - Type: ArrayList&#60;ClientItemIdReturnElement&#62;<br>
     *   plan_service - Type: ArrayList&#60;PlanServiceReturnElement&#62;<br>
-    *   tier - Type: ArrayList&#60;TierReturnElement&#62;<br>
+    *   surcharge_tier - Type: ArrayList&#60;SurchargeTierReturnElement&#62;<br>
     */
     abstract Map<String,Object> getSurchargeDetails(Long client_no, String auth_key, Long surcharge_no, String client_surcharge_id);
 
@@ -1628,7 +1628,7 @@ public interface AriaBillingAdministration {
     * @param inline_offset_ind - Type: String
     * @param apply_b4_or_after_discount_cd - Type: String
     * @param scope_no - Type: Long
-    * @param tier - Type: com.aria.common.shared.admin.TierArray
+    * @param surcharge_tier - Type: com.aria.common.shared.admin.SurchargeTierArray
     * @param client_surcharge_id - Type: String
     * @param apply_to_zero_invoice_ind - Type: Long
     * @param tax_group - Type: Long
@@ -1645,7 +1645,7 @@ public interface AriaBillingAdministration {
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   surcharge_no - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> createSurcharge(Long client_no, String auth_key, String surcharge_name, String description, String ext_description, String currency_cd, String surcharge_type_cd, String inline_offset_ind, String apply_b4_or_after_discount_cd, Long scope_no, com.aria.common.shared.admin.TierArray tier, String client_surcharge_id, Long apply_to_zero_invoice_ind, Long tax_group, String gl_cd, String ar_gl_cd, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id);
+    abstract Map<String,Object> createSurcharge(Long client_no, String auth_key, String surcharge_name, String description, String ext_description, String currency_cd, String surcharge_type_cd, String inline_offset_ind, String apply_b4_or_after_discount_cd, Long scope_no, com.aria.common.shared.admin.SurchargeTierArray surcharge_tier, String client_surcharge_id, Long apply_to_zero_invoice_ind, Long tax_group, String gl_cd, String ar_gl_cd, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id);
 
     abstract Map<String,Object> createSurcharge(Map<String,Object> map);
 
@@ -1660,7 +1660,7 @@ public interface AriaBillingAdministration {
     * @param ext_description - Type: String
     * @param currency_cd - Type: String
     * @param scope_no - Type: Long
-    * @param tier - Type: com.aria.common.shared.admin.TierArray
+    * @param surcharge_tier - Type: com.aria.common.shared.admin.SurchargeTierArray
     * @param apply_to_zero_invoice_ind - Type: Long
     * @param plan_no - Type: com.aria.common.shared.admin.PlanNoArray
     * @param client_plan_id - Type: com.aria.common.shared.admin.ClientPlanIdArray
@@ -1673,7 +1673,7 @@ public interface AriaBillingAdministration {
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   surcharge_no - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> editSurcharge(Long client_no, String auth_key, String surcharge_no, String surcharge_name, String client_surcharge_id, String description, String ext_description, String currency_cd, Long scope_no, com.aria.common.shared.admin.TierArray tier, Long apply_to_zero_invoice_ind, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id);
+    abstract Map<String,Object> editSurcharge(Long client_no, String auth_key, String surcharge_no, String surcharge_name, String client_surcharge_id, String description, String ext_description, String currency_cd, Long scope_no, com.aria.common.shared.admin.SurchargeTierArray surcharge_tier, Long apply_to_zero_invoice_ind, com.aria.common.shared.admin.PlanNoArray plan_no, com.aria.common.shared.admin.ClientPlanIdArray client_plan_id, com.aria.common.shared.admin.ServiceNoArray service_no, com.aria.common.shared.admin.ClientServiceIdArray client_service_id, com.aria.common.shared.admin.ItemNoArray item_no, com.aria.common.shared.admin.ClientItemIdArray client_item_id);
 
     abstract Map<String,Object> editSurcharge(Map<String,Object> map);
 

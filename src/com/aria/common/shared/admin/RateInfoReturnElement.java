@@ -24,7 +24,7 @@ public class RateInfoReturnElement {
     @XmlElement(name = "to_unit")
     protected String toUnit;
     @XmlElement(name = "rate_per_unit")
-    protected Long ratePerUnit;
+    protected Double ratePerUnit;
     
     public Long getScheduleNo() {
         return scheduleNo;
@@ -66,11 +66,11 @@ public class RateInfoReturnElement {
         this.toUnit = value;
     }
 
-    public Long getRatePerUnit() {
+    public Double getRatePerUnit() {
         return ratePerUnit;
     }
 
-    public void setRatePerUnit(Long value) {
+    public void setRatePerUnit(Double value) {
         this.ratePerUnit = value;
     }
 

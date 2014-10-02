@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "tier_row", propOrder = {
     "from",
     "to",
-    "rate"
+    "price"
     })
 public class TierRow {
 
@@ -18,8 +18,8 @@ public class TierRow {
     protected Long from;
     @XmlElement(name = "to")
     protected Long to;
-    @XmlElement(name = "rate")
-    protected Long rate;
+    @XmlElement(name = "price")
+    protected com.aria.common.shared.admin.PriceArray price;
     public Long getFrom() {
         return from;
     }
@@ -36,12 +36,12 @@ public class TierRow {
         this.to = value;
     }
 
-    public Long getRate() {
-        return rate;
+    public com.aria.common.shared.admin.PriceArray getPrice() {
+        return price;
     }
 
-    public void setRate(Long value) {
-        this.rate = value;
+    public void setPrice(com.aria.common.shared.admin.PriceArray value) {
+        this.price = value;
     }
 
     

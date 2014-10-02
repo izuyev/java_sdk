@@ -13,12 +13,12 @@ import javax.xml.bind.annotation.XmlType;
 public class PriceRow {
 
     @XmlElement(name = "amount")
-    protected Long amount;
-    public Long getAmount() {
+    protected Double amount;
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Long value) {
+    public void setAmount(Double value) {
         this.amount = value;
     }
 

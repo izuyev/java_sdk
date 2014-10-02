@@ -8,18 +8,29 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "rule_ids_row", propOrder = {
-    "ruleId"
+    "ruleId",
+    "rule"
     })
 public class RuleIdsRow {
 
     @XmlElement(name = "rule_id")
-    protected Long ruleId;
-    public Long getRuleId() {
+    protected String ruleId;
+    @XmlElement(name = "rule")
+    protected String rule;
+    public String getRuleId() {
         return ruleId;
     }
 
-    public void setRuleId(Long value) {
+    public void setRuleId(String value) {
         this.ruleId = value;
+    }
+
+    public String getRule() {
+        return rule;
+    }
+
+    public void setRule(String value) {
+        this.rule = value;
     }
 
     
