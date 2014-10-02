@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "accountNumber",    "firstName",    "lastName",    "middleInitial",    "companyName",    "address1",    "address2",    "city",    "locality",    "state",    "country",    "zip",    "intlPhone",    "phoneNpa",    "phoneNxx",    "phoneSuffix",    "phoneExtension",    "email",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "doCollect",    "changeStatusAfterColl",    "resetDatesAfterStatus",    "clientReceiptId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "accountNumber",    "firstName",    "lastName",    "middleInitial",    "companyName",    "address1",    "address2",    "city",    "locality",    "state",    "country",    "zip",    "intlPhone",    "phoneNpa",    "phoneNxx",    "phoneSuffix",    "phoneExtension",    "email",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "doCollect",    "changeStatusAfterColl",    "resetDatesAfterStatus",    "clientReceiptId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "primaryOrBkupPayMethodInd",    "refBkupSeqNo"})
 @XmlRootElement(name = "update_payment_method")
 public class UpdatePaymentMethod {
 
@@ -88,6 +88,10 @@ public class UpdatePaymentMethod {
     protected String bankIdCd;
         @XmlElement(name = "bank_branch_cd")
     protected String bankBranchCd;
+        @XmlElement(name = "primary_or_bkup_pay_method_ind")
+    protected Long primaryOrBkupPayMethodInd;
+        @XmlElement(name = "ref_bkup_seq_no")
+    protected Long refBkupSeqNo;
     
     public long getClientNo() {
         return clientNo;
@@ -349,6 +353,20 @@ public class UpdatePaymentMethod {
 
     public void setBankBranchCd(String value) {
         this.bankBranchCd = value;
+    }
+            public Long getPrimaryOrBkupPayMethodInd() {
+        return primaryOrBkupPayMethodInd;
+    }
+
+    public void setPrimaryOrBkupPayMethodInd(Long value) {
+        this.primaryOrBkupPayMethodInd = value;
+    }
+            public Long getRefBkupSeqNo() {
+        return refBkupSeqNo;
+    }
+
+    public void setRefBkupSeqNo(Long value) {
+        this.refBkupSeqNo = value;
     }
             
 }

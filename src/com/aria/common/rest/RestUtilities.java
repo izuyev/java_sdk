@@ -1195,6 +1195,7 @@ public class RestUtilities {
             entity.setTransactionRefCode(getStringValue(jsonObject,"transaction_ref_code"));
             entity.setCreditReasonCodeDescription(getStringValue(jsonObject,"credit_reason_code_description"));
             entity.setCsrComments(getStringValue(jsonObject,"csr_comments"));
+            entity.setSeqStatementId(getStringValue(jsonObject,"seq_statement_id"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -1436,6 +1437,7 @@ public class RestUtilities {
             entity.setTransactionRefCode(getStringValue(jsonObject,"transaction_ref_code"));
             entity.setCreditReasonCodeDescription(getStringValue(jsonObject,"credit_reason_code_description"));
             entity.setCsrComments(getStringValue(jsonObject,"csr_comments"));
+            entity.setTransactionSeqStmtId(getStringValue(jsonObject,"transaction_seq_stmt_id"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2232,6 +2234,7 @@ public class RestUtilities {
             entity.setTotalAmount(getDoubleValue(jsonObject,"total_amount"));
             entity.setIsPaidInd(getLongValue(jsonObject,"is_paid_ind"));
             entity.setInvoiceActivityInd(getLongValue(jsonObject,"invoice_activity_ind"));
+            entity.setSeqStatementId(getStringValue(jsonObject,"seq_statement_id"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2330,6 +2333,22 @@ public class RestUtilities {
             entity.setAddress3(getStringValue(jsonObject,"address3"));
             entity.setFromDateTime(getStringValue(jsonObject,"from_date_time"));
             entity.setToDateTime(getStringValue(jsonObject,"to_date_time"));
+            entity.setBkupPayMethodInd(getLongValue(jsonObject,"bkup_pay_method_ind"));
+            returnElement.add(entity);
+        }
+        return returnElement;
+    }
+
+    public static ArrayList<ThresholdLevelsReturnElement> buildThresholdLevelsReturnElement(JSONArray jsonArray) {
+        ArrayList<ThresholdLevelsReturnElement> returnElement = new ArrayList<ThresholdLevelsReturnElement>();
+        if (jsonArray == null) return returnElement;
+        for (int i = 0;i < jsonArray.size();i++) {
+            ThresholdLevelsReturnElement entity = new ThresholdLevelsReturnElement();
+            JSONObject jsonObject = (JSONObject)jsonArray.get(i);
+            entity.setLevelNo(getLongValue(jsonObject,"level_no"));
+            entity.setThresholdValue(getDoubleValue(jsonObject,"threshold_value"));
+            entity.setDeltaUsageUnitsBal(getDoubleValue(jsonObject,"delta_usage_units_bal"));
+            entity.setDeltaUsageUnitsSign(getStringValue(jsonObject,"delta_usage_units_sign"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2352,6 +2371,27 @@ public class RestUtilities {
             entity.setUsageTypeCode(getStringValue(jsonObject,"usage_type_code"));
             entity.setExcludeReasonCd(getLongValue(jsonObject,"exclude_reason_cd"));
             entity.setUsageRecNo(getLongValue(jsonObject,"usage_rec_no"));
+            returnElement.add(entity);
+        }
+        return returnElement;
+    }
+
+    public static ArrayList<UnitThresholdDetailsReturnElement> buildUnitThresholdDetailsReturnElement(JSONArray jsonArray) {
+        ArrayList<UnitThresholdDetailsReturnElement> returnElement = new ArrayList<UnitThresholdDetailsReturnElement>();
+        if (jsonArray == null) return returnElement;
+        for (int i = 0;i < jsonArray.size();i++) {
+            UnitThresholdDetailsReturnElement entity = new UnitThresholdDetailsReturnElement();
+            JSONObject jsonObject = (JSONObject)jsonArray.get(i);
+            entity.setPlanNo(getLongValue(jsonObject,"plan_no"));
+            entity.setUsageTypeNo(getLongValue(jsonObject,"usage_type_no"));
+            entity.setThresholdDestType(getStringValue(jsonObject,"threshold_dest_type"));
+            entity.setThresholdBalanceType(getStringValue(jsonObject,"threshold_balance_type"));
+            entity.setThresholdUnits(getDoubleValue(jsonObject,"threshold_units"));
+            entity.setUsageUnitsMeasured(getDoubleValue(jsonObject,"usage_units_measured"));
+                        ArrayList<ThresholdLevelsReturnElement> arrayListThresholdLevelsReturnElement = buildThresholdLevelsReturnElement((JSONArray)jsonObject.get("threshold_levels"));
+            for (ThresholdLevelsReturnElement element : arrayListThresholdLevelsReturnElement){
+                entity.getThresholdLevels().add(element);
+            }
             returnElement.add(entity);
         }
         return returnElement;
@@ -2869,6 +2909,7 @@ public class RestUtilities {
             entity.setPaymentSrcDescription(getStringValue(jsonObject,"payment_src_description"));
             entity.setPaymentSrcSuffix(getStringValue(jsonObject,"payment_src_suffix"));
             entity.setClientReceiptId(getStringValue(jsonObject,"client_receipt_id"));
+            entity.setSeqStatementId(getStringValue(jsonObject,"seq_statement_id"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2890,6 +2931,7 @@ public class RestUtilities {
             entity.setIsVoided(getStringValue(jsonObject,"is_voided"));
             entity.setStatementNo(getLongValue(jsonObject,"statement_no"));
             entity.setClientReceiptId(getStringValue(jsonObject,"client_receipt_id"));
+            entity.setSeqStatementId(getStringValue(jsonObject,"seq_statement_id"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -3497,6 +3539,7 @@ public class RestUtilities {
             parameters.add("contract_comments["+i+"]", getValue("String", row.getContractComments()));
             parameters.add("contract_start_date["+i+"]", getValue("String", row.getContractStartDate()));
             parameters.add("contract_end_date["+i+"]", getValue("String", row.getContractEndDate()));
+            parameters.add("client_contract_plan_id["+i+"]", getValue("String", row.getClientContractPlanId()));
             i++;
         }
     }
@@ -3512,6 +3555,7 @@ public class RestUtilities {
             parameters.add(paramPrefix + "contract_comments["+i+"]", getValue("String", row.getContractComments()));
             parameters.add(paramPrefix + "contract_start_date["+i+"]", getValue("String", row.getContractStartDate()));
             parameters.add(paramPrefix + "contract_end_date["+i+"]", getValue("String", row.getContractEndDate()));
+            parameters.add(paramPrefix + "client_contract_plan_id["+i+"]", getValue("String", row.getClientContractPlanId()));
             i++;
         }
     }
@@ -3543,6 +3587,7 @@ public class RestUtilities {
         for (com.aria.common.shared.EnableUsagePoolingPlanNoRow row : arrayList.getEnableUsagePoolingPlanNoRow()){
             parameters.add("enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getEnableUsagePoolingPlanNo()));
             parameters.add("client_enable_usage_pool_plan_id["+i+"]", getValue("String", row.getClientEnableUsagePoolPlanId()));
+            parameters.add("usage_threshold_applicability["+i+"]", getValue("String", row.getUsageThresholdApplicability()));
             i++;
         }
     }
@@ -3552,6 +3597,7 @@ public class RestUtilities {
         for (com.aria.common.shared.EnableUsagePoolingPlanNoRow row : arrayList.getEnableUsagePoolingPlanNoRow()){
             parameters.add(paramPrefix + "enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getEnableUsagePoolingPlanNo()));
             parameters.add(paramPrefix + "client_enable_usage_pool_plan_id["+i+"]", getValue("String", row.getClientEnableUsagePoolPlanId()));
+            parameters.add(paramPrefix + "usage_threshold_applicability["+i+"]", getValue("String", row.getUsageThresholdApplicability()));
             i++;
         }
     }
@@ -3820,6 +3866,7 @@ public class RestUtilities {
             parameters.add("a1_contract_comments["+i+"]", getValue("String", row.getA1ContractComments()));
             parameters.add("a1_contract_start_date["+i+"]", getValue("String", row.getA1ContractStartDate()));
             parameters.add("a1_contract_end_date["+i+"]", getValue("String", row.getA1ContractEndDate()));
+            parameters.add("a1_client_contract_plan_id["+i+"]", getValue("String", row.getA1ClientContractPlanId()));
             i++;
         }
     }
@@ -3835,6 +3882,7 @@ public class RestUtilities {
             parameters.add(paramPrefix + "a1_contract_comments["+i+"]", getValue("String", row.getA1ContractComments()));
             parameters.add(paramPrefix + "a1_contract_start_date["+i+"]", getValue("String", row.getA1ContractStartDate()));
             parameters.add(paramPrefix + "a1_contract_end_date["+i+"]", getValue("String", row.getA1ContractEndDate()));
+            parameters.add(paramPrefix + "a1_client_contract_plan_id["+i+"]", getValue("String", row.getA1ClientContractPlanId()));
             i++;
         }
     }
@@ -3866,6 +3914,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A1EnableUsagePoolingPlanNoRow row : arrayList.getA1EnableUsagePoolingPlanNoRow()){
             parameters.add("a1_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA1EnableUsagePoolingPlanNo()));
             parameters.add("a1_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA1ClientEnableUsgPoolPlanId()));
+            parameters.add("a1_usage_threshold_applicability["+i+"]", getValue("String", row.getA1UsageThresholdApplicability()));
             i++;
         }
     }
@@ -3875,6 +3924,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A1EnableUsagePoolingPlanNoRow row : arrayList.getA1EnableUsagePoolingPlanNoRow()){
             parameters.add(paramPrefix + "a1_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA1EnableUsagePoolingPlanNo()));
             parameters.add(paramPrefix + "a1_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA1ClientEnableUsgPoolPlanId()));
+            parameters.add(paramPrefix + "a1_usage_threshold_applicability["+i+"]", getValue("String", row.getA1UsageThresholdApplicability()));
             i++;
         }
     }
@@ -4143,6 +4193,7 @@ public class RestUtilities {
             parameters.add("a2_contract_comments["+i+"]", getValue("String", row.getA2ContractComments()));
             parameters.add("a2_contract_start_date["+i+"]", getValue("String", row.getA2ContractStartDate()));
             parameters.add("a2_contract_end_date["+i+"]", getValue("String", row.getA2ContractEndDate()));
+            parameters.add("a2_client_contract_plan_id["+i+"]", getValue("String", row.getA2ClientContractPlanId()));
             i++;
         }
     }
@@ -4158,6 +4209,7 @@ public class RestUtilities {
             parameters.add(paramPrefix + "a2_contract_comments["+i+"]", getValue("String", row.getA2ContractComments()));
             parameters.add(paramPrefix + "a2_contract_start_date["+i+"]", getValue("String", row.getA2ContractStartDate()));
             parameters.add(paramPrefix + "a2_contract_end_date["+i+"]", getValue("String", row.getA2ContractEndDate()));
+            parameters.add(paramPrefix + "a2_client_contract_plan_id["+i+"]", getValue("String", row.getA2ClientContractPlanId()));
             i++;
         }
     }
@@ -4189,6 +4241,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A2EnableUsagePoolingPlanNoRow row : arrayList.getA2EnableUsagePoolingPlanNoRow()){
             parameters.add("a2_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA2EnableUsagePoolingPlanNo()));
             parameters.add("a2_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA2ClientEnableUsgPoolPlanId()));
+            parameters.add("a2_usage_threshold_applicability["+i+"]", getValue("String", row.getA2UsageThresholdApplicability()));
             i++;
         }
     }
@@ -4198,6 +4251,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A2EnableUsagePoolingPlanNoRow row : arrayList.getA2EnableUsagePoolingPlanNoRow()){
             parameters.add(paramPrefix + "a2_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA2EnableUsagePoolingPlanNo()));
             parameters.add(paramPrefix + "a2_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA2ClientEnableUsgPoolPlanId()));
+            parameters.add(paramPrefix + "a2_usage_threshold_applicability["+i+"]", getValue("String", row.getA2UsageThresholdApplicability()));
             i++;
         }
     }
@@ -4466,6 +4520,7 @@ public class RestUtilities {
             parameters.add("a3_contract_comments["+i+"]", getValue("String", row.getA3ContractComments()));
             parameters.add("a3_contract_start_date["+i+"]", getValue("String", row.getA3ContractStartDate()));
             parameters.add("a3_contract_end_date["+i+"]", getValue("String", row.getA3ContractEndDate()));
+            parameters.add("a3_client_contract_plan_id["+i+"]", getValue("String", row.getA3ClientContractPlanId()));
             i++;
         }
     }
@@ -4481,6 +4536,7 @@ public class RestUtilities {
             parameters.add(paramPrefix + "a3_contract_comments["+i+"]", getValue("String", row.getA3ContractComments()));
             parameters.add(paramPrefix + "a3_contract_start_date["+i+"]", getValue("String", row.getA3ContractStartDate()));
             parameters.add(paramPrefix + "a3_contract_end_date["+i+"]", getValue("String", row.getA3ContractEndDate()));
+            parameters.add(paramPrefix + "a3_client_contract_plan_id["+i+"]", getValue("String", row.getA3ClientContractPlanId()));
             i++;
         }
     }
@@ -4512,6 +4568,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A3EnableUsagePoolingPlanNoRow row : arrayList.getA3EnableUsagePoolingPlanNoRow()){
             parameters.add("a3_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA3EnableUsagePoolingPlanNo()));
             parameters.add("a3_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA3ClientEnableUsgPoolPlanId()));
+            parameters.add("a3_usage_threshold_applicability["+i+"]", getValue("String", row.getA3UsageThresholdApplicability()));
             i++;
         }
     }
@@ -4521,6 +4578,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A3EnableUsagePoolingPlanNoRow row : arrayList.getA3EnableUsagePoolingPlanNoRow()){
             parameters.add(paramPrefix + "a3_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA3EnableUsagePoolingPlanNo()));
             parameters.add(paramPrefix + "a3_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA3ClientEnableUsgPoolPlanId()));
+            parameters.add(paramPrefix + "a3_usage_threshold_applicability["+i+"]", getValue("String", row.getA3UsageThresholdApplicability()));
             i++;
         }
     }
@@ -4789,6 +4847,7 @@ public class RestUtilities {
             parameters.add("a4_contract_comments["+i+"]", getValue("String", row.getA4ContractComments()));
             parameters.add("a4_contract_start_date["+i+"]", getValue("String", row.getA4ContractStartDate()));
             parameters.add("a4_contract_end_date["+i+"]", getValue("String", row.getA4ContractEndDate()));
+            parameters.add("a4_client_contract_plan_id["+i+"]", getValue("String", row.getA4ClientContractPlanId()));
             i++;
         }
     }
@@ -4804,6 +4863,7 @@ public class RestUtilities {
             parameters.add(paramPrefix + "a4_contract_comments["+i+"]", getValue("String", row.getA4ContractComments()));
             parameters.add(paramPrefix + "a4_contract_start_date["+i+"]", getValue("String", row.getA4ContractStartDate()));
             parameters.add(paramPrefix + "a4_contract_end_date["+i+"]", getValue("String", row.getA4ContractEndDate()));
+            parameters.add(paramPrefix + "a4_client_contract_plan_id["+i+"]", getValue("String", row.getA4ClientContractPlanId()));
             i++;
         }
     }
@@ -4835,6 +4895,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A4EnableUsagePoolingPlanNoRow row : arrayList.getA4EnableUsagePoolingPlanNoRow()){
             parameters.add("a4_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA4EnableUsagePoolingPlanNo()));
             parameters.add("a4_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA4ClientEnableUsgPoolPlanId()));
+            parameters.add("a4_usage_threshold_applicability["+i+"]", getValue("String", row.getA4UsageThresholdApplicability()));
             i++;
         }
     }
@@ -4844,6 +4905,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A4EnableUsagePoolingPlanNoRow row : arrayList.getA4EnableUsagePoolingPlanNoRow()){
             parameters.add(paramPrefix + "a4_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA4EnableUsagePoolingPlanNo()));
             parameters.add(paramPrefix + "a4_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA4ClientEnableUsgPoolPlanId()));
+            parameters.add(paramPrefix + "a4_usage_threshold_applicability["+i+"]", getValue("String", row.getA4UsageThresholdApplicability()));
             i++;
         }
     }
@@ -5112,6 +5174,7 @@ public class RestUtilities {
             parameters.add("a5_contract_comments["+i+"]", getValue("String", row.getA5ContractComments()));
             parameters.add("a5_contract_start_date["+i+"]", getValue("String", row.getA5ContractStartDate()));
             parameters.add("a5_contract_end_date["+i+"]", getValue("String", row.getA5ContractEndDate()));
+            parameters.add("a5_client_contract_plan_id["+i+"]", getValue("String", row.getA5ClientContractPlanId()));
             i++;
         }
     }
@@ -5127,6 +5190,7 @@ public class RestUtilities {
             parameters.add(paramPrefix + "a5_contract_comments["+i+"]", getValue("String", row.getA5ContractComments()));
             parameters.add(paramPrefix + "a5_contract_start_date["+i+"]", getValue("String", row.getA5ContractStartDate()));
             parameters.add(paramPrefix + "a5_contract_end_date["+i+"]", getValue("String", row.getA5ContractEndDate()));
+            parameters.add(paramPrefix + "a5_client_contract_plan_id["+i+"]", getValue("String", row.getA5ClientContractPlanId()));
             i++;
         }
     }
@@ -5158,6 +5222,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A5EnableUsagePoolingPlanNoRow row : arrayList.getA5EnableUsagePoolingPlanNoRow()){
             parameters.add("a5_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA5EnableUsagePoolingPlanNo()));
             parameters.add("a5_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA5ClientEnableUsgPoolPlanId()));
+            parameters.add("a5_usage_threshold_applicability["+i+"]", getValue("String", row.getA5UsageThresholdApplicability()));
             i++;
         }
     }
@@ -5167,6 +5232,7 @@ public class RestUtilities {
         for (com.aria.common.shared.A5EnableUsagePoolingPlanNoRow row : arrayList.getA5EnableUsagePoolingPlanNoRow()){
             parameters.add(paramPrefix + "a5_enable_usage_pooling_plan_no["+i+"]", getValue("Long", row.getA5EnableUsagePoolingPlanNo()));
             parameters.add(paramPrefix + "a5_client_enable_usg_pool_plan_id["+i+"]", getValue("String", row.getA5ClientEnableUsgPoolPlanId()));
+            parameters.add(paramPrefix + "a5_usage_threshold_applicability["+i+"]", getValue("String", row.getA5UsageThresholdApplicability()));
             i++;
         }
     }
@@ -5548,6 +5614,33 @@ public class RestUtilities {
         }
     }
 
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.UsageUnitThresholdsArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.UsageUnitThresholdsRow row : arrayList.getUsageUnitThresholdsRow()){
+            parameters.add("plan_no["+i+"]", getValue("Long", row.getPlanNo()));
+            parameters.add("usage_type_no["+i+"]", getValue("Long", row.getUsageTypeNo()));
+            parameters.add("usage_type_code["+i+"]", getValue("String", row.getUsageTypeCode()));
+            parameters.add("threshold_units["+i+"]", getValue("Double", row.getThresholdUnits()));
+            parameters.add("threshold_level_no["+i+"]", getValue("Long", row.getThresholdLevelNo()));
+            parameters.add("threshold_level_value["+i+"]", getValue("Double", row.getThresholdLevelValue()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.UsageUnitThresholdsArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.UsageUnitThresholdsRow row : arrayList.getUsageUnitThresholdsRow()){
+            parameters.add(paramPrefix + "plan_no["+i+"]", getValue("Long", row.getPlanNo()));
+            parameters.add(paramPrefix + "usage_type_no["+i+"]", getValue("Long", row.getUsageTypeNo()));
+            parameters.add(paramPrefix + "usage_type_code["+i+"]", getValue("String", row.getUsageTypeCode()));
+            parameters.add(paramPrefix + "threshold_units["+i+"]", getValue("Double", row.getThresholdUnits()));
+            parameters.add(paramPrefix + "threshold_level_no["+i+"]", getValue("Long", row.getThresholdLevelNo()));
+            parameters.add(paramPrefix + "threshold_level_value["+i+"]", getValue("Double", row.getThresholdLevelValue()));
+            i++;
+        }
+    }
+
     public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.PlanNoArray arrayList) {
         if (arrayList == null) return;
         int i = 0;
@@ -5671,6 +5764,23 @@ public class RestUtilities {
         int i = 0;
         for (com.aria.common.shared.SpecificChargeTransactionIdRow row : arrayList.getSpecificChargeTransactionIdRow()){
             parameters.add(paramPrefix + "specific_charge_transaction_id["+i+"]", getValue("Long", row.getSpecificChargeTransactionId()));
+            i++;
+        }
+    }
+
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.InvoiceNoArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.InvoiceNoRow row : arrayList.getInvoiceNoRow()){
+            parameters.add("invoice_no["+i+"]", getValue("Long", row.getInvoiceNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.InvoiceNoArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.InvoiceNoRow row : arrayList.getInvoiceNoRow()){
+            parameters.add(paramPrefix + "invoice_no["+i+"]", getValue("Long", row.getInvoiceNo()));
             i++;
         }
     }

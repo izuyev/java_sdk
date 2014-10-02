@@ -1506,6 +1506,8 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
+                , 1L
+                , 1L
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "updatePaymentMethod - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -2400,6 +2402,33 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , 1L
+                , ""
+                , 1L
+                , 1L
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -2573,14 +2602,17 @@ public class AriaServiceClientTest {
         com.aria.common.shared.UsageQualifier4Array usageQualifier4Array = new com.aria.common.shared.UsageQualifier4Array();
         
         hashMapReturnValues = getBaseAriaBilling().getUsageHistory(getClientNo(), getAuthKey()        , 1L
-                , ""
                 , 1L
+                , ""
                 , ""
                 , ""
                 , usageQualifier1Array
                 , usageQualifier2Array
                 , usageQualifier3Array
                 , usageQualifier4Array
+                , 1L
+                , 1L
+                , 1L
                 , 1L
                 , 1L
         );
@@ -2771,6 +2803,33 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
+                , 1L
+                , ""
+                , 1L
+                , 1L
+                , ""
+                , ""
+                , ""
+                , ""
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "updateAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -2907,6 +2966,7 @@ public class AriaServiceClientTest {
     public void removePayMethod() throws Exception {
         
         hashMapReturnValues = getBaseAriaBilling().removePayMethod(getClientNo(), getAuthKey()        , 1L
+                , 1L
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "removePayMethod - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -3237,6 +3297,10 @@ public class AriaServiceClientTest {
         
         hashMapReturnValues = getBaseAriaBilling().getUnbilledUsageSummary(getClientNo(), getAuthKey()        , 1L
                 , ""
+                , ""
+                , 1L
+                , 1L
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "getUnbilledUsageSummary - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -3249,9 +3313,11 @@ public class AriaServiceClientTest {
 
     //@Test
     public void setAcctUsgMtdThreshold() throws Exception {
+        com.aria.common.shared.UsageUnitThresholdsArray usageUnitThresholdsArray = new com.aria.common.shared.UsageUnitThresholdsArray();
         
         hashMapReturnValues = getBaseAriaBilling().setAcctUsgMtdThreshold(getClientNo(), getAuthKey()        , 1L
                 , 1d
+                , usageUnitThresholdsArray
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "setAcctUsgMtdThreshold - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -3264,9 +3330,11 @@ public class AriaServiceClientTest {
 
     //@Test
     public void setAcctUsgPtdThreshold() throws Exception {
+        com.aria.common.shared.UsageUnitThresholdsArray usageUnitThresholdsArray = new com.aria.common.shared.UsageUnitThresholdsArray();
         
         hashMapReturnValues = getBaseAriaBilling().setAcctUsgPtdThreshold(getClientNo(), getAuthKey()        , 1L
                 , 1d
+                , usageUnitThresholdsArray
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "setAcctUsgPtdThreshold - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -3279,9 +3347,11 @@ public class AriaServiceClientTest {
 
     //@Test
     public void setClientUsgMtdThreshold() throws Exception {
+        com.aria.common.shared.UsageUnitThresholdsArray usageUnitThresholdsArray = new com.aria.common.shared.UsageUnitThresholdsArray();
         
         hashMapReturnValues = getBaseAriaBilling().setClientUsgMtdThreshold(getClientNo(), getAuthKey()        , 1L
                 , 1d
+                , usageUnitThresholdsArray
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "setClientUsgMtdThreshold - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -3294,9 +3364,11 @@ public class AriaServiceClientTest {
 
     //@Test
     public void setClientUsgPtdThreshold() throws Exception {
+        com.aria.common.shared.UsageUnitThresholdsArray usageUnitThresholdsArray = new com.aria.common.shared.UsageUnitThresholdsArray();
         
         hashMapReturnValues = getBaseAriaBilling().setClientUsgPtdThreshold(getClientNo(), getAuthKey()        , 1L
                 , 1d
+                , usageUnitThresholdsArray
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "setClientUsgPtdThreshold - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -3941,6 +4013,7 @@ public class AriaServiceClientTest {
     //@Test
     public void recordExternalPayment() throws Exception {
         com.aria.common.shared.SpecificChargeTransactionIdArray specificChargeTransactionIdArray = new com.aria.common.shared.SpecificChargeTransactionIdArray();
+        com.aria.common.shared.InvoiceNoArray invoiceNoArray = new com.aria.common.shared.InvoiceNoArray();
         
         hashMapReturnValues = getBaseAriaBilling().recordExternalPayment(getClientNo(), getAuthKey()        , 1L
                 , ""
@@ -3950,6 +4023,7 @@ public class AriaServiceClientTest {
                 , specificChargeTransactionIdArray
                 , 1L
                 , ""
+                , invoiceNoArray
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "recordExternalPayment - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";

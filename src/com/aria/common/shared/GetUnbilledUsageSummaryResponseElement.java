@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "currencyCd", "currencyName", "acctMtdThresholdAmount", "acctPtdThresholdAmount", "clientMtdThresholdAmount", "clientPtdThresholdAmount", "mtdBalanceAmount", "ptdBalanceAmount", "acctMtdDeltaSign", "acctMtdDeltaAmount", "acctPtdDeltaSign", "acctPtdDeltaAmount", "clientMtdDeltaSign", "clientMtdDeltaAmount", "clientPtdDeltaSign", "clientPtdDeltaAmount", "unappSvcCreditBalAmount", "unappSvcCreditDeltaSign", "unappSvcCreditDeltaAmount", "unbilledUsageRecs"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "currencyCd", "currencyName", "acctMtdThresholdAmount", "acctPtdThresholdAmount", "clientMtdThresholdAmount", "clientPtdThresholdAmount", "mtdBalanceAmount", "ptdBalanceAmount", "acctMtdDeltaSign", "acctMtdDeltaAmount", "acctPtdDeltaSign", "acctPtdDeltaAmount", "clientMtdDeltaSign", "clientMtdDeltaAmount", "clientPtdDeltaSign", "clientPtdDeltaAmount", "unappSvcCreditBalAmount", "unappSvcCreditDeltaSign", "unappSvcCreditDeltaAmount", "unbilledUsageRecs", "unitThresholdDetails"})
 @XmlRootElement(name = "get_unbilled_usage_summaryResponseElement")
 public class GetUnbilledUsageSummaryResponseElement {
 
@@ -58,6 +58,8 @@ public class GetUnbilledUsageSummaryResponseElement {
     protected Double unappSvcCreditDeltaAmount;
     @XmlElement(name = "unbilled_usage_recs")
     protected List<UnbilledUsageRecsReturnElement> unbilledUsageRecs;
+    @XmlElement(name = "unit_threshold_details")
+    protected List<UnitThresholdDetailsReturnElement> unitThresholdDetails;
     
     public Long getErrorCode() {
         return errorCode;
@@ -232,5 +234,10 @@ public class GetUnbilledUsageSummaryResponseElement {
             this.unbilledUsageRecs = new ArrayList<UnbilledUsageRecsReturnElement>();
         }
         return this.unbilledUsageRecs;
+    }public List<UnitThresholdDetailsReturnElement> getUnitThresholdDetails() {
+        if (this.unitThresholdDetails == null) {
+            this.unitThresholdDetails = new ArrayList<UnitThresholdDetailsReturnElement>();
+        }
+        return this.unitThresholdDetails;
     }
 }

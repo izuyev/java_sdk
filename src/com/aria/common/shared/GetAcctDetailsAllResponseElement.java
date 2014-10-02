@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"firstName", "mi", "lastName", "userid", "birthdate", "jobTitle", "salutation", "seniorAcctNo", "clientAcctId", "respLevelCd", "isTestAcct", "altEmail", "address1", "address2", "city", "stateProv", "locality", "postalCode", "country", "companyName", "cellPhoneNpa", "cellPhoneNxx", "cellPhoneSuffix", "faxPhone", "intlCellPhone", "intlPhone", "phoneExtension", "phoneNpa", "phoneNxx", "phoneSuffix", "workPhone", "workPhoneExtension", "workPhoneNpa", "workPhoneNxx", "workPhoneSuffix", "billDay", "created", "dateToExpire", "dateToSuspend", "lastArrearsBillThruDate", "lastBillDate", "lastBillThruDate", "nextBillDate", "planDate", "statusDate", "statusDegradeDate", "statusCd", "statusLabel", "planNo", "planName", "planUnits", "notifyMethod", "notifyMethodName", "password", "pin", "secretQuestion", "secretQuestionAnswer", "payMethod", "payMethodName", "currencyCd", "taxId", "billingEmail", "billingFirstName", "billingMiddleInitial", "billingLastName", "billingAddress1", "billingAddress2", "billingCity", "billingState", "billingLocality", "billingZip", "billingCountry", "ccSuffix", "ccExpireMm", "ccExpireYyyy", "ccId", "bankAcctSuffix", "bankRoutingNo", "billingCellPhone", "billingCellPhoneNpa", "billingCellPhoneNxx", "billingCellPhoneSuffix", "billingCompanyName", "billingIntlPhone", "billingPhoneExtension", "billingPhoneNpa", "billingPhoneNxx", "billingPhoneSuffix", "billingWorkPhone", "billingWorkPhoneExtension", "billingWorkPhoneNpa", "billingWorkPhoneNxx", "billingWorkPhoneSuffix", "balance", "acctCreateClientReceiptId", "planClientReceiptId", "statusClientReceiptId", "taxpayerId", "altMsgTemplateNo", "seqFuncGroupNo", "promoCd", "address3", "billingAddress3", "addressVerificationCode", "addressMatchScore", "billingAddressVerificationCode", "billingAddressMatchScore", "clientPlanId", "clientAltMsgTemplateId", "errorCode", "errorMsg"})
+@XmlType(name = "", propOrder = {"firstName", "mi", "lastName", "userid", "birthdate", "jobTitle", "salutation", "seniorAcctNo", "clientAcctId", "respLevelCd", "isTestAcct", "altEmail", "address1", "address2", "city", "stateProv", "locality", "postalCode", "country", "companyName", "cellPhoneNpa", "cellPhoneNxx", "cellPhoneSuffix", "faxPhone", "intlCellPhone", "intlPhone", "phoneExtension", "phoneNpa", "phoneNxx", "phoneSuffix", "workPhone", "workPhoneExtension", "workPhoneNpa", "workPhoneNxx", "workPhoneSuffix", "billDay", "created", "dateToExpire", "dateToSuspend", "lastArrearsBillThruDate", "lastBillDate", "lastBillThruDate", "nextBillDate", "planDate", "statusDate", "statusDegradeDate", "statusCd", "statusLabel", "planNo", "planName", "planUnits", "notifyMethod", "notifyMethodName", "password", "pin", "secretQuestion", "secretQuestionAnswer", "payMethod", "payMethodName", "currencyCd", "taxId", "billingEmail", "billingFirstName", "billingMiddleInitial", "billingLastName", "billingAddress1", "billingAddress2", "billingCity", "billingState", "billingLocality", "billingZip", "billingCountry", "ccSuffix", "ccExpireMm", "ccExpireYyyy", "ccId", "bankAcctSuffix", "bankRoutingNo", "billingCellPhone", "billingCellPhoneNpa", "billingCellPhoneNxx", "billingCellPhoneSuffix", "billingCompanyName", "billingIntlPhone", "billingPhoneExtension", "billingPhoneNpa", "billingPhoneNxx", "billingPhoneSuffix", "billingWorkPhone", "billingWorkPhoneExtension", "billingWorkPhoneNpa", "billingWorkPhoneNxx", "billingWorkPhoneSuffix", "balance", "acctCreateClientReceiptId", "planClientReceiptId", "statusClientReceiptId", "taxpayerId", "altMsgTemplateNo", "seqFuncGroupNo", "promoCd", "address3", "billingAddress3", "addressVerificationCode", "addressMatchScore", "billingAddressVerificationCode", "billingAddressMatchScore", "clientPlanId", "clientAltMsgTemplateId", "bkupPayMethod", "bkupBillingEmail", "bkupBillingFirstName", "bkupBillingMiddleInitial", "bkupBillingLastName", "bkupBillingAddress1", "bkupBillingAddress2", "bkupBillingCity", "bkupBillingState", "bkupBillingLocality", "bkupBillingZip", "bkupBillingCountry", "bkupCcSuffix", "bkupCcExpireMm", "bkupCcExpireYyyy", "bkupCcId", "bkupBankAcctSuffix", "bkupBankRoutingNo", "bkupBillingCellPhone", "bkupBillingCellPhoneNpa", "bkupBillingCellPhoneNxx", "bkupBillingCellPhoneSuffix", "bkupBillingCompanyName", "bkupBillingIntlPhone", "bkupBillingPhoneExtension", "bkupBillingWorkPhone", "bkupBillingWorkPhoneExtension", "bkupBillingWorkPhoneNpa", "bkupBillingWorkPhoneNxx", "bkupBillingWorkPhoneSuffix", "errorCode", "errorMsg"})
 @XmlRootElement(name = "get_acct_details_allResponseElement")
 public class GetAcctDetailsAllResponseElement {
 
@@ -232,6 +232,66 @@ public class GetAcctDetailsAllResponseElement {
     protected String clientPlanId;
     @XmlElement(name = "client_alt_msg_template_id")
     protected String clientAltMsgTemplateId;
+    @XmlElement(name = "bkup_pay_method")
+    protected String bkupPayMethod;
+    @XmlElement(name = "bkup_billing_email")
+    protected String bkupBillingEmail;
+    @XmlElement(name = "bkup_billing_first_name")
+    protected String bkupBillingFirstName;
+    @XmlElement(name = "bkup_billing_middle_initial")
+    protected String bkupBillingMiddleInitial;
+    @XmlElement(name = "bkup_billing_last_name")
+    protected String bkupBillingLastName;
+    @XmlElement(name = "bkup_billing_address1")
+    protected String bkupBillingAddress1;
+    @XmlElement(name = "bkup_billing_address2")
+    protected String bkupBillingAddress2;
+    @XmlElement(name = "bkup_billing_city")
+    protected String bkupBillingCity;
+    @XmlElement(name = "bkup_billing_state")
+    protected String bkupBillingState;
+    @XmlElement(name = "bkup_billing_locality")
+    protected String bkupBillingLocality;
+    @XmlElement(name = "bkup_billing_zip")
+    protected String bkupBillingZip;
+    @XmlElement(name = "bkup_billing_country")
+    protected String bkupBillingCountry;
+    @XmlElement(name = "bkup_cc_suffix")
+    protected String bkupCcSuffix;
+    @XmlElement(name = "bkup_cc_expire_mm")
+    protected String bkupCcExpireMm;
+    @XmlElement(name = "bkup_cc_expire_yyyy")
+    protected String bkupCcExpireYyyy;
+    @XmlElement(name = "bkup_cc_id")
+    protected String bkupCcId;
+    @XmlElement(name = "bkup_bank_acct_suffix")
+    protected String bkupBankAcctSuffix;
+    @XmlElement(name = "bkup_bank_routing_no")
+    protected String bkupBankRoutingNo;
+    @XmlElement(name = "bkup_billing_cell_phone")
+    protected String bkupBillingCellPhone;
+    @XmlElement(name = "bkup_billing_cell_phone_npa")
+    protected String bkupBillingCellPhoneNpa;
+    @XmlElement(name = "bkup_billing_cell_phone_nxx")
+    protected String bkupBillingCellPhoneNxx;
+    @XmlElement(name = "bkup_billing_cell_phone_suffix")
+    protected String bkupBillingCellPhoneSuffix;
+    @XmlElement(name = "bkup_billing_company_name")
+    protected String bkupBillingCompanyName;
+    @XmlElement(name = "bkup_billing_intl_phone")
+    protected String bkupBillingIntlPhone;
+    @XmlElement(name = "bkup_billing_phone_extension")
+    protected String bkupBillingPhoneExtension;
+    @XmlElement(name = "bkup_billing_work_phone")
+    protected String bkupBillingWorkPhone;
+    @XmlElement(name = "bkup_billing_work_phone_extension")
+    protected String bkupBillingWorkPhoneExtension;
+    @XmlElement(name = "bkup_billing_work_phone_npa")
+    protected String bkupBillingWorkPhoneNpa;
+    @XmlElement(name = "bkup_billing_work_phone_nxx")
+    protected String bkupBillingWorkPhoneNxx;
+    @XmlElement(name = "bkup_billing_work_phone_suffix")
+    protected String bkupBillingWorkPhoneSuffix;
     @XmlElement(name = "error_code")
     protected Long errorCode;
     @XmlElement(name = "error_msg")
@@ -1107,6 +1167,246 @@ public class GetAcctDetailsAllResponseElement {
 
     public void setClientAltMsgTemplateId(String value) {
         this.clientAltMsgTemplateId = value;
+    }
+
+    public String getBkupPayMethod() {
+        return bkupPayMethod;
+    }
+
+    public void setBkupPayMethod(String value) {
+        this.bkupPayMethod = value;
+    }
+
+    public String getBkupBillingEmail() {
+        return bkupBillingEmail;
+    }
+
+    public void setBkupBillingEmail(String value) {
+        this.bkupBillingEmail = value;
+    }
+
+    public String getBkupBillingFirstName() {
+        return bkupBillingFirstName;
+    }
+
+    public void setBkupBillingFirstName(String value) {
+        this.bkupBillingFirstName = value;
+    }
+
+    public String getBkupBillingMiddleInitial() {
+        return bkupBillingMiddleInitial;
+    }
+
+    public void setBkupBillingMiddleInitial(String value) {
+        this.bkupBillingMiddleInitial = value;
+    }
+
+    public String getBkupBillingLastName() {
+        return bkupBillingLastName;
+    }
+
+    public void setBkupBillingLastName(String value) {
+        this.bkupBillingLastName = value;
+    }
+
+    public String getBkupBillingAddress1() {
+        return bkupBillingAddress1;
+    }
+
+    public void setBkupBillingAddress1(String value) {
+        this.bkupBillingAddress1 = value;
+    }
+
+    public String getBkupBillingAddress2() {
+        return bkupBillingAddress2;
+    }
+
+    public void setBkupBillingAddress2(String value) {
+        this.bkupBillingAddress2 = value;
+    }
+
+    public String getBkupBillingCity() {
+        return bkupBillingCity;
+    }
+
+    public void setBkupBillingCity(String value) {
+        this.bkupBillingCity = value;
+    }
+
+    public String getBkupBillingState() {
+        return bkupBillingState;
+    }
+
+    public void setBkupBillingState(String value) {
+        this.bkupBillingState = value;
+    }
+
+    public String getBkupBillingLocality() {
+        return bkupBillingLocality;
+    }
+
+    public void setBkupBillingLocality(String value) {
+        this.bkupBillingLocality = value;
+    }
+
+    public String getBkupBillingZip() {
+        return bkupBillingZip;
+    }
+
+    public void setBkupBillingZip(String value) {
+        this.bkupBillingZip = value;
+    }
+
+    public String getBkupBillingCountry() {
+        return bkupBillingCountry;
+    }
+
+    public void setBkupBillingCountry(String value) {
+        this.bkupBillingCountry = value;
+    }
+
+    public String getBkupCcSuffix() {
+        return bkupCcSuffix;
+    }
+
+    public void setBkupCcSuffix(String value) {
+        this.bkupCcSuffix = value;
+    }
+
+    public String getBkupCcExpireMm() {
+        return bkupCcExpireMm;
+    }
+
+    public void setBkupCcExpireMm(String value) {
+        this.bkupCcExpireMm = value;
+    }
+
+    public String getBkupCcExpireYyyy() {
+        return bkupCcExpireYyyy;
+    }
+
+    public void setBkupCcExpireYyyy(String value) {
+        this.bkupCcExpireYyyy = value;
+    }
+
+    public String getBkupCcId() {
+        return bkupCcId;
+    }
+
+    public void setBkupCcId(String value) {
+        this.bkupCcId = value;
+    }
+
+    public String getBkupBankAcctSuffix() {
+        return bkupBankAcctSuffix;
+    }
+
+    public void setBkupBankAcctSuffix(String value) {
+        this.bkupBankAcctSuffix = value;
+    }
+
+    public String getBkupBankRoutingNo() {
+        return bkupBankRoutingNo;
+    }
+
+    public void setBkupBankRoutingNo(String value) {
+        this.bkupBankRoutingNo = value;
+    }
+
+    public String getBkupBillingCellPhone() {
+        return bkupBillingCellPhone;
+    }
+
+    public void setBkupBillingCellPhone(String value) {
+        this.bkupBillingCellPhone = value;
+    }
+
+    public String getBkupBillingCellPhoneNpa() {
+        return bkupBillingCellPhoneNpa;
+    }
+
+    public void setBkupBillingCellPhoneNpa(String value) {
+        this.bkupBillingCellPhoneNpa = value;
+    }
+
+    public String getBkupBillingCellPhoneNxx() {
+        return bkupBillingCellPhoneNxx;
+    }
+
+    public void setBkupBillingCellPhoneNxx(String value) {
+        this.bkupBillingCellPhoneNxx = value;
+    }
+
+    public String getBkupBillingCellPhoneSuffix() {
+        return bkupBillingCellPhoneSuffix;
+    }
+
+    public void setBkupBillingCellPhoneSuffix(String value) {
+        this.bkupBillingCellPhoneSuffix = value;
+    }
+
+    public String getBkupBillingCompanyName() {
+        return bkupBillingCompanyName;
+    }
+
+    public void setBkupBillingCompanyName(String value) {
+        this.bkupBillingCompanyName = value;
+    }
+
+    public String getBkupBillingIntlPhone() {
+        return bkupBillingIntlPhone;
+    }
+
+    public void setBkupBillingIntlPhone(String value) {
+        this.bkupBillingIntlPhone = value;
+    }
+
+    public String getBkupBillingPhoneExtension() {
+        return bkupBillingPhoneExtension;
+    }
+
+    public void setBkupBillingPhoneExtension(String value) {
+        this.bkupBillingPhoneExtension = value;
+    }
+
+    public String getBkupBillingWorkPhone() {
+        return bkupBillingWorkPhone;
+    }
+
+    public void setBkupBillingWorkPhone(String value) {
+        this.bkupBillingWorkPhone = value;
+    }
+
+    public String getBkupBillingWorkPhoneExtension() {
+        return bkupBillingWorkPhoneExtension;
+    }
+
+    public void setBkupBillingWorkPhoneExtension(String value) {
+        this.bkupBillingWorkPhoneExtension = value;
+    }
+
+    public String getBkupBillingWorkPhoneNpa() {
+        return bkupBillingWorkPhoneNpa;
+    }
+
+    public void setBkupBillingWorkPhoneNpa(String value) {
+        this.bkupBillingWorkPhoneNpa = value;
+    }
+
+    public String getBkupBillingWorkPhoneNxx() {
+        return bkupBillingWorkPhoneNxx;
+    }
+
+    public void setBkupBillingWorkPhoneNxx(String value) {
+        this.bkupBillingWorkPhoneNxx = value;
+    }
+
+    public String getBkupBillingWorkPhoneSuffix() {
+        return bkupBillingWorkPhoneSuffix;
+    }
+
+    public void setBkupBillingWorkPhoneSuffix(String value) {
+        this.bkupBillingWorkPhoneSuffix = value;
     }
 
     public Long getErrorCode() {

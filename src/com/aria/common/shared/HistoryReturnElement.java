@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "history_ReturnElement", propOrder = {"transactionId", "transactionType", "transactionDesc", "transactionAmount", "transactionAppliedAmount", "transactionCurrency", "transactionCreateDate", "transactionVoidDate", "statementNo", "transactionVoidReason", "clientReceiptId", "transactionComments", "transactionSourceId", "transactionRefCode", "creditReasonCodeDescription", "csrComments"})
+@XmlType(name = "history_ReturnElement", propOrder = {"transactionId", "transactionType", "transactionDesc", "transactionAmount", "transactionAppliedAmount", "transactionCurrency", "transactionCreateDate", "transactionVoidDate", "statementNo", "transactionVoidReason", "clientReceiptId", "transactionComments", "transactionSourceId", "transactionRefCode", "creditReasonCodeDescription", "csrComments", "seqStatementId"})
 public class HistoryReturnElement {
 
     @XmlElement(name = "transaction_id")
@@ -45,6 +45,8 @@ public class HistoryReturnElement {
     protected String creditReasonCodeDescription;
     @XmlElement(name = "csr_comments")
     protected String csrComments;
+    @XmlElement(name = "seq_statement_id")
+    protected String seqStatementId;
     
     public Long getTransactionId() {
         return transactionId;
@@ -172,6 +174,14 @@ public class HistoryReturnElement {
 
     public void setCsrComments(String value) {
         this.csrComments = value;
+    }
+
+    public String getSeqStatementId() {
+        return seqStatementId;
+    }
+
+    public void setSeqStatementId(String value) {
+        this.seqStatementId = value;
     }
 
     

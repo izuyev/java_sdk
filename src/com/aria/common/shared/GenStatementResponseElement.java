@@ -10,12 +10,14 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"statementNo", "errorCode", "errorMsg"})
+@XmlType(name = "", propOrder = {"statementNo", "seqStatementId", "errorCode", "errorMsg"})
 @XmlRootElement(name = "gen_statementResponseElement")
 public class GenStatementResponseElement {
 
     @XmlElement(name = "statement_no")
     protected Long statementNo;
+    @XmlElement(name = "seq_statement_id")
+    protected String seqStatementId;
     @XmlElement(name = "error_code")
     protected Long errorCode;
     @XmlElement(name = "error_msg")
@@ -27,6 +29,14 @@ public class GenStatementResponseElement {
 
     public void setStatementNo(Long value) {
         this.statementNo = value;
+    }
+
+    public String getSeqStatementId() {
+        return seqStatementId;
+    }
+
+    public void setSeqStatementId(String value) {
+        this.seqStatementId = value;
     }
 
     public Long getErrorCode() {

@@ -9,7 +9,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "a4_enable_usage_pooling_plan_no_row", propOrder = {
     "a4EnableUsagePoolingPlanNo",
-    "a4ClientEnableUsgPoolPlanId"
+    "a4ClientEnableUsgPoolPlanId",
+    "a4UsageThresholdApplicability"
     })
 public class A4EnableUsagePoolingPlanNoRow {
 
@@ -17,6 +18,8 @@ public class A4EnableUsagePoolingPlanNoRow {
     protected Long a4EnableUsagePoolingPlanNo;
     @XmlElement(name = "a4_client_enable_usg_pool_plan_id")
     protected String a4ClientEnableUsgPoolPlanId;
+    @XmlElement(name = "a4_usage_threshold_applicability")
+    protected String a4UsageThresholdApplicability;
     public Long getA4EnableUsagePoolingPlanNo() {
         return a4EnableUsagePoolingPlanNo;
     }
@@ -31,6 +34,14 @@ public class A4EnableUsagePoolingPlanNoRow {
 
     public void setA4ClientEnableUsgPoolPlanId(String value) {
         this.a4ClientEnableUsgPoolPlanId = value;
+    }
+
+    public String getA4UsageThresholdApplicability() {
+        return a4UsageThresholdApplicability;
+    }
+
+    public void setA4UsageThresholdApplicability(String value) {
+        this.a4UsageThresholdApplicability = value;
     }
 
     

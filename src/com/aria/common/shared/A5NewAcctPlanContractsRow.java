@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlType;
     "a5ContractCancelFee",
     "a5ContractComments",
     "a5ContractStartDate",
-    "a5ContractEndDate"
+    "a5ContractEndDate",
+    "a5ClientContractPlanId"
     })
 public class A5NewAcctPlanContractsRow {
 
@@ -35,6 +36,8 @@ public class A5NewAcctPlanContractsRow {
     protected String a5ContractStartDate;
     @XmlElement(name = "a5_contract_end_date")
     protected String a5ContractEndDate;
+    @XmlElement(name = "a5_client_contract_plan_id")
+    protected String a5ClientContractPlanId;
     public Long getA5ContractPlanNo() {
         return a5ContractPlanNo;
     }
@@ -97,6 +100,14 @@ public class A5NewAcctPlanContractsRow {
 
     public void setA5ContractEndDate(String value) {
         this.a5ContractEndDate = value;
+    }
+
+    public String getA5ClientContractPlanId() {
+        return a5ClientContractPlanId;
+    }
+
+    public void setA5ClientContractPlanId(String value) {
+        this.a5ClientContractPlanId = value;
     }
 
     

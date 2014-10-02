@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "doWrite",    "clientReceiptId",    "a1AltStartDate",    "a1ClientAcctId",    "a1Userid",    "a1StatusCd",    "a1MasterPlanNo",    "a1MasterPlanUnits",    "a1SuppPlans",    "a1SuppPlanUnits",    "a1NotifyMethod",    "a1PromoCd",    "a1Password",    "a1SecretQuestion",    "a1SecretQuestionAnswer",    "a1FirstName",    "a1Mi",    "a1LastName",    "a1CompanyName",    "a1Address1",    "a1Address2",    "a1City",    "a1Locality",    "a1StateProv",    "a1Country",    "a1PostalCd",    "a1Phone",    "a1PhoneExt",    "a1CellPhone",    "a1WorkPhone",    "a1WorkPhoneExt",    "a1Email",    "a1Birthdate",    "a1BillFirstName",    "a1BillMi",    "a1BillLastName",    "a1BillCompanyName",    "a1BillAddress1",    "a1BillAddress2",    "a1BillCity",    "a1BillLocality",    "a1BillStateProv",    "a1BillCountry",    "a1BillPostalCd",    "a1BillPhone",    "a1BillPhoneExt",    "a1BillCellPhone",    "a1BillWorkPhone",    "a1BillWorkPhoneExt",    "a1BillEmail",    "a1PayMethod",    "a1CcNumber",    "a1CcExpireMm",    "a1CcExpireYyyy",    "a1BankAcctNo",    "a1BankRoutingNo",    "a1RespLevelCd",    "a1FunctionalAcctGroups",    "a1CollectionsAcctGroups",    "a1SuppFieldNames",    "a1SuppFieldValues",    "a1TestAcctInd",    "a1StatusUntilAltStart",    "a1BalanceForward",    "a1AltBillDay",    "a1DoFullInvoicing",    "a1DoProratedInvoicing",    "a1MasterPlanAltRateSchedNo",    "a1SuppPlanAltRateSchedNo",    "a1CurrencyCd",    "a1Cvv",    "a1TaxpayerId",    "a1BillAgreementId",    "a1RetroactiveStartDate",    "a1CouponCodes",    "a1NewAcctCustomRates",    "a1AltMsgTemplateNo",    "a1SeqFuncGroupNo",    "a1NewAcctPlanContracts",    "a1Address3",    "a1BillAddress3",    "a1UsageAccumulationConfig",    "a1EnableUsagePoolingPlanNo",    "a1ClientFuncAcctGroupIds",    "a1ClientCollAcctGroupIds",    "a1TrackData1",    "a1TrackData2",    "a1TaxExemptionLevel",    "a1CnAltMsgTemplateNo",    "a1InvoiceApprovalRequired",    "a1CreateSession",    "a1ClientMasterPlanId",    "a1ClientSuppPlanIds",    "a1ClientMpAltRateSchedId",    "a1ClientSpAltRateSchedIds",    "a1ClientAltMsgTemplateId",    "a1ClientCnAltMsgTemplateNo",    "a1Iban",    "a1BankCheckDigit",    "a1BankSwiftCd",    "a1BankCountryCd",    "a1MandateId",    "a1BankIdCd",    "a1BankBranchCd",    "a1SurchargeNo",    "a2AltStartDate",    "a2ClientAcctId",    "a2Userid",    "a2StatusCd",    "a2MasterPlanNo",    "a2MasterPlanUnits",    "a2SuppPlans",    "a2SuppPlanUnits",    "a2NotifyMethod",    "a2PromoCd",    "a2Password",    "a2SecretQuestion",    "a2SecretQuestionAnswer",    "a2FirstName",    "a2Mi",    "a2LastName",    "a2CompanyName",    "a2Address1",    "a2Address2",    "a2City",    "a2Locality",    "a2StateProv",    "a2Country",    "a2PostalCd",    "a2Phone",    "a2PhoneExt",    "a2CellPhone",    "a2WorkPhone",    "a2WorkPhoneExt",    "a2Email",    "a2Birthdate",    "a2BillFirstName",    "a2BillMi",    "a2BillLastName",    "a2BillCompanyName",    "a2BillAddress1",    "a2BillAddress2",    "a2BillCity",    "a2BillLocality",    "a2BillStateProv",    "a2BillCountry",    "a2BillPostalCd",    "a2BillPhone",    "a2BillPhoneExt",    "a2BillCellPhone",    "a2BillWorkPhone",    "a2BillWorkPhoneExt",    "a2BillEmail",    "a2PayMethod",    "a2CcNumber",    "a2CcExpireMm",    "a2CcExpireYyyy",    "a2BankAcctNo",    "a2BankRoutingNo",    "a2RespLevelCd",    "a2FunctionalAcctGroups",    "a2CollectionsAcctGroups",    "a2SuppFieldNames",    "a2SuppFieldValues",    "a2TestAcctInd",    "a2StatusUntilAltStart",    "a2BalanceForward",    "a2AltBillDay",    "a2DoFullInvoicing",    "a2DoProratedInvoicing",    "a2MasterPlanAltRateSchedNo",    "a2SuppPlanAltRateSchedNo",    "a2CurrencyCd",    "a2Cvv",    "a2TaxpayerId",    "a2BillAgreementId",    "a2RetroactiveStartDate",    "a2CouponCodes",    "a2NewAcctCustomRates",    "a2AltMsgTemplateNo",    "a2SeqFuncGroupNo",    "a2NewAcctPlanContracts",    "a2Address3",    "a2BillAddress3",    "a2UsageAccumulationConfig",    "a2EnableUsagePoolingPlanNo",    "a2ClientFuncAcctGroupIds",    "a2ClientCollAcctGroupIds",    "a2TrackData1",    "a2TrackData2",    "a2TaxExemptionLevel",    "a2CnAltMsgTemplateNo",    "a2InvoiceApprovalRequired",    "a2CreateSession",    "a2ClientMasterPlanId",    "a2ClientSuppPlanIds",    "a2ClientMpAltRateSchedId",    "a2ClientSpAltRateSchedIds",    "a2ClientAltMsgTemplateId",    "a2ClientCnAltMsgTemplateNo",    "a2Iban",    "a2BankCheckDigit",    "a2BankSwiftCd",    "a2BankCountryCd",    "a2MandateId",    "a2BankIdCd",    "a2BankBranchCd",    "a2SurchargeNo",    "a3AltStartDate",    "a3ClientAcctId",    "a3Userid",    "a3StatusCd",    "a3MasterPlanNo",    "a3MasterPlanUnits",    "a3SuppPlans",    "a3SuppPlanUnits",    "a3NotifyMethod",    "a3PromoCd",    "a3Password",    "a3SecretQuestion",    "a3SecretQuestionAnswer",    "a3FirstName",    "a3Mi",    "a3LastName",    "a3CompanyName",    "a3Address1",    "a3Address2",    "a3City",    "a3Locality",    "a3StateProv",    "a3Country",    "a3PostalCd",    "a3Phone",    "a3PhoneExt",    "a3CellPhone",    "a3WorkPhone",    "a3WorkPhoneExt",    "a3Email",    "a3Birthdate",    "a3BillFirstName",    "a3BillMi",    "a3BillLastName",    "a3BillCompanyName",    "a3BillAddress1",    "a3BillAddress2",    "a3BillCity",    "a3BillLocality",    "a3BillStateProv",    "a3BillCountry",    "a3BillPostalCd",    "a3BillPhone",    "a3BillPhoneExt",    "a3BillCellPhone",    "a3BillWorkPhone",    "a3BillWorkPhoneExt",    "a3BillEmail",    "a3PayMethod",    "a3CcNumber",    "a3CcExpireMm",    "a3CcExpireYyyy",    "a3BankAcctNo",    "a3BankRoutingNo",    "a3RespLevelCd",    "a3FunctionalAcctGroups",    "a3CollectionsAcctGroups",    "a3SuppFieldNames",    "a3SuppFieldValues",    "a3TestAcctInd",    "a3StatusUntilAltStart",    "a3BalanceForward",    "a3AltBillDay",    "a3DoFullInvoicing",    "a3DoProratedInvoicing",    "a3MasterPlanAltRateSchedNo",    "a3SuppPlanAltRateSchedNo",    "a3CurrencyCd",    "a3Cvv",    "a3TaxpayerId",    "a3BillAgreementId",    "a3RetroactiveStartDate",    "a3CouponCodes",    "a3NewAcctCustomRates",    "a3AltMsgTemplateNo",    "a3SeqFuncGroupNo",    "a3NewAcctPlanContracts",    "a3Address3",    "a3BillAddress3",    "a3UsageAccumulationConfig",    "a3EnableUsagePoolingPlanNo",    "a3ClientFuncAcctGroupIds",    "a3ClientCollAcctGroupIds",    "a3TrackData1",    "a3TrackData2",    "a3TaxExemptionLevel",    "a3CnAltMsgTemplateNo",    "a3InvoiceApprovalRequired",    "a3CreateSession",    "a3ClientMasterPlanId",    "a3ClientSuppPlanIds",    "a3ClientMpAltRateSchedId",    "a3ClientSpAltRateSchedIds",    "a3ClientAltMsgTemplateId",    "a3ClientCnAltMsgTemplateNo",    "a3Iban",    "a3BankCheckDigit",    "a3BankSwiftCd",    "a3BankCountryCd",    "a3MandateId",    "a3BankIdCd",    "a3BankBranchCd",    "a3SurchargeNo",    "a4AltStartDate",    "a4ClientAcctId",    "a4Userid",    "a4StatusCd",    "a4MasterPlanNo",    "a4MasterPlanUnits",    "a4SuppPlans",    "a4SuppPlanUnits",    "a4NotifyMethod",    "a4PromoCd",    "a4Password",    "a4SecretQuestion",    "a4SecretQuestionAnswer",    "a4FirstName",    "a4Mi",    "a4LastName",    "a4CompanyName",    "a4Address1",    "a4Address2",    "a4City",    "a4Locality",    "a4StateProv",    "a4Country",    "a4PostalCd",    "a4Phone",    "a4PhoneExt",    "a4CellPhone",    "a4WorkPhone",    "a4WorkPhoneExt",    "a4Email",    "a4Birthdate",    "a4BillFirstName",    "a4BillMi",    "a4BillLastName",    "a4BillCompanyName",    "a4BillAddress1",    "a4BillAddress2",    "a4BillCity",    "a4BillLocality",    "a4BillStateProv",    "a4BillCountry",    "a4BillPostalCd",    "a4BillPhone",    "a4BillPhoneExt",    "a4BillCellPhone",    "a4BillWorkPhone",    "a4BillWorkPhoneExt",    "a4BillEmail",    "a4PayMethod",    "a4CcNumber",    "a4CcExpireMm",    "a4CcExpireYyyy",    "a4BankAcctNo",    "a4BankRoutingNo",    "a4RespLevelCd",    "a4FunctionalAcctGroups",    "a4CollectionsAcctGroups",    "a4SuppFieldNames",    "a4SuppFieldValues",    "a4TestAcctInd",    "a4StatusUntilAltStart",    "a4BalanceForward",    "a4AltBillDay",    "a4DoFullInvoicing",    "a4DoProratedInvoicing",    "a4MasterPlanAltRateSchedNo",    "a4SuppPlanAltRateSchedNo",    "a4CurrencyCd",    "a4Cvv",    "a4TaxpayerId",    "a4BillAgreementId",    "a4RetroactiveStartDate",    "a4CouponCodes",    "a4NewAcctCustomRates",    "a4AltMsgTemplateNo",    "a4SeqFuncGroupNo",    "a4NewAcctPlanContracts",    "a4Address3",    "a4BillAddress3",    "a4UsageAccumulationConfig",    "a4EnableUsagePoolingPlanNo",    "a4ClientFuncAcctGroupIds",    "a4ClientCollAcctGroupIds",    "a4TrackData1",    "a4TrackData2",    "a4TaxExemptionLevel",    "a4CnAltMsgTemplateNo",    "a4InvoiceApprovalRequired",    "a4CreateSession",    "a4ClientMasterPlanId",    "a4ClientSuppPlanIds",    "a4ClientMpAltRateSchedId",    "a4ClientSpAltRateSchedIds",    "a4ClientAltMsgTemplateId",    "a4ClientCnAltMsgTemplateNo",    "a4Iban",    "a4BankCheckDigit",    "a4BankSwiftCd",    "a4BankCountryCd",    "a4MandateId",    "a4BankIdCd",    "a4BankBranchCd",    "a4SurchargeNo",    "a5AltStartDate",    "a5ClientAcctId",    "a5Userid",    "a5StatusCd",    "a5MasterPlanNo",    "a5MasterPlanUnits",    "a5SuppPlans",    "a5SuppPlanUnits",    "a5NotifyMethod",    "a5PromoCd",    "a5Password",    "a5SecretQuestion",    "a5SecretQuestionAnswer",    "a5FirstName",    "a5Mi",    "a5LastName",    "a5CompanyName",    "a5Address1",    "a5Address2",    "a5City",    "a5Locality",    "a5StateProv",    "a5Country",    "a5PostalCd",    "a5Phone",    "a5PhoneExt",    "a5CellPhone",    "a5WorkPhone",    "a5WorkPhoneExt",    "a5Email",    "a5Birthdate",    "a5BillFirstName",    "a5BillMi",    "a5BillLastName",    "a5BillCompanyName",    "a5BillAddress1",    "a5BillAddress2",    "a5BillCity",    "a5BillLocality",    "a5BillStateProv",    "a5BillCountry",    "a5BillPostalCd",    "a5BillPhone",    "a5BillPhoneExt",    "a5BillCellPhone",    "a5BillWorkPhone",    "a5BillWorkPhoneExt",    "a5BillEmail",    "a5PayMethod",    "a5CcNumber",    "a5CcExpireMm",    "a5CcExpireYyyy",    "a5BankAcctNo",    "a5BankRoutingNo",    "a5RespLevelCd",    "a5FunctionalAcctGroups",    "a5CollectionsAcctGroups",    "a5SuppFieldNames",    "a5SuppFieldValues",    "a5TestAcctInd",    "a5StatusUntilAltStart",    "a5BalanceForward",    "a5AltBillDay",    "a5DoFullInvoicing",    "a5DoProratedInvoicing",    "a5MasterPlanAltRateSchedNo",    "a5SuppPlanAltRateSchedNo",    "a5CurrencyCd",    "a5Cvv",    "a5TaxpayerId",    "a5BillAgreementId",    "a5RetroactiveStartDate",    "a5CouponCodes",    "a5NewAcctCustomRates",    "a5AltMsgTemplateNo",    "a5SeqFuncGroupNo",    "a5NewAcctPlanContracts",    "a5Address3",    "a5BillAddress3",    "a5UsageAccumulationConfig",    "a5EnableUsagePoolingPlanNo",    "a5ClientFuncAcctGroupIds",    "a5ClientCollAcctGroupIds",    "a5TrackData1",    "a5TrackData2",    "a5TaxExemptionLevel",    "a5CnAltMsgTemplateNo",    "a5InvoiceApprovalRequired",    "a5CreateSession",    "a5ClientMasterPlanId",    "a5ClientSuppPlanIds",    "a5ClientMpAltRateSchedId",    "a5ClientSpAltRateSchedIds",    "a5ClientAltMsgTemplateId",    "a5ClientCnAltMsgTemplateNo",    "a5Iban",    "a5BankCheckDigit",    "a5BankSwiftCd",    "a5BankCountryCd",    "a5MandateId",    "a5BankIdCd",    "a5BankBranchCd",    "a5SurchargeNo"})
+    "authKey",    "doWrite",    "clientReceiptId",    "a1AltStartDate",    "a1ClientAcctId",    "a1Userid",    "a1StatusCd",    "a1MasterPlanNo",    "a1MasterPlanUnits",    "a1SuppPlans",    "a1SuppPlanUnits",    "a1NotifyMethod",    "a1PromoCd",    "a1Password",    "a1SecretQuestion",    "a1SecretQuestionAnswer",    "a1FirstName",    "a1Mi",    "a1LastName",    "a1CompanyName",    "a1Address1",    "a1Address2",    "a1City",    "a1Locality",    "a1StateProv",    "a1Country",    "a1PostalCd",    "a1Phone",    "a1PhoneExt",    "a1CellPhone",    "a1WorkPhone",    "a1WorkPhoneExt",    "a1Email",    "a1Birthdate",    "a1BillFirstName",    "a1BillMi",    "a1BillLastName",    "a1BillCompanyName",    "a1BillAddress1",    "a1BillAddress2",    "a1BillCity",    "a1BillLocality",    "a1BillStateProv",    "a1BillCountry",    "a1BillPostalCd",    "a1BillPhone",    "a1BillPhoneExt",    "a1BillCellPhone",    "a1BillWorkPhone",    "a1BillWorkPhoneExt",    "a1BillEmail",    "a1PayMethod",    "a1CcNumber",    "a1CcExpireMm",    "a1CcExpireYyyy",    "a1BankAcctNo",    "a1BankRoutingNo",    "a1RespLevelCd",    "a1FunctionalAcctGroups",    "a1CollectionsAcctGroups",    "a1SuppFieldNames",    "a1SuppFieldValues",    "a1TestAcctInd",    "a1StatusUntilAltStart",    "a1BalanceForward",    "a1AltBillDay",    "a1DoFullInvoicing",    "a1DoProratedInvoicing",    "a1MasterPlanAltRateSchedNo",    "a1SuppPlanAltRateSchedNo",    "a1CurrencyCd",    "a1Cvv",    "a1TaxpayerId",    "a1BillAgreementId",    "a1RetroactiveStartDate",    "a1CouponCodes",    "a1NewAcctCustomRates",    "a1AltMsgTemplateNo",    "a1SeqFuncGroupNo",    "a1NewAcctPlanContracts",    "a1Address3",    "a1BillAddress3",    "a1UsageAccumulationConfig",    "a1EnableUsagePoolingPlanNo",    "a1ClientFuncAcctGroupIds",    "a1ClientCollAcctGroupIds",    "a1TrackData1",    "a1TrackData2",    "a1TaxExemptionLevel",    "a1CnAltMsgTemplateNo",    "a1InvoiceApprovalRequired",    "a1CreateSession",    "a1ClientMasterPlanId",    "a1ClientSuppPlanIds",    "a1ClientMpAltRateSchedId",    "a1ClientSpAltRateSchedIds",    "a1ClientAltMsgTemplateId",    "a1ClientCnAltMsgTemplateNo",    "a1Iban",    "a1BankCheckDigit",    "a1BankSwiftCd",    "a1BankCountryCd",    "a1MandateId",    "a1BankIdCd",    "a1BankBranchCd",    "a1SurchargeNo",    "a1BkupBillFirstName",    "a1BkupBillMi",    "a1BkupBillLastName",    "a1BkupBillCompanyName",    "a1BkupBillAddress1",    "a1BkupBillAddress2",    "a1BkupBillAddress3",    "a1BkupBillCity",    "a1BkupBillLocality",    "a1BkupBillStateProv",    "a1BkupBillCountry",    "a1BkupBillPostalCd",    "a1BkupBillPhone",    "a1BkupBillPhoneExt",    "a1BkupBillCellPhone",    "a1BkupBillWorkPhone",    "a1BkupBillWorkPhoneExt",    "a1BkupBillEmail",    "a1BkupPayMethod",    "a1BkupCcNumber",    "a1BkupCcExpireMm",    "a1BkupCcExpireYyyy",    "a1BkupBankAcctNo",    "a1BkupBankRoutingNo",    "a1BkupBillAgreementId",    "a1BkupCvv",    "a1SeqFuncGroupId",    "a2AltStartDate",    "a2ClientAcctId",    "a2Userid",    "a2StatusCd",    "a2MasterPlanNo",    "a2MasterPlanUnits",    "a2SuppPlans",    "a2SuppPlanUnits",    "a2NotifyMethod",    "a2PromoCd",    "a2Password",    "a2SecretQuestion",    "a2SecretQuestionAnswer",    "a2FirstName",    "a2Mi",    "a2LastName",    "a2CompanyName",    "a2Address1",    "a2Address2",    "a2City",    "a2Locality",    "a2StateProv",    "a2Country",    "a2PostalCd",    "a2Phone",    "a2PhoneExt",    "a2CellPhone",    "a2WorkPhone",    "a2WorkPhoneExt",    "a2Email",    "a2Birthdate",    "a2BillFirstName",    "a2BillMi",    "a2BillLastName",    "a2BillCompanyName",    "a2BillAddress1",    "a2BillAddress2",    "a2BillCity",    "a2BillLocality",    "a2BillStateProv",    "a2BillCountry",    "a2BillPostalCd",    "a2BillPhone",    "a2BillPhoneExt",    "a2BillCellPhone",    "a2BillWorkPhone",    "a2BillWorkPhoneExt",    "a2BillEmail",    "a2PayMethod",    "a2CcNumber",    "a2CcExpireMm",    "a2CcExpireYyyy",    "a2BankAcctNo",    "a2BankRoutingNo",    "a2RespLevelCd",    "a2FunctionalAcctGroups",    "a2CollectionsAcctGroups",    "a2SuppFieldNames",    "a2SuppFieldValues",    "a2TestAcctInd",    "a2StatusUntilAltStart",    "a2BalanceForward",    "a2AltBillDay",    "a2DoFullInvoicing",    "a2DoProratedInvoicing",    "a2MasterPlanAltRateSchedNo",    "a2SuppPlanAltRateSchedNo",    "a2CurrencyCd",    "a2Cvv",    "a2TaxpayerId",    "a2BillAgreementId",    "a2RetroactiveStartDate",    "a2CouponCodes",    "a2NewAcctCustomRates",    "a2AltMsgTemplateNo",    "a2SeqFuncGroupNo",    "a2NewAcctPlanContracts",    "a2Address3",    "a2BillAddress3",    "a2UsageAccumulationConfig",    "a2EnableUsagePoolingPlanNo",    "a2ClientFuncAcctGroupIds",    "a2ClientCollAcctGroupIds",    "a2TrackData1",    "a2TrackData2",    "a2TaxExemptionLevel",    "a2CnAltMsgTemplateNo",    "a2InvoiceApprovalRequired",    "a2CreateSession",    "a2ClientMasterPlanId",    "a2ClientSuppPlanIds",    "a2ClientMpAltRateSchedId",    "a2ClientSpAltRateSchedIds",    "a2ClientAltMsgTemplateId",    "a2ClientCnAltMsgTemplateNo",    "a2Iban",    "a2BankCheckDigit",    "a2BankSwiftCd",    "a2BankCountryCd",    "a2MandateId",    "a2BankIdCd",    "a2BankBranchCd",    "a2SurchargeNo",    "a2BkupBillFirstName",    "a2BkupBillMi",    "a2BkupBillLastName",    "a2BkupBillCompanyName",    "a2BkupBillAddress1",    "a2BkupBillAddress2",    "a2BkupBillAddress3",    "a2BkupBillCity",    "a2BkupBillLocality",    "a2BkupBillStateProv",    "a2BkupBillCountry",    "a2BkupBillPostalCd",    "a2BkupBillPhone",    "a2BkupBillPhoneExt",    "a2BkupBillCellPhone",    "a2BkupBillWorkPhone",    "a2BkupBillWorkPhoneExt",    "a2BkupBillEmail",    "a2BkupPayMethod",    "a2BkupCcNumber",    "a2BkupCcExpireMm",    "a2BkupCcExpireYyyy",    "a2BkupBankAcctNo",    "a2BkupBankRoutingNo",    "a2BkupBillAgreementId",    "a2BkupCvv",    "a2SeqFuncGroupId",    "a3AltStartDate",    "a3ClientAcctId",    "a3Userid",    "a3StatusCd",    "a3MasterPlanNo",    "a3MasterPlanUnits",    "a3SuppPlans",    "a3SuppPlanUnits",    "a3NotifyMethod",    "a3PromoCd",    "a3Password",    "a3SecretQuestion",    "a3SecretQuestionAnswer",    "a3FirstName",    "a3Mi",    "a3LastName",    "a3CompanyName",    "a3Address1",    "a3Address2",    "a3City",    "a3Locality",    "a3StateProv",    "a3Country",    "a3PostalCd",    "a3Phone",    "a3PhoneExt",    "a3CellPhone",    "a3WorkPhone",    "a3WorkPhoneExt",    "a3Email",    "a3Birthdate",    "a3BillFirstName",    "a3BillMi",    "a3BillLastName",    "a3BillCompanyName",    "a3BillAddress1",    "a3BillAddress2",    "a3BillCity",    "a3BillLocality",    "a3BillStateProv",    "a3BillCountry",    "a3BillPostalCd",    "a3BillPhone",    "a3BillPhoneExt",    "a3BillCellPhone",    "a3BillWorkPhone",    "a3BillWorkPhoneExt",    "a3BillEmail",    "a3PayMethod",    "a3CcNumber",    "a3CcExpireMm",    "a3CcExpireYyyy",    "a3BankAcctNo",    "a3BankRoutingNo",    "a3RespLevelCd",    "a3FunctionalAcctGroups",    "a3CollectionsAcctGroups",    "a3SuppFieldNames",    "a3SuppFieldValues",    "a3TestAcctInd",    "a3StatusUntilAltStart",    "a3BalanceForward",    "a3AltBillDay",    "a3DoFullInvoicing",    "a3DoProratedInvoicing",    "a3MasterPlanAltRateSchedNo",    "a3SuppPlanAltRateSchedNo",    "a3CurrencyCd",    "a3Cvv",    "a3TaxpayerId",    "a3BillAgreementId",    "a3RetroactiveStartDate",    "a3CouponCodes",    "a3NewAcctCustomRates",    "a3AltMsgTemplateNo",    "a3SeqFuncGroupNo",    "a3NewAcctPlanContracts",    "a3Address3",    "a3BillAddress3",    "a3UsageAccumulationConfig",    "a3EnableUsagePoolingPlanNo",    "a3ClientFuncAcctGroupIds",    "a3ClientCollAcctGroupIds",    "a3TrackData1",    "a3TrackData2",    "a3TaxExemptionLevel",    "a3CnAltMsgTemplateNo",    "a3InvoiceApprovalRequired",    "a3CreateSession",    "a3ClientMasterPlanId",    "a3ClientSuppPlanIds",    "a3ClientMpAltRateSchedId",    "a3ClientSpAltRateSchedIds",    "a3ClientAltMsgTemplateId",    "a3ClientCnAltMsgTemplateNo",    "a3Iban",    "a3BankCheckDigit",    "a3BankSwiftCd",    "a3BankCountryCd",    "a3MandateId",    "a3BankIdCd",    "a3BankBranchCd",    "a3SurchargeNo",    "a3BkupBillFirstName",    "a3BkupBillMi",    "a3BkupBillLastName",    "a3BkupBillCompanyName",    "a3BkupBillAddress1",    "a3BkupBillAddress2",    "a3BkupBillAddress3",    "a3BkupBillCity",    "a3BkupBillLocality",    "a3BkupBillStateProv",    "a3BkupBillCountry",    "a3BkupBillPostalCd",    "a3BkupBillPhone",    "a3BkupBillPhoneExt",    "a3BkupBillCellPhone",    "a3BkupBillWorkPhone",    "a3BkupBillWorkPhoneExt",    "a3BkupBillEmail",    "a3BkupPayMethod",    "a3BkupCcNumber",    "a3BkupCcExpireMm",    "a3BkupCcExpireYyyy",    "a3BkupBankAcctNo",    "a3BkupBankRoutingNo",    "a3BkupBillAgreementId",    "a3BkupCvv",    "a3SeqFuncGroupId",    "a4AltStartDate",    "a4ClientAcctId",    "a4Userid",    "a4StatusCd",    "a4MasterPlanNo",    "a4MasterPlanUnits",    "a4SuppPlans",    "a4SuppPlanUnits",    "a4NotifyMethod",    "a4PromoCd",    "a4Password",    "a4SecretQuestion",    "a4SecretQuestionAnswer",    "a4FirstName",    "a4Mi",    "a4LastName",    "a4CompanyName",    "a4Address1",    "a4Address2",    "a4City",    "a4Locality",    "a4StateProv",    "a4Country",    "a4PostalCd",    "a4Phone",    "a4PhoneExt",    "a4CellPhone",    "a4WorkPhone",    "a4WorkPhoneExt",    "a4Email",    "a4Birthdate",    "a4BillFirstName",    "a4BillMi",    "a4BillLastName",    "a4BillCompanyName",    "a4BillAddress1",    "a4BillAddress2",    "a4BillCity",    "a4BillLocality",    "a4BillStateProv",    "a4BillCountry",    "a4BillPostalCd",    "a4BillPhone",    "a4BillPhoneExt",    "a4BillCellPhone",    "a4BillWorkPhone",    "a4BillWorkPhoneExt",    "a4BillEmail",    "a4PayMethod",    "a4CcNumber",    "a4CcExpireMm",    "a4CcExpireYyyy",    "a4BankAcctNo",    "a4BankRoutingNo",    "a4RespLevelCd",    "a4FunctionalAcctGroups",    "a4CollectionsAcctGroups",    "a4SuppFieldNames",    "a4SuppFieldValues",    "a4TestAcctInd",    "a4StatusUntilAltStart",    "a4BalanceForward",    "a4AltBillDay",    "a4DoFullInvoicing",    "a4DoProratedInvoicing",    "a4MasterPlanAltRateSchedNo",    "a4SuppPlanAltRateSchedNo",    "a4CurrencyCd",    "a4Cvv",    "a4TaxpayerId",    "a4BillAgreementId",    "a4RetroactiveStartDate",    "a4CouponCodes",    "a4NewAcctCustomRates",    "a4AltMsgTemplateNo",    "a4SeqFuncGroupNo",    "a4NewAcctPlanContracts",    "a4Address3",    "a4BillAddress3",    "a4UsageAccumulationConfig",    "a4EnableUsagePoolingPlanNo",    "a4ClientFuncAcctGroupIds",    "a4ClientCollAcctGroupIds",    "a4TrackData1",    "a4TrackData2",    "a4TaxExemptionLevel",    "a4CnAltMsgTemplateNo",    "a4InvoiceApprovalRequired",    "a4CreateSession",    "a4ClientMasterPlanId",    "a4ClientSuppPlanIds",    "a4ClientMpAltRateSchedId",    "a4ClientSpAltRateSchedIds",    "a4ClientAltMsgTemplateId",    "a4ClientCnAltMsgTemplateNo",    "a4Iban",    "a4BankCheckDigit",    "a4BankSwiftCd",    "a4BankCountryCd",    "a4MandateId",    "a4BankIdCd",    "a4BankBranchCd",    "a4SurchargeNo",    "a4BkupBillFirstName",    "a4BkupBillMi",    "a4BkupBillLastName",    "a4BkupBillCompanyName",    "a4BkupBillAddress1",    "a4BkupBillAddress2",    "a4BkupBillAddress3",    "a4BkupBillCity",    "a4BkupBillLocality",    "a4BkupBillStateProv",    "a4BkupBillCountry",    "a4BkupBillPostalCd",    "a4BkupBillPhone",    "a4BkupBillPhoneExt",    "a4BkupBillCellPhone",    "a4BkupBillWorkPhone",    "a4BkupBillWorkPhoneExt",    "a4BkupBillEmail",    "a4BkupPayMethod",    "a4BkupCcNumber",    "a4BkupCcExpireMm",    "a4BkupCcExpireYyyy",    "a4BkupBankAcctNo",    "a4BkupBankRoutingNo",    "a4BkupBillAgreementId",    "a4BkupCvv",    "a4SeqFuncGroupId",    "a5AltStartDate",    "a5ClientAcctId",    "a5Userid",    "a5StatusCd",    "a5MasterPlanNo",    "a5MasterPlanUnits",    "a5SuppPlans",    "a5SuppPlanUnits",    "a5NotifyMethod",    "a5PromoCd",    "a5Password",    "a5SecretQuestion",    "a5SecretQuestionAnswer",    "a5FirstName",    "a5Mi",    "a5LastName",    "a5CompanyName",    "a5Address1",    "a5Address2",    "a5City",    "a5Locality",    "a5StateProv",    "a5Country",    "a5PostalCd",    "a5Phone",    "a5PhoneExt",    "a5CellPhone",    "a5WorkPhone",    "a5WorkPhoneExt",    "a5Email",    "a5Birthdate",    "a5BillFirstName",    "a5BillMi",    "a5BillLastName",    "a5BillCompanyName",    "a5BillAddress1",    "a5BillAddress2",    "a5BillCity",    "a5BillLocality",    "a5BillStateProv",    "a5BillCountry",    "a5BillPostalCd",    "a5BillPhone",    "a5BillPhoneExt",    "a5BillCellPhone",    "a5BillWorkPhone",    "a5BillWorkPhoneExt",    "a5BillEmail",    "a5PayMethod",    "a5CcNumber",    "a5CcExpireMm",    "a5CcExpireYyyy",    "a5BankAcctNo",    "a5BankRoutingNo",    "a5RespLevelCd",    "a5FunctionalAcctGroups",    "a5CollectionsAcctGroups",    "a5SuppFieldNames",    "a5SuppFieldValues",    "a5TestAcctInd",    "a5StatusUntilAltStart",    "a5BalanceForward",    "a5AltBillDay",    "a5DoFullInvoicing",    "a5DoProratedInvoicing",    "a5MasterPlanAltRateSchedNo",    "a5SuppPlanAltRateSchedNo",    "a5CurrencyCd",    "a5Cvv",    "a5TaxpayerId",    "a5BillAgreementId",    "a5RetroactiveStartDate",    "a5CouponCodes",    "a5NewAcctCustomRates",    "a5AltMsgTemplateNo",    "a5SeqFuncGroupNo",    "a5NewAcctPlanContracts",    "a5Address3",    "a5BillAddress3",    "a5UsageAccumulationConfig",    "a5EnableUsagePoolingPlanNo",    "a5ClientFuncAcctGroupIds",    "a5ClientCollAcctGroupIds",    "a5TrackData1",    "a5TrackData2",    "a5TaxExemptionLevel",    "a5CnAltMsgTemplateNo",    "a5InvoiceApprovalRequired",    "a5CreateSession",    "a5ClientMasterPlanId",    "a5ClientSuppPlanIds",    "a5ClientMpAltRateSchedId",    "a5ClientSpAltRateSchedIds",    "a5ClientAltMsgTemplateId",    "a5ClientCnAltMsgTemplateNo",    "a5Iban",    "a5BankCheckDigit",    "a5BankSwiftCd",    "a5BankCountryCd",    "a5MandateId",    "a5BankIdCd",    "a5BankBranchCd",    "a5SurchargeNo",    "a5BkupBillFirstName",    "a5BkupBillMi",    "a5BkupBillLastName",    "a5BkupBillCompanyName",    "a5BkupBillAddress1",    "a5BkupBillAddress2",    "a5BkupBillAddress3",    "a5BkupBillCity",    "a5BkupBillLocality",    "a5BkupBillStateProv",    "a5BkupBillCountry",    "a5BkupBillPostalCd",    "a5BkupBillPhone",    "a5BkupBillPhoneExt",    "a5BkupBillCellPhone",    "a5BkupBillWorkPhone",    "a5BkupBillWorkPhoneExt",    "a5BkupBillEmail",    "a5BkupPayMethod",    "a5BkupCcNumber",    "a5BkupCcExpireMm",    "a5BkupCcExpireYyyy",    "a5BkupBankAcctNo",    "a5BkupBankRoutingNo",    "a5BkupBillAgreementId",    "a5BkupCvv",    "a5SeqFuncGroupId"})
 @XmlRootElement(name = "create_acct_hierarchy")
 public class CreateAcctHierarchy {
 
@@ -228,6 +228,60 @@ public class CreateAcctHierarchy {
     protected String a1BankBranchCd;
         @XmlElement(name = "a1_surcharge_no")
     protected A1SurchargeNoArray a1SurchargeNo;
+        @XmlElement(name = "a1_bkup_bill_first_name")
+    protected String a1BkupBillFirstName;
+        @XmlElement(name = "a1_bkup_bill_mi")
+    protected String a1BkupBillMi;
+        @XmlElement(name = "a1_bkup_bill_last_name")
+    protected String a1BkupBillLastName;
+        @XmlElement(name = "a1_bkup_bill_company_name")
+    protected String a1BkupBillCompanyName;
+        @XmlElement(name = "a1_bkup_bill_address1")
+    protected String a1BkupBillAddress1;
+        @XmlElement(name = "a1_bkup_bill_address2")
+    protected String a1BkupBillAddress2;
+        @XmlElement(name = "a1_bkup_bill_address3")
+    protected String a1BkupBillAddress3;
+        @XmlElement(name = "a1_bkup_bill_city")
+    protected String a1BkupBillCity;
+        @XmlElement(name = "a1_bkup_bill_locality")
+    protected String a1BkupBillLocality;
+        @XmlElement(name = "a1_bkup_bill_state_prov")
+    protected String a1BkupBillStateProv;
+        @XmlElement(name = "a1_bkup_bill_country")
+    protected String a1BkupBillCountry;
+        @XmlElement(name = "a1_bkup_bill_postal_cd")
+    protected String a1BkupBillPostalCd;
+        @XmlElement(name = "a1_bkup_bill_phone")
+    protected String a1BkupBillPhone;
+        @XmlElement(name = "a1_bkup_bill_phone_ext")
+    protected String a1BkupBillPhoneExt;
+        @XmlElement(name = "a1_bkup_bill_cell_phone")
+    protected String a1BkupBillCellPhone;
+        @XmlElement(name = "a1_bkup_bill_work_phone")
+    protected String a1BkupBillWorkPhone;
+        @XmlElement(name = "a1_bkup_bill_work_phone_ext")
+    protected String a1BkupBillWorkPhoneExt;
+        @XmlElement(name = "a1_bkup_bill_email")
+    protected String a1BkupBillEmail;
+        @XmlElement(name = "a1_bkup_pay_method")
+    protected Long a1BkupPayMethod;
+        @XmlElement(name = "a1_bkup_cc_number")
+    protected String a1BkupCcNumber;
+        @XmlElement(name = "a1_bkup_cc_expire_mm")
+    protected Long a1BkupCcExpireMm;
+        @XmlElement(name = "a1_bkup_cc_expire_yyyy")
+    protected Long a1BkupCcExpireYyyy;
+        @XmlElement(name = "a1_bkup_bank_acct_no")
+    protected String a1BkupBankAcctNo;
+        @XmlElement(name = "a1_bkup_bank_routing_no")
+    protected String a1BkupBankRoutingNo;
+        @XmlElement(name = "a1_bkup_bill_agreement_id")
+    protected String a1BkupBillAgreementId;
+        @XmlElement(name = "a1_bkup_cvv")
+    protected String a1BkupCvv;
+        @XmlElement(name = "a1_seq_func_group_id")
+    protected String a1SeqFuncGroupId;
         @XmlElement(name = "a2_alt_start_date")
     protected String a2AltStartDate;
         @XmlElement(name = "a2_client_acct_id")
@@ -434,6 +488,60 @@ public class CreateAcctHierarchy {
     protected String a2BankBranchCd;
         @XmlElement(name = "a2_surcharge_no")
     protected A2SurchargeNoArray a2SurchargeNo;
+        @XmlElement(name = "a2_bkup_bill_first_name")
+    protected String a2BkupBillFirstName;
+        @XmlElement(name = "a2_bkup_bill_mi")
+    protected String a2BkupBillMi;
+        @XmlElement(name = "a2_bkup_bill_last_name")
+    protected String a2BkupBillLastName;
+        @XmlElement(name = "a2_bkup_bill_company_name")
+    protected String a2BkupBillCompanyName;
+        @XmlElement(name = "a2_bkup_bill_address1")
+    protected String a2BkupBillAddress1;
+        @XmlElement(name = "a2_bkup_bill_address2")
+    protected String a2BkupBillAddress2;
+        @XmlElement(name = "a2_bkup_bill_address3")
+    protected String a2BkupBillAddress3;
+        @XmlElement(name = "a2_bkup_bill_city")
+    protected String a2BkupBillCity;
+        @XmlElement(name = "a2_bkup_bill_locality")
+    protected String a2BkupBillLocality;
+        @XmlElement(name = "a2_bkup_bill_state_prov")
+    protected String a2BkupBillStateProv;
+        @XmlElement(name = "a2_bkup_bill_country")
+    protected String a2BkupBillCountry;
+        @XmlElement(name = "a2_bkup_bill_postal_cd")
+    protected String a2BkupBillPostalCd;
+        @XmlElement(name = "a2_bkup_bill_phone")
+    protected String a2BkupBillPhone;
+        @XmlElement(name = "a2_bkup_bill_phone_ext")
+    protected String a2BkupBillPhoneExt;
+        @XmlElement(name = "a2_bkup_bill_cell_phone")
+    protected String a2BkupBillCellPhone;
+        @XmlElement(name = "a2_bkup_bill_work_phone")
+    protected String a2BkupBillWorkPhone;
+        @XmlElement(name = "a2_bkup_bill_work_phone_ext")
+    protected String a2BkupBillWorkPhoneExt;
+        @XmlElement(name = "a2_bkup_bill_email")
+    protected String a2BkupBillEmail;
+        @XmlElement(name = "a2_bkup_pay_method")
+    protected Long a2BkupPayMethod;
+        @XmlElement(name = "a2_bkup_cc_number")
+    protected String a2BkupCcNumber;
+        @XmlElement(name = "a2_bkup_cc_expire_mm")
+    protected Long a2BkupCcExpireMm;
+        @XmlElement(name = "a2_bkup_cc_expire_yyyy")
+    protected Long a2BkupCcExpireYyyy;
+        @XmlElement(name = "a2_bkup_bank_acct_no")
+    protected String a2BkupBankAcctNo;
+        @XmlElement(name = "a2_bkup_bank_routing_no")
+    protected String a2BkupBankRoutingNo;
+        @XmlElement(name = "a2_bkup_bill_agreement_id")
+    protected String a2BkupBillAgreementId;
+        @XmlElement(name = "a2_bkup_cvv")
+    protected String a2BkupCvv;
+        @XmlElement(name = "a2_seq_func_group_id")
+    protected String a2SeqFuncGroupId;
         @XmlElement(name = "a3_alt_start_date")
     protected String a3AltStartDate;
         @XmlElement(name = "a3_client_acct_id")
@@ -640,6 +748,60 @@ public class CreateAcctHierarchy {
     protected String a3BankBranchCd;
         @XmlElement(name = "a3_surcharge_no")
     protected A3SurchargeNoArray a3SurchargeNo;
+        @XmlElement(name = "a3_bkup_bill_first_name")
+    protected String a3BkupBillFirstName;
+        @XmlElement(name = "a3_bkup_bill_mi")
+    protected String a3BkupBillMi;
+        @XmlElement(name = "a3_bkup_bill_last_name")
+    protected String a3BkupBillLastName;
+        @XmlElement(name = "a3_bkup_bill_company_name")
+    protected String a3BkupBillCompanyName;
+        @XmlElement(name = "a3_bkup_bill_address1")
+    protected String a3BkupBillAddress1;
+        @XmlElement(name = "a3_bkup_bill_address2")
+    protected String a3BkupBillAddress2;
+        @XmlElement(name = "a3_bkup_bill_address3")
+    protected String a3BkupBillAddress3;
+        @XmlElement(name = "a3_bkup_bill_city")
+    protected String a3BkupBillCity;
+        @XmlElement(name = "a3_bkup_bill_locality")
+    protected String a3BkupBillLocality;
+        @XmlElement(name = "a3_bkup_bill_state_prov")
+    protected String a3BkupBillStateProv;
+        @XmlElement(name = "a3_bkup_bill_country")
+    protected String a3BkupBillCountry;
+        @XmlElement(name = "a3_bkup_bill_postal_cd")
+    protected String a3BkupBillPostalCd;
+        @XmlElement(name = "a3_bkup_bill_phone")
+    protected String a3BkupBillPhone;
+        @XmlElement(name = "a3_bkup_bill_phone_ext")
+    protected String a3BkupBillPhoneExt;
+        @XmlElement(name = "a3_bkup_bill_cell_phone")
+    protected String a3BkupBillCellPhone;
+        @XmlElement(name = "a3_bkup_bill_work_phone")
+    protected String a3BkupBillWorkPhone;
+        @XmlElement(name = "a3_bkup_bill_work_phone_ext")
+    protected String a3BkupBillWorkPhoneExt;
+        @XmlElement(name = "a3_bkup_bill_email")
+    protected String a3BkupBillEmail;
+        @XmlElement(name = "a3_bkup_pay_method")
+    protected Long a3BkupPayMethod;
+        @XmlElement(name = "a3_bkup_cc_number")
+    protected String a3BkupCcNumber;
+        @XmlElement(name = "a3_bkup_cc_expire_mm")
+    protected Long a3BkupCcExpireMm;
+        @XmlElement(name = "a3_bkup_cc_expire_yyyy")
+    protected Long a3BkupCcExpireYyyy;
+        @XmlElement(name = "a3_bkup_bank_acct_no")
+    protected String a3BkupBankAcctNo;
+        @XmlElement(name = "a3_bkup_bank_routing_no")
+    protected String a3BkupBankRoutingNo;
+        @XmlElement(name = "a3_bkup_bill_agreement_id")
+    protected String a3BkupBillAgreementId;
+        @XmlElement(name = "a3_bkup_cvv")
+    protected String a3BkupCvv;
+        @XmlElement(name = "a3_seq_func_group_id")
+    protected String a3SeqFuncGroupId;
         @XmlElement(name = "a4_alt_start_date")
     protected String a4AltStartDate;
         @XmlElement(name = "a4_client_acct_id")
@@ -846,6 +1008,60 @@ public class CreateAcctHierarchy {
     protected String a4BankBranchCd;
         @XmlElement(name = "a4_surcharge_no")
     protected A4SurchargeNoArray a4SurchargeNo;
+        @XmlElement(name = "a4_bkup_bill_first_name")
+    protected String a4BkupBillFirstName;
+        @XmlElement(name = "a4_bkup_bill_mi")
+    protected String a4BkupBillMi;
+        @XmlElement(name = "a4_bkup_bill_last_name")
+    protected String a4BkupBillLastName;
+        @XmlElement(name = "a4_bkup_bill_company_name")
+    protected String a4BkupBillCompanyName;
+        @XmlElement(name = "a4_bkup_bill_address1")
+    protected String a4BkupBillAddress1;
+        @XmlElement(name = "a4_bkup_bill_address2")
+    protected String a4BkupBillAddress2;
+        @XmlElement(name = "a4_bkup_bill_address3")
+    protected String a4BkupBillAddress3;
+        @XmlElement(name = "a4_bkup_bill_city")
+    protected String a4BkupBillCity;
+        @XmlElement(name = "a4_bkup_bill_locality")
+    protected String a4BkupBillLocality;
+        @XmlElement(name = "a4_bkup_bill_state_prov")
+    protected String a4BkupBillStateProv;
+        @XmlElement(name = "a4_bkup_bill_country")
+    protected String a4BkupBillCountry;
+        @XmlElement(name = "a4_bkup_bill_postal_cd")
+    protected String a4BkupBillPostalCd;
+        @XmlElement(name = "a4_bkup_bill_phone")
+    protected String a4BkupBillPhone;
+        @XmlElement(name = "a4_bkup_bill_phone_ext")
+    protected String a4BkupBillPhoneExt;
+        @XmlElement(name = "a4_bkup_bill_cell_phone")
+    protected String a4BkupBillCellPhone;
+        @XmlElement(name = "a4_bkup_bill_work_phone")
+    protected String a4BkupBillWorkPhone;
+        @XmlElement(name = "a4_bkup_bill_work_phone_ext")
+    protected String a4BkupBillWorkPhoneExt;
+        @XmlElement(name = "a4_bkup_bill_email")
+    protected String a4BkupBillEmail;
+        @XmlElement(name = "a4_bkup_pay_method")
+    protected Long a4BkupPayMethod;
+        @XmlElement(name = "a4_bkup_cc_number")
+    protected String a4BkupCcNumber;
+        @XmlElement(name = "a4_bkup_cc_expire_mm")
+    protected Long a4BkupCcExpireMm;
+        @XmlElement(name = "a4_bkup_cc_expire_yyyy")
+    protected Long a4BkupCcExpireYyyy;
+        @XmlElement(name = "a4_bkup_bank_acct_no")
+    protected String a4BkupBankAcctNo;
+        @XmlElement(name = "a4_bkup_bank_routing_no")
+    protected String a4BkupBankRoutingNo;
+        @XmlElement(name = "a4_bkup_bill_agreement_id")
+    protected String a4BkupBillAgreementId;
+        @XmlElement(name = "a4_bkup_cvv")
+    protected String a4BkupCvv;
+        @XmlElement(name = "a4_seq_func_group_id")
+    protected String a4SeqFuncGroupId;
         @XmlElement(name = "a5_alt_start_date")
     protected String a5AltStartDate;
         @XmlElement(name = "a5_client_acct_id")
@@ -1052,6 +1268,60 @@ public class CreateAcctHierarchy {
     protected String a5BankBranchCd;
         @XmlElement(name = "a5_surcharge_no")
     protected A5SurchargeNoArray a5SurchargeNo;
+        @XmlElement(name = "a5_bkup_bill_first_name")
+    protected String a5BkupBillFirstName;
+        @XmlElement(name = "a5_bkup_bill_mi")
+    protected String a5BkupBillMi;
+        @XmlElement(name = "a5_bkup_bill_last_name")
+    protected String a5BkupBillLastName;
+        @XmlElement(name = "a5_bkup_bill_company_name")
+    protected String a5BkupBillCompanyName;
+        @XmlElement(name = "a5_bkup_bill_address1")
+    protected String a5BkupBillAddress1;
+        @XmlElement(name = "a5_bkup_bill_address2")
+    protected String a5BkupBillAddress2;
+        @XmlElement(name = "a5_bkup_bill_address3")
+    protected String a5BkupBillAddress3;
+        @XmlElement(name = "a5_bkup_bill_city")
+    protected String a5BkupBillCity;
+        @XmlElement(name = "a5_bkup_bill_locality")
+    protected String a5BkupBillLocality;
+        @XmlElement(name = "a5_bkup_bill_state_prov")
+    protected String a5BkupBillStateProv;
+        @XmlElement(name = "a5_bkup_bill_country")
+    protected String a5BkupBillCountry;
+        @XmlElement(name = "a5_bkup_bill_postal_cd")
+    protected String a5BkupBillPostalCd;
+        @XmlElement(name = "a5_bkup_bill_phone")
+    protected String a5BkupBillPhone;
+        @XmlElement(name = "a5_bkup_bill_phone_ext")
+    protected String a5BkupBillPhoneExt;
+        @XmlElement(name = "a5_bkup_bill_cell_phone")
+    protected String a5BkupBillCellPhone;
+        @XmlElement(name = "a5_bkup_bill_work_phone")
+    protected String a5BkupBillWorkPhone;
+        @XmlElement(name = "a5_bkup_bill_work_phone_ext")
+    protected String a5BkupBillWorkPhoneExt;
+        @XmlElement(name = "a5_bkup_bill_email")
+    protected String a5BkupBillEmail;
+        @XmlElement(name = "a5_bkup_pay_method")
+    protected Long a5BkupPayMethod;
+        @XmlElement(name = "a5_bkup_cc_number")
+    protected String a5BkupCcNumber;
+        @XmlElement(name = "a5_bkup_cc_expire_mm")
+    protected Long a5BkupCcExpireMm;
+        @XmlElement(name = "a5_bkup_cc_expire_yyyy")
+    protected Long a5BkupCcExpireYyyy;
+        @XmlElement(name = "a5_bkup_bank_acct_no")
+    protected String a5BkupBankAcctNo;
+        @XmlElement(name = "a5_bkup_bank_routing_no")
+    protected String a5BkupBankRoutingNo;
+        @XmlElement(name = "a5_bkup_bill_agreement_id")
+    protected String a5BkupBillAgreementId;
+        @XmlElement(name = "a5_bkup_cvv")
+    protected String a5BkupCvv;
+        @XmlElement(name = "a5_seq_func_group_id")
+    protected String a5SeqFuncGroupId;
     
     public long getClientNo() {
         return clientNo;
@@ -1804,6 +2074,195 @@ public class CreateAcctHierarchy {
     public void setA1SurchargeNo(A1SurchargeNoArray value) {
         this.a1SurchargeNo = value;
     }
+            public String getA1BkupBillFirstName() {
+        return a1BkupBillFirstName;
+    }
+
+    public void setA1BkupBillFirstName(String value) {
+        this.a1BkupBillFirstName = value;
+    }
+            public String getA1BkupBillMi() {
+        return a1BkupBillMi;
+    }
+
+    public void setA1BkupBillMi(String value) {
+        this.a1BkupBillMi = value;
+    }
+            public String getA1BkupBillLastName() {
+        return a1BkupBillLastName;
+    }
+
+    public void setA1BkupBillLastName(String value) {
+        this.a1BkupBillLastName = value;
+    }
+            public String getA1BkupBillCompanyName() {
+        return a1BkupBillCompanyName;
+    }
+
+    public void setA1BkupBillCompanyName(String value) {
+        this.a1BkupBillCompanyName = value;
+    }
+            public String getA1BkupBillAddress1() {
+        return a1BkupBillAddress1;
+    }
+
+    public void setA1BkupBillAddress1(String value) {
+        this.a1BkupBillAddress1 = value;
+    }
+            public String getA1BkupBillAddress2() {
+        return a1BkupBillAddress2;
+    }
+
+    public void setA1BkupBillAddress2(String value) {
+        this.a1BkupBillAddress2 = value;
+    }
+            public String getA1BkupBillAddress3() {
+        return a1BkupBillAddress3;
+    }
+
+    public void setA1BkupBillAddress3(String value) {
+        this.a1BkupBillAddress3 = value;
+    }
+            public String getA1BkupBillCity() {
+        return a1BkupBillCity;
+    }
+
+    public void setA1BkupBillCity(String value) {
+        this.a1BkupBillCity = value;
+    }
+            public String getA1BkupBillLocality() {
+        return a1BkupBillLocality;
+    }
+
+    public void setA1BkupBillLocality(String value) {
+        this.a1BkupBillLocality = value;
+    }
+            public String getA1BkupBillStateProv() {
+        return a1BkupBillStateProv;
+    }
+
+    public void setA1BkupBillStateProv(String value) {
+        this.a1BkupBillStateProv = value;
+    }
+            public String getA1BkupBillCountry() {
+        return a1BkupBillCountry;
+    }
+
+    public void setA1BkupBillCountry(String value) {
+        this.a1BkupBillCountry = value;
+    }
+            public String getA1BkupBillPostalCd() {
+        return a1BkupBillPostalCd;
+    }
+
+    public void setA1BkupBillPostalCd(String value) {
+        this.a1BkupBillPostalCd = value;
+    }
+            public String getA1BkupBillPhone() {
+        return a1BkupBillPhone;
+    }
+
+    public void setA1BkupBillPhone(String value) {
+        this.a1BkupBillPhone = value;
+    }
+            public String getA1BkupBillPhoneExt() {
+        return a1BkupBillPhoneExt;
+    }
+
+    public void setA1BkupBillPhoneExt(String value) {
+        this.a1BkupBillPhoneExt = value;
+    }
+            public String getA1BkupBillCellPhone() {
+        return a1BkupBillCellPhone;
+    }
+
+    public void setA1BkupBillCellPhone(String value) {
+        this.a1BkupBillCellPhone = value;
+    }
+            public String getA1BkupBillWorkPhone() {
+        return a1BkupBillWorkPhone;
+    }
+
+    public void setA1BkupBillWorkPhone(String value) {
+        this.a1BkupBillWorkPhone = value;
+    }
+            public String getA1BkupBillWorkPhoneExt() {
+        return a1BkupBillWorkPhoneExt;
+    }
+
+    public void setA1BkupBillWorkPhoneExt(String value) {
+        this.a1BkupBillWorkPhoneExt = value;
+    }
+            public String getA1BkupBillEmail() {
+        return a1BkupBillEmail;
+    }
+
+    public void setA1BkupBillEmail(String value) {
+        this.a1BkupBillEmail = value;
+    }
+            public Long getA1BkupPayMethod() {
+        return a1BkupPayMethod;
+    }
+
+    public void setA1BkupPayMethod(Long value) {
+        this.a1BkupPayMethod = value;
+    }
+            public String getA1BkupCcNumber() {
+        return a1BkupCcNumber;
+    }
+
+    public void setA1BkupCcNumber(String value) {
+        this.a1BkupCcNumber = value;
+    }
+            public Long getA1BkupCcExpireMm() {
+        return a1BkupCcExpireMm;
+    }
+
+    public void setA1BkupCcExpireMm(Long value) {
+        this.a1BkupCcExpireMm = value;
+    }
+            public Long getA1BkupCcExpireYyyy() {
+        return a1BkupCcExpireYyyy;
+    }
+
+    public void setA1BkupCcExpireYyyy(Long value) {
+        this.a1BkupCcExpireYyyy = value;
+    }
+            public String getA1BkupBankAcctNo() {
+        return a1BkupBankAcctNo;
+    }
+
+    public void setA1BkupBankAcctNo(String value) {
+        this.a1BkupBankAcctNo = value;
+    }
+            public String getA1BkupBankRoutingNo() {
+        return a1BkupBankRoutingNo;
+    }
+
+    public void setA1BkupBankRoutingNo(String value) {
+        this.a1BkupBankRoutingNo = value;
+    }
+            public String getA1BkupBillAgreementId() {
+        return a1BkupBillAgreementId;
+    }
+
+    public void setA1BkupBillAgreementId(String value) {
+        this.a1BkupBillAgreementId = value;
+    }
+            public String getA1BkupCvv() {
+        return a1BkupCvv;
+    }
+
+    public void setA1BkupCvv(String value) {
+        this.a1BkupCvv = value;
+    }
+            public String getA1SeqFuncGroupId() {
+        return a1SeqFuncGroupId;
+    }
+
+    public void setA1SeqFuncGroupId(String value) {
+        this.a1SeqFuncGroupId = value;
+    }
             public String getA2AltStartDate() {
         return a2AltStartDate;
     }
@@ -2524,6 +2983,195 @@ public class CreateAcctHierarchy {
 
     public void setA2SurchargeNo(A2SurchargeNoArray value) {
         this.a2SurchargeNo = value;
+    }
+            public String getA2BkupBillFirstName() {
+        return a2BkupBillFirstName;
+    }
+
+    public void setA2BkupBillFirstName(String value) {
+        this.a2BkupBillFirstName = value;
+    }
+            public String getA2BkupBillMi() {
+        return a2BkupBillMi;
+    }
+
+    public void setA2BkupBillMi(String value) {
+        this.a2BkupBillMi = value;
+    }
+            public String getA2BkupBillLastName() {
+        return a2BkupBillLastName;
+    }
+
+    public void setA2BkupBillLastName(String value) {
+        this.a2BkupBillLastName = value;
+    }
+            public String getA2BkupBillCompanyName() {
+        return a2BkupBillCompanyName;
+    }
+
+    public void setA2BkupBillCompanyName(String value) {
+        this.a2BkupBillCompanyName = value;
+    }
+            public String getA2BkupBillAddress1() {
+        return a2BkupBillAddress1;
+    }
+
+    public void setA2BkupBillAddress1(String value) {
+        this.a2BkupBillAddress1 = value;
+    }
+            public String getA2BkupBillAddress2() {
+        return a2BkupBillAddress2;
+    }
+
+    public void setA2BkupBillAddress2(String value) {
+        this.a2BkupBillAddress2 = value;
+    }
+            public String getA2BkupBillAddress3() {
+        return a2BkupBillAddress3;
+    }
+
+    public void setA2BkupBillAddress3(String value) {
+        this.a2BkupBillAddress3 = value;
+    }
+            public String getA2BkupBillCity() {
+        return a2BkupBillCity;
+    }
+
+    public void setA2BkupBillCity(String value) {
+        this.a2BkupBillCity = value;
+    }
+            public String getA2BkupBillLocality() {
+        return a2BkupBillLocality;
+    }
+
+    public void setA2BkupBillLocality(String value) {
+        this.a2BkupBillLocality = value;
+    }
+            public String getA2BkupBillStateProv() {
+        return a2BkupBillStateProv;
+    }
+
+    public void setA2BkupBillStateProv(String value) {
+        this.a2BkupBillStateProv = value;
+    }
+            public String getA2BkupBillCountry() {
+        return a2BkupBillCountry;
+    }
+
+    public void setA2BkupBillCountry(String value) {
+        this.a2BkupBillCountry = value;
+    }
+            public String getA2BkupBillPostalCd() {
+        return a2BkupBillPostalCd;
+    }
+
+    public void setA2BkupBillPostalCd(String value) {
+        this.a2BkupBillPostalCd = value;
+    }
+            public String getA2BkupBillPhone() {
+        return a2BkupBillPhone;
+    }
+
+    public void setA2BkupBillPhone(String value) {
+        this.a2BkupBillPhone = value;
+    }
+            public String getA2BkupBillPhoneExt() {
+        return a2BkupBillPhoneExt;
+    }
+
+    public void setA2BkupBillPhoneExt(String value) {
+        this.a2BkupBillPhoneExt = value;
+    }
+            public String getA2BkupBillCellPhone() {
+        return a2BkupBillCellPhone;
+    }
+
+    public void setA2BkupBillCellPhone(String value) {
+        this.a2BkupBillCellPhone = value;
+    }
+            public String getA2BkupBillWorkPhone() {
+        return a2BkupBillWorkPhone;
+    }
+
+    public void setA2BkupBillWorkPhone(String value) {
+        this.a2BkupBillWorkPhone = value;
+    }
+            public String getA2BkupBillWorkPhoneExt() {
+        return a2BkupBillWorkPhoneExt;
+    }
+
+    public void setA2BkupBillWorkPhoneExt(String value) {
+        this.a2BkupBillWorkPhoneExt = value;
+    }
+            public String getA2BkupBillEmail() {
+        return a2BkupBillEmail;
+    }
+
+    public void setA2BkupBillEmail(String value) {
+        this.a2BkupBillEmail = value;
+    }
+            public Long getA2BkupPayMethod() {
+        return a2BkupPayMethod;
+    }
+
+    public void setA2BkupPayMethod(Long value) {
+        this.a2BkupPayMethod = value;
+    }
+            public String getA2BkupCcNumber() {
+        return a2BkupCcNumber;
+    }
+
+    public void setA2BkupCcNumber(String value) {
+        this.a2BkupCcNumber = value;
+    }
+            public Long getA2BkupCcExpireMm() {
+        return a2BkupCcExpireMm;
+    }
+
+    public void setA2BkupCcExpireMm(Long value) {
+        this.a2BkupCcExpireMm = value;
+    }
+            public Long getA2BkupCcExpireYyyy() {
+        return a2BkupCcExpireYyyy;
+    }
+
+    public void setA2BkupCcExpireYyyy(Long value) {
+        this.a2BkupCcExpireYyyy = value;
+    }
+            public String getA2BkupBankAcctNo() {
+        return a2BkupBankAcctNo;
+    }
+
+    public void setA2BkupBankAcctNo(String value) {
+        this.a2BkupBankAcctNo = value;
+    }
+            public String getA2BkupBankRoutingNo() {
+        return a2BkupBankRoutingNo;
+    }
+
+    public void setA2BkupBankRoutingNo(String value) {
+        this.a2BkupBankRoutingNo = value;
+    }
+            public String getA2BkupBillAgreementId() {
+        return a2BkupBillAgreementId;
+    }
+
+    public void setA2BkupBillAgreementId(String value) {
+        this.a2BkupBillAgreementId = value;
+    }
+            public String getA2BkupCvv() {
+        return a2BkupCvv;
+    }
+
+    public void setA2BkupCvv(String value) {
+        this.a2BkupCvv = value;
+    }
+            public String getA2SeqFuncGroupId() {
+        return a2SeqFuncGroupId;
+    }
+
+    public void setA2SeqFuncGroupId(String value) {
+        this.a2SeqFuncGroupId = value;
     }
             public String getA3AltStartDate() {
         return a3AltStartDate;
@@ -3246,6 +3894,195 @@ public class CreateAcctHierarchy {
     public void setA3SurchargeNo(A3SurchargeNoArray value) {
         this.a3SurchargeNo = value;
     }
+            public String getA3BkupBillFirstName() {
+        return a3BkupBillFirstName;
+    }
+
+    public void setA3BkupBillFirstName(String value) {
+        this.a3BkupBillFirstName = value;
+    }
+            public String getA3BkupBillMi() {
+        return a3BkupBillMi;
+    }
+
+    public void setA3BkupBillMi(String value) {
+        this.a3BkupBillMi = value;
+    }
+            public String getA3BkupBillLastName() {
+        return a3BkupBillLastName;
+    }
+
+    public void setA3BkupBillLastName(String value) {
+        this.a3BkupBillLastName = value;
+    }
+            public String getA3BkupBillCompanyName() {
+        return a3BkupBillCompanyName;
+    }
+
+    public void setA3BkupBillCompanyName(String value) {
+        this.a3BkupBillCompanyName = value;
+    }
+            public String getA3BkupBillAddress1() {
+        return a3BkupBillAddress1;
+    }
+
+    public void setA3BkupBillAddress1(String value) {
+        this.a3BkupBillAddress1 = value;
+    }
+            public String getA3BkupBillAddress2() {
+        return a3BkupBillAddress2;
+    }
+
+    public void setA3BkupBillAddress2(String value) {
+        this.a3BkupBillAddress2 = value;
+    }
+            public String getA3BkupBillAddress3() {
+        return a3BkupBillAddress3;
+    }
+
+    public void setA3BkupBillAddress3(String value) {
+        this.a3BkupBillAddress3 = value;
+    }
+            public String getA3BkupBillCity() {
+        return a3BkupBillCity;
+    }
+
+    public void setA3BkupBillCity(String value) {
+        this.a3BkupBillCity = value;
+    }
+            public String getA3BkupBillLocality() {
+        return a3BkupBillLocality;
+    }
+
+    public void setA3BkupBillLocality(String value) {
+        this.a3BkupBillLocality = value;
+    }
+            public String getA3BkupBillStateProv() {
+        return a3BkupBillStateProv;
+    }
+
+    public void setA3BkupBillStateProv(String value) {
+        this.a3BkupBillStateProv = value;
+    }
+            public String getA3BkupBillCountry() {
+        return a3BkupBillCountry;
+    }
+
+    public void setA3BkupBillCountry(String value) {
+        this.a3BkupBillCountry = value;
+    }
+            public String getA3BkupBillPostalCd() {
+        return a3BkupBillPostalCd;
+    }
+
+    public void setA3BkupBillPostalCd(String value) {
+        this.a3BkupBillPostalCd = value;
+    }
+            public String getA3BkupBillPhone() {
+        return a3BkupBillPhone;
+    }
+
+    public void setA3BkupBillPhone(String value) {
+        this.a3BkupBillPhone = value;
+    }
+            public String getA3BkupBillPhoneExt() {
+        return a3BkupBillPhoneExt;
+    }
+
+    public void setA3BkupBillPhoneExt(String value) {
+        this.a3BkupBillPhoneExt = value;
+    }
+            public String getA3BkupBillCellPhone() {
+        return a3BkupBillCellPhone;
+    }
+
+    public void setA3BkupBillCellPhone(String value) {
+        this.a3BkupBillCellPhone = value;
+    }
+            public String getA3BkupBillWorkPhone() {
+        return a3BkupBillWorkPhone;
+    }
+
+    public void setA3BkupBillWorkPhone(String value) {
+        this.a3BkupBillWorkPhone = value;
+    }
+            public String getA3BkupBillWorkPhoneExt() {
+        return a3BkupBillWorkPhoneExt;
+    }
+
+    public void setA3BkupBillWorkPhoneExt(String value) {
+        this.a3BkupBillWorkPhoneExt = value;
+    }
+            public String getA3BkupBillEmail() {
+        return a3BkupBillEmail;
+    }
+
+    public void setA3BkupBillEmail(String value) {
+        this.a3BkupBillEmail = value;
+    }
+            public Long getA3BkupPayMethod() {
+        return a3BkupPayMethod;
+    }
+
+    public void setA3BkupPayMethod(Long value) {
+        this.a3BkupPayMethod = value;
+    }
+            public String getA3BkupCcNumber() {
+        return a3BkupCcNumber;
+    }
+
+    public void setA3BkupCcNumber(String value) {
+        this.a3BkupCcNumber = value;
+    }
+            public Long getA3BkupCcExpireMm() {
+        return a3BkupCcExpireMm;
+    }
+
+    public void setA3BkupCcExpireMm(Long value) {
+        this.a3BkupCcExpireMm = value;
+    }
+            public Long getA3BkupCcExpireYyyy() {
+        return a3BkupCcExpireYyyy;
+    }
+
+    public void setA3BkupCcExpireYyyy(Long value) {
+        this.a3BkupCcExpireYyyy = value;
+    }
+            public String getA3BkupBankAcctNo() {
+        return a3BkupBankAcctNo;
+    }
+
+    public void setA3BkupBankAcctNo(String value) {
+        this.a3BkupBankAcctNo = value;
+    }
+            public String getA3BkupBankRoutingNo() {
+        return a3BkupBankRoutingNo;
+    }
+
+    public void setA3BkupBankRoutingNo(String value) {
+        this.a3BkupBankRoutingNo = value;
+    }
+            public String getA3BkupBillAgreementId() {
+        return a3BkupBillAgreementId;
+    }
+
+    public void setA3BkupBillAgreementId(String value) {
+        this.a3BkupBillAgreementId = value;
+    }
+            public String getA3BkupCvv() {
+        return a3BkupCvv;
+    }
+
+    public void setA3BkupCvv(String value) {
+        this.a3BkupCvv = value;
+    }
+            public String getA3SeqFuncGroupId() {
+        return a3SeqFuncGroupId;
+    }
+
+    public void setA3SeqFuncGroupId(String value) {
+        this.a3SeqFuncGroupId = value;
+    }
             public String getA4AltStartDate() {
         return a4AltStartDate;
     }
@@ -3967,6 +4804,195 @@ public class CreateAcctHierarchy {
     public void setA4SurchargeNo(A4SurchargeNoArray value) {
         this.a4SurchargeNo = value;
     }
+            public String getA4BkupBillFirstName() {
+        return a4BkupBillFirstName;
+    }
+
+    public void setA4BkupBillFirstName(String value) {
+        this.a4BkupBillFirstName = value;
+    }
+            public String getA4BkupBillMi() {
+        return a4BkupBillMi;
+    }
+
+    public void setA4BkupBillMi(String value) {
+        this.a4BkupBillMi = value;
+    }
+            public String getA4BkupBillLastName() {
+        return a4BkupBillLastName;
+    }
+
+    public void setA4BkupBillLastName(String value) {
+        this.a4BkupBillLastName = value;
+    }
+            public String getA4BkupBillCompanyName() {
+        return a4BkupBillCompanyName;
+    }
+
+    public void setA4BkupBillCompanyName(String value) {
+        this.a4BkupBillCompanyName = value;
+    }
+            public String getA4BkupBillAddress1() {
+        return a4BkupBillAddress1;
+    }
+
+    public void setA4BkupBillAddress1(String value) {
+        this.a4BkupBillAddress1 = value;
+    }
+            public String getA4BkupBillAddress2() {
+        return a4BkupBillAddress2;
+    }
+
+    public void setA4BkupBillAddress2(String value) {
+        this.a4BkupBillAddress2 = value;
+    }
+            public String getA4BkupBillAddress3() {
+        return a4BkupBillAddress3;
+    }
+
+    public void setA4BkupBillAddress3(String value) {
+        this.a4BkupBillAddress3 = value;
+    }
+            public String getA4BkupBillCity() {
+        return a4BkupBillCity;
+    }
+
+    public void setA4BkupBillCity(String value) {
+        this.a4BkupBillCity = value;
+    }
+            public String getA4BkupBillLocality() {
+        return a4BkupBillLocality;
+    }
+
+    public void setA4BkupBillLocality(String value) {
+        this.a4BkupBillLocality = value;
+    }
+            public String getA4BkupBillStateProv() {
+        return a4BkupBillStateProv;
+    }
+
+    public void setA4BkupBillStateProv(String value) {
+        this.a4BkupBillStateProv = value;
+    }
+            public String getA4BkupBillCountry() {
+        return a4BkupBillCountry;
+    }
+
+    public void setA4BkupBillCountry(String value) {
+        this.a4BkupBillCountry = value;
+    }
+            public String getA4BkupBillPostalCd() {
+        return a4BkupBillPostalCd;
+    }
+
+    public void setA4BkupBillPostalCd(String value) {
+        this.a4BkupBillPostalCd = value;
+    }
+            public String getA4BkupBillPhone() {
+        return a4BkupBillPhone;
+    }
+
+    public void setA4BkupBillPhone(String value) {
+        this.a4BkupBillPhone = value;
+    }
+            public String getA4BkupBillPhoneExt() {
+        return a4BkupBillPhoneExt;
+    }
+
+    public void setA4BkupBillPhoneExt(String value) {
+        this.a4BkupBillPhoneExt = value;
+    }
+            public String getA4BkupBillCellPhone() {
+        return a4BkupBillCellPhone;
+    }
+
+    public void setA4BkupBillCellPhone(String value) {
+        this.a4BkupBillCellPhone = value;
+    }
+            public String getA4BkupBillWorkPhone() {
+        return a4BkupBillWorkPhone;
+    }
+
+    public void setA4BkupBillWorkPhone(String value) {
+        this.a4BkupBillWorkPhone = value;
+    }
+            public String getA4BkupBillWorkPhoneExt() {
+        return a4BkupBillWorkPhoneExt;
+    }
+
+    public void setA4BkupBillWorkPhoneExt(String value) {
+        this.a4BkupBillWorkPhoneExt = value;
+    }
+            public String getA4BkupBillEmail() {
+        return a4BkupBillEmail;
+    }
+
+    public void setA4BkupBillEmail(String value) {
+        this.a4BkupBillEmail = value;
+    }
+            public Long getA4BkupPayMethod() {
+        return a4BkupPayMethod;
+    }
+
+    public void setA4BkupPayMethod(Long value) {
+        this.a4BkupPayMethod = value;
+    }
+            public String getA4BkupCcNumber() {
+        return a4BkupCcNumber;
+    }
+
+    public void setA4BkupCcNumber(String value) {
+        this.a4BkupCcNumber = value;
+    }
+            public Long getA4BkupCcExpireMm() {
+        return a4BkupCcExpireMm;
+    }
+
+    public void setA4BkupCcExpireMm(Long value) {
+        this.a4BkupCcExpireMm = value;
+    }
+            public Long getA4BkupCcExpireYyyy() {
+        return a4BkupCcExpireYyyy;
+    }
+
+    public void setA4BkupCcExpireYyyy(Long value) {
+        this.a4BkupCcExpireYyyy = value;
+    }
+            public String getA4BkupBankAcctNo() {
+        return a4BkupBankAcctNo;
+    }
+
+    public void setA4BkupBankAcctNo(String value) {
+        this.a4BkupBankAcctNo = value;
+    }
+            public String getA4BkupBankRoutingNo() {
+        return a4BkupBankRoutingNo;
+    }
+
+    public void setA4BkupBankRoutingNo(String value) {
+        this.a4BkupBankRoutingNo = value;
+    }
+            public String getA4BkupBillAgreementId() {
+        return a4BkupBillAgreementId;
+    }
+
+    public void setA4BkupBillAgreementId(String value) {
+        this.a4BkupBillAgreementId = value;
+    }
+            public String getA4BkupCvv() {
+        return a4BkupCvv;
+    }
+
+    public void setA4BkupCvv(String value) {
+        this.a4BkupCvv = value;
+    }
+            public String getA4SeqFuncGroupId() {
+        return a4SeqFuncGroupId;
+    }
+
+    public void setA4SeqFuncGroupId(String value) {
+        this.a4SeqFuncGroupId = value;
+    }
             public String getA5AltStartDate() {
         return a5AltStartDate;
     }
@@ -4687,6 +5713,195 @@ public class CreateAcctHierarchy {
 
     public void setA5SurchargeNo(A5SurchargeNoArray value) {
         this.a5SurchargeNo = value;
+    }
+            public String getA5BkupBillFirstName() {
+        return a5BkupBillFirstName;
+    }
+
+    public void setA5BkupBillFirstName(String value) {
+        this.a5BkupBillFirstName = value;
+    }
+            public String getA5BkupBillMi() {
+        return a5BkupBillMi;
+    }
+
+    public void setA5BkupBillMi(String value) {
+        this.a5BkupBillMi = value;
+    }
+            public String getA5BkupBillLastName() {
+        return a5BkupBillLastName;
+    }
+
+    public void setA5BkupBillLastName(String value) {
+        this.a5BkupBillLastName = value;
+    }
+            public String getA5BkupBillCompanyName() {
+        return a5BkupBillCompanyName;
+    }
+
+    public void setA5BkupBillCompanyName(String value) {
+        this.a5BkupBillCompanyName = value;
+    }
+            public String getA5BkupBillAddress1() {
+        return a5BkupBillAddress1;
+    }
+
+    public void setA5BkupBillAddress1(String value) {
+        this.a5BkupBillAddress1 = value;
+    }
+            public String getA5BkupBillAddress2() {
+        return a5BkupBillAddress2;
+    }
+
+    public void setA5BkupBillAddress2(String value) {
+        this.a5BkupBillAddress2 = value;
+    }
+            public String getA5BkupBillAddress3() {
+        return a5BkupBillAddress3;
+    }
+
+    public void setA5BkupBillAddress3(String value) {
+        this.a5BkupBillAddress3 = value;
+    }
+            public String getA5BkupBillCity() {
+        return a5BkupBillCity;
+    }
+
+    public void setA5BkupBillCity(String value) {
+        this.a5BkupBillCity = value;
+    }
+            public String getA5BkupBillLocality() {
+        return a5BkupBillLocality;
+    }
+
+    public void setA5BkupBillLocality(String value) {
+        this.a5BkupBillLocality = value;
+    }
+            public String getA5BkupBillStateProv() {
+        return a5BkupBillStateProv;
+    }
+
+    public void setA5BkupBillStateProv(String value) {
+        this.a5BkupBillStateProv = value;
+    }
+            public String getA5BkupBillCountry() {
+        return a5BkupBillCountry;
+    }
+
+    public void setA5BkupBillCountry(String value) {
+        this.a5BkupBillCountry = value;
+    }
+            public String getA5BkupBillPostalCd() {
+        return a5BkupBillPostalCd;
+    }
+
+    public void setA5BkupBillPostalCd(String value) {
+        this.a5BkupBillPostalCd = value;
+    }
+            public String getA5BkupBillPhone() {
+        return a5BkupBillPhone;
+    }
+
+    public void setA5BkupBillPhone(String value) {
+        this.a5BkupBillPhone = value;
+    }
+            public String getA5BkupBillPhoneExt() {
+        return a5BkupBillPhoneExt;
+    }
+
+    public void setA5BkupBillPhoneExt(String value) {
+        this.a5BkupBillPhoneExt = value;
+    }
+            public String getA5BkupBillCellPhone() {
+        return a5BkupBillCellPhone;
+    }
+
+    public void setA5BkupBillCellPhone(String value) {
+        this.a5BkupBillCellPhone = value;
+    }
+            public String getA5BkupBillWorkPhone() {
+        return a5BkupBillWorkPhone;
+    }
+
+    public void setA5BkupBillWorkPhone(String value) {
+        this.a5BkupBillWorkPhone = value;
+    }
+            public String getA5BkupBillWorkPhoneExt() {
+        return a5BkupBillWorkPhoneExt;
+    }
+
+    public void setA5BkupBillWorkPhoneExt(String value) {
+        this.a5BkupBillWorkPhoneExt = value;
+    }
+            public String getA5BkupBillEmail() {
+        return a5BkupBillEmail;
+    }
+
+    public void setA5BkupBillEmail(String value) {
+        this.a5BkupBillEmail = value;
+    }
+            public Long getA5BkupPayMethod() {
+        return a5BkupPayMethod;
+    }
+
+    public void setA5BkupPayMethod(Long value) {
+        this.a5BkupPayMethod = value;
+    }
+            public String getA5BkupCcNumber() {
+        return a5BkupCcNumber;
+    }
+
+    public void setA5BkupCcNumber(String value) {
+        this.a5BkupCcNumber = value;
+    }
+            public Long getA5BkupCcExpireMm() {
+        return a5BkupCcExpireMm;
+    }
+
+    public void setA5BkupCcExpireMm(Long value) {
+        this.a5BkupCcExpireMm = value;
+    }
+            public Long getA5BkupCcExpireYyyy() {
+        return a5BkupCcExpireYyyy;
+    }
+
+    public void setA5BkupCcExpireYyyy(Long value) {
+        this.a5BkupCcExpireYyyy = value;
+    }
+            public String getA5BkupBankAcctNo() {
+        return a5BkupBankAcctNo;
+    }
+
+    public void setA5BkupBankAcctNo(String value) {
+        this.a5BkupBankAcctNo = value;
+    }
+            public String getA5BkupBankRoutingNo() {
+        return a5BkupBankRoutingNo;
+    }
+
+    public void setA5BkupBankRoutingNo(String value) {
+        this.a5BkupBankRoutingNo = value;
+    }
+            public String getA5BkupBillAgreementId() {
+        return a5BkupBillAgreementId;
+    }
+
+    public void setA5BkupBillAgreementId(String value) {
+        this.a5BkupBillAgreementId = value;
+    }
+            public String getA5BkupCvv() {
+        return a5BkupCvv;
+    }
+
+    public void setA5BkupCvv(String value) {
+        this.a5BkupCvv = value;
+    }
+            public String getA5SeqFuncGroupId() {
+        return a5SeqFuncGroupId;
+    }
+
+    public void setA5SeqFuncGroupId(String value) {
+        this.a5SeqFuncGroupId = value;
     }
             
 }

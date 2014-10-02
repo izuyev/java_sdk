@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "invoice_payments_ReturnElement", propOrder = {"transactionId", "transactionType", "description", "amount", "appliedAmount", "currencyCode", "transactionDate", "isVoided", "statementNo", "paymentType", "paymentSrcDescription", "paymentSrcSuffix", "clientReceiptId"})
+@XmlType(name = "invoice_payments_ReturnElement", propOrder = {"transactionId", "transactionType", "description", "amount", "appliedAmount", "currencyCode", "transactionDate", "isVoided", "statementNo", "paymentType", "paymentSrcDescription", "paymentSrcSuffix", "clientReceiptId", "seqStatementId"})
 public class InvoicePaymentsReturnElement {
 
     @XmlElement(name = "transaction_id")
@@ -39,6 +39,8 @@ public class InvoicePaymentsReturnElement {
     protected String paymentSrcSuffix;
     @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
+    @XmlElement(name = "seq_statement_id")
+    protected String seqStatementId;
     
     public Long getTransactionId() {
         return transactionId;
@@ -142,6 +144,14 @@ public class InvoicePaymentsReturnElement {
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
+    }
+
+    public String getSeqStatementId() {
+        return seqStatementId;
+    }
+
+    public void setSeqStatementId(String value) {
+        this.seqStatementId = value;
     }
 
     

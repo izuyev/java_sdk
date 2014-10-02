@@ -1500,6 +1500,46 @@ public class RestUtilities {
         }
     }
 
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.NotificationsArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.admin.NotificationsRow row : arrayList.getNotificationsRow()){
+            parameters.add("units["+i+"]", getValue("Long", row.getUnits()));
+            parameters.add("values["+i+"]", getValue("", row.getValues()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.NotificationsArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.admin.NotificationsRow row : arrayList.getNotificationsRow()){
+            parameters.add(paramPrefix + "units["+i+"]", getValue("Long", row.getUnits()));
+            parameters.add(paramPrefix + "values["+i+"]", getValue("", row.getValues()));
+            i++;
+        }
+    }
+
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.UsageThresholdArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.admin.UsageThresholdRow row : arrayList.getUsageThresholdRow()){
+            parameters.add("notice_dest_type["+i+"]", getValue("String", row.getNoticeDestType()));
+            parameters.add("notice_balance_type["+i+"]", getValue("String", row.getNoticeBalanceType()));
+                        addParameterValuesFromArray(parameters, row.getNotifications(), "notifications["+i+"]");
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.UsageThresholdArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.admin.UsageThresholdRow row : arrayList.getUsageThresholdRow()){
+            parameters.add(paramPrefix + "notice_dest_type["+i+"]", getValue("String", row.getNoticeDestType()));
+            parameters.add(paramPrefix + "notice_balance_type["+i+"]", getValue("String", row.getNoticeBalanceType()));
+                        addParameterValuesFromArray(parameters, row.getNotifications(), paramPrefix + "notifications["+i+"]");
+            i++;
+        }
+    }
+
     public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.PlanGroupArray arrayList) {
         if (arrayList == null) return;
         int i = 0;

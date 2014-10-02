@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "amount"})
+    "authKey",    "acctNo",    "amount",    "usageUnitThresholds"})
 @XmlRootElement(name = "set_client_usg_mtd_threshold")
 public class SetClientUsgMtdThreshold {
 
@@ -22,6 +22,8 @@ public class SetClientUsgMtdThreshold {
     protected Long acctNo;
         @XmlElement(name = "amount")
     protected Double amount;
+        @XmlElement(name = "usage_unit_thresholds")
+    protected UsageUnitThresholdsArray usageUnitThresholds;
     
     public long getClientNo() {
         return clientNo;
@@ -52,6 +54,13 @@ public class SetClientUsgMtdThreshold {
 
     public void setAmount(Double value) {
         this.amount = value;
+    }
+            public UsageUnitThresholdsArray getUsageUnitThresholds() {
+        return usageUnitThresholds;
+    }
+
+    public void setUsageUnitThresholds(UsageUnitThresholdsArray value) {
+        this.usageUnitThresholds = value;
     }
             
 }

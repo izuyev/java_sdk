@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "accountNo",    "referenceCode",    "paymentAmount",    "comments",    "clientReceiptId",    "specificChargeTransactionId",    "externalDestinationId",    "externalId"})
+    "authKey",    "accountNo",    "referenceCode",    "paymentAmount",    "comments",    "clientReceiptId",    "specificChargeTransactionId",    "externalDestinationId",    "externalId",    "invoiceNo"})
 @XmlRootElement(name = "record_external_payment")
 public class RecordExternalPayment {
 
@@ -34,6 +34,8 @@ public class RecordExternalPayment {
     protected Long externalDestinationId;
         @XmlElement(name = "external_id")
     protected String externalId;
+        @XmlElement(name = "invoice_no")
+    protected InvoiceNoArray invoiceNo;
     
     public long getClientNo() {
         return clientNo;
@@ -106,6 +108,13 @@ public class RecordExternalPayment {
 
     public void setExternalId(String value) {
         this.externalId = value;
+    }
+            public InvoiceNoArray getInvoiceNo() {
+        return invoiceNo;
+    }
+
+    public void setInvoiceNo(InvoiceNoArray value) {
+        this.invoiceNo = value;
     }
             
 }

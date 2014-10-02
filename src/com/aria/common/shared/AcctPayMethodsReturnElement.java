@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "acct_pay_methods_ReturnElement", propOrder = {"firstName", "middleInitial", "lastName", "address1", "address2", "city", "state", "zipcode", "country", "locality", "phone", "cellPhone", "workPhone", "email", "companyName", "seqNo", "payMethodId", "payMethodName", "persistentInd", "fromDate", "toDate", "ccExpMm", "ccExpYy", "ccId", "ccType", "bankRouting", "bankName", "bankAcctType", "suffix", "currentPayMethod", "billInfoApiReceiptId", "address3", "fromDateTime", "toDateTime"})
+@XmlType(name = "acct_pay_methods_ReturnElement", propOrder = {"firstName", "middleInitial", "lastName", "address1", "address2", "city", "state", "zipcode", "country", "locality", "phone", "cellPhone", "workPhone", "email", "companyName", "seqNo", "payMethodId", "payMethodName", "persistentInd", "fromDate", "toDate", "ccExpMm", "ccExpYy", "ccId", "ccType", "bankRouting", "bankName", "bankAcctType", "suffix", "currentPayMethod", "billInfoApiReceiptId", "address3", "fromDateTime", "toDateTime", "bkupPayMethodInd"})
 public class AcctPayMethodsReturnElement {
 
     @XmlElement(name = "first_name")
@@ -81,6 +81,8 @@ public class AcctPayMethodsReturnElement {
     protected String fromDateTime;
     @XmlElement(name = "to_date_time")
     protected String toDateTime;
+    @XmlElement(name = "bkup_pay_method_ind")
+    protected Long bkupPayMethodInd;
     
     public String getFirstName() {
         return firstName;
@@ -352,6 +354,14 @@ public class AcctPayMethodsReturnElement {
 
     public void setToDateTime(String value) {
         this.toDateTime = value;
+    }
+
+    public Long getBkupPayMethodInd() {
+        return bkupPayMethodInd;
+    }
+
+    public void setBkupPayMethodInd(Long value) {
+        this.bkupPayMethodInd = value;
     }
 
     

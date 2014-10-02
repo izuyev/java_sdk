@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "fam_trans_ReturnElement", propOrder = {"acctNo", "transactionId", "transactionType", "transactionDesc", "transactionAmt", "transactionAppliedAmt", "transactionCurrency", "transactionCreateDate", "transactionVoidDate", "transactionStmtNo", "transactionVoidReason", "clientReceiptId", "transactionComments", "transactionSourceId", "transactionRefCode", "creditReasonCodeDescription", "csrComments"})
+@XmlType(name = "fam_trans_ReturnElement", propOrder = {"acctNo", "transactionId", "transactionType", "transactionDesc", "transactionAmt", "transactionAppliedAmt", "transactionCurrency", "transactionCreateDate", "transactionVoidDate", "transactionStmtNo", "transactionVoidReason", "clientReceiptId", "transactionComments", "transactionSourceId", "transactionRefCode", "creditReasonCodeDescription", "csrComments", "transactionSeqStmtId"})
 public class FamTransReturnElement {
 
     @XmlElement(name = "acct_no")
@@ -47,6 +47,8 @@ public class FamTransReturnElement {
     protected String creditReasonCodeDescription;
     @XmlElement(name = "csr_comments")
     protected String csrComments;
+    @XmlElement(name = "transaction_seq_stmt_id")
+    protected String transactionSeqStmtId;
     
     public Long getAcctNo() {
         return acctNo;
@@ -182,6 +184,14 @@ public class FamTransReturnElement {
 
     public void setCsrComments(String value) {
         this.csrComments = value;
+    }
+
+    public String getTransactionSeqStmtId() {
+        return transactionSeqStmtId;
+    }
+
+    public void setTransactionSeqStmtId(String value) {
+        this.transactionSeqStmtId = value;
     }
 
     

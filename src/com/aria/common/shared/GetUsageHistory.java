@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "dateRangeStart",    "specifiedUsageTypeNo",    "dateRangeEnd",    "specifiedUsageTypeCode",    "usageQualifier1",    "usageQualifier2",    "usageQualifier3",    "usageQualifier4",    "limit",    "offset"})
+    "authKey",    "acctNo",    "specifiedUsageTypeNo",    "dateRangeStart",    "dateRangeEnd",    "specifiedUsageTypeCode",    "usageQualifier1",    "usageQualifier2",    "usageQualifier3",    "usageQualifier4",    "limit",    "offset",    "transactionId",    "invoiceNo",    "invoiceLineItem"})
 @XmlRootElement(name = "get_usage_history")
 public class GetUsageHistory {
 
@@ -20,10 +20,10 @@ public class GetUsageHistory {
     protected String authKey;
         @XmlElement(name = "acct_no")
     protected Long acctNo;
-        @XmlElement(name = "date_range_start")
-    protected String dateRangeStart;
         @XmlElement(name = "specified_usage_type_no")
     protected Long specifiedUsageTypeNo;
+        @XmlElement(name = "date_range_start")
+    protected String dateRangeStart;
         @XmlElement(name = "date_range_end")
     protected String dateRangeEnd;
         @XmlElement(name = "specified_usage_type_code")
@@ -40,6 +40,12 @@ public class GetUsageHistory {
     protected Long limit;
         @XmlElement(name = "offset")
     protected Long offset;
+        @XmlElement(name = "transaction_id")
+    protected Long transactionId;
+        @XmlElement(name = "invoice_no")
+    protected Long invoiceNo;
+        @XmlElement(name = "invoice_line_item")
+    protected Long invoiceLineItem;
     
     public long getClientNo() {
         return clientNo;
@@ -64,19 +70,19 @@ public class GetUsageHistory {
     public void setAcctNo(Long value) {
         this.acctNo = value;
     }
-            public String getDateRangeStart() {
-        return dateRangeStart;
-    }
-
-    public void setDateRangeStart(String value) {
-        this.dateRangeStart = value;
-    }
             public Long getSpecifiedUsageTypeNo() {
         return specifiedUsageTypeNo;
     }
 
     public void setSpecifiedUsageTypeNo(Long value) {
         this.specifiedUsageTypeNo = value;
+    }
+            public String getDateRangeStart() {
+        return dateRangeStart;
+    }
+
+    public void setDateRangeStart(String value) {
+        this.dateRangeStart = value;
     }
             public String getDateRangeEnd() {
         return dateRangeEnd;
@@ -133,6 +139,27 @@ public class GetUsageHistory {
 
     public void setOffset(Long value) {
         this.offset = value;
+    }
+            public Long getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(Long value) {
+        this.transactionId = value;
+    }
+            public Long getInvoiceNo() {
+        return invoiceNo;
+    }
+
+    public void setInvoiceNo(Long value) {
+        this.invoiceNo = value;
+    }
+            public Long getInvoiceLineItem() {
+        return invoiceLineItem;
+    }
+
+    public void setInvoiceLineItem(Long value) {
+        this.invoiceLineItem = value;
     }
             
 }

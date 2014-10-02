@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "firstName",    "lastName",    "middleInitial",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billLastName",    "billMiddleInitial",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "masterPlanNo",    "masterPlanAltRateSchedNo",    "masterPlanUnits",    "masterPlanAssignDirective",    "updateAcctSuppField",    "updateAcctFuncGroup",    "updateAcctCollGroup",    "statusCd",    "notifyMethod",    "password",    "secretQuestion",    "secretQuestionAnswer",    "pin",    "testAcctInd",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "clientAcctId",    "doCollect",    "changeStatusAfterColl",    "resetDatesAfterStatus",    "clientReceiptId",    "altDoDunning",    "forceCurrencyChange",    "cvv",    "taxpayerId",    "billAgreementId",    "autoCancelSuppPlans",    "offsetMonths",    "altProrationStartDate",    "altMsgTemplateNo",    "seqFuncGroupNo",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "disableUsagePoolingPlanNo",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "offsetInterval",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "promoCd",    "invoiceUnbilledUsage",    "couponCode",    "userid",    "invoiceApprovalRequired",    "clientMasterPlanId",    "clientMpAltRateSchedId",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateId",    "updateSurcharge",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "acctNo",    "firstName",    "lastName",    "middleInitial",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billLastName",    "billMiddleInitial",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "masterPlanNo",    "masterPlanAltRateSchedNo",    "masterPlanUnits",    "masterPlanAssignDirective",    "updateAcctSuppField",    "updateAcctFuncGroup",    "updateAcctCollGroup",    "statusCd",    "notifyMethod",    "password",    "secretQuestion",    "secretQuestionAnswer",    "pin",    "testAcctInd",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "clientAcctId",    "doCollect",    "changeStatusAfterColl",    "resetDatesAfterStatus",    "clientReceiptId",    "altDoDunning",    "forceCurrencyChange",    "cvv",    "taxpayerId",    "billAgreementId",    "autoCancelSuppPlans",    "offsetMonths",    "altProrationStartDate",    "altMsgTemplateNo",    "seqFuncGroupNo",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "disableUsagePoolingPlanNo",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "offsetInterval",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "promoCd",    "invoiceUnbilledUsage",    "couponCode",    "userid",    "invoiceApprovalRequired",    "clientMasterPlanId",    "clientMpAltRateSchedId",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateId",    "updateSurcharge",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "bkupBillFirstName",    "bkupBillMi",    "bkupBillLastName",    "bkupBillCompanyName",    "bkupBillAddress1",    "bkupBillAddress2",    "bkupBillAddress3",    "bkupBillCity",    "bkupBillLocality",    "bkupBillStateProv",    "bkupBillCountry",    "bkupBillPostalCd",    "bkupBillPhone",    "bkupBillPhoneExt",    "bkupBillCellPhone",    "bkupBillWorkPhone",    "bkupBillWorkPhoneExt",    "bkupBillEmail",    "bkupPayMethod",    "bkupCcNumber",    "bkupCcExpireMm",    "bkupCcExpireYyyy",    "bkupBankAcctNo",    "bkupBankRoutingNo",    "bkupBillAgreementId",    "bkupCvv",    "seqFuncGroupId"})
 @XmlRootElement(name = "update_acct_complete")
 public class UpdateAcctComplete {
 
@@ -224,6 +224,60 @@ public class UpdateAcctComplete {
     protected String bankIdCd;
         @XmlElement(name = "bank_branch_cd")
     protected String bankBranchCd;
+        @XmlElement(name = "bkup_bill_first_name")
+    protected String bkupBillFirstName;
+        @XmlElement(name = "bkup_bill_mi")
+    protected String bkupBillMi;
+        @XmlElement(name = "bkup_bill_last_name")
+    protected String bkupBillLastName;
+        @XmlElement(name = "bkup_bill_company_name")
+    protected String bkupBillCompanyName;
+        @XmlElement(name = "bkup_bill_address1")
+    protected String bkupBillAddress1;
+        @XmlElement(name = "bkup_bill_address2")
+    protected String bkupBillAddress2;
+        @XmlElement(name = "bkup_bill_address3")
+    protected String bkupBillAddress3;
+        @XmlElement(name = "bkup_bill_city")
+    protected String bkupBillCity;
+        @XmlElement(name = "bkup_bill_locality")
+    protected String bkupBillLocality;
+        @XmlElement(name = "bkup_bill_state_prov")
+    protected String bkupBillStateProv;
+        @XmlElement(name = "bkup_bill_country")
+    protected String bkupBillCountry;
+        @XmlElement(name = "bkup_bill_postal_cd")
+    protected String bkupBillPostalCd;
+        @XmlElement(name = "bkup_bill_phone")
+    protected String bkupBillPhone;
+        @XmlElement(name = "bkup_bill_phone_ext")
+    protected String bkupBillPhoneExt;
+        @XmlElement(name = "bkup_bill_cell_phone")
+    protected String bkupBillCellPhone;
+        @XmlElement(name = "bkup_bill_work_phone")
+    protected String bkupBillWorkPhone;
+        @XmlElement(name = "bkup_bill_work_phone_ext")
+    protected String bkupBillWorkPhoneExt;
+        @XmlElement(name = "bkup_bill_email")
+    protected String bkupBillEmail;
+        @XmlElement(name = "bkup_pay_method")
+    protected Long bkupPayMethod;
+        @XmlElement(name = "bkup_cc_number")
+    protected String bkupCcNumber;
+        @XmlElement(name = "bkup_cc_expire_mm")
+    protected Long bkupCcExpireMm;
+        @XmlElement(name = "bkup_cc_expire_yyyy")
+    protected Long bkupCcExpireYyyy;
+        @XmlElement(name = "bkup_bank_acct_no")
+    protected String bkupBankAcctNo;
+        @XmlElement(name = "bkup_bank_routing_no")
+    protected String bkupBankRoutingNo;
+        @XmlElement(name = "bkup_bill_agreement_id")
+    protected String bkupBillAgreementId;
+        @XmlElement(name = "bkup_cvv")
+    protected String bkupCvv;
+        @XmlElement(name = "seq_func_group_id")
+    protected String seqFuncGroupId;
     
     public long getClientNo() {
         return clientNo;
@@ -961,6 +1015,195 @@ public class UpdateAcctComplete {
 
     public void setBankBranchCd(String value) {
         this.bankBranchCd = value;
+    }
+            public String getBkupBillFirstName() {
+        return bkupBillFirstName;
+    }
+
+    public void setBkupBillFirstName(String value) {
+        this.bkupBillFirstName = value;
+    }
+            public String getBkupBillMi() {
+        return bkupBillMi;
+    }
+
+    public void setBkupBillMi(String value) {
+        this.bkupBillMi = value;
+    }
+            public String getBkupBillLastName() {
+        return bkupBillLastName;
+    }
+
+    public void setBkupBillLastName(String value) {
+        this.bkupBillLastName = value;
+    }
+            public String getBkupBillCompanyName() {
+        return bkupBillCompanyName;
+    }
+
+    public void setBkupBillCompanyName(String value) {
+        this.bkupBillCompanyName = value;
+    }
+            public String getBkupBillAddress1() {
+        return bkupBillAddress1;
+    }
+
+    public void setBkupBillAddress1(String value) {
+        this.bkupBillAddress1 = value;
+    }
+            public String getBkupBillAddress2() {
+        return bkupBillAddress2;
+    }
+
+    public void setBkupBillAddress2(String value) {
+        this.bkupBillAddress2 = value;
+    }
+            public String getBkupBillAddress3() {
+        return bkupBillAddress3;
+    }
+
+    public void setBkupBillAddress3(String value) {
+        this.bkupBillAddress3 = value;
+    }
+            public String getBkupBillCity() {
+        return bkupBillCity;
+    }
+
+    public void setBkupBillCity(String value) {
+        this.bkupBillCity = value;
+    }
+            public String getBkupBillLocality() {
+        return bkupBillLocality;
+    }
+
+    public void setBkupBillLocality(String value) {
+        this.bkupBillLocality = value;
+    }
+            public String getBkupBillStateProv() {
+        return bkupBillStateProv;
+    }
+
+    public void setBkupBillStateProv(String value) {
+        this.bkupBillStateProv = value;
+    }
+            public String getBkupBillCountry() {
+        return bkupBillCountry;
+    }
+
+    public void setBkupBillCountry(String value) {
+        this.bkupBillCountry = value;
+    }
+            public String getBkupBillPostalCd() {
+        return bkupBillPostalCd;
+    }
+
+    public void setBkupBillPostalCd(String value) {
+        this.bkupBillPostalCd = value;
+    }
+            public String getBkupBillPhone() {
+        return bkupBillPhone;
+    }
+
+    public void setBkupBillPhone(String value) {
+        this.bkupBillPhone = value;
+    }
+            public String getBkupBillPhoneExt() {
+        return bkupBillPhoneExt;
+    }
+
+    public void setBkupBillPhoneExt(String value) {
+        this.bkupBillPhoneExt = value;
+    }
+            public String getBkupBillCellPhone() {
+        return bkupBillCellPhone;
+    }
+
+    public void setBkupBillCellPhone(String value) {
+        this.bkupBillCellPhone = value;
+    }
+            public String getBkupBillWorkPhone() {
+        return bkupBillWorkPhone;
+    }
+
+    public void setBkupBillWorkPhone(String value) {
+        this.bkupBillWorkPhone = value;
+    }
+            public String getBkupBillWorkPhoneExt() {
+        return bkupBillWorkPhoneExt;
+    }
+
+    public void setBkupBillWorkPhoneExt(String value) {
+        this.bkupBillWorkPhoneExt = value;
+    }
+            public String getBkupBillEmail() {
+        return bkupBillEmail;
+    }
+
+    public void setBkupBillEmail(String value) {
+        this.bkupBillEmail = value;
+    }
+            public Long getBkupPayMethod() {
+        return bkupPayMethod;
+    }
+
+    public void setBkupPayMethod(Long value) {
+        this.bkupPayMethod = value;
+    }
+            public String getBkupCcNumber() {
+        return bkupCcNumber;
+    }
+
+    public void setBkupCcNumber(String value) {
+        this.bkupCcNumber = value;
+    }
+            public Long getBkupCcExpireMm() {
+        return bkupCcExpireMm;
+    }
+
+    public void setBkupCcExpireMm(Long value) {
+        this.bkupCcExpireMm = value;
+    }
+            public Long getBkupCcExpireYyyy() {
+        return bkupCcExpireYyyy;
+    }
+
+    public void setBkupCcExpireYyyy(Long value) {
+        this.bkupCcExpireYyyy = value;
+    }
+            public String getBkupBankAcctNo() {
+        return bkupBankAcctNo;
+    }
+
+    public void setBkupBankAcctNo(String value) {
+        this.bkupBankAcctNo = value;
+    }
+            public String getBkupBankRoutingNo() {
+        return bkupBankRoutingNo;
+    }
+
+    public void setBkupBankRoutingNo(String value) {
+        this.bkupBankRoutingNo = value;
+    }
+            public String getBkupBillAgreementId() {
+        return bkupBillAgreementId;
+    }
+
+    public void setBkupBillAgreementId(String value) {
+        this.bkupBillAgreementId = value;
+    }
+            public String getBkupCvv() {
+        return bkupCvv;
+    }
+
+    public void setBkupCvv(String value) {
+        this.bkupCvv = value;
+    }
+            public String getSeqFuncGroupId() {
+        return seqFuncGroupId;
+    }
+
+    public void setSeqFuncGroupId(String value) {
+        this.seqFuncGroupId = value;
     }
             
 }
