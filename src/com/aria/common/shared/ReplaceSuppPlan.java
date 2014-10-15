@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "existingSuppPlanNo",    "newSuppPlanNo",    "altRateScheduleNo",    "numPlanUnits",    "couponCode",    "assignmentDirective",    "comments",    "doWrite",    "clientReceiptId",    "offsetMonths",    "autoOffsetMonthsOption",    "altClientAcctGroupId",    "newAcctCustomRates",    "effectiveDate",    "offsetInterval",    "invoiceUnbilledUsage",    "syncMstrBillDatesOverride",    "clientExistingSuppPlanId",    "clientNewSuppPlanId",    "clientAltRateScheduleId"})
+    "authKey",    "acctNo",    "existingSuppPlanNo",    "newSuppPlanNo",    "altRateScheduleNo",    "numPlanUnits",    "couponCode",    "assignmentDirective",    "comments",    "doWrite",    "clientReceiptId",    "offsetMonths",    "autoOffsetMonthsOption",    "altClientAcctGroupId",    "newAcctCustomRates",    "effectiveDate",    "offsetInterval",    "invoiceUnbilledUsage",    "syncMstrBillDatesOverride",    "clientExistingSuppPlanId",    "clientNewSuppPlanId",    "clientAltRateScheduleId",    "surchargeNo"})
 @XmlRootElement(name = "replace_supp_plan")
 public class ReplaceSuppPlan {
 
@@ -60,6 +60,8 @@ public class ReplaceSuppPlan {
     protected String clientNewSuppPlanId;
         @XmlElement(name = "client_alt_rate_schedule_id")
     protected String clientAltRateScheduleId;
+        @XmlElement(name = "surcharge_no")
+    protected SurchargeNoArray surchargeNo;
     
     public long getClientNo() {
         return clientNo;
@@ -223,6 +225,13 @@ public class ReplaceSuppPlan {
 
     public void setClientAltRateScheduleId(String value) {
         this.clientAltRateScheduleId = value;
+    }
+            public SurchargeNoArray getSurchargeNo() {
+        return surchargeNo;
+    }
+
+    public void setSurchargeNo(SurchargeNoArray value) {
+        this.surchargeNo = value;
     }
             
 }

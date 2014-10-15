@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "unapplied_service_credits_ReturnElement", propOrder = {"creditId", "createDate", "createUser", "initialAmount", "amountLeftToApply", "reasonCd", "reasonText", "comments", "currencyCd", "serviceNoToApply", "serviceNameToApply", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "clientServiceIdToApply", "clientEligiblePlanId", "clientEligibleServiceId", "eligibleServiceTypes"})
+@XmlType(name = "unapplied_service_credits_ReturnElement", propOrder = {"creditId", "createDate", "createUser", "initialAmount", "amountLeftToApply", "reasonCd", "reasonText", "comments", "currencyCd", "serviceNoToApply", "serviceNameToApply", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "clientServiceIdToApply", "clientEligiblePlanId", "clientEligibleServiceId", "amountReservedForAnniversary", "eligibleServiceTypes"})
 public class UnappliedServiceCreditsReturnElement {
 
     @XmlElement(name = "credit_id")
@@ -49,6 +49,8 @@ public class UnappliedServiceCreditsReturnElement {
     protected String clientEligiblePlanId;
     @XmlElement(name = "client_eligible_service_id")
     protected String clientEligibleServiceId;
+    @XmlElement(name = "amount_reserved_for_anniversary")
+    protected Long amountReservedForAnniversary;
     @XmlElement(name = "eligible_service_types")
     protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
     
@@ -194,6 +196,14 @@ public class UnappliedServiceCreditsReturnElement {
 
     public void setClientEligibleServiceId(String value) {
         this.clientEligibleServiceId = value;
+    }
+
+    public Long getAmountReservedForAnniversary() {
+        return amountReservedForAnniversary;
+    }
+
+    public void setAmountReservedForAnniversary(Long value) {
+        this.amountReservedForAnniversary = value;
     }
 
     public List<EligibleServiceTypesReturnElement> getEligibleServiceTypes() {

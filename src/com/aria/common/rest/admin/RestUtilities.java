@@ -1578,11 +1578,10 @@ public class RestUtilities {
         if (arrayList == null) return;
         int i = 0;
         for (com.aria.common.shared.admin.ScheduleRow row : arrayList.getScheduleRow()){
-            parameters.add("schedule_no["+i+"]", getValue("Long", row.getScheduleNo()));
             parameters.add("schedule_name["+i+"]", getValue("String", row.getScheduleName()));
-            parameters.add("client_rate_schedule_id["+i+"]", getValue("String", row.getClientRateScheduleId()));
             parameters.add("currency_cd["+i+"]", getValue("String", row.getCurrencyCd()));
             parameters.add("is_default["+i+"]", getValue("Long", row.getIsDefault()));
+            parameters.add("min_surcharge_to_apply["+i+"]", getValue("Double", row.getMinSurchargeToApply()));
             i++;
         }
     }
@@ -1590,11 +1589,10 @@ public class RestUtilities {
         if (arrayList == null) return;
         int i = 0;
         for (com.aria.common.shared.admin.ScheduleRow row : arrayList.getScheduleRow()){
-            parameters.add(paramPrefix + "schedule_no["+i+"]", getValue("Long", row.getScheduleNo()));
             parameters.add(paramPrefix + "schedule_name["+i+"]", getValue("String", row.getScheduleName()));
-            parameters.add(paramPrefix + "client_rate_schedule_id["+i+"]", getValue("String", row.getClientRateScheduleId()));
             parameters.add(paramPrefix + "currency_cd["+i+"]", getValue("String", row.getCurrencyCd()));
             parameters.add(paramPrefix + "is_default["+i+"]", getValue("Long", row.getIsDefault()));
+            parameters.add(paramPrefix + "min_surcharge_to_apply["+i+"]", getValue("Double", row.getMinSurchargeToApply()));
             i++;
         }
     }
@@ -1755,7 +1753,8 @@ public class RestUtilities {
         for (com.aria.common.shared.admin.SurchargeTierRow row : arrayList.getSurchargeTierRow()){
             parameters.add("from["+i+"]", getValue("Long", row.getFrom()));
             parameters.add("to["+i+"]", getValue("Long", row.getTo()));
-            parameters.add("rate["+i+"]", getValue("Double", row.getRate()));
+            parameters.add("rate["+i+"]", getValue("", row.getRate()));
+            parameters.add("include_zero["+i+"]", getValue("", row.getIncludeZero()));
             i++;
         }
     }
@@ -1765,7 +1764,8 @@ public class RestUtilities {
         for (com.aria.common.shared.admin.SurchargeTierRow row : arrayList.getSurchargeTierRow()){
             parameters.add(paramPrefix + "from["+i+"]", getValue("Long", row.getFrom()));
             parameters.add(paramPrefix + "to["+i+"]", getValue("Long", row.getTo()));
-            parameters.add(paramPrefix + "rate["+i+"]", getValue("Double", row.getRate()));
+            parameters.add(paramPrefix + "rate["+i+"]", getValue("", row.getRate()));
+            parameters.add(paramPrefix + "include_zero["+i+"]", getValue("", row.getIncludeZero()));
             i++;
         }
     }

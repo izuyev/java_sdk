@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "altStartDate",    "clientAcctId",    "userid",    "statusCd",    "masterPlanNo",    "masterPlanUnits",    "suppPlans",    "suppPlanUnits",    "notifyMethod",    "promoCd",    "password",    "secretQuestion",    "secretQuestionAnswer",    "firstName",    "mi",    "lastName",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billMi",    "billLastName",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankAcctNo",    "bankRoutingNo",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "functionalAcctGroups",    "collectionsAcctGroups",    "suppFieldNames",    "suppFieldValues",    "testAcctInd",    "statusUntilAltStart",    "balanceForward",    "altBillDay",    "doFullInvoicing",    "doProratedInvoicing",    "masterPlanAltRateSchedNo",    "suppPlanAltRateSchedNo",    "clientReceiptId",    "currencyCd",    "cvv",    "taxpayerId",    "billAgreementId",    "retroactiveStartDate",    "couponCodes",    "newAcctCustomRates",    "altMsgTemplateNo",    "seqFuncGroupNo",    "newAcctPlanContracts",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "clientFuncAcctGroupIds",    "clientCollAcctGroupIds",    "trackData1",    "trackData2",    "doWrite",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "invoiceApprovalRequired",    "createSession",    "clientMasterPlanId",    "clientSuppPlanIds",    "clientMpAltRateSchedId",    "clientSpAltRateSchedIds",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateNo",    "surchargeNo",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "bkupBillFirstName",    "bkupBillMi",    "bkupBillLastName",    "bkupBillCompanyName",    "bkupBillAddress1",    "bkupBillAddress2",    "bkupBillAddress3",    "bkupBillCity",    "bkupBillLocality",    "bkupBillStateProv",    "bkupBillCountry",    "bkupBillPostalCd",    "bkupBillPhone",    "bkupBillPhoneExt",    "bkupBillCellPhone",    "bkupBillWorkPhone",    "bkupBillWorkPhoneExt",    "bkupBillEmail",    "bkupPayMethod",    "bkupCcNumber",    "bkupCcExpireMm",    "bkupCcExpireYyyy",    "bkupBankAcctNo",    "bkupBankRoutingNo",    "bkupBillAgreementId",    "bkupCvv",    "seqFuncGroupId"})
+    "authKey",    "altStartDate",    "clientAcctId",    "userid",    "statusCd",    "masterPlanNo",    "masterPlanUnits",    "suppPlans",    "suppPlanUnits",    "notifyMethod",    "promoCd",    "password",    "secretQuestion",    "secretQuestionAnswer",    "firstName",    "mi",    "lastName",    "companyName",    "address1",    "address2",    "city",    "locality",    "stateProv",    "country",    "postalCd",    "phone",    "phoneExt",    "cellPhone",    "workPhone",    "workPhoneExt",    "email",    "birthdate",    "billFirstName",    "billMi",    "billLastName",    "billCompanyName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billCountry",    "billPostalCd",    "billPhone",    "billPhoneExt",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExt",    "billEmail",    "payMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankAcctNo",    "bankRoutingNo",    "respLevelCd",    "seniorAcctNo",    "seniorAcctUserId",    "clientSeniorAcctId",    "functionalAcctGroups",    "collectionsAcctGroups",    "suppFieldNames",    "suppFieldValues",    "testAcctInd",    "statusUntilAltStart",    "balanceForward",    "altBillDay",    "doFullInvoicing",    "doProratedInvoicing",    "masterPlanAltRateSchedNo",    "suppPlanAltRateSchedNo",    "clientReceiptId",    "currencyCd",    "cvv",    "taxpayerId",    "billAgreementId",    "retroactiveStartDate",    "couponCodes",    "newAcctCustomRates",    "altMsgTemplateNo",    "seqFuncGroupNo",    "newAcctPlanContracts",    "address3",    "billAddress3",    "usageAccumulationConfig",    "enableUsagePoolingPlanNo",    "clientFuncAcctGroupIds",    "clientCollAcctGroupIds",    "trackData1",    "trackData2",    "doWrite",    "taxExemptionLevel",    "cnAltMsgTemplateNo",    "invoiceApprovalRequired",    "createSession",    "clientMasterPlanId",    "clientSuppPlanIds",    "clientMpAltRateSchedId",    "clientSpAltRateSchedIds",    "clientAltMsgTemplateId",    "clientCnAltMsgTemplateNo",    "surchargeNo",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "bkupBillFirstName",    "bkupBillMi",    "bkupBillLastName",    "bkupBillCompanyName",    "bkupBillAddress1",    "bkupBillAddress2",    "bkupBillAddress3",    "bkupBillCity",    "bkupBillLocality",    "bkupBillStateProv",    "bkupBillCountry",    "bkupBillPostalCd",    "bkupBillPhone",    "bkupBillPhoneExt",    "bkupBillCellPhone",    "bkupBillWorkPhone",    "bkupBillWorkPhoneExt",    "bkupBillEmail",    "bkupPayMethod",    "bkupCcNumber",    "bkupCcExpireMm",    "bkupCcExpireYyyy",    "bkupBankAcctNo",    "bkupBankRoutingNo",    "bkupBillAgreementId",    "bkupCvv",    "seqFuncGroupId",    "revrecProfileId",    "revrecClientDefinedId"})
 @XmlRootElement(name = "create_acct_complete")
 public class CreateAcctComplete {
 
@@ -288,6 +288,10 @@ public class CreateAcctComplete {
     protected String bkupCvv;
         @XmlElement(name = "seq_func_group_id")
     protected String seqFuncGroupId;
+        @XmlElement(name = "revrec_profile_id")
+    protected Long revrecProfileId;
+        @XmlElement(name = "revrec_client_defined_id")
+    protected String revrecClientDefinedId;
     
     public long getClientNo() {
         return clientNo;
@@ -1249,6 +1253,20 @@ public class CreateAcctComplete {
 
     public void setSeqFuncGroupId(String value) {
         this.seqFuncGroupId = value;
+    }
+            public Long getRevrecProfileId() {
+        return revrecProfileId;
+    }
+
+    public void setRevrecProfileId(Long value) {
+        this.revrecProfileId = value;
+    }
+            public String getRevrecClientDefinedId() {
+        return revrecClientDefinedId;
+    }
+
+    public void setRevrecClientDefinedId(String value) {
+        this.revrecClientDefinedId = value;
     }
             
 }

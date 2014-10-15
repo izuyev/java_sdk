@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "accountNo",    "orderNo",    "billImmediately",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "doWrite",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "altInvTemplateNo",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "accountNo",    "orderNo",    "billImmediately",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "doWrite",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "altInvTemplateNo",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "fulfilledDate"})
 @XmlRootElement(name = "update_order")
 public class UpdateOrder {
 
@@ -94,6 +94,8 @@ public class UpdateOrder {
     protected String bankIdCd;
         @XmlElement(name = "bank_branch_cd")
     protected String bankBranchCd;
+        @XmlElement(name = "fulfilled_date")
+    protected String fulfilledDate;
     
     public long getClientNo() {
         return clientNo;
@@ -376,6 +378,13 @@ public class UpdateOrder {
 
     public void setBankBranchCd(String value) {
         this.bankBranchCd = value;
+    }
+            public String getFulfilledDate() {
+        return fulfilledDate;
+    }
+
+    public void setFulfilledDate(String value) {
+        this.fulfilledDate = value;
     }
             
 }

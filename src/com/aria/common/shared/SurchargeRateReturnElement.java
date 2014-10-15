@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "surcharge_rate_ReturnElement", propOrder = {"rateSeqNo", "fromUnit", "toUnit", "ratePerUnit"})
+@XmlType(name = "surcharge_rate_ReturnElement", propOrder = {"rateSeqNo", "fromUnit", "toUnit", "ratePerUnit", "includeZero", "rateSchedIsAssignedInd"})
 public class SurchargeRateReturnElement {
 
     @XmlElement(name = "rate_seq_no")
@@ -21,6 +21,10 @@ public class SurchargeRateReturnElement {
     protected Double toUnit;
     @XmlElement(name = "rate_per_unit")
     protected Double ratePerUnit;
+    @XmlElement(name = "include_zero")
+    protected Long includeZero;
+    @XmlElement(name = "rate_sched_is_assigned_ind")
+    protected Long rateSchedIsAssignedInd;
     
     public Long getRateSeqNo() {
         return rateSeqNo;
@@ -52,6 +56,22 @@ public class SurchargeRateReturnElement {
 
     public void setRatePerUnit(Double value) {
         this.ratePerUnit = value;
+    }
+
+    public Long getIncludeZero() {
+        return includeZero;
+    }
+
+    public void setIncludeZero(Long value) {
+        this.includeZero = value;
+    }
+
+    public Long getRateSchedIsAssignedInd() {
+        return rateSchedIsAssignedInd;
+    }
+
+    public void setRateSchedIsAssignedInd(Long value) {
+        this.rateSchedIsAssignedInd = value;
     }
 
     

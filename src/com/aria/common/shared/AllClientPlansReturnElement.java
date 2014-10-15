@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "all_client_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "suppPlanInd", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "clientPlanId", "clientRolloverPlanId", "planServices", "planRateSchedules", "planGroups", "promotionalPlanSets", "parentPlans", "planSuppFields", "firstRetrievalLevelInd", "childPlanNo"})
+@XmlType(name = "all_client_plans_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "suppPlanInd", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "earlyCancelFee", "earlyCancelMinMonths", "suspensionPeriod", "newAcctStatus", "rolloverAcctStatus", "rolloverAcctStatusDays", "initFreeMonths", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "clientPlanId", "clientRolloverPlanId", "prorationInvoiceTimingCd", "planServices", "planRateSchedules", "planGroups", "promotionalPlanSets", "parentPlans", "planSuppFields", "firstRetrievalLevelInd", "childPlanNo"})
 public class AllClientPlansReturnElement {
 
     @XmlElement(name = "plan_no")
@@ -57,6 +57,8 @@ public class AllClientPlansReturnElement {
     protected String clientPlanId;
     @XmlElement(name = "client_rollover_plan_id")
     protected String clientRolloverPlanId;
+    @XmlElement(name = "proration_invoice_timing_cd")
+    protected String prorationInvoiceTimingCd;
     @XmlElement(name = "plan_services")
     protected List<PlanServicesReturnElement> planServices;
     @XmlElement(name = "plan_rate_schedules")
@@ -248,6 +250,14 @@ public class AllClientPlansReturnElement {
 
     public void setClientRolloverPlanId(String value) {
         this.clientRolloverPlanId = value;
+    }
+
+    public String getProrationInvoiceTimingCd() {
+        return prorationInvoiceTimingCd;
+    }
+
+    public void setProrationInvoiceTimingCd(String value) {
+        this.prorationInvoiceTimingCd = value;
     }
 
     public List<PlanServicesReturnElement> getPlanServices() {

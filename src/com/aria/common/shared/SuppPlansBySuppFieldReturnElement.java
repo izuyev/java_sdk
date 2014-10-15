@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "supp_plans_by_supp_field_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "clientPlanId", "clientRolloverPlanId", "clientPlanId2AssignOnSusp"})
+@XmlType(name = "supp_plans_by_supp_field_ReturnElement", propOrder = {"planNo", "planName", "planDesc", "billingInterval", "billingInd", "displayInd", "rolloverMonths", "rolloverPlanNo", "plan2AssignOnSusp", "defaultNotifyMethod", "prepaidInd", "currencyCd", "clientPlanId", "clientRolloverPlanId", "clientPlanId2AssignOnSusp", "prorationInvoiceTimingCd"})
 public class SuppPlansBySuppFieldReturnElement {
 
     @XmlElement(name = "plan_no")
@@ -43,6 +43,8 @@ public class SuppPlansBySuppFieldReturnElement {
     protected String clientRolloverPlanId;
     @XmlElement(name = "client_plan_id_2_assign_on_susp")
     protected String clientPlanId2AssignOnSusp;
+    @XmlElement(name = "proration_invoice_timing_cd")
+    protected String prorationInvoiceTimingCd;
     
     public Long getPlanNo() {
         return planNo;
@@ -162,6 +164,14 @@ public class SuppPlansBySuppFieldReturnElement {
 
     public void setClientPlanId2AssignOnSusp(String value) {
         this.clientPlanId2AssignOnSusp = value;
+    }
+
+    public String getProrationInvoiceTimingCd() {
+        return prorationInvoiceTimingCd;
+    }
+
+    public void setProrationInvoiceTimingCd(String value) {
+        this.prorationInvoiceTimingCd = value;
     }
 
     

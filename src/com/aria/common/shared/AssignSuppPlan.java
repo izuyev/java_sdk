@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "suppPlanNo",    "altRateScheduleNo",    "numPlanUnits",    "couponCode",    "assignmentDirective",    "comments",    "doWrite",    "clientReceiptId",    "contractTypeNo",    "contractAltRecurFee",    "contractLengthMonths",    "contractCancelFee",    "contractComments",    "contractStartDate",    "offsetMonths",    "autoOffsetMonthsOption",    "altProrationStartDate",    "altClientAcctGroupId",    "newAcctCustomRates",    "effectiveDate",    "offsetInterval",    "contractEndDate",    "syncMstrBillDatesOverride",    "clientSuppPlanId",    "clientAltRateScheduleId"})
+    "authKey",    "acctNo",    "suppPlanNo",    "altRateScheduleNo",    "numPlanUnits",    "couponCode",    "assignmentDirective",    "comments",    "doWrite",    "clientReceiptId",    "contractTypeNo",    "contractAltRecurFee",    "contractLengthMonths",    "contractCancelFee",    "contractComments",    "contractStartDate",    "offsetMonths",    "autoOffsetMonthsOption",    "altProrationStartDate",    "altClientAcctGroupId",    "newAcctCustomRates",    "effectiveDate",    "offsetInterval",    "contractEndDate",    "syncMstrBillDatesOverride",    "clientSuppPlanId",    "clientAltRateScheduleId",    "surchargeNo"})
 @XmlRootElement(name = "assign_supp_plan")
 public class AssignSuppPlan {
 
@@ -70,6 +70,8 @@ public class AssignSuppPlan {
     protected String clientSuppPlanId;
         @XmlElement(name = "client_alt_rate_schedule_id")
     protected String clientAltRateScheduleId;
+        @XmlElement(name = "surcharge_no")
+    protected SurchargeNoArray surchargeNo;
     
     public long getClientNo() {
         return clientNo;
@@ -268,6 +270,13 @@ public class AssignSuppPlan {
 
     public void setClientAltRateScheduleId(String value) {
         this.clientAltRateScheduleId = value;
+    }
+            public SurchargeNoArray getSurchargeNo() {
+        return surchargeNo;
+    }
+
+    public void setSurchargeNo(SurchargeNoArray value) {
+        this.surchargeNo = value;
     }
             
 }

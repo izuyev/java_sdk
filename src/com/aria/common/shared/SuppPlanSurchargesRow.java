@@ -7,19 +7,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "update_surcharge_row", propOrder = {
+@XmlType(name = "supp_plan_surcharges_row", propOrder = {
     "surchargeNo",
-    "surchargeDirective",
-    "rateScheduleNo"
+    "rateScheduleNo",
+    "surchargeSuppPlanNo"
     })
-public class UpdateSurchargeRow {
+public class SuppPlanSurchargesRow {
 
     @XmlElement(name = "surcharge_no")
     protected Long surchargeNo;
-    @XmlElement(name = "surcharge_directive")
-    protected Long surchargeDirective;
     @XmlElement(name = "rate_schedule_no")
     protected Long rateScheduleNo;
+    @XmlElement(name = "surcharge_supp_plan_no")
+    protected Long surchargeSuppPlanNo;
     public Long getSurchargeNo() {
         return surchargeNo;
     }
@@ -28,20 +28,20 @@ public class UpdateSurchargeRow {
         this.surchargeNo = value;
     }
 
-    public Long getSurchargeDirective() {
-        return surchargeDirective;
-    }
-
-    public void setSurchargeDirective(Long value) {
-        this.surchargeDirective = value;
-    }
-
     public Long getRateScheduleNo() {
         return rateScheduleNo;
     }
 
     public void setRateScheduleNo(Long value) {
         this.rateScheduleNo = value;
+    }
+
+    public Long getSurchargeSuppPlanNo() {
+        return surchargeSuppPlanNo;
+    }
+
+    public void setSurchargeSuppPlanNo(Long value) {
+        this.surchargeSuppPlanNo = value;
     }
 
     

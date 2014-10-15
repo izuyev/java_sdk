@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "suppPlansToAssign",    "assignmentDirective",    "doWrite",    "comments",    "clientReceiptId",    "altProrationStartDate",    "couponCodes",    "effectiveDate",    "syncMstrBillDatesOverride"})
+    "authKey",    "acctNo",    "suppPlansToAssign",    "assignmentDirective",    "doWrite",    "comments",    "clientReceiptId",    "altProrationStartDate",    "couponCodes",    "effectiveDate",    "syncMstrBillDatesOverride",    "suppPlanSurcharges"})
 @XmlRootElement(name = "assign_supp_plan_multi")
 public class AssignSuppPlanMulti {
 
@@ -38,6 +38,8 @@ public class AssignSuppPlanMulti {
     protected String effectiveDate;
         @XmlElement(name = "sync_mstr_bill_dates_override")
     protected Long syncMstrBillDatesOverride;
+        @XmlElement(name = "supp_plan_surcharges")
+    protected SuppPlanSurchargesArray suppPlanSurcharges;
     
     public long getClientNo() {
         return clientNo;
@@ -124,6 +126,13 @@ public class AssignSuppPlanMulti {
 
     public void setSyncMstrBillDatesOverride(Long value) {
         this.syncMstrBillDatesOverride = value;
+    }
+            public SuppPlanSurchargesArray getSuppPlanSurcharges() {
+        return suppPlanSurcharges;
+    }
+
+    public void setSuppPlanSurcharges(SuppPlanSurchargesArray value) {
+        this.suppPlanSurcharges = value;
     }
             
 }

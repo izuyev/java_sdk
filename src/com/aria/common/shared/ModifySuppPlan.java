@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "suppPlanNo",    "altRateScheduleNo",    "numPlanUnits",    "couponCode",    "assignmentDirective",    "comments",    "doWrite",    "clientReceiptId",    "newAcctCustomRates",    "effectiveDate",    "offsetInterval",    "clientPlanId",    "clientAltRateScheduleId"})
+    "authKey",    "acctNo",    "suppPlanNo",    "altRateScheduleNo",    "numPlanUnits",    "couponCode",    "assignmentDirective",    "comments",    "doWrite",    "clientReceiptId",    "newAcctCustomRates",    "effectiveDate",    "offsetInterval",    "clientPlanId",    "clientAltRateScheduleId",    "surchargeNo"})
 @XmlRootElement(name = "modify_supp_plan")
 public class ModifySuppPlan {
 
@@ -46,6 +46,8 @@ public class ModifySuppPlan {
     protected String clientPlanId;
         @XmlElement(name = "client_alt_rate_schedule_id")
     protected String clientAltRateScheduleId;
+        @XmlElement(name = "surcharge_no")
+    protected SurchargeNoArray surchargeNo;
     
     public long getClientNo() {
         return clientNo;
@@ -160,6 +162,13 @@ public class ModifySuppPlan {
 
     public void setClientAltRateScheduleId(String value) {
         this.clientAltRateScheduleId = value;
+    }
+            public SurchargeNoArray getSurchargeNo() {
+        return surchargeNo;
+    }
+
+    public void setSurchargeNo(SurchargeNoArray value) {
+        this.surchargeNo = value;
     }
             
 }
