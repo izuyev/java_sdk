@@ -2438,6 +2438,7 @@ public class AriaServiceClientTest {
                 , ""
                 , 1L
                 , ""
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createAcctComplete - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -2842,6 +2843,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
+                , ""
                 , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
@@ -3925,6 +3927,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , ""
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createOrder - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -4129,6 +4132,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , standingOrderArray
+                , ""
                 , ""
                 , ""
                 , ""
@@ -4589,6 +4593,7 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , 1L
+                , ""
                 , ""
                 , ""
                 , ""

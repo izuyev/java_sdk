@@ -763,7 +763,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         return getPlanServiceDetails(client_no, auth_key, service_no, client_service_id, plan_no, client_plan_id);
     }
 
-    public Map<String,Object> createService(Long client_no, String auth_key, String service_name, String service_type, String gl_cd, String taxable_ind, String tax_group, String usage_type, String client_service_id, com.aria.common.shared.admin.SupplementalObjFieldArray supplemental_obj_field, String commodity_cd){
+    public Map<String,Object> createService(Long client_no, String auth_key, String service_name, String service_type, String gl_cd, String taxable_ind, String tax_group, String usage_type, String client_service_id, com.aria.common.shared.admin.SupplementalObjFieldArray supplemental_obj_field, String commodity_cd, String client_tax_group_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -776,6 +776,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         addParameters(parameters,"client_service_id",getValue("String", client_service_id));
         RestUtilities.addParameterValuesFromArray(parameters,supplemental_obj_field);
         addParameters(parameters,"commodity_cd",getValue("String", commodity_cd));
+        addParameters(parameters,"client_tax_group_id",getValue("String", client_tax_group_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("create_service"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -801,11 +802,12 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
                 String client_service_id = (String) map.get("client_service_id");
                 com.aria.common.shared.admin.SupplementalObjFieldArray supplemental_obj_field = (com.aria.common.shared.admin.SupplementalObjFieldArray) map.get("supplemental_obj_field");
                 String commodity_cd = (String) map.get("commodity_cd");
+                String client_tax_group_id = (String) map.get("client_tax_group_id");
                 
-        return createService(client_no, auth_key, service_name, service_type, gl_cd, taxable_ind, tax_group, usage_type, client_service_id, supplemental_obj_field, commodity_cd);
+        return createService(client_no, auth_key, service_name, service_type, gl_cd, taxable_ind, tax_group, usage_type, client_service_id, supplemental_obj_field, commodity_cd, client_tax_group_id);
     }
 
-    public Map<String,Object> updateService(Long client_no, String auth_key, Long service_no, String service_name, String service_type, String client_service_id, String gl_cd, String taxable_ind, String tax_group, String usage_type, String commodity_cd){
+    public Map<String,Object> updateService(Long client_no, String auth_key, Long service_no, String service_name, String service_type, String client_service_id, String gl_cd, String taxable_ind, String tax_group, String usage_type, String commodity_cd, String client_tax_group_id){
         MultivaluedMap<String, String> parameters = new MultivaluedMapImpl();
         addParameters(parameters,"client_no",getValue("Long",client_no));
         addParameters(parameters,"auth_key",getValue("String",auth_key));
@@ -818,6 +820,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
         addParameters(parameters,"tax_group",getValue("String", tax_group));
         addParameters(parameters,"usage_type",getValue("String", usage_type));
         addParameters(parameters,"commodity_cd",getValue("String", commodity_cd));
+        addParameters(parameters,"client_tax_group_id",getValue("String", client_tax_group_id));
         
         WebResource webResource = Client.create(new DefaultClientConfig()).resource(buildUrl("update_service"));
         String ret = webResource.type("application/x-www-form-urlencoded").accept("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8").header("accept-encoding", "deflate").header("accept-encoding", "gzip").post(String.class, parameters);
@@ -843,8 +846,9 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
                 String tax_group = (String) map.get("tax_group");
                 String usage_type = (String) map.get("usage_type");
                 String commodity_cd = (String) map.get("commodity_cd");
+                String client_tax_group_id = (String) map.get("client_tax_group_id");
                 
-        return updateService(client_no, auth_key, service_no, service_name, service_type, client_service_id, gl_cd, taxable_ind, tax_group, usage_type, commodity_cd);
+        return updateService(client_no, auth_key, service_no, service_name, service_type, client_service_id, gl_cd, taxable_ind, tax_group, usage_type, commodity_cd, client_tax_group_id);
     }
 
     public Map<String,Object> getSuppFields(Long client_no, String auth_key){

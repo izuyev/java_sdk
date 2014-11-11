@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "accountNo",    "orderLineItems",    "billImmediately",    "billSeq",    "clientOrderId",    "clientReceiptId",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "doWrite",    "couponCd",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "altInvTemplateNo",    "clientAltInvTemplateId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "statementMessage",    "fulfilledDate"})
+    "authKey",    "accountNo",    "orderLineItems",    "billImmediately",    "billSeq",    "clientOrderId",    "clientReceiptId",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "billAddress3",    "doWrite",    "couponCd",    "altClientAcctGroupId",    "trackData1",    "trackData2",    "altInvTemplateNo",    "clientAltInvTemplateId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "statementMessage",    "fulfilledDate",    "orderComments"})
 @XmlRootElement(name = "create_order")
 public class CreateOrder {
 
@@ -112,6 +112,8 @@ public class CreateOrder {
     protected String statementMessage;
         @XmlElement(name = "fulfilled_date")
     protected String fulfilledDate;
+        @XmlElement(name = "order_comments")
+    protected String orderComments;
     
     public long getClientNo() {
         return clientNo;
@@ -457,6 +459,13 @@ public class CreateOrder {
 
     public void setFulfilledDate(String value) {
         this.fulfilledDate = value;
+    }
+            public String getOrderComments() {
+        return orderComments;
+    }
+
+    public void setOrderComments(String value) {
+        this.orderComments = value;
     }
             
 }

@@ -2618,6 +2618,7 @@ public class RestUtilities {
             for (ThisAcctSuppFieldsReturnElement element : arrayListThisAcctSuppFieldsReturnElement){
                 entity.getThisAcctSuppFields().add(element);
             }
+            entity.setStmntEmailList(getStringValue(jsonObject,"stmnt_email_list"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -2677,6 +2678,8 @@ public class RestUtilities {
             entity.setUnappliedAmount(getDoubleValue(jsonObject,"unapplied_amount"));
             entity.setReasonCode(getLongValue(jsonObject,"reason_code"));
             entity.setReasonText(getStringValue(jsonObject,"reason_text"));
+            entity.setTransactionId(getLongValue(jsonObject,"transaction_id"));
+            entity.setVoidTransactionId(getLongValue(jsonObject,"void_transaction_id"));
             returnElement.add(entity);
         }
         return returnElement;

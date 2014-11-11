@@ -500,6 +500,7 @@ public class AriaServiceClientTest {
                 , ""
                 , supplementalObjFieldArray
                 , ""
+                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createService - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -514,6 +515,7 @@ public class AriaServiceClientTest {
     public void updateService() throws Exception {
         
         hashMapReturnValues = getBaseAriaBilling().updateService(getClientNo(), getAuthKey()        , 1L
+                , ""
                 , ""
                 , ""
                 , ""

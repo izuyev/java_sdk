@@ -465,12 +465,13 @@ public interface AriaBillingAdministration {
     * @param client_service_id - Type: String
     * @param supplemental_obj_field - Type: com.aria.common.shared.admin.SupplementalObjFieldArray
     * @param commodity_cd - Type: String
+    * @param client_tax_group_id - Type: String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   service_no - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> createService(Long client_no, String auth_key, String service_name, String service_type, String gl_cd, String taxable_ind, String tax_group, String usage_type, String client_service_id, com.aria.common.shared.admin.SupplementalObjFieldArray supplemental_obj_field, String commodity_cd);
+    abstract Map<String,Object> createService(Long client_no, String auth_key, String service_name, String service_type, String gl_cd, String taxable_ind, String tax_group, String usage_type, String client_service_id, com.aria.common.shared.admin.SupplementalObjFieldArray supplemental_obj_field, String commodity_cd, String client_tax_group_id);
 
     abstract Map<String,Object> createService(Map<String,Object> map);
 
@@ -487,12 +488,13 @@ public interface AriaBillingAdministration {
     * @param tax_group - Type: String
     * @param usage_type - Type: String
     * @param commodity_cd - Type: String
+    * @param client_tax_group_id - Type: String
     * @return A <code>Map&#60;String,Object&#62;</code>, containing the following Objects:
     *   error_code - Type: javax.xml.ws.Holder<br>
     *   error_msg - Type: javax.xml.ws.Holder<br>
     *   service_no - Type: javax.xml.ws.Holder<br>
     */
-    abstract Map<String,Object> updateService(Long client_no, String auth_key, Long service_no, String service_name, String service_type, String client_service_id, String gl_cd, String taxable_ind, String tax_group, String usage_type, String commodity_cd);
+    abstract Map<String,Object> updateService(Long client_no, String auth_key, Long service_no, String service_name, String service_type, String client_service_id, String gl_cd, String taxable_ind, String tax_group, String usage_type, String commodity_cd, String client_tax_group_id);
 
     abstract Map<String,Object> updateService(Map<String,Object> map);
 
