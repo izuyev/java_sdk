@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "createdBy", "createdDate", "amount", "creditType", "appliedAmount", "unappliedAmount", "reasonCode", "reasonText", "comments", "transactionId", "voidTransactionId"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "createdBy", "createdDate", "amount", "creditType", "appliedAmount", "unappliedAmount", "reasonCode", "reasonText", "comments", "transactionId", "voidTransactionId", "creditExpiryTypeInd", "creditExpiryMonths", "creditExpiryDate", "eligibleServicePlanDetails"})
 @XmlRootElement(name = "get_acct_credit_detailsResponseElement")
 public class GetAcctCreditDetailsResponseElement {
 
@@ -40,6 +40,14 @@ public class GetAcctCreditDetailsResponseElement {
     protected Long transactionId;
     @XmlElement(name = "void_transaction_id")
     protected Long voidTransactionId;
+    @XmlElement(name = "credit_expiry_type_ind")
+    protected String creditExpiryTypeInd;
+    @XmlElement(name = "credit_expiry_months")
+    protected Long creditExpiryMonths;
+    @XmlElement(name = "credit_expiry_date")
+    protected String creditExpiryDate;
+    @XmlElement(name = "eligible_service_plan_details")
+    protected List<EligibleServicePlanDetailsReturnElement> eligibleServicePlanDetails;
     
     public Long getErrorCode() {
         return errorCode;
@@ -145,5 +153,34 @@ public class GetAcctCreditDetailsResponseElement {
         this.voidTransactionId = value;
     }
 
-    
+    public String getCreditExpiryTypeInd() {
+        return creditExpiryTypeInd;
+    }
+
+    public void setCreditExpiryTypeInd(String value) {
+        this.creditExpiryTypeInd = value;
+    }
+
+    public Long getCreditExpiryMonths() {
+        return creditExpiryMonths;
+    }
+
+    public void setCreditExpiryMonths(Long value) {
+        this.creditExpiryMonths = value;
+    }
+
+    public String getCreditExpiryDate() {
+        return creditExpiryDate;
+    }
+
+    public void setCreditExpiryDate(String value) {
+        this.creditExpiryDate = value;
+    }
+
+    public List<EligibleServicePlanDetailsReturnElement> getEligibleServicePlanDetails() {
+        if (this.eligibleServicePlanDetails == null) {
+            this.eligibleServicePlanDetails = new ArrayList<EligibleServicePlanDetailsReturnElement>();
+        }
+        return this.eligibleServicePlanDetails;
+    }
 }

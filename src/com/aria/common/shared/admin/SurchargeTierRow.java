@@ -10,8 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "surcharge_tier_row", propOrder = {
     "from",
     "to",
-    "rate",
-    "includeZero"
+    "rate"
     })
 public class SurchargeTierRow {
 
@@ -20,9 +19,7 @@ public class SurchargeTierRow {
     @XmlElement(name = "to")
     protected Long to;
     @XmlElement(name = "rate")
-    protected  rate;
-    @XmlElement(name = "include_zero")
-    protected  includeZero;
+    protected Double rate;
     public Long getFrom() {
         return from;
     }
@@ -39,20 +36,12 @@ public class SurchargeTierRow {
         this.to = value;
     }
 
-    public  getRate() {
+    public Double getRate() {
         return rate;
     }
 
-    public void setRate( value) {
+    public void setRate(Double value) {
         this.rate = value;
-    }
-
-    public  getIncludeZero() {
-        return includeZero;
-    }
-
-    public void setIncludeZero( value) {
-        this.includeZero = value;
     }
 
     

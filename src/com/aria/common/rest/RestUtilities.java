@@ -2169,6 +2169,23 @@ public class RestUtilities {
         return returnElement;
     }
 
+    public static ArrayList<EligibleServicePlanDetailsReturnElement> buildEligibleServicePlanDetailsReturnElement(JSONArray jsonArray) {
+        ArrayList<EligibleServicePlanDetailsReturnElement> returnElement = new ArrayList<EligibleServicePlanDetailsReturnElement>();
+        if (jsonArray == null) return returnElement;
+        for (int i = 0;i < jsonArray.size();i++) {
+            EligibleServicePlanDetailsReturnElement entity = new EligibleServicePlanDetailsReturnElement();
+            JSONObject jsonObject = (JSONObject)jsonArray.get(i);
+            entity.setPlanNo(getLongValue(jsonObject,"plan_no"));
+            entity.setPlanName(getStringValue(jsonObject,"plan_name"));
+            entity.setServiceNo(getLongValue(jsonObject,"service_no"));
+            entity.setServiceName(getStringValue(jsonObject,"service_name"));
+            entity.setClientPlanId(getStringValue(jsonObject,"client_plan_id"));
+            entity.setClientServiceId(getStringValue(jsonObject,"client_service_id"));
+            returnElement.add(entity);
+        }
+        return returnElement;
+    }
+
     public static ArrayList<RecurringCreditInfoReturnElement> buildRecurringCreditInfoReturnElement(JSONArray jsonArray) {
         ArrayList<RecurringCreditInfoReturnElement> returnElement = new ArrayList<RecurringCreditInfoReturnElement>();
         if (jsonArray == null) return returnElement;
@@ -2208,6 +2225,10 @@ public class RestUtilities {
                         ArrayList<EligibleServiceTypesReturnElement> arrayListEligibleServiceTypesReturnElement = buildEligibleServiceTypesReturnElement((JSONArray)jsonObject.get("eligible_service_types"));
             for (EligibleServiceTypesReturnElement element : arrayListEligibleServiceTypesReturnElement){
                 entity.getEligibleServiceTypes().add(element);
+            }
+                        ArrayList<EligibleServicePlanDetailsReturnElement> arrayListEligibleServicePlanDetailsReturnElement = buildEligibleServicePlanDetailsReturnElement((JSONArray)jsonObject.get("eligible_service_plan_details"));
+            for (EligibleServicePlanDetailsReturnElement element : arrayListEligibleServicePlanDetailsReturnElement){
+                entity.getEligibleServicePlanDetails().add(element);
             }
             returnElement.add(entity);
         }
@@ -2283,6 +2304,7 @@ public class RestUtilities {
             entity.setUsageBillThru(getStringValue(jsonObject,"usage_bill_thru"));
             entity.setIsVoidedInd(getLongValue(jsonObject,"is_voided_ind"));
             entity.setClientMasterPlanId(getStringValue(jsonObject,"client_master_plan_id"));
+            entity.setInvoiceTypeCd(getStringValue(jsonObject,"invoice_type_cd"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -3256,6 +3278,7 @@ public class RestUtilities {
             entity.setInvoiceAmount(getDoubleValue(jsonObject,"invoice_amount"));
             entity.setTotalPaid(getDoubleValue(jsonObject,"total_paid"));
             entity.setBalanceDue(getDoubleValue(jsonObject,"balance_due"));
+            entity.setInvoiceTypeCd(getStringValue(jsonObject,"invoice_type_cd"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -5398,6 +5421,44 @@ public class RestUtilities {
         int i = 0;
         for (com.aria.common.shared.EligibleServiceTypesRow row : arrayList.getEligibleServiceTypesRow()){
             parameters.add(paramPrefix + "eligible_service_types["+i+"]", getValue("String", row.getEligibleServiceTypes()));
+            i++;
+        }
+    }
+
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.EligibleServicePlansArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.EligibleServicePlansRow row : arrayList.getEligibleServicePlansRow()){
+            parameters.add("plan_no["+i+"]", getValue("Long", row.getPlanNo()));
+            parameters.add("service_no["+i+"]", getValue("Long", row.getServiceNo()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.EligibleServicePlansArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.EligibleServicePlansRow row : arrayList.getEligibleServicePlansRow()){
+            parameters.add(paramPrefix + "plan_no["+i+"]", getValue("Long", row.getPlanNo()));
+            parameters.add(paramPrefix + "service_no["+i+"]", getValue("Long", row.getServiceNo()));
+            i++;
+        }
+    }
+
+    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.ClientEligibleServicePlanIdsArray arrayList) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.ClientEligibleServicePlanIdsRow row : arrayList.getClientEligibleServicePlanIdsRow()){
+            parameters.add("client_plan_id["+i+"]", getValue("String", row.getClientPlanId()));
+            parameters.add("client_service_id["+i+"]", getValue("String", row.getClientServiceId()));
+            i++;
+        }
+    }
+    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.ClientEligibleServicePlanIdsArray arrayList, String paramPrefix) {
+        if (arrayList == null) return;
+        int i = 0;
+        for (com.aria.common.shared.ClientEligibleServicePlanIdsRow row : arrayList.getClientEligibleServicePlanIdsRow()){
+            parameters.add(paramPrefix + "client_plan_id["+i+"]", getValue("String", row.getClientPlanId()));
+            parameters.add(paramPrefix + "client_service_id["+i+"]", getValue("String", row.getClientServiceId()));
             i++;
         }
     }

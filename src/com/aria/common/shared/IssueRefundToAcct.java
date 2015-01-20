@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "paymentTransactionId",    "reasonCode",    "totalRefundAmount",    "refundCheckNumber",    "comments",    "doWrite",    "autoCalcRefund",    "invoicesToReverse",    "clientReceiptId"})
+    "authKey",    "acctNo",    "paymentTransactionId",    "reasonCode",    "totalRefundAmount",    "refundCheckNumber",    "comments",    "doWrite",    "autoCalcRefund",    "invoicesToReverse",    "clientReceiptId",    "isUnlinkedRefund"})
 @XmlRootElement(name = "issue_refund_to_acct")
 public class IssueRefundToAcct {
 
@@ -38,6 +38,8 @@ public class IssueRefundToAcct {
     protected InvoicesToReverseArray invoicesToReverse;
         @XmlElement(name = "client_receipt_id")
     protected String clientReceiptId;
+        @XmlElement(name = "is_unlinked_refund")
+    protected String isUnlinkedRefund;
     
     public long getClientNo() {
         return clientNo;
@@ -124,6 +126,13 @@ public class IssueRefundToAcct {
 
     public void setClientReceiptId(String value) {
         this.clientReceiptId = value;
+    }
+            public String getIsUnlinkedRefund() {
+        return isUnlinkedRefund;
+    }
+
+    public void setIsUnlinkedRefund(String value) {
+        this.isUnlinkedRefund = value;
     }
             
 }

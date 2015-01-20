@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "invoiceNo",    "acctNo",    "actionDirective",    "billSeq",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "altCollectOnApprove",    "altSendStatementOnApprove",    "cancelOrdersOnDiscard",    "billAddress3",    "trackData1",    "trackData2",    "clientReceiptId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd"})
+    "authKey",    "invoiceNo",    "acctNo",    "actionDirective",    "billSeq",    "altPayMethod",    "ccNumber",    "ccExpireMm",    "ccExpireYyyy",    "bankRoutingNum",    "bankAcctNum",    "billCompanyName",    "billFirstName",    "billMiddleInitial",    "billLastName",    "billAddress1",    "billAddress2",    "billCity",    "billLocality",    "billStateProv",    "billZip",    "billCountry",    "billEmail",    "billPhone",    "billPhoneExtension",    "billCellPhone",    "billWorkPhone",    "billWorkPhoneExtension",    "cvv",    "altCollectOnApprove",    "altSendStatementOnApprove",    "cancelOrdersOnDiscard",    "billAddress3",    "trackData1",    "trackData2",    "clientReceiptId",    "iban",    "bankCheckDigit",    "bankSwiftCd",    "bankCountryCd",    "mandateId",    "bankIdCd",    "bankBranchCd",    "customStatusLabel",    "clientNotes"})
 @XmlRootElement(name = "manage_pending_invoice")
 public class ManagePendingInvoice {
 
@@ -102,6 +102,10 @@ public class ManagePendingInvoice {
     protected String bankIdCd;
         @XmlElement(name = "bank_branch_cd")
     protected String bankBranchCd;
+        @XmlElement(name = "custom_status_label")
+    protected String customStatusLabel;
+        @XmlElement(name = "client_notes")
+    protected String clientNotes;
     
     public long getClientNo() {
         return clientNo;
@@ -412,6 +416,20 @@ public class ManagePendingInvoice {
 
     public void setBankBranchCd(String value) {
         this.bankBranchCd = value;
+    }
+            public String getCustomStatusLabel() {
+        return customStatusLabel;
+    }
+
+    public void setCustomStatusLabel(String value) {
+        this.customStatusLabel = value;
+    }
+            public String getClientNotes() {
+        return clientNotes;
+    }
+
+    public void setClientNotes(String value) {
+        this.clientNotes = value;
     }
             
 }

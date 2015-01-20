@@ -439,6 +439,9 @@ public class RestUtilities {
             entity.setAcctStatementSeqStr(getStringValue(jsonObject,"acct_statement_seq_str"));
             entity.setSecondAcctStatementSeqStr(getStringValue(jsonObject,"second_acct_statement_seq_str"));
             entity.setVoidingEventNo(getLongValue(jsonObject,"voiding_event_no"));
+            entity.setCustomStatusLabel(getStringValue(jsonObject,"custom_status_label"));
+            entity.setClientNotes(getStringValue(jsonObject,"client_notes"));
+            entity.setInvoiceTypeCd(getStringValue(jsonObject,"invoice_type_cd"));
                         ArrayList<InvoiceLineReturnElement> arrayListInvoiceLineReturnElement = buildInvoiceLineReturnElement((JSONArray)jsonObject.get("invoice_line"));
             for (InvoiceLineReturnElement element : arrayListInvoiceLineReturnElement){
                 entity.getInvoiceLine().add(element);
@@ -672,6 +675,8 @@ public class RestUtilities {
             entity.setSecondAcctStatementSeqStr(getStringValue(jsonObject,"second_acct_statement_seq_str"));
             entity.setInvoiceLineItems(getStringValue(jsonObject,"invoice_line_items"));
             entity.setVoidingEventNo(getLongValue(jsonObject,"voiding_event_no"));
+            entity.setCustomStatusLabel(getStringValue(jsonObject,"custom_status_label"));
+            entity.setClientNotes(getStringValue(jsonObject,"client_notes"));
                         ArrayList<AllInvoiceLineReturnElement> arrayListAllInvoiceLineReturnElement = buildAllInvoiceLineReturnElement((JSONArray)jsonObject.get("all_invoice_line"));
             for (AllInvoiceLineReturnElement element : arrayListAllInvoiceLineReturnElement){
                 entity.getAllInvoiceLine().add(element);

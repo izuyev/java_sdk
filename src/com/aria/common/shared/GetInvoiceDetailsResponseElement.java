@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "invoiceLineItems", "isPendingInd"})
+@XmlType(name = "", propOrder = {"errorCode", "errorMsg", "invoiceLineItems", "isPendingInd", "customStatusLabel", "customStatusDesc", "clientNotes", "invoiceTypeCd"})
 @XmlRootElement(name = "get_invoice_detailsResponseElement")
 public class GetInvoiceDetailsResponseElement {
 
@@ -22,6 +22,14 @@ public class GetInvoiceDetailsResponseElement {
     protected List<InvoiceLineItemsReturnElement> invoiceLineItems;
     @XmlElement(name = "is_pending_ind")
     protected Long isPendingInd;
+    @XmlElement(name = "custom_status_label")
+    protected String customStatusLabel;
+    @XmlElement(name = "custom_status_desc")
+    protected String customStatusDesc;
+    @XmlElement(name = "client_notes")
+    protected String clientNotes;
+    @XmlElement(name = "invoice_type_cd")
+    protected String invoiceTypeCd;
     
     public Long getErrorCode() {
         return errorCode;
@@ -50,6 +58,38 @@ public class GetInvoiceDetailsResponseElement {
 
     public void setIsPendingInd(Long value) {
         this.isPendingInd = value;
+    }
+
+    public String getCustomStatusLabel() {
+        return customStatusLabel;
+    }
+
+    public void setCustomStatusLabel(String value) {
+        this.customStatusLabel = value;
+    }
+
+    public String getCustomStatusDesc() {
+        return customStatusDesc;
+    }
+
+    public void setCustomStatusDesc(String value) {
+        this.customStatusDesc = value;
+    }
+
+    public String getClientNotes() {
+        return clientNotes;
+    }
+
+    public void setClientNotes(String value) {
+        this.clientNotes = value;
+    }
+
+    public String getInvoiceTypeCd() {
+        return invoiceTypeCd;
+    }
+
+    public void setInvoiceTypeCd(String value) {
+        this.invoiceTypeCd = value;
     }
 
     

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "invoice_history_ReturnElement", propOrder = {"invoiceNo", "masterPlanNo", "masterPlanName", "currencyCd", "billDate", "paidDate", "debit", "credit", "recurringBillFrom", "recurringBillThru", "usageBillFrom", "usageBillThru", "isVoidedInd", "clientMasterPlanId"})
+@XmlType(name = "invoice_history_ReturnElement", propOrder = {"invoiceNo", "masterPlanNo", "masterPlanName", "currencyCd", "billDate", "paidDate", "debit", "credit", "recurringBillFrom", "recurringBillThru", "usageBillFrom", "usageBillThru", "isVoidedInd", "clientMasterPlanId", "invoiceTypeCd"})
 public class InvoiceHistoryReturnElement {
 
     @XmlElement(name = "invoice_no")
@@ -41,6 +41,8 @@ public class InvoiceHistoryReturnElement {
     protected Long isVoidedInd;
     @XmlElement(name = "client_master_plan_id")
     protected String clientMasterPlanId;
+    @XmlElement(name = "invoice_type_cd")
+    protected String invoiceTypeCd;
     
     public Long getInvoiceNo() {
         return invoiceNo;
@@ -152,6 +154,14 @@ public class InvoiceHistoryReturnElement {
 
     public void setClientMasterPlanId(String value) {
         this.clientMasterPlanId = value;
+    }
+
+    public String getInvoiceTypeCd() {
+        return invoiceTypeCd;
+    }
+
+    public void setInvoiceTypeCd(String value) {
+        this.invoiceTypeCd = value;
     }
 
     

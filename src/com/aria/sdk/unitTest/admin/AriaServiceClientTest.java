@@ -139,11 +139,6 @@ public class AriaServiceClientTest {
         //createSurcharge();
         //editSurcharge();
         //deleteSurcharge();
-        //getRevrecProfiles();
-        //getRevrecProfileDetails();
-        //createRevrecProfile();
-        //updateRevrecProfile();
-        //deleteRevrecProfile();
         //validateAdminSession();
             }
 
@@ -340,7 +335,6 @@ public class AriaServiceClientTest {
                 , imageArray
                 , parentClassArray
                 , supplementalObjFieldArray
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createInventoryItem - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -499,8 +493,6 @@ public class AriaServiceClientTest {
                 , ""
                 , ""
                 , supplementalObjFieldArray
-                , ""
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createService - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -515,8 +507,6 @@ public class AriaServiceClientTest {
     public void updateService() throws Exception {
         
         hashMapReturnValues = getBaseAriaBilling().updateService(getClientNo(), getAuthKey()        , 1L
-                , ""
-                , ""
                 , ""
                 , ""
                 , ""
@@ -1074,7 +1064,6 @@ public class AriaServiceClientTest {
                 , ""
                 , surchargeNoArray
                 , clientSurchargeIdArray
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createNewPlan - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -1140,7 +1129,6 @@ public class AriaServiceClientTest {
                 , ""
                 , surchargeNoArray
                 , clientSurchargeIdArray
-                , ""
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "editPlan - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -1176,6 +1164,32 @@ public class AriaServiceClientTest {
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "copyPlan - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
+            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
+                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
+            }
+            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
+        }
+    }
+
+    //@Test
+    public void updateMasterPlan() throws Exception {
+        
+        hashMapReturnValues = getBaseAriaBilling().updateMasterPlan(getClientNo(), getAuthKey());
+        if (hashMapReturnValues.get(ERROR_CODE) != null) {
+            String errorMessage = "updateMasterPlan - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
+            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
+                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
+            }
+            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
+        }
+    }
+
+    //@Test
+    public void updateSupplementalPlan() throws Exception {
+        
+        hashMapReturnValues = getBaseAriaBilling().updateSupplementalPlan(getClientNo(), getAuthKey());
+        if (hashMapReturnValues.get(ERROR_CODE) != null) {
+            String errorMessage = "updateSupplementalPlan - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
                 errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
             }
@@ -1330,7 +1344,7 @@ public class AriaServiceClientTest {
         
         hashMapReturnValues = getBaseAriaBilling().createSuppObjField(getClientNo(), getAuthKey()        , ""
                 , ""
-                , 1L
+                , ""
                 , 1L
                 , ""
                 , ""
@@ -1560,7 +1574,6 @@ public class AriaServiceClientTest {
         com.aria.common.shared.admin.ClientServiceIdArray clientServiceIdArray = new com.aria.common.shared.admin.ClientServiceIdArray();
         com.aria.common.shared.admin.ItemNoArray itemNoArray = new com.aria.common.shared.admin.ItemNoArray();
         com.aria.common.shared.admin.ClientItemIdArray clientItemIdArray = new com.aria.common.shared.admin.ClientItemIdArray();
-        com.aria.common.shared.admin.ScheduleArray scheduleArray = new com.aria.common.shared.admin.ScheduleArray();
         
         hashMapReturnValues = getBaseAriaBilling().createSurcharge(getClientNo(), getAuthKey()        , ""
                 , ""
@@ -1582,7 +1595,6 @@ public class AriaServiceClientTest {
                 , clientServiceIdArray
                 , itemNoArray
                 , clientItemIdArray
-                , scheduleArray
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "createSurcharge - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -1602,7 +1614,6 @@ public class AriaServiceClientTest {
         com.aria.common.shared.admin.ClientServiceIdArray clientServiceIdArray = new com.aria.common.shared.admin.ClientServiceIdArray();
         com.aria.common.shared.admin.ItemNoArray itemNoArray = new com.aria.common.shared.admin.ItemNoArray();
         com.aria.common.shared.admin.ClientItemIdArray clientItemIdArray = new com.aria.common.shared.admin.ClientItemIdArray();
-        com.aria.common.shared.admin.ScheduleArray scheduleArray = new com.aria.common.shared.admin.ScheduleArray();
         
         hashMapReturnValues = getBaseAriaBilling().editSurcharge(getClientNo(), getAuthKey()        , ""
                 , ""
@@ -1619,7 +1630,6 @@ public class AriaServiceClientTest {
                 , clientServiceIdArray
                 , itemNoArray
                 , clientItemIdArray
-                , scheduleArray
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "editSurcharge - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
@@ -1640,88 +1650,6 @@ public class AriaServiceClientTest {
         );
         if (hashMapReturnValues.get(ERROR_CODE) != null) {
             String errorMessage = "deleteSurcharge - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
-    public void getRevrecProfiles() throws Exception {
-        
-        hashMapReturnValues = getBaseAriaBilling().getRevrecProfiles(getClientNo(), getAuthKey());
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "getRevrecProfiles - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
-    public void getRevrecProfileDetails() throws Exception {
-        
-        hashMapReturnValues = getBaseAriaBilling().getRevrecProfileDetails(getClientNo(), getAuthKey()        , 1L
-                , ""
-        );
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "getRevrecProfileDetails - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
-    public void createRevrecProfile() throws Exception {
-        
-        hashMapReturnValues = getBaseAriaBilling().createRevrecProfile(getClientNo(), getAuthKey()        , ""
-                , ""
-                , ""
-                , 1L
-                , 1L
-                , 1L
-        );
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "createRevrecProfile - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
-    public void updateRevrecProfile() throws Exception {
-        
-        hashMapReturnValues = getBaseAriaBilling().updateRevrecProfile(getClientNo(), getAuthKey()        , 1L
-                , ""
-                , ""
-                , ""
-                , 1L
-                , 1L
-                , 1L
-        );
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "updateRevrecProfile - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
-            if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
-                errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
-            }
-            assertEquals(errorMessage, 0L, hashMapReturnValues.get(ERROR_CODE));
-        }
-    }
-
-    //@Test
-    public void deleteRevrecProfile() throws Exception {
-        
-        hashMapReturnValues = getBaseAriaBilling().deleteRevrecProfile(getClientNo(), getAuthKey()        , 1L
-                , ""
-        );
-        if (hashMapReturnValues.get(ERROR_CODE) != null) {
-            String errorMessage = "deleteRevrecProfile - " + ERROR_CODE + " (" + hashMapReturnValues.get(ERROR_CODE) + ") ";
             if (hashMapReturnValues.get(ERROR_MESSAGE) != null) {
                 errorMessage += ERROR_MESSAGE + " (" + hashMapReturnValues.get(ERROR_MESSAGE) + ")";
             }

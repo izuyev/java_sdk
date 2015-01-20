@@ -193,7 +193,7 @@ public class RestUtilities {
             entity.setClientSku(getStringValue(jsonObject,"client_sku"));
             entity.setActiveInd(getLongValue(jsonObject,"active_ind"));
             entity.setClientItemId(getStringValue(jsonObject,"client_item_id"));
-            entity.setStockLevel(getLongValue(jsonObject,"stock_level"));
+            entity.setStockLevel(getDoubleValue(jsonObject,"stock_level"));
             returnElement.add(entity);
         }
         return returnElement;
@@ -1500,46 +1500,6 @@ public class RestUtilities {
         }
     }
 
-    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.NotificationsArray arrayList) {
-        if (arrayList == null) return;
-        int i = 0;
-        for (com.aria.common.shared.admin.NotificationsRow row : arrayList.getNotificationsRow()){
-            parameters.add("units["+i+"]", getValue("Long", row.getUnits()));
-            parameters.add("values["+i+"]", getValue("", row.getValues()));
-            i++;
-        }
-    }
-    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.NotificationsArray arrayList, String paramPrefix) {
-        if (arrayList == null) return;
-        int i = 0;
-        for (com.aria.common.shared.admin.NotificationsRow row : arrayList.getNotificationsRow()){
-            parameters.add(paramPrefix + "units["+i+"]", getValue("Long", row.getUnits()));
-            parameters.add(paramPrefix + "values["+i+"]", getValue("", row.getValues()));
-            i++;
-        }
-    }
-
-    public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.UsageThresholdArray arrayList) {
-        if (arrayList == null) return;
-        int i = 0;
-        for (com.aria.common.shared.admin.UsageThresholdRow row : arrayList.getUsageThresholdRow()){
-            parameters.add("notice_dest_type["+i+"]", getValue("String", row.getNoticeDestType()));
-            parameters.add("notice_balance_type["+i+"]", getValue("String", row.getNoticeBalanceType()));
-                        addParameterValuesFromArray(parameters, row.getNotifications(), "notifications["+i+"]");
-            i++;
-        }
-    }
-    private static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.UsageThresholdArray arrayList, String paramPrefix) {
-        if (arrayList == null) return;
-        int i = 0;
-        for (com.aria.common.shared.admin.UsageThresholdRow row : arrayList.getUsageThresholdRow()){
-            parameters.add(paramPrefix + "notice_dest_type["+i+"]", getValue("String", row.getNoticeDestType()));
-            parameters.add(paramPrefix + "notice_balance_type["+i+"]", getValue("String", row.getNoticeBalanceType()));
-                        addParameterValuesFromArray(parameters, row.getNotifications(), paramPrefix + "notifications["+i+"]");
-            i++;
-        }
-    }
-
     public static void addParameterValuesFromArray(MultivaluedMap<String, String> parameters, com.aria.common.shared.admin.PlanGroupArray arrayList) {
         if (arrayList == null) return;
         int i = 0;
@@ -1578,10 +1538,11 @@ public class RestUtilities {
         if (arrayList == null) return;
         int i = 0;
         for (com.aria.common.shared.admin.ScheduleRow row : arrayList.getScheduleRow()){
+            parameters.add("schedule_no["+i+"]", getValue("Long", row.getScheduleNo()));
             parameters.add("schedule_name["+i+"]", getValue("String", row.getScheduleName()));
+            parameters.add("client_rate_schedule_id["+i+"]", getValue("String", row.getClientRateScheduleId()));
             parameters.add("currency_cd["+i+"]", getValue("String", row.getCurrencyCd()));
             parameters.add("is_default["+i+"]", getValue("Long", row.getIsDefault()));
-            parameters.add("min_surcharge_to_apply["+i+"]", getValue("Double", row.getMinSurchargeToApply()));
             i++;
         }
     }
@@ -1589,10 +1550,11 @@ public class RestUtilities {
         if (arrayList == null) return;
         int i = 0;
         for (com.aria.common.shared.admin.ScheduleRow row : arrayList.getScheduleRow()){
+            parameters.add(paramPrefix + "schedule_no["+i+"]", getValue("Long", row.getScheduleNo()));
             parameters.add(paramPrefix + "schedule_name["+i+"]", getValue("String", row.getScheduleName()));
+            parameters.add(paramPrefix + "client_rate_schedule_id["+i+"]", getValue("String", row.getClientRateScheduleId()));
             parameters.add(paramPrefix + "currency_cd["+i+"]", getValue("String", row.getCurrencyCd()));
             parameters.add(paramPrefix + "is_default["+i+"]", getValue("Long", row.getIsDefault()));
-            parameters.add(paramPrefix + "min_surcharge_to_apply["+i+"]", getValue("Double", row.getMinSurchargeToApply()));
             i++;
         }
     }
@@ -1753,8 +1715,7 @@ public class RestUtilities {
         for (com.aria.common.shared.admin.SurchargeTierRow row : arrayList.getSurchargeTierRow()){
             parameters.add("from["+i+"]", getValue("Long", row.getFrom()));
             parameters.add("to["+i+"]", getValue("Long", row.getTo()));
-            parameters.add("rate["+i+"]", getValue("", row.getRate()));
-            parameters.add("include_zero["+i+"]", getValue("", row.getIncludeZero()));
+            parameters.add("rate["+i+"]", getValue("Double", row.getRate()));
             i++;
         }
     }
@@ -1764,8 +1725,7 @@ public class RestUtilities {
         for (com.aria.common.shared.admin.SurchargeTierRow row : arrayList.getSurchargeTierRow()){
             parameters.add(paramPrefix + "from["+i+"]", getValue("Long", row.getFrom()));
             parameters.add(paramPrefix + "to["+i+"]", getValue("Long", row.getTo()));
-            parameters.add(paramPrefix + "rate["+i+"]", getValue("", row.getRate()));
-            parameters.add(paramPrefix + "include_zero["+i+"]", getValue("", row.getIncludeZero()));
+            parameters.add(paramPrefix + "rate["+i+"]", getValue("Double", row.getRate()));
             i++;
         }
     }

@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "recurring_credit_info_ReturnElement", propOrder = {"recurringCreditNo", "createDate", "createUser", "updateDate", "updateUser", "firstCreditDate", "lastCreditDate", "nextCreditDate", "creditAmount", "currencyCd", "creditsCompleted", "creditsRemaining", "creditIntervalMonths", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "serviceNoToApply", "serviceNameToApply", "creditStatusCd", "creditStatusLabel", "creditReasonCd", "creditReasonText", "comments", "cancelDate", "cancelUser", "cancelComments", "clientEligiblePlanId", "clientEligibleServiceId", "clientServiceIdToApply", "eligibleServiceTypes"})
+@XmlType(name = "recurring_credit_info_ReturnElement", propOrder = {"recurringCreditNo", "createDate", "createUser", "updateDate", "updateUser", "firstCreditDate", "lastCreditDate", "nextCreditDate", "creditAmount", "currencyCd", "creditsCompleted", "creditsRemaining", "creditIntervalMonths", "eligiblePlanNo", "eligiblePlanName", "eligibleServiceNo", "eligibleServiceName", "serviceNoToApply", "serviceNameToApply", "creditStatusCd", "creditStatusLabel", "creditReasonCd", "creditReasonText", "comments", "cancelDate", "cancelUser", "cancelComments", "clientEligiblePlanId", "clientEligibleServiceId", "clientServiceIdToApply", "eligibleServiceTypes", "eligibleServicePlanDetails"})
 public class RecurringCreditInfoReturnElement {
 
     @XmlElement(name = "recurring_credit_no")
@@ -75,6 +75,8 @@ public class RecurringCreditInfoReturnElement {
     protected String clientServiceIdToApply;
     @XmlElement(name = "eligible_service_types")
     protected List<EligibleServiceTypesReturnElement> eligibleServiceTypes;
+    @XmlElement(name = "eligible_service_plan_details")
+    protected List<EligibleServicePlanDetailsReturnElement> eligibleServicePlanDetails;
     
     public Long getRecurringCreditNo() {
         return recurringCreditNo;
@@ -321,5 +323,10 @@ public class RecurringCreditInfoReturnElement {
             this.eligibleServiceTypes = new ArrayList<EligibleServiceTypesReturnElement>();
         }
         return this.eligibleServiceTypes;
+    }public List<EligibleServicePlanDetailsReturnElement> getEligibleServicePlanDetails() {
+        if (this.eligibleServicePlanDetails == null) {
+            this.eligibleServicePlanDetails = new ArrayList<EligibleServicePlanDetailsReturnElement>();
+        }
+        return this.eligibleServicePlanDetails;
     }
 }

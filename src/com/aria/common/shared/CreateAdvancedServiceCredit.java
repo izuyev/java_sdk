@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "clientNo",
-    "authKey",    "acctNo",    "amount",    "reasonCode",    "comments",    "eligiblePlanNo",    "eligibleServiceNo",    "altServiceNoToApply",    "frequencyNo",    "frequencyIntervalMonths",    "initialCreditDate",    "percentAmount",    "percentEvalPlanNo",    "percentEvalServiceNo",    "eligibleServiceTypes",    "clientEligiblePlanId",    "clientEligibleServiceId",    "clientAltServiceIdToApply",    "clientPercentEvalPlanId",    "clientPercentEvalServiceId"})
+    "authKey",    "acctNo",    "amount",    "reasonCode",    "comments",    "eligiblePlanNo",    "eligibleServiceNo",    "altServiceNoToApply",    "frequencyNo",    "frequencyIntervalMonths",    "initialCreditDate",    "percentAmount",    "percentEvalPlanNo",    "percentEvalServiceNo",    "eligibleServiceTypes",    "clientEligiblePlanId",    "clientEligibleServiceId",    "clientAltServiceIdToApply",    "clientPercentEvalPlanId",    "clientPercentEvalServiceId",    "creditExpiryTypeInd",    "creditExpiryMonths",    "creditExpiryDate",    "eligibleServicePlans",    "clientEligibleServicePlanIds"})
 @XmlRootElement(name = "create_advanced_service_credit")
 public class CreateAdvancedServiceCredit {
 
@@ -56,6 +56,16 @@ public class CreateAdvancedServiceCredit {
     protected String clientPercentEvalPlanId;
         @XmlElement(name = "client_percent_eval_service_id")
     protected String clientPercentEvalServiceId;
+        @XmlElement(name = "credit_expiry_type_ind")
+    protected String creditExpiryTypeInd;
+        @XmlElement(name = "credit_expiry_months")
+    protected Long creditExpiryMonths;
+        @XmlElement(name = "credit_expiry_date")
+    protected String creditExpiryDate;
+        @XmlElement(name = "eligible_service_plans")
+    protected EligibleServicePlansArray eligibleServicePlans;
+        @XmlElement(name = "client_eligible_service_plan_ids")
+    protected ClientEligibleServicePlanIdsArray clientEligibleServicePlanIds;
     
     public long getClientNo() {
         return clientNo;
@@ -205,6 +215,41 @@ public class CreateAdvancedServiceCredit {
 
     public void setClientPercentEvalServiceId(String value) {
         this.clientPercentEvalServiceId = value;
+    }
+            public String getCreditExpiryTypeInd() {
+        return creditExpiryTypeInd;
+    }
+
+    public void setCreditExpiryTypeInd(String value) {
+        this.creditExpiryTypeInd = value;
+    }
+            public Long getCreditExpiryMonths() {
+        return creditExpiryMonths;
+    }
+
+    public void setCreditExpiryMonths(Long value) {
+        this.creditExpiryMonths = value;
+    }
+            public String getCreditExpiryDate() {
+        return creditExpiryDate;
+    }
+
+    public void setCreditExpiryDate(String value) {
+        this.creditExpiryDate = value;
+    }
+            public EligibleServicePlansArray getEligibleServicePlans() {
+        return eligibleServicePlans;
+    }
+
+    public void setEligibleServicePlans(EligibleServicePlansArray value) {
+        this.eligibleServicePlans = value;
+    }
+            public ClientEligibleServicePlanIdsArray getClientEligibleServicePlanIds() {
+        return clientEligibleServicePlanIds;
+    }
+
+    public void setClientEligibleServicePlanIds(ClientEligibleServicePlanIdsArray value) {
+        this.clientEligibleServicePlanIds = value;
     }
             
 }

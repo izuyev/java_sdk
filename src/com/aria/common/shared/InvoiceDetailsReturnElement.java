@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "invoice_details_ReturnElement", propOrder = {"invoiceNo", "billDate", "dueDate", "daysPastDue", "invoiceAmount", "totalPaid", "balanceDue"})
+@XmlType(name = "invoice_details_ReturnElement", propOrder = {"invoiceNo", "billDate", "dueDate", "daysPastDue", "invoiceAmount", "totalPaid", "balanceDue", "invoiceTypeCd"})
 public class InvoiceDetailsReturnElement {
 
     @XmlElement(name = "invoice_no")
@@ -27,6 +27,8 @@ public class InvoiceDetailsReturnElement {
     protected Double totalPaid;
     @XmlElement(name = "balance_due")
     protected Double balanceDue;
+    @XmlElement(name = "invoice_type_cd")
+    protected String invoiceTypeCd;
     
     public Long getInvoiceNo() {
         return invoiceNo;
@@ -82,6 +84,14 @@ public class InvoiceDetailsReturnElement {
 
     public void setBalanceDue(Double value) {
         this.balanceDue = value;
+    }
+
+    public String getInvoiceTypeCd() {
+        return invoiceTypeCd;
+    }
+
+    public void setInvoiceTypeCd(String value) {
+        this.invoiceTypeCd = value;
     }
 
     

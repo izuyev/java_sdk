@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "all_invoice_details_ReturnElement", propOrder = {"invoiceNo", "acctNo", "userId", "invoiceType", "fromDate", "toDate", "usageBillFromDate", "usageBillThruDate", "taxedEmail", "taxedFirstName", "taxedMiddleInitial", "taxedLastName", "taxedAddress1", "taxedAddress2", "taxedAddress3", "taxedCity", "taxedState", "taxedLocality", "taxedZip", "taxedCountry", "debit", "credit", "billDate", "dueDate", "paidDate", "notifyDate", "currencyCd", "balanceForward", "statementBalanceForward", "totalDue", "comments", "additionalComments", "transactionType", "lastUpdated", "ariaEventNo", "ariaStatementNo", "acctStatementSeqStr", "secondAcctStatementSeqStr", "invoiceLineItems", "voidingEventNo", "allInvoiceLine"})
+@XmlType(name = "all_invoice_details_ReturnElement", propOrder = {"invoiceNo", "acctNo", "userId", "invoiceType", "fromDate", "toDate", "usageBillFromDate", "usageBillThruDate", "taxedEmail", "taxedFirstName", "taxedMiddleInitial", "taxedLastName", "taxedAddress1", "taxedAddress2", "taxedAddress3", "taxedCity", "taxedState", "taxedLocality", "taxedZip", "taxedCountry", "debit", "credit", "billDate", "dueDate", "paidDate", "notifyDate", "currencyCd", "balanceForward", "statementBalanceForward", "totalDue", "comments", "additionalComments", "transactionType", "lastUpdated", "ariaEventNo", "ariaStatementNo", "acctStatementSeqStr", "secondAcctStatementSeqStr", "invoiceLineItems", "voidingEventNo", "customStatusLabel", "clientNotes", "allInvoiceLine"})
 public class AllInvoiceDetailsReturnElement {
 
     @XmlElement(name = "invoice_no")
@@ -93,6 +93,10 @@ public class AllInvoiceDetailsReturnElement {
     protected String invoiceLineItems;
     @XmlElement(name = "voiding_event_no")
     protected Long voidingEventNo;
+    @XmlElement(name = "custom_status_label")
+    protected String customStatusLabel;
+    @XmlElement(name = "client_notes")
+    protected String clientNotes;
     @XmlElement(name = "all_invoice_line")
     protected List<AllInvoiceLineReturnElement> allInvoiceLine;
     
@@ -414,6 +418,22 @@ public class AllInvoiceDetailsReturnElement {
 
     public void setVoidingEventNo(Long value) {
         this.voidingEventNo = value;
+    }
+
+    public String getCustomStatusLabel() {
+        return customStatusLabel;
+    }
+
+    public void setCustomStatusLabel(String value) {
+        this.customStatusLabel = value;
+    }
+
+    public String getClientNotes() {
+        return clientNotes;
+    }
+
+    public void setClientNotes(String value) {
+        this.clientNotes = value;
     }
 
     public List<AllInvoiceLineReturnElement> getAllInvoiceLine() {
