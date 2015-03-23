@@ -547,7 +547,7 @@ public class RestUtilities {
         return returnElement;
     }
 
-    public static ArrayList<DiscountRuleReturnElement> buildDiscountRuleReturnElement(JSONArray jsonArray) {
+    public static ArrayList<DiscountRuleReturnElement> buildDiscountRulesReturnElement(JSONArray jsonArray) {
         ArrayList<DiscountRuleReturnElement> returnElement = new ArrayList<DiscountRuleReturnElement>();
         if (jsonArray == null) return returnElement;
         for (int i = 0;i < jsonArray.size();i++) {

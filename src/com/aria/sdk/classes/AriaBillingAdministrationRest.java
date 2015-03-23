@@ -1591,13 +1591,7 @@ public class AriaBillingAdministrationRest extends BaseAriaBilling implements Ar
 
         returnValues[0] = "error_code";
         returnValues[1] = "error_msg";
-        returnValues[2] = "rule_no";
-        returnValues[3] = "rule_id";
-        returnValues[4] = "description";
-        returnValues[5] = "ext_description";
-        returnValues[6] = "flat_percent_ind";
-        returnValues[7] = "amount";
-        returnValues[8] = "currency";
+        returnValues[2] = "discount_rules";
         
         buildHashMapReturnValues(ret,returnValues);
         return getHashMapReturnValues();
